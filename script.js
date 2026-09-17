@@ -96,28 +96,8 @@
     hero.style.setProperty("--wall-rows", best.rows);
     hero.style.setProperty("--wall-height", `${best.height}px`);
     heroVideos.forEach((video, index) => { video.parentElement.hidden = index >= best.count; });
-    requestAnimationFrame(positionMotionLabels);
     updatePlayback();
   }
-  function positionMotionLabels() {
-    const obstacles = [...document.querySelectorAll(".hero-copy h1, .hero-copy p")].map(node => {
-      const range = document.createRange(); range.selectNodeContents(node);
-      const text = range.getBoundingClientRect(), line = node.getBoundingClientRect();
-      return { left: text.left, right: text.right, top: line.top, bottom: line.bottom };
-    });
-    document.querySelectorAll(".motion-tile:not([hidden]) .motion-label").forEach(label => {
-      const tile = label.parentElement.getBoundingClientRect();
-      const height = label.getBoundingClientRect().height;
-      let bestTop = tile.height - height - 8, leastOverlap = Infinity;
-      for (let top = bestTop; top >= 8; top -= 4) {
-        const overlap = obstacles.reduce((total, box) => total + Math.max(0, Math.min(tile.top + top + height, box.bottom + 2) - Math.max(tile.top + top, box.top - 2)) * Math.max(0, Math.min(label.getBoundingClientRect().right, box.right) - Math.max(tile.left + 10, box.left)), 0);
-        if (overlap < leastOverlap) { leastOverlap = overlap; bestTop = top; }
-        if (!overlap) break;
-      }
-      label.style.top = `${bestTop}px`; label.style.bottom = "auto";
-    });
-  }
-  document.fonts.ready.then(positionMotionLabels);
   let resizeFrame;
   window.addEventListener("resize", () => {
     cancelAnimationFrame(resizeFrame);

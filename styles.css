@@ -19,8 +19,8 @@ img, video { max-width: 100%; display: block; }
 .skip-link:focus { top: 12px; }
 .hero { height: var(--wall-height, 100svh); position: relative; isolation: isolate; background: var(--color-dark); color: var(--color-white); display: grid; align-items: center; }
 .motion-wall { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(var(--wall-columns, 6), minmax(0, 1fr)); grid-template-rows: repeat(var(--wall-rows, 4), minmax(0, 1fr)); gap: 0; background: var(--color-motion-backdrop); z-index: -3; }
-.motion-tile { position: relative; min-width: 0; min-height: 0; padding: 0; border: 0; }
-.motion-label { position: absolute; z-index: 2; left: 10px; max-width: calc(100% - 18px); bottom: 8px; color: var(--color-white); font: 600 clamp(.75rem, .95vw, .95rem)/1.25 var(--font-body); text-shadow: 0 1px 4px var(--color-dark); }
+.motion-tile { position: relative; container-type: inline-size; min-width: 0; min-height: 0; padding: 0; border: 0; }
+.motion-label { position: absolute; z-index: 2; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 94%; color: var(--color-white); opacity: .3; font: 700 clamp(1.125rem, 11cqw, 4rem)/1.05 var(--font-display); letter-spacing: -.035em; text-align: center; text-wrap: balance; pointer-events: none; }
 .motion-tile video { width: 100%; height: 100%; object-fit: contain; object-position: center; min-height: 0; min-width: 0; border: 0; border-radius: 0; }
 .motion-tile.failed video { opacity: .25; }
 .hero-shade { position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(180deg, var(--color-veil-edge), var(--color-veil) 30%, var(--color-veil) 65%, var(--color-veil-edge)); }
