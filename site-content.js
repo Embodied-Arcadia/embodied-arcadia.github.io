@@ -11,7 +11,7 @@ window.ROBOOSTEER = {
     "caption": "Benchmark overview from the accompanying appendix. Full-benchmark counts include Order and Times, which require local construction from official source datasets."
   },
   "bibtex": "",
-  "contributors": "Contributor names and affiliations will be added here.",
+  "contributors": "Coming soon.",
   "heroVideos": [
     {
       "src": "assets/motion/hero-01--bgPTgJJlv4_00019_8_72.mp4",

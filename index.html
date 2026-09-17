@@ -21,49 +21,46 @@
   <main>
     <section class="hero" id="home" aria-labelledby="hero-title">
       <div class="motion-wall" id="motion-wall" aria-hidden="true"><div class="hero-shade"></div></div>
-      <header class="hero-nav"><a href="#home" class="wordmark" aria-label="RoboSteer home">RoboSteer<span class="brand-mark" aria-hidden="true">↗</span></a><a href="#paper">Explore the project <span aria-hidden="true">↓</span></a></header>
+      <header class="hero-nav"><a href="#home" class="wordmark" aria-label="RoboSteer home">RoboSteer<span class="brand-mark" aria-hidden="true">↗</span></a><a href="#paper">Overview <span aria-hidden="true">↓</span></a></header>
       <div class="hero-copy">
         <h1 id="hero-title">Robo<span>Steer</span></h1>
         <p>Benchmarking Behavioral Steerability<br class="desktop-break"> in Humanoid Foundation Models</p>
       </div>
-      <div class="hero-bottom"><p>Motion from the RoboSteer dataset</p><button id="motion-toggle" type="button" aria-pressed="false">Pause motion <span aria-hidden="true">Ⅱ</span></button></div>
+      <div class="hero-bottom"><button id="motion-toggle" type="button" aria-pressed="false">Pause motion <span aria-hidden="true">Ⅱ</span></button></div>
     </section>
 
     <section class="paper section" id="paper" aria-labelledby="paper-title">
       <div class="paper-inner">
-        <p class="project-name">RoboSteer</p>
         <h2 id="paper-title">Benchmarking Behavioral Steerability<br class="desktop-break"> in Humanoid Foundation Models</h2>
         <p class="authors" id="authors">Authors to be announced</p>
         <p class="team" id="team">Team and affiliations to be announced</p>
         <nav class="resource-links" aria-label="Project resources" id="resource-links"></nav>
-        <p class="release-note">Project preview · Paper, code, and dataset release links will be added here.</p>
       </div>
     </section>
 
     <section class="section overview" id="overview" aria-labelledby="overview-title">
-      <div class="section-heading"><h2 id="overview-title">From motion generation<br>to behavioral steering.</h2><p>RoboSteer evaluates three increasingly complex forms of behavioral steerability: Conditional Steering, Constraint Steering, and Compositional Steering.</p></div>
+      <div class="section-heading"><h2 id="overview-title">Benchmark overview</h2></div>
       <div class="task-levels">
-        <article class="level"><div class="level-top"><span class="level-number">L1</span><span>12 tasks</span></div><h3>Conditional Steering</h3><p>Generate or complete motion from a conditioning source. The three task families distinguish complete, temporally partial, and spatially partial conditions.</p><ul><li><a href="#family-full-conditioning-reproduction">Full Conditioning Reproduction · 5</a></li><li><a href="#family-temporal-completion">Temporal Completion · 4</a></li><li><a href="#family-spatial-completion">Spatial Completion · 3</a></li></ul></article>
-        <article class="level"><div class="level-top"><span class="level-number">L2</span><span>7 tasks</span></div><h3>Constraint Steering</h3><p>Add an explicit behavioral constraint specifying how the action should be performed.</p><ul><li>Speed · Amplitude · Direction</li><li>Order · Times · Trajectory</li><li>Body Restrain</li></ul><a class="text-link" href="#cases-level-2">Explore all seven constraints ↓</a></article>
-        <article class="level"><div class="level-top"><span class="level-number">L3</span><span>1 task</span></div><h3>Compositional Steering</h3><p>Integrate heterogeneous, temporally interleaved instructions into one consistent motion sequence.</p><ul><li>Interleaved Multi-Source Steering</li></ul><a class="text-link" href="#cases-level-3">Explore the interleaved case ↓</a></article>
+        <article class="level"><div class="level-top"><span class="level-number">L1</span><span>12 tasks</span></div><h3>Conditional Steering</h3><p>Generate or complete motion from full, temporal, or spatial conditions.</p><ul><li><a href="#family-full-conditioning-reproduction">Full Conditioning Reproduction · 5</a></li><li><a href="#family-temporal-completion">Temporal Completion · 4</a></li><li><a href="#family-spatial-completion">Spatial Completion · 3</a></li></ul></article>
+        <article class="level"><div class="level-top"><span class="level-number">L2</span><span>7 tasks</span></div><h3>Constraint Steering</h3><p>Control motion with an explicit behavioral constraint.</p><ul><li>Speed · Amplitude · Direction</li><li>Order · Times · Trajectory</li><li>Body Restrain</li></ul><a class="text-link" href="#cases-level-2">View tasks ↓</a></article>
+        <article class="level"><div class="level-top"><span class="level-number">L3</span><span>1 task</span></div><h3>Compositional Steering</h3><p>Combine interleaved instructions into one motion sequence.</p><ul><li>Interleaved Multi-Source Steering</li></ul><a class="text-link" href="#cases-level-3">View task ↓</a></article>
       </div>
-      <div class="abstract-slot"><h3>Abstract</h3><p id="abstract">The paper abstract will be added with the manuscript release.</p></div>
+      <div class="abstract-slot"><h3>Abstract</h3><p id="abstract">Coming soon.</p></div>
       <figure class="main-figure" id="main-figure"><div class="figure-placeholder"><span>Representative figure</span><p>The project overview figure will be added here.</p></div><figcaption id="main-caption">Project overview · Figure forthcoming</figcaption></figure>
     </section>
 
     <section class="cases-section" id="cases" aria-labelledby="cases-title"><div class="section">
-      <div class="section-heading"><h2 id="cases-title">Every task, in context.</h2><p>20 cases across three levels. Explore each input and motion reference; expand a case for its full prompt and ground-truth data.</p></div>
+      <div class="section-heading"><h2 id="cases-title">Task demonstration</h2></div>
       <nav class="case-navigation" aria-label="Browse cases by benchmark level"><a href="#cases-level-1">01 · Conditional Steering <span>12 tasks</span></a><a href="#cases-level-2">02 · Constraint Steering <span>7 tasks</span></a><a href="#cases-level-3">03 · Compositional Steering <span>1 task</span></a></nav>
-      <p class="case-intro">Reference assets, not model predictions. Target intervals and missing constraint-specific results are marked within each case.</p>
       <div id="case-grid"></div>
     </div></section>
 
     <section class="section dataset-section" id="dataset" aria-labelledby="dataset-title">
-      <div><h2 id="dataset-title">Working with the dataset</h2><p>Task definitions and motion assets stay together. Paths inside each task are resolved from the dataset root.</p><a class="text-link" href="docs/dataset-guide.html">Read the dataset guide <span aria-hidden="true">↗</span></a></div>
-      <div class="dataset-tree" role="img" aria-label="The dataset root contains Tasks with Levels 1, 2 and 3, and Data with Levels 1, 2, 3 and Shared."><div class="tree-root">RoboSteer dataset</div><div class="tree-branch"><strong>Tasks/</strong><span>Level1/ · Level2/ · Level3/</span></div><div class="tree-branch"><strong>Data/</strong><span>Level1/ · Level2/ · Level3/ · Shared/</span></div><p>Preserve the folder names and relative paths.</p></div>
+      <div><h2 id="dataset-title">Dataset</h2><a class="text-link" href="docs/dataset-guide.html">Dataset guide <span aria-hidden="true">↗</span></a></div>
+      <div class="dataset-tree" role="img" aria-label="The dataset root contains Tasks with Levels 1, 2 and 3, and Data with Levels 1, 2, 3 and Shared."><div class="tree-root">RoboSteer dataset</div><div class="tree-branch"><strong>Tasks/</strong><span>Level1/ · Level2/ · Level3/</span></div><div class="tree-branch"><strong>Data/</strong><span>Level1/ · Level2/ · Level3/ · Shared/</span></div></div>
     </section>
 
-    <section class="section closing" id="citation" aria-labelledby="citation-title"><div><h2 id="citation-title">Citation</h2><p id="citation-note">The BibTeX entry will be available when the paper is released.</p><pre id="bibtex" hidden></pre><button class="copy-button" id="copy-citation" type="button" hidden>Copy BibTeX</button><p id="copy-status" role="status"></p></div><div><h2>Contributors</h2><p id="contributors">Contributor names and affiliations will be added here.</p></div></section>
+    <section class="section closing" id="citation" aria-labelledby="citation-title"><div><h2 id="citation-title">Citation</h2><p id="citation-note">Coming soon.</p><pre id="bibtex" hidden></pre><button class="copy-button" id="copy-citation" type="button" hidden>Copy BibTeX</button><p id="copy-status" role="status"></p></div><div><h2>Contributors</h2><p id="contributors">Coming soon.</p></div></section>
   </main>
   <footer><a href="#home" class="wordmark">RoboSteer<span class="brand-mark" aria-hidden="true">↗</span></a><span>Benchmarking Behavioral Steerability</span><a href="#home">Back to top ↑</a></footer>
   <noscript><p class="noscript-note">Enable JavaScript to view the motion wall and dynamic examples. The benchmark overview and dataset guide are available above.</p></noscript>

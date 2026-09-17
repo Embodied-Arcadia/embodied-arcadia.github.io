@@ -20,7 +20,6 @@
     else item.setAttribute("aria-disabled", "true");
     byId("resource-links").append(item);
   }
-  if ([content.paperUrl, content.datasetUrl, content.codeUrl].every(safeUrl)) document.querySelector(".release-note").hidden = true;
   if (content.figure?.src) {
     const img = document.createElement("img"); img.src = content.figure.src;
     img.alt = content.figure.alt || "RoboSteer overview"; img.loading = "lazy";
@@ -191,7 +190,6 @@
     article.append(header);
     const input = el("section", "case-input"); input.setAttribute("aria-label", `${item.title}: input condition`);
     input.append(el("h6", "case-block-title", item.level === 3 ? "Ordered input sequence" : "Input condition"));
-    if (item.level === 3) input.append(el("p", "sequence-note", "Follow the motion timeline from top to bottom. The image anchors the transition at 2 s."));
     const inputs = el(item.level === 3 ? "ol" : "div", item.level === 3 ? "interleaved-inputs" : "case-inputs");
     for (const [index, asset] of item.inputs.entries()) {
       const block = el(item.level === 3 ? "li" : "div", "input-item");
@@ -229,9 +227,6 @@
     const caseBody = el("div", "case-body"); caseBody.append(input);
     const output = el("section", "case-output"); output.setAttribute("aria-label", `${item.title}: motion and ground truth`);
     output.append(el("h6", "case-block-title", "Motion reference"));
-    if (item.watchFor) {
-      const reading = el("div", "case-reading"); reading.append(el("p", "input-label", "What this task asks for"), el("p", "", item.watchFor)); output.append(reading);
-    }
     if (item.level === 3) output.append(el("p", "sequence-output-note", "01 → 02 → 03 → 04 · one continuous motion"));
     if (item.timeline) {
       const timeline = el("div", "task-timeline");
@@ -261,8 +256,9 @@
         status.classList.toggle("is-target", inTarget);
       }); output.append(status);
     }
-    if (item.previewScope) output.append(el("p", "motion-note preview-scope", item.previewScope));
     const packageInfo = el("div", "package-info");
+    if (item.watchFor) packageInfo.append(el("p", "input-label", "Task requirement"), el("p", "", item.watchFor));
+    if (item.previewScope) packageInfo.append(el("p", "input-label", "Media notes"), el("p", "motion-note", item.previewScope));
     packageInfo.append(el("p", "input-label", "Task prompt"), el("p", "input-text", item.prompt), el("p", "motion-note", item.motionNote), el("p", "case-id", item.taskId));
     const table = el("table"); table.append(el("caption", "", "Motion package referenced by the task"));
     const head = el("thead"), headrow = el("tr");
@@ -274,7 +270,7 @@
     const path = el("p", "package-path"); path.append(el("span", "", "Dataset-relative path: "), el("code", "", item.packagePath)); packageInfo.append(path);
     if (item.trajectoryPoints && Object.keys(item.trajectoryPoints).length) packageInfo.append(el("pre", "", JSON.stringify(item.trajectoryPoints, null, 2)));
     caseBody.append(output); article.append(caseBody);
-    const details = disclosure("Full prompt & ground-truth details", packageInfo); details.className = "case-technical";
+    const details = disclosure("Task details", packageInfo); details.className = "case-technical";
     article.append(details);
     return article;
   }
@@ -287,7 +283,7 @@
     const section = el("section", "case-level-section"); section.id = `cases-level-${level}`;
     section.setAttribute("aria-labelledby", `case-level-heading-${level}`);
     const heading = el("h3", "case-level-heading", `Level ${level} · ${title}`); heading.id = `case-level-heading-${level}`;
-    section.append(heading, el("p", "level-description", description));
+    section.append(heading);
     const items = content.cases.filter(item => item.level === level);
     const groups = level === 1 ? [...new Set(items.map(item => item.group))] : [""];
     for (const group of groups) {

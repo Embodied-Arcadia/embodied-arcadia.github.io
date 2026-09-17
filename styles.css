@@ -32,7 +32,7 @@ img, video { max-width: 100%; display: block; }
 .hero-copy h1 { font-size: clamp(4rem, 10.8vw, 10rem); font-weight: 650; line-height: 1; margin-bottom: 24px; letter-spacing: -.075em; }
 .hero-copy h1 span { font-weight: 400; }
 .hero-copy p { font-size: clamp(1.125rem, 2vw, 1.75rem); line-height: 1.45; max-width: 840px; margin: 0 auto; color: var(--color-white); }
-.hero-bottom { position: absolute; bottom: 20px; left: 40px; right: 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: var(--text-sm); }
+.hero-bottom { position: absolute; bottom: 20px; left: 40px; right: 40px; display: flex; align-items: center; justify-content: flex-end; gap: 16px; font-size: var(--text-sm); }
 .hero-bottom p { margin: 0; color: var(--color-hero-muted); }
 .hero-bottom button { background: var(--color-dark); color: var(--color-white); border: 1px solid var(--color-hero-line); padding: 8px 16px; min-height: 44px; border-radius: var(--radius-sm); white-space: nowrap; }
 .hero-bottom button:hover { background: var(--color-wall); }
