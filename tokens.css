@@ -1,0 +1,30 @@
+:root {
+  --color-paper: oklch(100% 0 0);
+  --color-ink: oklch(23% 0.025 250);
+  --color-muted: oklch(47% 0.023 250);
+  --color-accent: oklch(46% 0.14 250);
+  --color-focus: oklch(58% 0.19 250);
+  --color-soft: oklch(97.7% 0.007 250);
+  --color-line: oklch(88% 0.012 250);
+  --color-dark: oklch(19% 0.018 250);
+  --color-wall: oklch(25% 0.018 250);
+  --color-motion-backdrop: #cecece; /* Sampled from the skeleton render background. */
+  --color-white: oklch(100% 0 0);
+  --color-hero-muted: oklch(91% 0.006 250);
+  --color-veil: oklch(10% 0.02 250 / 0.52);
+  --color-veil-edge: oklch(10% 0.02 250 / 0.72);
+  --color-transparent: oklch(100% 0 0 / 0);
+  --color-hero-line: oklch(100% 0 0 / 0.35);
+  --font-display: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
+  --font-code: ui-monospace, "Cascadia Code", monospace;
+  --space-xs: 4px; --space-sm: 8px; --space-md: 16px; --space-lg: 24px;
+  --space-xl: 32px; --space-2xl: 48px; --space-3xl: 64px; --space-4xl: 96px;
+  --text-sm: .875rem; --text-body: 1rem; --text-lg: 1.25rem;
+  --text-heading: clamp(2rem, 4vw, 3.25rem);
+  --radius-sm: 6px;
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --ease-in: cubic-bezier(.7, 0, .84, 0);
+  --ease-in-out: cubic-bezier(.65, 0, .35, 1);
+  --dur-short: 150ms;
+}
