@@ -3,7 +3,7 @@ window.ROBOOSTEER = {
   "team": "Team and affiliations to be announced",
   "abstract": "",
   "paperUrl": "",
-  "datasetUrl": "",
+  "datasetUrl": "https://huggingface.co/datasets/YanCORANV/RoboSteer",
   "codeUrl": "",
   "figure": {
     "src": "assets/figures/benchmark-statistics.png",
