@@ -304,7 +304,124 @@ window.ROBOOSTEER = {
       "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
       "packagePath": "Data/Shared/Motion/00002/HhLmhjgg0AA_00000_392_462",
       "watchFor": "Transfer the action and its order from the human video to a full-body motion.",
-      "previewScope": "Human input and skeleton reference show the same source action."
+      "previewScope": "Human input and skeleton reference show the same source action.",
+      "variants": [
+        {
+          "id": "video_to_motion_imitation",
+          "level": 1,
+          "group": "Full Conditioning Reproduction",
+          "title": "Video-to-Motion Imitation",
+          "modality": "Human video",
+          "taskId": "L1_video_to_motion_imitation_human_video_HhLmhjgg0AA_00000_392_462",
+          "duration": 2.4,
+          "purpose": "Reconstruct the full-body action shown in the complete input video.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a video showing a full-body real human action. Your objective is to reconstruct the corresponding 3D full-body motion sequence. You must ensure that the generated movements follow the actions depicted in the video and maintain physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the full-body motion.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "video",
+              "label": "Input video · complete clip",
+              "src": "assets/cases/video_to_motion_imitation/input-00.mp4",
+              "poster": "assets/cases/video_to_motion_imitation/input-00.jpg"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "167 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "167 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "167 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "167 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "167 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "167 × 3"
+            }
+          ],
+          "panel": 2,
+          "video": {
+            "src": "assets/cases/video_to_motion_imitation/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/video_to_motion_imitation/skeleton.jpg"
+          },
+          "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
+          "packagePath": "Data/Shared/Motion/00002/HhLmhjgg0AA_00000_392_462",
+          "watchFor": "Transfer the action and its order from the human video to a full-body motion.",
+          "previewScope": "Human input and skeleton reference show the same source action.",
+          "variantId": "human_video",
+          "variantLabel": "Human video"
+        },
+        {
+          "id": "video_to_motion_imitation",
+          "level": 1,
+          "group": "Full Conditioning Reproduction",
+          "title": "Video-to-Motion Imitation",
+          "modality": "Skeleton video",
+          "taskId": "L1_video_to_motion_imitation_skeleton_video_HhLmhjgg0AA_00000_392_462",
+          "duration": 2.4,
+          "purpose": "Reconstruct the full-body action shown in the input video.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a video showing a full-body rendered skeleton action. Your objective is to reconstruct the corresponding 3D full-body motion sequence. You must ensure that the generated movements follow the actions depicted in the video and maintain physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the full-body motion.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "video",
+              "label": "Input video",
+              "src": "assets/cases/video_to_motion_imitation/skeleton_video/condition-00.mp4",
+              "poster": "assets/cases/video_to_motion_imitation/skeleton_video/condition-00.jpg"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "167 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "167 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "167 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "167 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "167 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "167 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/video_to_motion_imitation/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/video_to_motion_imitation/skeleton.jpg"
+          },
+          "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
+          "packagePath": "Data/Shared/Motion/00002/HhLmhjgg0AA_00000_392_462",
+          "previewScope": "Human input and skeleton reference show the same source action.",
+          "variantId": "skeleton_video",
+          "variantLabel": "Skeleton video"
+        }
+      ]
     },
     {
       "id": "audio_to_motion_generation",
@@ -548,7 +665,386 @@ window.ROBOOSTEER = {
       ],
       "packagePath": "Data/Level1/Motion/Prediction/jEqXdH2H0Bw_00022_0_131_fore",
       "watchFor": "Generate 3–4.405 s using the earlier text condition. Only the final interval is missing.",
-      "previewScope": "The complete source is shown for comparison; the blue interval marks the requested completion."
+      "previewScope": "The complete source is shown for comparison; the blue interval marks the requested completion.",
+      "variants": [
+        {
+          "id": "motion_prediction",
+          "level": 1,
+          "group": "Temporal Completion",
+          "title": "Motion Prediction",
+          "modality": "Text",
+          "taskId": "L1_motion_prediction_text_jEqXdH2H0Bw_00022_0_131",
+          "duration": 4.405,
+          "purpose": "Generate the unseen future interval from the background and first-part description.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic text input consisting of two parts: a Background that summarizes the macro intent of a complete action, and the First half details which specifies the kinematics of the person's whole body, upper limbs, and lower limbs during the initial period. Your objective is to leverage the global context from the Background to predict and generate the unseen second half of the motion sequence. You must ensure the generated future motion naturally continues from the described first half and maintains physical balance throughout the transition. Your output MUST be a continuous sequence of ACTION TOKENS representing the predicted future motion.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "text",
+              "label": "Input description",
+              "text": "Background: The person is lifting a white panel off a wooden cabinet and repositioning the cabinet on a workbench.\nFirst half details: The person stands beside a wooden cabinet, then lifts a white rectangular panel off the top with both hands, rotating it upward and away from the cabinet. Both arms extend forward to grip the panel, then lift and rotate it upward and to the right, with elbows bending and shoulders engaging to control the motion. Legs remain mostly stationary, with slight bending at the knees to stabilize the body during the lifting motion. The person lowers the white panel onto a workbench in front of them, bending slightly at the waist and knees to place it down gently. Arms extend forward and downward to lower the panel, with forearms rotating to align the panel flat on the workbench. Knees bend slightly and hips hinge forward to maintain balance while lowering the panel."
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "70 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "70 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "70 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "70 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "70 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "70 × 3"
+            }
+          ],
+          "panel": 6,
+          "video": {
+            "src": "assets/cases/motion_prediction/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/motion_prediction/skeleton.jpg"
+          },
+          "motionNote": "The full reference is shown for context. Only 3–4.405 s is the target interval; the other interval(s) supply the condition. The GT package contains the target segment.",
+          "targetWindow": [
+            3.0,
+            4.405
+          ],
+          "timeline": [
+            {
+              "start": 0,
+              "end": 3.0,
+              "label": "Provided",
+              "kind": "condition"
+            },
+            {
+              "start": 3.0,
+              "end": 4.405,
+              "label": "Generate",
+              "kind": "target"
+            }
+          ],
+          "packagePath": "Data/Level1/Motion/Prediction/jEqXdH2H0Bw_00022_0_131_fore",
+          "watchFor": "Generate 3–4.405 s using the earlier text condition. Only the final interval is missing.",
+          "previewScope": "The complete source is shown for comparison; the blue interval marks the requested completion.",
+          "variantId": "text",
+          "variantLabel": "Text"
+        },
+        {
+          "id": "motion_prediction",
+          "level": 1,
+          "group": "Temporal Completion",
+          "title": "Motion Prediction",
+          "modality": "Human video",
+          "taskId": "L1_motion_prediction_human_video_jEqXdH2H0Bw_00022_0_131",
+          "duration": 4.405,
+          "purpose": "Generate the missing future motion from the provided input.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a video of a real human that ONLY shows the first half of a continuous action sequence. Your objective is to predict and generate the unseen second half of the motion sequence. You must ensure the generated future motion naturally continues from the action in the video and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the predicted future motion.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "video",
+              "label": "Provided beginning · 0–3 s",
+              "src": "assets/cases/motion_prediction/human_video/condition-00.mp4",
+              "poster": "assets/cases/motion_prediction/human_video/condition-00.jpg"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "70 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "70 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "70 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "70 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "70 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "70 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/motion_prediction/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/motion_prediction/skeleton.jpg"
+          },
+          "motionNote": "The full reference is shown for context. Only 3–4.405 s is the target interval; the other interval(s) supply the condition. The GT package contains the target segment.",
+          "targetWindow": [
+            3.0,
+            4.405
+          ],
+          "timeline": [
+            {
+              "start": 0,
+              "end": 3.0,
+              "label": "Provided",
+              "kind": "condition"
+            },
+            {
+              "start": 3.0,
+              "end": 4.405,
+              "label": "Generate",
+              "kind": "target"
+            }
+          ],
+          "packagePath": "Data/Level1/Motion/Prediction/jEqXdH2H0Bw_00022_0_131_fore",
+          "previewScope": "The complete source is shown for comparison; the blue interval marks the requested completion.",
+          "variantId": "human_video",
+          "variantLabel": "Human video"
+        },
+        {
+          "id": "motion_prediction",
+          "level": 1,
+          "group": "Temporal Completion",
+          "title": "Motion Prediction",
+          "modality": "Skeleton video",
+          "taskId": "L1_motion_prediction_skeleton_video_jEqXdH2H0Bw_00022_0_131",
+          "duration": 4.405,
+          "purpose": "Generate the missing future motion from the provided input.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a video of a rendered skeleton that ONLY shows the first half of a continuous action sequence. Your objective is to predict and generate the unseen second half of the motion sequence. You must ensure the generated future motion naturally continues from the action in the video and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the predicted future motion.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "video",
+              "label": "Provided beginning · 0–3 s",
+              "src": "assets/cases/motion_prediction/skeleton_video/condition-00.mp4",
+              "poster": "assets/cases/motion_prediction/skeleton_video/condition-00.jpg"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "70 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "70 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "70 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "70 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "70 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "70 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/motion_prediction/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/motion_prediction/skeleton.jpg"
+          },
+          "motionNote": "The full reference is shown for context. Only 3–4.405 s is the target interval; the other interval(s) supply the condition. The GT package contains the target segment.",
+          "targetWindow": [
+            3.0,
+            4.405
+          ],
+          "timeline": [
+            {
+              "start": 0,
+              "end": 3.0,
+              "label": "Provided",
+              "kind": "condition"
+            },
+            {
+              "start": 3.0,
+              "end": 4.405,
+              "label": "Generate",
+              "kind": "target"
+            }
+          ],
+          "packagePath": "Data/Level1/Motion/Prediction/jEqXdH2H0Bw_00022_0_131_fore",
+          "previewScope": "The complete source is shown for comparison; the blue interval marks the requested completion.",
+          "variantId": "skeleton_video",
+          "variantLabel": "Skeleton video"
+        },
+        {
+          "id": "motion_prediction",
+          "level": 1,
+          "group": "Temporal Completion",
+          "title": "Motion Prediction",
+          "modality": "Audio",
+          "taskId": "L1_motion_prediction_audio_jEqXdH2H0Bw_00022_0_131",
+          "duration": 4.405,
+          "purpose": "Generate the missing future motion from the provided input.",
+          "prompt": "You are an advanced 3D motion generation model. I will provide you with an audio recording containing the background of a complete action and spoken details of its first half. Your objective is to predict and generate the unseen second half so that it naturally continues the described motion and remains physically plausible. Your output MUST be a continuous sequence of ACTION TOKENS representing the predicted future motion.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "audio",
+              "label": "Spoken instruction",
+              "src": "assets/cases/motion_prediction/audio/condition-00.mp3"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "70 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "70 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "70 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "70 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "70 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "70 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/motion_prediction/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/motion_prediction/skeleton.jpg"
+          },
+          "motionNote": "The full reference is shown for context. Only 3–4.405 s is the target interval; the other interval(s) supply the condition. The GT package contains the target segment.",
+          "targetWindow": [
+            3.0,
+            4.405
+          ],
+          "timeline": [
+            {
+              "start": 0,
+              "end": 3.0,
+              "label": "Provided",
+              "kind": "condition"
+            },
+            {
+              "start": 3.0,
+              "end": 4.405,
+              "label": "Generate",
+              "kind": "target"
+            }
+          ],
+          "packagePath": "Data/Level1/Motion/Prediction/jEqXdH2H0Bw_00022_0_131_fore",
+          "previewScope": "The complete source is shown for comparison; the blue interval marks the requested completion.",
+          "variantId": "audio",
+          "variantLabel": "Audio"
+        },
+        {
+          "id": "motion_prediction",
+          "level": 1,
+          "group": "Temporal Completion",
+          "title": "Motion Prediction",
+          "modality": "Text + music",
+          "taskId": "L1_motion_prediction_rhythm__M7DH7Ml9lI_00002_0_258",
+          "duration": 10.803,
+          "purpose": "Predict the continuation from the action description and partial music.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with the first half of a music track, a text description of the overall full-body action, and a target motion duration for the predicted sequence in seconds. Your objective is to predict and generate the continuation of the motion sequence. You must ensure the generated future motion naturally continues from the previous state, matches the target duration, synchronizes with the music continuation, and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the predicted future motion.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "text",
+              "label": "Input description",
+              "text": "The person is squatting and thrusting a medicine ball upward."
+            },
+            {
+              "kind": "audio",
+              "label": "Music input",
+              "src": "assets/cases/motion_prediction/rhythm/condition-01.mp3"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "271 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "271 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "271 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "271 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "271 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "271 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/motion_prediction/rhythm/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/motion_prediction/rhythm/skeleton.jpg"
+          },
+          "motionNote": "The source action is shown; beat alignment is not established. The task target interval ends at 10.840816 s; metadata reports a 10.803 s source duration.",
+          "targetWindow": [
+            5.420408,
+            10.840816
+          ],
+          "timeline": [
+            {
+              "start": 0,
+              "end": 5.420408,
+              "label": "Provided",
+              "kind": "condition"
+            },
+            {
+              "start": 5.420408,
+              "end": 10.840816,
+              "label": "Generate",
+              "kind": "target"
+            }
+          ],
+          "packagePath": "Data/Level1/Motion/RhythmPrediction/_M7DH7Ml9lI_00002_0_258_rhyme_fore_motion",
+          "variantId": "rhythm",
+          "variantLabel": "Text + music"
+        }
+      ]
     },
     {
       "id": "motion_retrodiction",
@@ -621,7 +1117,308 @@ window.ROBOOSTEER = {
       ],
       "packagePath": "Data/Level1/Motion/Retrodiction/jEqXdH2H0Bw_00022_0_131_retro",
       "watchFor": "Reconstruct 0–1.5 s from the later text condition. Only the beginning is missing.",
-      "previewScope": "The complete source is shown for comparison; the blue interval marks the requested completion."
+      "previewScope": "The complete source is shown for comparison; the blue interval marks the requested completion.",
+      "variants": [
+        {
+          "id": "motion_retrodiction",
+          "level": 1,
+          "group": "Temporal Completion",
+          "title": "Motion Retrodiction",
+          "modality": "Text",
+          "taskId": "L1_motion_retrodiction_text_jEqXdH2H0Bw_00022_0_131",
+          "duration": 4.405,
+          "purpose": "Reconstruct the missing past interval from the background and later observations.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic text input consisting of two parts: a Background that summarizes the macro intent of a complete action, and the Second half details which specifies the kinematics of the person's whole body, upper limbs, and lower limbs during the concluding period. Your objective is to leverage the global context from the Background to retrodict and generate the unseen initial phase of the motion sequence. You must ensure the generated past motion naturally leads into the described final state and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the retrodicted initial motion.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "text",
+              "label": "Input description",
+              "text": "Background: The person is lifting a white panel off a wooden cabinet and repositioning the cabinet on a workbench.\nSecond half details: The person lowers the white panel onto a workbench in front of them, bending slightly at the waist and knees to place it down gently. Arms extend forward and downward to lower the panel, with forearms rotating to align the panel flat on the workbench. Knees bend slightly and hips hinge forward to maintain balance while lowering the panel. The person grips the wooden cabinet with both hands, lifts it slightly off the workbench, and tilts it forward to reposition it over the white panel. Arms bend at the elbows to grip the sides of the cabinet, then extend slightly as the cabinet is lifted and tilted forward. Legs bend more deeply at the knees and hips to generate lifting force, with feet planted firmly for stability."
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "75 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "75 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "75 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "75 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "75 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "75 × 3"
+            }
+          ],
+          "panel": 11,
+          "video": {
+            "src": "assets/cases/motion_retrodiction/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/motion_retrodiction/skeleton.jpg"
+          },
+          "motionNote": "The full reference is shown for context. Only 0–1.5 s is the target interval; the other interval(s) supply the condition. The GT package contains the target segment.",
+          "targetWindow": [
+            0.0,
+            1.5
+          ],
+          "timeline": [
+            {
+              "start": 0.0,
+              "end": 1.5,
+              "label": "Generate",
+              "kind": "target"
+            },
+            {
+              "start": 1.5,
+              "end": 4.405,
+              "label": "Provided",
+              "kind": "condition"
+            }
+          ],
+          "packagePath": "Data/Level1/Motion/Retrodiction/jEqXdH2H0Bw_00022_0_131_retro",
+          "watchFor": "Reconstruct 0–1.5 s from the later text condition. Only the beginning is missing.",
+          "previewScope": "The complete source is shown for comparison; the blue interval marks the requested completion.",
+          "variantId": "text",
+          "variantLabel": "Text"
+        },
+        {
+          "id": "motion_retrodiction",
+          "level": 1,
+          "group": "Temporal Completion",
+          "title": "Motion Retrodiction",
+          "modality": "Human video",
+          "taskId": "L1_motion_retrodiction_human_video_jEqXdH2H0Bw_00022_0_131",
+          "duration": 4.405,
+          "purpose": "Reconstruct the missing beginning from the later input.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a video of a real human that ONLY shows the second half of a continuous action sequence. Your objective is to infer and generate the preceding first half of the motion sequence. You must ensure the generated past motion logically transitions into the starting state of the provided video and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the inferred past motion.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "video",
+              "label": "Provided ending · from 1.5 s",
+              "src": "assets/cases/motion_retrodiction/human_video/condition-00.mp4",
+              "poster": "assets/cases/motion_retrodiction/human_video/condition-00.jpg"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "75 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "75 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "75 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "75 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "75 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "75 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/motion_retrodiction/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/motion_retrodiction/skeleton.jpg"
+          },
+          "motionNote": "The full reference is shown for context. Only 0–1.5 s is the target interval; the other interval(s) supply the condition. The GT package contains the target segment.",
+          "targetWindow": [
+            0.0,
+            1.5
+          ],
+          "timeline": [
+            {
+              "start": 0.0,
+              "end": 1.5,
+              "label": "Generate",
+              "kind": "target"
+            },
+            {
+              "start": 1.5,
+              "end": 4.405,
+              "label": "Provided",
+              "kind": "condition"
+            }
+          ],
+          "packagePath": "Data/Level1/Motion/Retrodiction/jEqXdH2H0Bw_00022_0_131_retro",
+          "previewScope": "The complete source is shown for comparison; the blue interval marks the requested completion.",
+          "variantId": "human_video",
+          "variantLabel": "Human video"
+        },
+        {
+          "id": "motion_retrodiction",
+          "level": 1,
+          "group": "Temporal Completion",
+          "title": "Motion Retrodiction",
+          "modality": "Skeleton video",
+          "taskId": "L1_motion_retrodiction_skeleton_video_jEqXdH2H0Bw_00022_0_131",
+          "duration": 4.405,
+          "purpose": "Reconstruct the missing beginning from the later input.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a video of a rendered skeleton that ONLY shows the second half of a continuous action sequence. Your objective is to infer and generate the preceding first half of the motion sequence. You must ensure the generated past motion logically transitions into the starting state of the provided video and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the inferred past motion.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "video",
+              "label": "Provided ending · from 1.5 s",
+              "src": "assets/cases/motion_retrodiction/skeleton_video/condition-00.mp4",
+              "poster": "assets/cases/motion_retrodiction/skeleton_video/condition-00.jpg"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "75 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "75 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "75 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "75 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "75 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "75 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/motion_retrodiction/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/motion_retrodiction/skeleton.jpg"
+          },
+          "motionNote": "The full reference is shown for context. Only 0–1.5 s is the target interval; the other interval(s) supply the condition. The GT package contains the target segment.",
+          "targetWindow": [
+            0.0,
+            1.5
+          ],
+          "timeline": [
+            {
+              "start": 0.0,
+              "end": 1.5,
+              "label": "Generate",
+              "kind": "target"
+            },
+            {
+              "start": 1.5,
+              "end": 4.405,
+              "label": "Provided",
+              "kind": "condition"
+            }
+          ],
+          "packagePath": "Data/Level1/Motion/Retrodiction/jEqXdH2H0Bw_00022_0_131_retro",
+          "previewScope": "The complete source is shown for comparison; the blue interval marks the requested completion.",
+          "variantId": "skeleton_video",
+          "variantLabel": "Skeleton video"
+        },
+        {
+          "id": "motion_retrodiction",
+          "level": 1,
+          "group": "Temporal Completion",
+          "title": "Motion Retrodiction",
+          "modality": "Audio",
+          "taskId": "L1_motion_retrodiction_audio_jEqXdH2H0Bw_00022_0_131",
+          "duration": 4.405,
+          "purpose": "Reconstruct the missing beginning from the later input.",
+          "prompt": "You are an advanced 3D motion generation model. I will provide you with an audio recording containing the background of a complete action and spoken details of its second half. Your objective is to infer and generate the unseen first half so that it naturally leads into the described motion and remains physically plausible. Your output MUST be a continuous sequence of ACTION TOKENS representing the inferred past motion.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "audio",
+              "label": "Spoken instruction",
+              "src": "assets/cases/motion_retrodiction/audio/condition-00.mp3"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "75 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "75 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "75 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "75 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "75 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "75 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/motion_retrodiction/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/motion_retrodiction/skeleton.jpg"
+          },
+          "motionNote": "The full reference is shown for context. Only 0–1.5 s is the target interval; the other interval(s) supply the condition. The GT package contains the target segment.",
+          "targetWindow": [
+            0.0,
+            1.5
+          ],
+          "timeline": [
+            {
+              "start": 0.0,
+              "end": 1.5,
+              "label": "Generate",
+              "kind": "target"
+            },
+            {
+              "start": 1.5,
+              "end": 4.405,
+              "label": "Provided",
+              "kind": "condition"
+            }
+          ],
+          "packagePath": "Data/Level1/Motion/Retrodiction/jEqXdH2H0Bw_00022_0_131_retro",
+          "previewScope": "The complete source is shown for comparison; the blue interval marks the requested completion.",
+          "variantId": "audio",
+          "variantLabel": "Audio"
+        }
+      ]
     },
     {
       "id": "motion_interpolation",
@@ -700,7 +1497,344 @@ window.ROBOOSTEER = {
       ],
       "packagePath": "Data/Level1/Motion/Interpolation/tfYiJh5E1uY_00006_36_110_inter",
       "watchFor": "Fill 1–2 s while connecting the described beginning and ending.",
-      "previewScope": "The complete source is shown for comparison; the blue interval marks the missing middle."
+      "previewScope": "The complete source is shown for comparison; the blue interval marks the missing middle.",
+      "variants": [
+        {
+          "id": "motion_interpolation",
+          "level": 1,
+          "group": "Temporal Completion",
+          "title": "Motion Interpolation",
+          "modality": "Text",
+          "taskId": "L1_motion_interpolation_text_tfYiJh5E1uY_00006_36_110",
+          "duration": 3.086,
+          "purpose": "Generate the missing middle interval while connecting the two observed ends.",
+          "prompt": "You are an advanced 3D motion generation model. You will receive motion text from the beginning and ending parts of the same clip, with the middle part missing. Your objective is to rewrite them into one coherent motion sequence while inserting the exact bridge sentence 'The middle sequence is missing.' once in the middle. Keep only motion facts and essential object interaction. Do not mention appearance, clothing, face, camera, lighting, or unrelated background details. Do not invent actions or add unsupported details. Your output MUST be a coherent motion sequence representing the missing middle sequence.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "text",
+              "label": "Input description",
+              "text": "Background: The person is walking down a hallway, opening a door, and entering a room.\nEnds details: The person walks forward down a hallway, maintaining an upright posture with a steady gait. Arms swing naturally at the sides, alternating with each step, elbows slightly bent. Legs move in a rhythmic alternating pattern, stepping forward with each stride. The middle sequence is missing. The person stands inside the room, head bowed slightly, body still. Arms hang loosely at the sides, relaxed. Feet are planted shoulder-width apart, body stationary."
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "50 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "50 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "50 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "50 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "50 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "50 × 3"
+            }
+          ],
+          "panel": 15,
+          "video": {
+            "src": "assets/cases/motion_interpolation/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/motion_interpolation/skeleton.jpg"
+          },
+          "motionNote": "The full reference is shown for context. Only 1–2 s is the target interval; the other interval(s) supply the condition. The GT package contains the target segment.",
+          "targetWindow": [
+            1.0,
+            2.0
+          ],
+          "timeline": [
+            {
+              "start": 0,
+              "end": 1.0,
+              "label": "Provided",
+              "kind": "condition"
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "label": "Generate",
+              "kind": "target"
+            },
+            {
+              "start": 2.0,
+              "end": 3.086,
+              "label": "Provided",
+              "kind": "condition"
+            }
+          ],
+          "packagePath": "Data/Level1/Motion/Interpolation/tfYiJh5E1uY_00006_36_110_inter",
+          "watchFor": "Fill 1–2 s while connecting the described beginning and ending.",
+          "previewScope": "The complete source is shown for comparison; the blue interval marks the missing middle.",
+          "variantId": "text",
+          "variantLabel": "Text"
+        },
+        {
+          "id": "motion_interpolation",
+          "level": 1,
+          "group": "Temporal Completion",
+          "title": "Motion Interpolation",
+          "modality": "Human video",
+          "taskId": "L1_motion_interpolation_human_video_tfYiJh5E1uY_00006_36_110",
+          "duration": 3.086,
+          "purpose": "Connect the provided beginning and ending with the missing motion.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with two video segments of a real human showing the starting portion and the ending portion of an action, with a temporal gap in between. Your objective is to predict and generate the missing intermediate movements to bridge this temporal gap. You must ensure the generated motion logically connects the action in the starting video to the action in the ending video and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the missing middle sequence.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "video",
+              "label": "Provided beginning",
+              "src": "assets/cases/motion_interpolation/human_video/condition-00.mp4",
+              "poster": "assets/cases/motion_interpolation/human_video/condition-00.jpg"
+            },
+            {
+              "kind": "video",
+              "label": "Provided ending",
+              "src": "assets/cases/motion_interpolation/human_video/condition-01.mp4",
+              "poster": "assets/cases/motion_interpolation/human_video/condition-01.jpg"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "50 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "50 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "50 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "50 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "50 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "50 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/motion_interpolation/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/motion_interpolation/skeleton.jpg"
+          },
+          "motionNote": "The full reference is shown for context. Only 1–2 s is the target interval; the other interval(s) supply the condition. The GT package contains the target segment.",
+          "targetWindow": [
+            1.0,
+            2.0
+          ],
+          "timeline": [
+            {
+              "start": 0,
+              "end": 1.0,
+              "label": "Provided",
+              "kind": "condition"
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "label": "Generate",
+              "kind": "target"
+            },
+            {
+              "start": 2.0,
+              "end": 3.086,
+              "label": "Provided",
+              "kind": "condition"
+            }
+          ],
+          "packagePath": "Data/Level1/Motion/Interpolation/tfYiJh5E1uY_00006_36_110_inter",
+          "previewScope": "The complete source is shown for comparison; the blue interval marks the missing middle.",
+          "variantId": "human_video",
+          "variantLabel": "Human video"
+        },
+        {
+          "id": "motion_interpolation",
+          "level": 1,
+          "group": "Temporal Completion",
+          "title": "Motion Interpolation",
+          "modality": "Skeleton video",
+          "taskId": "L1_motion_interpolation_skeleton_video_tfYiJh5E1uY_00006_36_110",
+          "duration": 3.086,
+          "purpose": "Connect the provided beginning and ending with the missing motion.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with two video segments of a rendered skeleton showing the starting portion and the ending portion of an action, with a temporal gap in between. Your objective is to predict and generate the missing intermediate movements to bridge this temporal gap. You must ensure the generated motion logically connects the action in the starting video to the action in the ending video and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the missing middle sequence.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "video",
+              "label": "Provided beginning",
+              "src": "assets/cases/motion_interpolation/skeleton_video/condition-00.mp4",
+              "poster": "assets/cases/motion_interpolation/skeleton_video/condition-00.jpg"
+            },
+            {
+              "kind": "video",
+              "label": "Provided ending",
+              "src": "assets/cases/motion_interpolation/skeleton_video/condition-01.mp4",
+              "poster": "assets/cases/motion_interpolation/skeleton_video/condition-01.jpg"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "50 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "50 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "50 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "50 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "50 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "50 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/motion_interpolation/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/motion_interpolation/skeleton.jpg"
+          },
+          "motionNote": "The full reference is shown for context. Only 1–2 s is the target interval; the other interval(s) supply the condition. The GT package contains the target segment.",
+          "targetWindow": [
+            1.0,
+            2.0
+          ],
+          "timeline": [
+            {
+              "start": 0,
+              "end": 1.0,
+              "label": "Provided",
+              "kind": "condition"
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "label": "Generate",
+              "kind": "target"
+            },
+            {
+              "start": 2.0,
+              "end": 3.086,
+              "label": "Provided",
+              "kind": "condition"
+            }
+          ],
+          "packagePath": "Data/Level1/Motion/Interpolation/tfYiJh5E1uY_00006_36_110_inter",
+          "previewScope": "The complete source is shown for comparison; the blue interval marks the missing middle.",
+          "variantId": "skeleton_video",
+          "variantLabel": "Skeleton video"
+        },
+        {
+          "id": "motion_interpolation",
+          "level": 1,
+          "group": "Temporal Completion",
+          "title": "Motion Interpolation",
+          "modality": "Audio",
+          "taskId": "L1_motion_interpolation_audio_tfYiJh5E1uY_00006_36_110",
+          "duration": 3.086,
+          "purpose": "Connect the provided beginning and ending with the missing motion.",
+          "prompt": "You are an advanced 3D motion generation model. I will provide you with an audio recording containing the background of a complete action and spoken descriptions of its beginning and ending portions, with the middle portion missing. Your objective is to generate the missing intermediate motion so that it connects both observed portions naturally and remains physically plausible. Your output MUST be a continuous sequence of ACTION TOKENS representing the missing middle motion.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "audio",
+              "label": "Spoken instruction",
+              "src": "assets/cases/motion_interpolation/audio/condition-00.mp3"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "50 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "50 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "50 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "50 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "50 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "50 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/motion_interpolation/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/motion_interpolation/skeleton.jpg"
+          },
+          "motionNote": "The full reference is shown for context. Only 1–2 s is the target interval; the other interval(s) supply the condition. The GT package contains the target segment.",
+          "targetWindow": [
+            1.0,
+            2.0
+          ],
+          "timeline": [
+            {
+              "start": 0,
+              "end": 1.0,
+              "label": "Provided",
+              "kind": "condition"
+            },
+            {
+              "start": 1.0,
+              "end": 2.0,
+              "label": "Generate",
+              "kind": "target"
+            },
+            {
+              "start": 2.0,
+              "end": 3.086,
+              "label": "Provided",
+              "kind": "condition"
+            }
+          ],
+          "packagePath": "Data/Level1/Motion/Interpolation/tfYiJh5E1uY_00006_36_110_inter",
+          "previewScope": "The complete source is shown for comparison; the blue interval marks the missing middle.",
+          "variantId": "audio",
+          "variantLabel": "Audio"
+        }
+      ]
     },
     {
       "id": "key_frame_conditioning",
@@ -760,7 +1894,254 @@ window.ROBOOSTEER = {
       "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
       "packagePath": "Data/Shared/Motion/00052/--3wjNOccLY_00002_0_63",
       "watchFor": "Match the supplied pose at 1.2 s while generating the rest of the lunge-to-crouch sequence.",
-      "previewScope": "The image constrains one instant; the reference shows the whole source sequence."
+      "previewScope": "The image constrains one instant; the reference shows the whole source sequence.",
+      "variants": [
+        {
+          "id": "key_frame_conditioning",
+          "level": 1,
+          "group": "Temporal Completion",
+          "title": "Key-frame Conditioning",
+          "modality": "Human image + text",
+          "taskId": "L1_key_frame_conditioning_human_image_--3wjNOccLY_00002_0_63",
+          "duration": 2.136,
+          "purpose": "Generate the full sequence and match the supplied human pose at 1.2 seconds.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a text description of the overall full-body action, a target motion duration in seconds, and a sequence of keyframe images of a real human extracted at specific timestamps. Your objective is to generate a continuous 3D motion sequence. You must ensure that the generated motion logically follows the text description, matches the target duration, matches the subject's poses in the keyframe images at their exact timestamps, and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the full-body motion.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "text",
+              "label": "Input description",
+              "text": "The person is lunging forward dynamically and dropping into a low crouch."
+            },
+            {
+              "kind": "image",
+              "label": "Key frame at 1.2 s",
+              "src": "assets/cases/key_frame_conditioning/input-01.jpg"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "154 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "154 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "154 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "154 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "154 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "154 × 3"
+            }
+          ],
+          "panel": 19,
+          "video": {
+            "src": "assets/cases/key_frame_conditioning/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/key_frame_conditioning/skeleton.jpg"
+          },
+          "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
+          "packagePath": "Data/Shared/Motion/00052/--3wjNOccLY_00002_0_63",
+          "watchFor": "Match the supplied pose at 1.2 s while generating the rest of the lunge-to-crouch sequence.",
+          "previewScope": "The image constrains one instant; the reference shows the whole source sequence.",
+          "variantId": "human_image",
+          "variantLabel": "Human image + text"
+        },
+        {
+          "id": "key_frame_conditioning",
+          "level": 1,
+          "group": "Temporal Completion",
+          "title": "Key-frame Conditioning",
+          "modality": "Human image + audio",
+          "taskId": "L1_key_frame_conditioning_human_image_audio_--3wjNOccLY_00002_0_63",
+          "duration": 2.136,
+          "purpose": "Follow the action instruction and match the supplied pose at 1.2 s.",
+          "prompt": "You are an advanced 3D motion generation model. I will provide you with an audio recording describing the overall action, a target motion duration, and keyframe images of a real human at specific timestamps. Your objective is to generate a continuous 3D full-body motion that follows the spoken action description, matches the target duration, and matches the human poses at their corresponding timestamps while maintaining physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the full-body motion.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "audio",
+              "label": "Spoken instruction",
+              "src": "assets/cases/key_frame_conditioning/human_image_audio/condition-00.mp3"
+            },
+            {
+              "kind": "image",
+              "label": "Key frame at 1.2 s",
+              "src": "assets/cases/key_frame_conditioning/human_image_audio/condition-01.jpg"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "154 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "154 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "154 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "154 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "154 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "154 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/key_frame_conditioning/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/key_frame_conditioning/skeleton.jpg"
+          },
+          "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
+          "packagePath": "Data/Shared/Motion/00052/--3wjNOccLY_00002_0_63",
+          "previewScope": "The image constrains one instant; the reference shows the whole source sequence.",
+          "variantId": "human_image_audio",
+          "variantLabel": "Human image + audio"
+        },
+        {
+          "id": "key_frame_conditioning",
+          "level": 1,
+          "group": "Temporal Completion",
+          "title": "Key-frame Conditioning",
+          "modality": "Skeleton image + text",
+          "taskId": "L1_key_frame_conditioning_skeleton_image_--3wjNOccLY_00002_0_63",
+          "duration": 2.136,
+          "purpose": "Follow the action instruction and match the supplied pose at 1.2 s.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a text description of the overall full-body action, a target motion duration in seconds, and a sequence of keyframe images of a rendered skeleton extracted at specific timestamps. Your objective is to generate a continuous 3D motion sequence. You must ensure that the generated motion logically follows the text description, matches the target duration, matches the subject's poses in the keyframe images at their exact timestamps, and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the full-body motion.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "text",
+              "label": "Input description",
+              "text": "The person is lunging forward dynamically and dropping into a low crouch."
+            },
+            {
+              "kind": "image",
+              "label": "Key frame at 1.2 s",
+              "src": "assets/cases/key_frame_conditioning/skeleton_image/condition-01.jpg"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "154 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "154 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "154 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "154 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "154 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "154 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/key_frame_conditioning/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/key_frame_conditioning/skeleton.jpg"
+          },
+          "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
+          "packagePath": "Data/Shared/Motion/00052/--3wjNOccLY_00002_0_63",
+          "previewScope": "The image constrains one instant; the reference shows the whole source sequence.",
+          "variantId": "skeleton_image",
+          "variantLabel": "Skeleton image + text"
+        },
+        {
+          "id": "key_frame_conditioning",
+          "level": 1,
+          "group": "Temporal Completion",
+          "title": "Key-frame Conditioning",
+          "modality": "Skeleton image + audio",
+          "taskId": "L1_key_frame_conditioning_skeleton_image_audio_--3wjNOccLY_00002_0_63",
+          "duration": 2.136,
+          "purpose": "Follow the action instruction and match the supplied pose at 1.2 s.",
+          "prompt": "You are an advanced 3D motion generation model. I will provide you with an audio recording describing the overall action, a target motion duration, and keyframe images of a rendered skeleton at specific timestamps. Your objective is to generate a continuous 3D full-body motion that follows the spoken action description, matches the target duration, and matches the skeleton poses at their corresponding timestamps while maintaining physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the full-body motion.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "audio",
+              "label": "Spoken instruction",
+              "src": "assets/cases/key_frame_conditioning/skeleton_image_audio/condition-00.mp3"
+            },
+            {
+              "kind": "image",
+              "label": "Key frame at 1.2 s",
+              "src": "assets/cases/key_frame_conditioning/skeleton_image_audio/condition-01.jpg"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "154 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "154 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "154 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "154 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "154 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "154 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/key_frame_conditioning/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/key_frame_conditioning/skeleton.jpg"
+          },
+          "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
+          "packagePath": "Data/Shared/Motion/00052/--3wjNOccLY_00002_0_63",
+          "previewScope": "The image constrains one instant; the reference shows the whole source sequence.",
+          "variantId": "skeleton_image_audio",
+          "variantLabel": "Skeleton image + audio"
+        }
+      ]
     },
     {
       "id": "upper_to_full_body_completion",
@@ -815,7 +2196,236 @@ window.ROBOOSTEER = {
       "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
       "packagePath": "Data/Shared/Motion/00023/EJYftp7eZYc_00005_0_85",
       "watchFor": "Preserve the described upper body and infer the leg motion needed for a balanced squat.",
-      "previewScope": "The full body is shown for comparison; the legs are the part to complete."
+      "previewScope": "The full body is shown for comparison; the legs are the part to complete.",
+      "variants": [
+        {
+          "id": "upper_to_full_body_completion",
+          "level": 1,
+          "group": "Spatial Completion",
+          "title": "Upper-to-Full Body Completion",
+          "modality": "Text",
+          "taskId": "L1_upper_to_full_body_completion_text_EJYftp7eZYc_00005_0_85",
+          "duration": 2.87,
+          "purpose": "Complete the lower-body motion while preserving the described upper-body action.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic text input that details the kinematics of a person's whole body and upper limbs, but the description for the lower limbs is explicitly missing. Your objective is to predict the missing lower-limb movements to form a coherent full-body action. You must ensure that the generated lower-limb movements synchronize with the explicitly described whole body and upper limbs, and maintain physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the completed entire body.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "text",
+              "label": "Input description",
+              "text": "The person maintains an upright torso during a controlled descent and ascent. The arms are extended forward to grip a barbell across the upper back, remaining stable throughout the motion to support the load."
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "191 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "191 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "191 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "191 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "191 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "191 × 3"
+            }
+          ],
+          "panel": 23,
+          "video": {
+            "src": "assets/cases/upper_to_full_body_completion/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/upper_to_full_body_completion/skeleton.jpg"
+          },
+          "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
+          "packagePath": "Data/Shared/Motion/00023/EJYftp7eZYc_00005_0_85",
+          "watchFor": "Preserve the described upper body and infer the leg motion needed for a balanced squat.",
+          "previewScope": "The full body is shown for comparison; the legs are the part to complete.",
+          "variantId": "text",
+          "variantLabel": "Text"
+        },
+        {
+          "id": "upper_to_full_body_completion",
+          "level": 1,
+          "group": "Spatial Completion",
+          "title": "Upper-to-Full Body Completion",
+          "modality": "Human video",
+          "taskId": "L1_upper_to_full_body_completion_human_video_EJYftp7eZYc_00005_0_85",
+          "duration": 2.87,
+          "purpose": "Complete the lower body while preserving the supplied upper-body motion.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a video of a real human that ONLY shows the movements of the upper body. The lower body is explicitly missing. Your objective is to predict the missing lower-body movements to form a coherent full-body action. You must ensure that the generated lower-body movements synchronize with the visible upper body and maintain physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the completed entire body.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "video",
+              "label": "Upper-body input",
+              "src": "assets/cases/upper_to_full_body_completion/human_video/condition-00.mp4",
+              "poster": "assets/cases/upper_to_full_body_completion/human_video/condition-00.jpg"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "191 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "191 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "191 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "191 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "191 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "191 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/upper_to_full_body_completion/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/upper_to_full_body_completion/skeleton.jpg"
+          },
+          "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
+          "packagePath": "Data/Shared/Motion/00023/EJYftp7eZYc_00005_0_85",
+          "previewScope": "The full body is shown for comparison; the legs are the part to complete.",
+          "variantId": "human_video",
+          "variantLabel": "Human video"
+        },
+        {
+          "id": "upper_to_full_body_completion",
+          "level": 1,
+          "group": "Spatial Completion",
+          "title": "Upper-to-Full Body Completion",
+          "modality": "Skeleton video",
+          "taskId": "L1_upper_to_full_body_completion_skeleton_video_EJYftp7eZYc_00005_0_85",
+          "duration": 2.87,
+          "purpose": "Complete the lower body while preserving the supplied upper-body motion.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a video of a rendered skeleton that ONLY shows the movements of the upper body. The lower body is explicitly missing. Your objective is to predict the missing lower-body movements to form a coherent full-body action. You must ensure that the generated lower-body movements synchronize with the visible upper body and maintain physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the completed entire body.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "video",
+              "label": "Upper-body input",
+              "src": "assets/cases/upper_to_full_body_completion/skeleton_video/condition-00.mp4",
+              "poster": "assets/cases/upper_to_full_body_completion/skeleton_video/condition-00.jpg"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "191 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "191 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "191 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "191 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "191 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "191 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/upper_to_full_body_completion/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/upper_to_full_body_completion/skeleton.jpg"
+          },
+          "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
+          "packagePath": "Data/Shared/Motion/00023/EJYftp7eZYc_00005_0_85",
+          "previewScope": "The full body is shown for comparison; the legs are the part to complete.",
+          "variantId": "skeleton_video",
+          "variantLabel": "Skeleton video"
+        },
+        {
+          "id": "upper_to_full_body_completion",
+          "level": 1,
+          "group": "Spatial Completion",
+          "title": "Upper-to-Full Body Completion",
+          "modality": "Audio",
+          "taskId": "L1_upper_to_full_body_completion_audio_EJYftp7eZYc_00005_0_85",
+          "duration": 2.87,
+          "purpose": "Complete the lower body while preserving the supplied upper-body motion.",
+          "prompt": "You are an advanced 3D motion generation model. I will provide you with an audio recording describing the observed whole-body context and upper-body motion while the lower-body details are missing. Your objective is to infer the missing lower-body movement and generate a coherent, physically plausible full-body action. Your output MUST be a continuous sequence of ACTION TOKENS representing the completed full-body motion.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "audio",
+              "label": "Spoken instruction",
+              "src": "assets/cases/upper_to_full_body_completion/audio/condition-00.mp3"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "191 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "191 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "191 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "191 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "191 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "191 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/upper_to_full_body_completion/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/upper_to_full_body_completion/skeleton.jpg"
+          },
+          "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
+          "packagePath": "Data/Shared/Motion/00023/EJYftp7eZYc_00005_0_85",
+          "previewScope": "The full body is shown for comparison; the legs are the part to complete.",
+          "variantId": "audio",
+          "variantLabel": "Audio"
+        }
+      ]
     },
     {
       "id": "lower_to_full_body_completion",
@@ -870,7 +2480,236 @@ window.ROBOOSTEER = {
       "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
       "packagePath": "Data/Shared/Motion/00023/EJYftp7eZYc_00005_0_85",
       "watchFor": "Preserve the described leg motion and infer compatible torso and arm motion.",
-      "previewScope": "The full body is shown for comparison; the upper body is the part to complete."
+      "previewScope": "The full body is shown for comparison; the upper body is the part to complete.",
+      "variants": [
+        {
+          "id": "lower_to_full_body_completion",
+          "level": 1,
+          "group": "Spatial Completion",
+          "title": "Lower-to-Full Body Completion",
+          "modality": "Text",
+          "taskId": "L1_lower_to_full_body_completion_text_EJYftp7eZYc_00005_0_85",
+          "duration": 2.87,
+          "purpose": "Complete the upper-body motion while preserving the described lower-body action.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic text input that details the kinematics of a person's whole body and lower limbs, but the description for the upper limbs is explicitly missing. Your objective is to predict the missing upper-limb movements to form a coherent full-body action. You must ensure that the generated upper-limb movements synchronize with the explicitly described whole body and lower limbs, and maintain physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the completed entire body.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "text",
+              "label": "Input description",
+              "text": "The person is performing barbell squats, maintaining an upright torso and a controlled descent and ascent. The legs bend at the knees and hips to lower the body into a squat position, then extend powerfully to return to standing with feet planted apart."
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "191 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "191 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "191 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "191 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "191 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "191 × 3"
+            }
+          ],
+          "panel": 27,
+          "video": {
+            "src": "assets/cases/lower_to_full_body_completion/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/lower_to_full_body_completion/skeleton.jpg"
+          },
+          "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
+          "packagePath": "Data/Shared/Motion/00023/EJYftp7eZYc_00005_0_85",
+          "watchFor": "Preserve the described leg motion and infer compatible torso and arm motion.",
+          "previewScope": "The full body is shown for comparison; the upper body is the part to complete.",
+          "variantId": "text",
+          "variantLabel": "Text"
+        },
+        {
+          "id": "lower_to_full_body_completion",
+          "level": 1,
+          "group": "Spatial Completion",
+          "title": "Lower-to-Full Body Completion",
+          "modality": "Human video",
+          "taskId": "L1_lower_to_full_body_completion_human_video_EJYftp7eZYc_00005_0_85",
+          "duration": 2.87,
+          "purpose": "Complete the upper body while preserving the supplied lower-body motion.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a video of a real human that ONLY shows the movements of the lower body. The upper body is explicitly missing. Your objective is to predict the missing upper-body movements to form a coherent full-body action. You must ensure that the generated upper-body movements synchronize with the visible lower body and maintain physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the completed entire body.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "video",
+              "label": "Lower-body input",
+              "src": "assets/cases/lower_to_full_body_completion/human_video/condition-00.mp4",
+              "poster": "assets/cases/lower_to_full_body_completion/human_video/condition-00.jpg"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "191 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "191 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "191 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "191 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "191 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "191 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/lower_to_full_body_completion/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/lower_to_full_body_completion/skeleton.jpg"
+          },
+          "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
+          "packagePath": "Data/Shared/Motion/00023/EJYftp7eZYc_00005_0_85",
+          "previewScope": "The full body is shown for comparison; the upper body is the part to complete.",
+          "variantId": "human_video",
+          "variantLabel": "Human video"
+        },
+        {
+          "id": "lower_to_full_body_completion",
+          "level": 1,
+          "group": "Spatial Completion",
+          "title": "Lower-to-Full Body Completion",
+          "modality": "Skeleton video",
+          "taskId": "L1_lower_to_full_body_completion_skeleton_video_EJYftp7eZYc_00005_0_85",
+          "duration": 2.87,
+          "purpose": "Complete the upper body while preserving the supplied lower-body motion.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a video of a rendered skeleton that ONLY shows the movements of the lower body. The upper body is explicitly missing. Your objective is to predict the missing upper-body movements to form a coherent full-body action. You must ensure that the generated upper-body movements synchronize with the visible lower body and maintain physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the completed entire body.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "video",
+              "label": "Lower-body input",
+              "src": "assets/cases/lower_to_full_body_completion/skeleton_video/condition-00.mp4",
+              "poster": "assets/cases/lower_to_full_body_completion/skeleton_video/condition-00.jpg"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "191 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "191 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "191 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "191 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "191 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "191 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/lower_to_full_body_completion/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/lower_to_full_body_completion/skeleton.jpg"
+          },
+          "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
+          "packagePath": "Data/Shared/Motion/00023/EJYftp7eZYc_00005_0_85",
+          "previewScope": "The full body is shown for comparison; the upper body is the part to complete.",
+          "variantId": "skeleton_video",
+          "variantLabel": "Skeleton video"
+        },
+        {
+          "id": "lower_to_full_body_completion",
+          "level": 1,
+          "group": "Spatial Completion",
+          "title": "Lower-to-Full Body Completion",
+          "modality": "Audio",
+          "taskId": "L1_lower_to_full_body_completion_audio_EJYftp7eZYc_00005_0_85",
+          "duration": 2.87,
+          "purpose": "Complete the upper body while preserving the supplied lower-body motion.",
+          "prompt": "You are an advanced 3D motion generation model. I will provide you with an audio recording describing the observed whole-body context and lower-body motion while the upper-body details are missing. Your objective is to infer the missing upper-body movement and generate a coherent, physically plausible full-body action. Your output MUST be a continuous sequence of ACTION TOKENS representing the completed full-body motion.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "audio",
+              "label": "Spoken instruction",
+              "src": "assets/cases/lower_to_full_body_completion/audio/condition-00.mp3"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "191 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "191 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "191 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "191 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "191 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "191 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/lower_to_full_body_completion/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/lower_to_full_body_completion/skeleton.jpg"
+          },
+          "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
+          "packagePath": "Data/Shared/Motion/00023/EJYftp7eZYc_00005_0_85",
+          "previewScope": "The full body is shown for comparison; the upper body is the part to complete.",
+          "variantId": "audio",
+          "variantLabel": "Audio"
+        }
+      ]
     },
     {
       "id": "target_reaching",
@@ -925,7 +2764,122 @@ window.ROBOOSTEER = {
       "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
       "packagePath": "Data/Shared/Motion/00030/v3J14lxJmHo_00016_542_901",
       "watchFor": "Keep the kick-and-walk action and include one clear occurrence of both hands on the head.",
-      "previewScope": "The local hand goal is one event in the sequence, not a pose to hold throughout."
+      "previewScope": "The local hand goal is one event in the sequence, not a pose to hold throughout.",
+      "variants": [
+        {
+          "id": "target_reaching",
+          "level": 1,
+          "group": "Spatial Completion",
+          "title": "Target Reaching",
+          "modality": "Text",
+          "taskId": "L1_target_reaching_text_v3J14lxJmHo_00016_542_901",
+          "duration": 6.009,
+          "purpose": "Preserve the base action and satisfy the local goal: both hands on the head.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements under a local body-part goal. I will provide you with a base action description plus a separate local goal. Your objective is to generate the complete full-body motion that follows the base action and includes this local goal as one clear occurrence during the action. You must preserve physical plausibility, timing, and balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the full-body motion.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "text",
+              "label": "Input description",
+              "text": "Base_Action: A person runs forward, plants their left foot, and kicks a ball with their right leg. They stand still to watch the ball, turn slightly to observe, and then walk forward slowly before standing still again.\nLocal goal: both hands are placed on the head"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "347 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "347 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "347 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "347 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "347 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "347 × 3"
+            }
+          ],
+          "panel": 31,
+          "video": {
+            "src": "assets/cases/target_reaching/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/target_reaching/skeleton.jpg"
+          },
+          "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
+          "packagePath": "Data/Shared/Motion/00030/v3J14lxJmHo_00016_542_901",
+          "watchFor": "Keep the kick-and-walk action and include one clear occurrence of both hands on the head.",
+          "previewScope": "The local hand goal is one event in the sequence, not a pose to hold throughout.",
+          "variantId": "text",
+          "variantLabel": "Text"
+        },
+        {
+          "id": "target_reaching",
+          "level": 1,
+          "group": "Spatial Completion",
+          "title": "Target Reaching",
+          "modality": "Audio",
+          "taskId": "L1_target_reaching_audio_v3J14lxJmHo_00016_542_901",
+          "duration": 6.009,
+          "purpose": "Preserve the base action and satisfy the local goal: both hands on the head.",
+          "prompt": "You are an advanced 3D motion generation model. I will provide you with an audio recording containing a spoken base-action description and a local target-reaching goal. Your objective is to generate a complete, physically plausible full-body motion that preserves the base action and reaches the specified local target as instructed. Your output MUST be a continuous sequence of ACTION TOKENS representing the target-reaching motion.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "audio",
+              "label": "Spoken instruction",
+              "src": "assets/cases/target_reaching/audio/condition-00.mp3"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "347 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "347 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "347 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "347 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "347 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "347 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/target_reaching/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/target_reaching/skeleton.jpg"
+          },
+          "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
+          "packagePath": "Data/Shared/Motion/00030/v3J14lxJmHo_00016_542_901",
+          "previewScope": "The local hand goal is one event in the sequence, not a pose to hold throughout.",
+          "variantId": "audio",
+          "variantLabel": "Audio"
+        }
+      ]
     },
     {
       "id": "speed",
@@ -980,7 +2934,236 @@ window.ROBOOSTEER = {
       "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
       "packagePath": "Data/Shared/Motion/00026/_7ui0Pd8Bd0_00020_18_71",
       "watchFor": "Keep the walking action but perform it at half the original speed.",
-      "previewScope": "Base action only. A verified 0.5× target video is not available in this preview."
+      "previewScope": "Base action only. A verified 0.5× target video is not available in this preview.",
+      "variants": [
+        {
+          "id": "speed",
+          "level": 2,
+          "group": "",
+          "title": "Speed",
+          "modality": "Text",
+          "taskId": "L2_speed_text__7ui0Pd8Bd0_00020_18_71_slow",
+          "duration": 2.123,
+          "purpose": "Preserve the action while performing it at 0.5 times the original speed.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic description of an action and a specific speed multiplier. Your objective is to apply the specified multiplier to the execution tempo while maintaining the action's core kinematics and physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the motion at the target speed multiplier.",
+          "modifier": "Please perform the movement at 0.5x the original speed.",
+          "inputs": [
+            {
+              "kind": "text",
+              "label": "Input description",
+              "text": "Their movement is steady and casual, covering the distance from near the staircase to the foreground. The arms swing naturally in opposition to the legs—right arm forward as left leg steps, and vice versa. The shoulders remain relaxed, and the torso rotates slightly with each step. The legs alternate in a rhythmic walking gait. The right leg steps forward first, followed by the left, with knees bending slightly to absorb impact. The feet land heel-first and roll through to the toes with each step."
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "154 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "154 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "154 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "154 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "154 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "154 × 3"
+            }
+          ],
+          "panel": 46,
+          "video": {
+            "src": "assets/cases/speed/skeleton.mp4",
+            "label": "Base-action reference · constraint target described above",
+            "poster": "assets/cases/speed/skeleton.jpg"
+          },
+          "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
+          "packagePath": "Data/Shared/Motion/00026/_7ui0Pd8Bd0_00020_18_71",
+          "watchFor": "Keep the walking action but perform it at half the original speed.",
+          "previewScope": "Base action only. A verified 0.5× target video is not available in this preview.",
+          "variantId": "text",
+          "variantLabel": "Text"
+        },
+        {
+          "id": "speed",
+          "level": 2,
+          "group": "",
+          "title": "Speed",
+          "modality": "Human video",
+          "taskId": "L2_speed_human_video__7ui0Pd8Bd0_00020_18_71_slow",
+          "duration": 2.123,
+          "purpose": "Preserve the action while performing it at 0.5 times the original speed.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic description of an action and a specific speed multiplier. Your objective is to apply the specified multiplier to the execution tempo while maintaining the action's core kinematics and physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the motion at the target speed multiplier.",
+          "modifier": "Please perform the movement at 0.5x the original speed.",
+          "inputs": [
+            {
+              "kind": "video",
+              "label": "Input video",
+              "src": "assets/cases/speed/human_video/condition-00.mp4",
+              "poster": "assets/cases/speed/human_video/condition-00.jpg"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "154 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "154 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "154 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "154 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "154 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "154 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/speed/skeleton.mp4",
+            "label": "Base-action reference · constraint target described above",
+            "poster": "assets/cases/speed/skeleton.jpg"
+          },
+          "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
+          "packagePath": "Data/Shared/Motion/00026/_7ui0Pd8Bd0_00020_18_71",
+          "previewScope": "Base action only. A verified 0.5× target video is not available in this preview.",
+          "variantId": "human_video",
+          "variantLabel": "Human video"
+        },
+        {
+          "id": "speed",
+          "level": 2,
+          "group": "",
+          "title": "Speed",
+          "modality": "Skeleton video",
+          "taskId": "L2_speed_skeleton_video__7ui0Pd8Bd0_00020_18_71_slow",
+          "duration": 2.123,
+          "purpose": "Preserve the action while performing it at 0.5 times the original speed.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic description of an action and a specific speed multiplier. Your objective is to apply the specified multiplier to the execution tempo while maintaining the action's core kinematics and physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the motion at the target speed multiplier.",
+          "modifier": "Please perform the movement at 0.5x the original speed.",
+          "inputs": [
+            {
+              "kind": "video",
+              "label": "Input video",
+              "src": "assets/cases/speed/skeleton_video/condition-00.mp4",
+              "poster": "assets/cases/speed/skeleton_video/condition-00.jpg"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "154 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "154 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "154 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "154 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "154 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "154 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/speed/skeleton.mp4",
+            "label": "Base-action reference · constraint target described above",
+            "poster": "assets/cases/speed/skeleton.jpg"
+          },
+          "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
+          "packagePath": "Data/Shared/Motion/00026/_7ui0Pd8Bd0_00020_18_71",
+          "previewScope": "Base action only. A verified 0.5× target video is not available in this preview.",
+          "variantId": "skeleton_video",
+          "variantLabel": "Skeleton video"
+        },
+        {
+          "id": "speed",
+          "level": 2,
+          "group": "",
+          "title": "Speed",
+          "modality": "Audio",
+          "taskId": "L2_speed_audio__7ui0Pd8Bd0_00020_18_71_slow",
+          "duration": 2.123,
+          "purpose": "Preserve the action while performing it at 0.5 times the original speed.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with an audio recording containing a spoken action description and a speed-control instruction. Your objective is to apply the specified speed multiplier while preserving the action's core kinematics and physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the motion at the target speed multiplier.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "audio",
+              "label": "Spoken instruction",
+              "src": "assets/cases/speed/audio/condition-00.mp3"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "154 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "154 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "154 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "154 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "154 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "154 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/speed/skeleton.mp4",
+            "label": "Base-action reference · constraint target described above",
+            "poster": "assets/cases/speed/skeleton.jpg"
+          },
+          "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
+          "packagePath": "Data/Shared/Motion/00026/_7ui0Pd8Bd0_00020_18_71",
+          "previewScope": "Base action only. A verified 0.5× target video is not available in this preview.",
+          "variantId": "audio",
+          "variantLabel": "Audio"
+        }
+      ]
     },
     {
       "id": "amplitude",
@@ -1035,7 +3218,236 @@ window.ROBOOSTEER = {
       "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
       "packagePath": "Data/Shared/Motion/00063/_629q8t8_Hg_00004_91_186",
       "watchFor": "Keep the walking action but double the requested motion amplitude.",
-      "previewScope": "Base action only. A verified 2×-amplitude target video is not available in this preview."
+      "previewScope": "Base action only. A verified 2×-amplitude target video is not available in this preview.",
+      "variants": [
+        {
+          "id": "amplitude",
+          "level": 2,
+          "group": "",
+          "title": "Amplitude",
+          "modality": "Text",
+          "taskId": "L2_amplitude_text__629q8t8_Hg_00004_91_186_scale_up",
+          "duration": 3.92,
+          "purpose": "Preserve the action while doubling the spatial extent of the movement.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic description of an action and a specific amplitude multiplier. Your objective is to apply the specified multiplier to the spatial extent of the movement while maintaining the action's core kinematics and physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the motion at the target amplitude multiplier.",
+          "modifier": "Please perform the movement with 2x the original amplitude.",
+          "inputs": [
+            {
+              "kind": "text",
+              "label": "Input description",
+              "text": "The person walks from right to left across the frame, maintaining an upright posture with a steady gait. Their movement is smooth and continuous, traversing the forest floor in front of a row of wooden targets. The right arm swings forward and back in coordination with the legs, while the left arm remains relatively relaxed at the side. The shoulders remain level and stable throughout the motion. The legs alternate in a natural walking rhythm, with the right leg stepping forward first, followed by the left. The knees bend slightly with each step, and the feet make contact with the ground in a heel-to-toe motion."
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "239 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "239 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "239 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "239 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "239 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "239 × 3"
+            }
+          ],
+          "panel": 40,
+          "video": {
+            "src": "assets/cases/amplitude/skeleton.mp4",
+            "label": "Base-action reference · constraint target described above",
+            "poster": "assets/cases/amplitude/skeleton.jpg"
+          },
+          "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
+          "packagePath": "Data/Shared/Motion/00063/_629q8t8_Hg_00004_91_186",
+          "watchFor": "Keep the walking action but double the requested motion amplitude.",
+          "previewScope": "Base action only. A verified 2×-amplitude target video is not available in this preview.",
+          "variantId": "text",
+          "variantLabel": "Text"
+        },
+        {
+          "id": "amplitude",
+          "level": 2,
+          "group": "",
+          "title": "Amplitude",
+          "modality": "Human video",
+          "taskId": "L2_amplitude_human_video__629q8t8_Hg_00004_91_186_scale_up",
+          "duration": 3.92,
+          "purpose": "Preserve the action while doubling the spatial extent of the movement.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic description of an action and a specific amplitude multiplier. Your objective is to apply the specified multiplier to the spatial extent of the movement while maintaining the action's core kinematics and physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the motion at the target amplitude multiplier.",
+          "modifier": "Please perform the movement with 2x the original amplitude.",
+          "inputs": [
+            {
+              "kind": "video",
+              "label": "Input video",
+              "src": "assets/cases/amplitude/human_video/condition-00.mp4",
+              "poster": "assets/cases/amplitude/human_video/condition-00.jpg"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "239 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "239 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "239 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "239 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "239 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "239 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/amplitude/skeleton.mp4",
+            "label": "Base-action reference · constraint target described above",
+            "poster": "assets/cases/amplitude/skeleton.jpg"
+          },
+          "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
+          "packagePath": "Data/Shared/Motion/00063/_629q8t8_Hg_00004_91_186",
+          "previewScope": "Base action only. A verified 2×-amplitude target video is not available in this preview.",
+          "variantId": "human_video",
+          "variantLabel": "Human video"
+        },
+        {
+          "id": "amplitude",
+          "level": 2,
+          "group": "",
+          "title": "Amplitude",
+          "modality": "Skeleton video",
+          "taskId": "L2_amplitude_skeleton_video__629q8t8_Hg_00004_91_186_scale_up",
+          "duration": 3.92,
+          "purpose": "Preserve the action while doubling the spatial extent of the movement.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic description of an action and a specific amplitude multiplier. Your objective is to apply the specified multiplier to the spatial extent of the movement while maintaining the action's core kinematics and physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the motion at the target amplitude multiplier.",
+          "modifier": "Please perform the movement with 2x the original amplitude.",
+          "inputs": [
+            {
+              "kind": "video",
+              "label": "Input video",
+              "src": "assets/cases/amplitude/skeleton_video/condition-00.mp4",
+              "poster": "assets/cases/amplitude/skeleton_video/condition-00.jpg"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "239 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "239 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "239 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "239 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "239 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "239 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/amplitude/skeleton.mp4",
+            "label": "Base-action reference · constraint target described above",
+            "poster": "assets/cases/amplitude/skeleton.jpg"
+          },
+          "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
+          "packagePath": "Data/Shared/Motion/00063/_629q8t8_Hg_00004_91_186",
+          "previewScope": "Base action only. A verified 2×-amplitude target video is not available in this preview.",
+          "variantId": "skeleton_video",
+          "variantLabel": "Skeleton video"
+        },
+        {
+          "id": "amplitude",
+          "level": 2,
+          "group": "",
+          "title": "Amplitude",
+          "modality": "Audio",
+          "taskId": "L2_amplitude_audio__629q8t8_Hg_00004_91_186_scale_up",
+          "duration": 3.92,
+          "purpose": "Preserve the action while doubling the spatial extent of the movement.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with an audio recording containing a spoken action description and an amplitude-control instruction. Your objective is to apply the specified amplitude multiplier to the spatial extent of the movement while maintaining the action's core kinematics and physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the motion at the target amplitude multiplier.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "audio",
+              "label": "Spoken instruction",
+              "src": "assets/cases/amplitude/audio/condition-00.mp3"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "239 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "239 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "239 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "239 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "239 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "239 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/amplitude/skeleton.mp4",
+            "label": "Base-action reference · constraint target described above",
+            "poster": "assets/cases/amplitude/skeleton.jpg"
+          },
+          "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
+          "packagePath": "Data/Shared/Motion/00063/_629q8t8_Hg_00004_91_186",
+          "previewScope": "Base action only. A verified 2×-amplitude target video is not available in this preview.",
+          "variantId": "audio",
+          "variantLabel": "Audio"
+        }
+      ]
     },
     {
       "id": "direction",
@@ -1090,7 +3502,236 @@ window.ROBOOSTEER = {
       "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
       "packagePath": "Data/Shared/Motion/00024/_0jcfXKxjLI_00025_33_131",
       "watchFor": "Redirect travel to the left while preserving the underlying walking behavior.",
-      "previewScope": "Base action only. A verified redirected target video is not available in this preview."
+      "previewScope": "Base action only. A verified redirected target video is not available in this preview.",
+      "variants": [
+        {
+          "id": "direction",
+          "level": 2,
+          "group": "",
+          "title": "Direction",
+          "modality": "Text",
+          "taskId": "L2_direction_text__0jcfXKxjLI_00025_33_131_left",
+          "duration": 3.96,
+          "purpose": "Complete the same action while changing the travel direction to the left.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide a base motion description or video and a direction-change instruction. Your objective is to change the movement direction as instructed while preserving the original action and physical plausibility. Your output MUST be a continuous sequence of ACTION TOKENS representing the modified motion.",
+          "modifier": "The current motion moves straight to the front. Change it to move to the left while still completing the same action.",
+          "inputs": [
+            {
+              "kind": "text",
+              "label": "Input description",
+              "text": "The person walks forward along a straight concrete path in an open, barren landscape under a clear blue sky. Their posture is upright and confident, with a steady gait."
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "246 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "246 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "246 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "246 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "246 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "246 × 3"
+            }
+          ],
+          "panel": 44,
+          "video": {
+            "src": "assets/cases/direction/skeleton.mp4",
+            "label": "Base-action reference · constraint target described above",
+            "poster": "assets/cases/direction/skeleton.jpg"
+          },
+          "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
+          "packagePath": "Data/Shared/Motion/00024/_0jcfXKxjLI_00025_33_131",
+          "watchFor": "Redirect travel to the left while preserving the underlying walking behavior.",
+          "previewScope": "Base action only. A verified redirected target video is not available in this preview.",
+          "variantId": "text",
+          "variantLabel": "Text"
+        },
+        {
+          "id": "direction",
+          "level": 2,
+          "group": "",
+          "title": "Direction",
+          "modality": "Human video",
+          "taskId": "L2_direction_human_video__0jcfXKxjLI_00025_33_131_left",
+          "duration": 3.96,
+          "purpose": "Complete the same action while changing the travel direction to the left.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide a base motion description or video and a direction-change instruction. Your objective is to change the movement direction as instructed while preserving the original action and physical plausibility. Your output MUST be a continuous sequence of ACTION TOKENS representing the modified motion.",
+          "modifier": "The current motion moves straight to the front. Change it to move to the left while still completing the same action.",
+          "inputs": [
+            {
+              "kind": "video",
+              "label": "Input video",
+              "src": "assets/cases/direction/human_video/condition-00.mp4",
+              "poster": "assets/cases/direction/human_video/condition-00.jpg"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "246 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "246 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "246 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "246 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "246 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "246 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/direction/skeleton.mp4",
+            "label": "Base-action reference · constraint target described above",
+            "poster": "assets/cases/direction/skeleton.jpg"
+          },
+          "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
+          "packagePath": "Data/Shared/Motion/00024/_0jcfXKxjLI_00025_33_131",
+          "previewScope": "Base action only. A verified redirected target video is not available in this preview.",
+          "variantId": "human_video",
+          "variantLabel": "Human video"
+        },
+        {
+          "id": "direction",
+          "level": 2,
+          "group": "",
+          "title": "Direction",
+          "modality": "Skeleton video",
+          "taskId": "L2_direction_skeleton_video__0jcfXKxjLI_00025_33_131_left",
+          "duration": 3.96,
+          "purpose": "Complete the same action while changing the travel direction to the left.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide a base motion description or video and a direction-change instruction. Your objective is to change the movement direction as instructed while preserving the original action and physical plausibility. Your output MUST be a continuous sequence of ACTION TOKENS representing the modified motion.",
+          "modifier": "The current motion moves straight to the front. Change it to move to the left while still completing the same action.",
+          "inputs": [
+            {
+              "kind": "video",
+              "label": "Input video",
+              "src": "assets/cases/direction/skeleton_video/condition-00.mp4",
+              "poster": "assets/cases/direction/skeleton_video/condition-00.jpg"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "246 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "246 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "246 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "246 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "246 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "246 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/direction/skeleton.mp4",
+            "label": "Base-action reference · constraint target described above",
+            "poster": "assets/cases/direction/skeleton.jpg"
+          },
+          "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
+          "packagePath": "Data/Shared/Motion/00024/_0jcfXKxjLI_00025_33_131",
+          "previewScope": "Base action only. A verified redirected target video is not available in this preview.",
+          "variantId": "skeleton_video",
+          "variantLabel": "Skeleton video"
+        },
+        {
+          "id": "direction",
+          "level": 2,
+          "group": "",
+          "title": "Direction",
+          "modality": "Audio",
+          "taskId": "L2_direction_audio__0jcfXKxjLI_00025_33_131_left",
+          "duration": 3.96,
+          "purpose": "Complete the same action while changing the travel direction to the left.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with an audio recording containing a spoken base-motion description and a direction-change instruction. Your objective is to change the movement direction as instructed while preserving the original action and physical plausibility. Your output MUST be a continuous sequence of ACTION TOKENS representing the modified motion.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "audio",
+              "label": "Spoken instruction",
+              "src": "assets/cases/direction/audio/condition-00.mp3"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "246 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "246 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "246 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "246 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "246 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "246 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/direction/skeleton.mp4",
+            "label": "Base-action reference · constraint target described above",
+            "poster": "assets/cases/direction/skeleton.jpg"
+          },
+          "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
+          "packagePath": "Data/Shared/Motion/00024/_0jcfXKxjLI_00025_33_131",
+          "previewScope": "Base action only. A verified redirected target video is not available in this preview.",
+          "variantId": "audio",
+          "variantLabel": "Audio"
+        }
+      ]
     },
     {
       "id": "order",
@@ -1130,7 +3771,145 @@ window.ROBOOSTEER = {
       ],
       "packagePath": "Data/Level2/Order/Motion/10028_0.pkl",
       "watchFor": "Perform the T-pose first, then the step-jump to the right; preserve that order and the transition.",
-      "previewScope": "The supplied AMASS body rendering shows the ordered reference."
+      "previewScope": "The supplied AMASS body rendering shows the ordered reference.",
+      "variants": [
+        {
+          "id": "order",
+          "level": 2,
+          "group": "",
+          "title": "Order",
+          "modality": "Text",
+          "taskId": "L2_order_text_10028_0_p0",
+          "duration": 4.309,
+          "purpose": "Perform a T-pose, then step-jump to the right, with a continuous transition.",
+          "prompt": "You are an advanced 3D motion generation model. I will provide you with a text description of two distinct actions that must occur in a specific sequence. Your objective is to generate a continuous 3D motion that executes Action A followed by Action B with a natural transition. Your output MUST be a continuous sequence of ACTION TOKENS.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "text",
+              "label": "Input description",
+              "text": "tpose then stepjump to the right"
+            }
+          ],
+          "package": [
+            {
+              "file": "10028_0.pkl",
+              "shape": "AMASS motion package: poses, trans, dmpls, betas, gender, mocap_framerate"
+            }
+          ],
+          "panel": 33,
+          "video": {
+            "src": "assets/cases/order/skeleton.mp4",
+            "label": "AMASS body rendering · ordered motion",
+            "poster": "assets/cases/order/skeleton.jpg"
+          },
+          "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
+          "sequence": [
+            "T-pose",
+            "Transition",
+            "Step-jump right"
+          ],
+          "packagePath": "Data/Level2/Order/Motion/10028_0.pkl",
+          "watchFor": "Perform the T-pose first, then the step-jump to the right; preserve that order and the transition.",
+          "previewScope": "The supplied AMASS body rendering shows the ordered reference.",
+          "variantId": "text",
+          "variantLabel": "Text"
+        },
+        {
+          "id": "order",
+          "level": 2,
+          "group": "",
+          "title": "Order",
+          "modality": "Audio",
+          "taskId": "L2_order_audio_10028_0_p0",
+          "duration": 4.309,
+          "purpose": "Perform a T-pose, then step-jump to the right, with a continuous transition.",
+          "prompt": "You are an advanced 3D motion generation model. I will provide you with an audio recording describing two distinct actions that must occur in a specific sequence. Your objective is to generate a continuous 3D motion that executes the actions in the spoken order with a natural transition. Your output MUST be a continuous sequence of ACTION TOKENS.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "audio",
+              "label": "Spoken instruction",
+              "src": "assets/cases/order/audio/condition-00.mp3"
+            }
+          ],
+          "package": [
+            {
+              "file": "10028_0.pkl",
+              "shape": "AMASS motion package: poses, trans, dmpls, betas, gender, mocap_framerate"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/order/skeleton.mp4",
+            "label": "AMASS body rendering · ordered motion",
+            "poster": "assets/cases/order/skeleton.jpg"
+          },
+          "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
+          "sequence": [
+            "T-pose",
+            "Transition",
+            "Step-jump right"
+          ],
+          "packagePath": "Data/Level2/Order/Motion/10028_0.pkl",
+          "previewScope": "The supplied AMASS body rendering shows the ordered reference.",
+          "variantId": "audio",
+          "variantLabel": "Audio"
+        },
+        {
+          "id": "order",
+          "level": 2,
+          "group": "",
+          "title": "Order",
+          "modality": "Video",
+          "taskId": "L2_order_video_10028_0_p0",
+          "duration": 4.309,
+          "purpose": "Perform a T-pose, then step-jump to the right, with a continuous transition.",
+          "prompt": "You are an advanced 3D motion generation model. I will provide you with two video clips, each showing one action segment, and a text instruction specifying their temporal order. Your objective is to generate a continuous 3D motion that performs the action from the first referenced video and the action from the second referenced video in the instructed order with a natural transition. Your output MUST be a continuous sequence of ACTION TOKENS.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "text",
+              "label": "Input description",
+              "text": "Perform the motion shown in the first video, then perform the motion shown in the second video."
+            },
+            {
+              "kind": "video",
+              "label": "Input action 1",
+              "src": "assets/cases/order/video/condition-01.mp4",
+              "poster": "assets/cases/order/video/condition-01.jpg"
+            },
+            {
+              "kind": "video",
+              "label": "Input action 2",
+              "src": "assets/cases/order/video/condition-02.mp4",
+              "poster": "assets/cases/order/video/condition-02.jpg"
+            }
+          ],
+          "package": [
+            {
+              "file": "10028_0.pkl",
+              "shape": "AMASS motion package: poses, trans, dmpls, betas, gender, mocap_framerate"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/order/skeleton.mp4",
+            "label": "AMASS body rendering · ordered motion",
+            "poster": "assets/cases/order/skeleton.jpg"
+          },
+          "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
+          "sequence": [
+            "T-pose",
+            "Transition",
+            "Step-jump right"
+          ],
+          "packagePath": "Data/Level2/Order/Motion/10028_0.pkl",
+          "previewScope": "The supplied AMASS body rendering shows the ordered reference.",
+          "variantId": "video",
+          "variantLabel": "Video"
+        }
+      ]
     },
     {
       "id": "times",
@@ -1170,7 +3949,139 @@ window.ROBOOSTEER = {
       ],
       "packagePath": "Data/Level2/Times/Motion/10005_7_2x.pkl",
       "watchFor": "Lower the arms, reset, and lower them again: exactly two repetitions.",
-      "previewScope": "One source cycle is shown. The separate two-repetition motion package has no complete target preview here."
+      "previewScope": "One source cycle is shown. The separate two-repetition motion package has no complete target preview here.",
+      "variants": [
+        {
+          "id": "times",
+          "level": 2,
+          "group": "",
+          "title": "Times",
+          "modality": "Text",
+          "taskId": "L2_times_text_10005_7_2x",
+          "duration": 3.216666666666667,
+          "purpose": "Lower the arms exactly twice, including the reset between repetitions.",
+          "prompt": "You are an advanced 3D motion generation model. I will provide you with a text description of a single action and an explicit repetition count. Your objective is to generate a continuous 3D motion where the specified action is repeated exactly as instructed, including the necessary reset between repetitions. Your output MUST be a continuous sequence of ACTION TOKENS.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "text",
+              "label": "Input description",
+              "text": "repeat lower arms 2 times"
+            }
+          ],
+          "package": [
+            {
+              "file": "10005_7_2x.pkl",
+              "shape": "AMASS motion package: poses, trans, dmpls, betas, gender, mocap_framerate"
+            }
+          ],
+          "panel": 36,
+          "video": {
+            "src": "assets/cases/times/skeleton.mp4",
+            "label": "Source action cycle · lower arms",
+            "poster": "assets/cases/times/skeleton.jpg"
+          },
+          "motionNote": "The supplied video shows one source cycle. The task requests two repetitions and points to a separate repeated-motion package (10005_7_2x.pkl). A video of that complete repeated target is not supplied.",
+          "sequence": [
+            "Lower arms",
+            "Reset",
+            "Lower arms"
+          ],
+          "packagePath": "Data/Level2/Times/Motion/10005_7_2x.pkl",
+          "watchFor": "Lower the arms, reset, and lower them again: exactly two repetitions.",
+          "previewScope": "One source cycle is shown. The separate two-repetition motion package has no complete target preview here.",
+          "variantId": "text",
+          "variantLabel": "Text"
+        },
+        {
+          "id": "times",
+          "level": 2,
+          "group": "",
+          "title": "Times",
+          "modality": "Audio",
+          "taskId": "L2_times_audio_10005_7_2x",
+          "duration": 3.216666666666667,
+          "purpose": "Lower the arms exactly twice, including the reset between repetitions.",
+          "prompt": "You are an advanced 3D motion generation model. I will provide you with an audio recording describing a single action and an explicit repetition count. Your objective is to generate a continuous 3D motion in which the specified action is repeated exactly as instructed, including the necessary reset between repetitions. Your output MUST be a continuous sequence of ACTION TOKENS.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "audio",
+              "label": "Spoken instruction",
+              "src": "assets/cases/times/audio/condition-00.mp3"
+            }
+          ],
+          "package": [
+            {
+              "file": "10005_7_2x.pkl",
+              "shape": "AMASS motion package: poses, trans, dmpls, betas, gender, mocap_framerate"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/times/skeleton.mp4",
+            "label": "Source action cycle · lower arms",
+            "poster": "assets/cases/times/skeleton.jpg"
+          },
+          "motionNote": "The supplied video shows one source cycle. The task requests two repetitions and points to a separate repeated-motion package (10005_7_2x.pkl). A video of that complete repeated target is not supplied.",
+          "sequence": [
+            "Lower arms",
+            "Reset",
+            "Lower arms"
+          ],
+          "packagePath": "Data/Level2/Times/Motion/10005_7_2x.pkl",
+          "previewScope": "One source cycle is shown. The separate two-repetition motion package has no complete target preview here.",
+          "variantId": "audio",
+          "variantLabel": "Audio"
+        },
+        {
+          "id": "times",
+          "level": 2,
+          "group": "",
+          "title": "Times",
+          "modality": "Video",
+          "taskId": "L2_times_video_10005_7_2x",
+          "duration": 3.216666666666667,
+          "purpose": "Lower the arms exactly twice, including the reset between repetitions.",
+          "prompt": "You are an advanced 3D motion generation model. I will provide you with a video clip showing a single action and a text instruction specifying how many times to repeat that action. Your objective is to generate a continuous 3D motion that repeats the action from the video exactly as instructed. Your output MUST be a continuous sequence of ACTION TOKENS.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "text",
+              "label": "Input description",
+              "text": "repeat the action shown in the video 2 times"
+            },
+            {
+              "kind": "video",
+              "label": "Input action · one cycle",
+              "src": "assets/cases/times/video/condition-01.mp4",
+              "poster": "assets/cases/times/video/condition-01.jpg"
+            }
+          ],
+          "package": [
+            {
+              "file": "10005_7_2x.pkl",
+              "shape": "AMASS motion package: poses, trans, dmpls, betas, gender, mocap_framerate"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/times/skeleton.mp4",
+            "label": "Source action cycle · lower arms",
+            "poster": "assets/cases/times/skeleton.jpg"
+          },
+          "motionNote": "The supplied video shows one source cycle. The task requests two repetitions and points to a separate repeated-motion package (10005_7_2x.pkl). A video of that complete repeated target is not supplied.",
+          "sequence": [
+            "Lower arms",
+            "Reset",
+            "Lower arms"
+          ],
+          "packagePath": "Data/Level2/Times/Motion/10005_7_2x.pkl",
+          "previewScope": "One source cycle is shown. The separate two-repetition motion package has no complete target preview here.",
+          "variantId": "video",
+          "variantLabel": "Video"
+        }
+      ]
     },
     {
       "id": "trajectory",
@@ -1252,7 +4163,260 @@ window.ROBOOSTEER = {
         ]
       },
       "watchFor": "Preserve the balancing action while moving along the supplied path. Compare the root path, not just the limb motion.",
-      "previewScope": "The skeleton shows the source action. Agreement with the supplied trajectory has not been verified."
+      "previewScope": "The skeleton shows the source action. Agreement with the supplied trajectory has not been verified.",
+      "variants": [
+        {
+          "id": "trajectory",
+          "level": 2,
+          "group": "",
+          "title": "Trajectory",
+          "modality": "Text + trajectory",
+          "taskId": "L2_trajectory_text__7dhzy2Mnm8_00006_0_68_s_shape",
+          "duration": 2.8,
+          "purpose": "Perform the described action while following the supplied root trajectory.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a base action and a target spatial trajectory curve shown in a graph. Your objective is to map the local movements onto the global path such that the root translation strictly adheres to the specified curve. Your output MUST be a continuous sequence of ACTION TOKENS representing the trajectory-constrained motion.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "text",
+              "label": "Input description",
+              "text": "A person walks slowly while balancing a soccer ball on their head. Their body remains mostly upright with a slight forward lean to maintain balance, taking measured steps to keep the ball stable."
+            },
+            {
+              "kind": "image",
+              "label": "Input trajectory",
+              "src": "assets/cases/trajectory/input-01.png"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "186 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "186 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "186 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "186 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "186 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "186 × 3"
+            }
+          ],
+          "panel": 38,
+          "video": {
+            "src": "assets/cases/trajectory/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/trajectory/skeleton.jpg"
+          },
+          "motionNote": "The skeleton shows the source action. Agreement with the supplied trajectory has not been verified. This is not a model prediction.",
+          "packagePath": "Data/Shared/Motion/00004/_7dhzy2Mnm8_00006_0_68",
+          "trajectoryPoints": {
+            "start": [
+              0.003207333153113723,
+              0.00037507660454139113
+            ],
+            "point_1_4": [
+              0.06211318864703049,
+              0.39486468832701377
+            ],
+            "point_1_2": [
+              0.2527128273039314,
+              0.7411862750704294
+            ],
+            "point_3_4": [
+              0.4664325414613155,
+              1.077374198021684
+            ],
+            "end": [
+              0.5607303977012634,
+              1.4646698236465454
+            ]
+          },
+          "watchFor": "Preserve the balancing action while moving along the supplied path. Compare the root path, not just the limb motion.",
+          "previewScope": "The skeleton shows the source action. Agreement with the supplied trajectory has not been verified.",
+          "variantId": "text",
+          "variantLabel": "Text + trajectory"
+        },
+        {
+          "id": "trajectory",
+          "level": 2,
+          "group": "",
+          "title": "Trajectory",
+          "modality": "Audio + trajectory",
+          "taskId": "L2_trajectory_audio__7dhzy2Mnm8_00006_0_68_s_shape",
+          "duration": 2.8,
+          "purpose": "Perform the described action while following the supplied root trajectory.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with an audio recording describing a base action and a target spatial trajectory curve shown in a graph. Your objective is to map the local movements onto the global path such that the root translation strictly adheres to the specified curve. Your output MUST be a continuous sequence of ACTION TOKENS representing the trajectory-constrained motion.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "audio",
+              "label": "Spoken instruction",
+              "src": "assets/cases/trajectory/audio/condition-00.mp3"
+            },
+            {
+              "kind": "image",
+              "label": "Input trajectory",
+              "src": "assets/cases/trajectory/audio/condition-01.png"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "186 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "186 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "186 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "186 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "186 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "186 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/trajectory/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/trajectory/skeleton.jpg"
+          },
+          "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
+          "packagePath": "Data/Shared/Motion/00004/_7dhzy2Mnm8_00006_0_68",
+          "trajectoryPoints": {
+            "start": [
+              0.003207333153113723,
+              0.00037507660454139113
+            ],
+            "point_1_4": [
+              0.06211318864703049,
+              0.39486468832701377
+            ],
+            "point_1_2": [
+              0.2527128273039314,
+              0.7411862750704294
+            ],
+            "point_3_4": [
+              0.4664325414613155,
+              1.077374198021684
+            ],
+            "end": [
+              0.5607303977012634,
+              1.4646698236465454
+            ]
+          },
+          "previewScope": "The skeleton shows the source action. Agreement with the supplied trajectory has not been verified.",
+          "variantId": "audio",
+          "variantLabel": "Audio + trajectory"
+        },
+        {
+          "id": "trajectory",
+          "level": 2,
+          "group": "",
+          "title": "Trajectory",
+          "modality": "Video + trajectory",
+          "taskId": "L2_trajectory_video__7dhzy2Mnm8_00006_0_68_s_shape",
+          "duration": 2.8,
+          "purpose": "Perform the described action while following the supplied root trajectory.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a base action and a target spatial trajectory curve shown in a graph. Your objective is to map the local movements onto the global path such that the root translation strictly adheres to the specified curve. Your output MUST be a continuous sequence of ACTION TOKENS representing the trajectory-constrained motion.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "video",
+              "label": "Input video",
+              "src": "assets/cases/trajectory/video/condition-00.mp4",
+              "poster": "assets/cases/trajectory/video/condition-00.jpg"
+            },
+            {
+              "kind": "image",
+              "label": "Input trajectory",
+              "src": "assets/cases/trajectory/video/condition-01.png"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "186 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "186 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "186 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "186 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "186 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "186 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/trajectory/skeleton.mp4",
+            "label": "Skeleton reference motion · complete sequence",
+            "poster": "assets/cases/trajectory/skeleton.jpg"
+          },
+          "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
+          "packagePath": "Data/Shared/Motion/00004/_7dhzy2Mnm8_00006_0_68",
+          "trajectoryPoints": {
+            "start": [
+              0.003207333153113723,
+              0.00037507660454139113
+            ],
+            "point_1_4": [
+              0.06211318864703049,
+              0.39486468832701377
+            ],
+            "point_1_2": [
+              0.2527128273039314,
+              0.7411862750704294
+            ],
+            "point_3_4": [
+              0.4664325414613155,
+              1.077374198021684
+            ],
+            "end": [
+              0.5607303977012634,
+              1.4646698236465454
+            ]
+          },
+          "previewScope": "The skeleton shows the source action. Agreement with the supplied trajectory has not been verified.",
+          "variantId": "video",
+          "variantLabel": "Video + trajectory"
+        }
+      ]
     },
     {
       "id": "body_restrain",
@@ -1307,7 +4471,236 @@ window.ROBOOSTEER = {
       "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
       "packagePath": "Data/Shared/Motion/00063/_629q8t8_Hg_00004_91_186",
       "watchFor": "Keep walking while holding the arms still, overriding the arm swing in the base description.",
-      "previewScope": "Base action only. A verified arms-fixed target video is not available in this preview."
+      "previewScope": "Base action only. A verified arms-fixed target video is not available in this preview.",
+      "variants": [
+        {
+          "id": "body_restrain",
+          "level": 2,
+          "group": "",
+          "title": "Body Restrain",
+          "modality": "Text",
+          "taskId": "L2_body_restrain_text__629q8t8_Hg_00004_91_186_arms",
+          "duration": 3.92,
+          "purpose": "Preserve walking while keeping the arms still and motionless.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic description of an action and an instruction that specifies non-core body parts to restrain. Your objective is to generate the full-body motion while keeping the specified non-core joints still and motionless, preserving the core action as much as possible. Your output MUST be a continuous sequence of ACTION TOKENS representing the restrained motion.",
+          "modifier": "Please perform the action while keeping your arms still and motionless.",
+          "inputs": [
+            {
+              "kind": "text",
+              "label": "Input description",
+              "text": "The person walks from right to left across the frame, maintaining an upright posture with a steady gait. Their movement is smooth and continuous, traversing the forest floor in front of a row of wooden targets. The right arm swings forward and back in coordination with the legs, while the left arm remains relatively relaxed at the side. The shoulders remain level and stable throughout the motion. The legs alternate in a natural walking rhythm, with the right leg stepping forward first, followed by the left. The knees bend slightly with each step, and the feet make contact with the ground in a heel-to-toe motion."
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "239 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "239 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "239 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "239 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "239 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "239 × 3"
+            }
+          ],
+          "panel": 42,
+          "video": {
+            "src": "assets/cases/body_restrain/skeleton.mp4",
+            "label": "Base-action reference · constraint target described above",
+            "poster": "assets/cases/body_restrain/skeleton.jpg"
+          },
+          "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
+          "packagePath": "Data/Shared/Motion/00063/_629q8t8_Hg_00004_91_186",
+          "watchFor": "Keep walking while holding the arms still, overriding the arm swing in the base description.",
+          "previewScope": "Base action only. A verified arms-fixed target video is not available in this preview.",
+          "variantId": "text",
+          "variantLabel": "Text"
+        },
+        {
+          "id": "body_restrain",
+          "level": 2,
+          "group": "",
+          "title": "Body Restrain",
+          "modality": "Human video",
+          "taskId": "L2_body_restrain_human_video__629q8t8_Hg_00004_91_186_arms",
+          "duration": 3.92,
+          "purpose": "Preserve walking while keeping the arms still and motionless.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic description of an action and an instruction that specifies non-core body parts to restrain. Your objective is to generate the full-body motion while keeping the specified non-core joints still and motionless, preserving the core action as much as possible. Your output MUST be a continuous sequence of ACTION TOKENS representing the restrained motion.",
+          "modifier": "Please perform the action while keeping your arms still and motionless.",
+          "inputs": [
+            {
+              "kind": "video",
+              "label": "Input video",
+              "src": "assets/cases/body_restrain/human_video/condition-00.mp4",
+              "poster": "assets/cases/body_restrain/human_video/condition-00.jpg"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "239 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "239 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "239 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "239 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "239 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "239 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/body_restrain/skeleton.mp4",
+            "label": "Base-action reference · constraint target described above",
+            "poster": "assets/cases/body_restrain/skeleton.jpg"
+          },
+          "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
+          "packagePath": "Data/Shared/Motion/00063/_629q8t8_Hg_00004_91_186",
+          "previewScope": "Base action only. A verified arms-fixed target video is not available in this preview.",
+          "variantId": "human_video",
+          "variantLabel": "Human video"
+        },
+        {
+          "id": "body_restrain",
+          "level": 2,
+          "group": "",
+          "title": "Body Restrain",
+          "modality": "Skeleton video",
+          "taskId": "L2_body_restrain_skeleton_video__629q8t8_Hg_00004_91_186_arms",
+          "duration": 3.92,
+          "purpose": "Preserve walking while keeping the arms still and motionless.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic description of an action and an instruction that specifies non-core body parts to restrain. Your objective is to generate the full-body motion while keeping the specified non-core joints still and motionless, preserving the core action as much as possible. Your output MUST be a continuous sequence of ACTION TOKENS representing the restrained motion.",
+          "modifier": "Please perform the action while keeping your arms still and motionless.",
+          "inputs": [
+            {
+              "kind": "video",
+              "label": "Input video",
+              "src": "assets/cases/body_restrain/skeleton_video/condition-00.mp4",
+              "poster": "assets/cases/body_restrain/skeleton_video/condition-00.jpg"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "239 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "239 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "239 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "239 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "239 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "239 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/body_restrain/skeleton.mp4",
+            "label": "Base-action reference · constraint target described above",
+            "poster": "assets/cases/body_restrain/skeleton.jpg"
+          },
+          "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
+          "packagePath": "Data/Shared/Motion/00063/_629q8t8_Hg_00004_91_186",
+          "previewScope": "Base action only. A verified arms-fixed target video is not available in this preview.",
+          "variantId": "skeleton_video",
+          "variantLabel": "Skeleton video"
+        },
+        {
+          "id": "body_restrain",
+          "level": 2,
+          "group": "",
+          "title": "Body Restrain",
+          "modality": "Audio",
+          "taskId": "L2_body_restrain_audio__629q8t8_Hg_00004_91_186_arms",
+          "duration": 3.92,
+          "purpose": "Preserve walking while keeping the arms still and motionless.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with an audio recording containing a spoken action description and an instruction specifying which non-core body parts to restrain. Your objective is to generate the full-body motion while keeping the specified non-core joints still and motionless and preserving the core action as much as possible. Your output MUST be a continuous sequence of ACTION TOKENS representing the restrained motion.",
+          "modifier": "",
+          "inputs": [
+            {
+              "kind": "audio",
+              "label": "Spoken instruction",
+              "src": "assets/cases/body_restrain/audio/condition-00.mp3"
+            }
+          ],
+          "package": [
+            {
+              "file": "joint_pos.csv",
+              "shape": "239 × 29"
+            },
+            {
+              "file": "body_pos.csv",
+              "shape": "239 × 3"
+            },
+            {
+              "file": "body_quat.csv",
+              "shape": "239 × 4"
+            },
+            {
+              "file": "joint_vel.csv",
+              "shape": "239 × 29"
+            },
+            {
+              "file": "body_lin_vel.csv",
+              "shape": "239 × 3"
+            },
+            {
+              "file": "body_ang_vel.csv",
+              "shape": "239 × 3"
+            }
+          ],
+          "panel": null,
+          "video": {
+            "src": "assets/cases/body_restrain/skeleton.mp4",
+            "label": "Base-action reference · constraint target described above",
+            "poster": "assets/cases/body_restrain/skeleton.jpg"
+          },
+          "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
+          "packagePath": "Data/Shared/Motion/00063/_629q8t8_Hg_00004_91_186",
+          "previewScope": "Base action only. A verified arms-fixed target video is not available in this preview.",
+          "variantId": "audio",
+          "variantLabel": "Audio"
+        }
+      ]
     },
     {
       "id": "interleaved_multi_source_steering",

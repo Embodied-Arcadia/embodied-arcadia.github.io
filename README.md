@@ -75,3 +75,9 @@ Hero action labels summarize each selected sample’s original text annotation. 
 All 20 cases include `watchFor` (the task requirement) and `previewScope` (what the available visualization demonstrates). Input and reference media use the same player controls. Level 3 retains the boundary image at 2 s and the full 2–4 s video; its poster is taken at motion time 2.9 s to show a different pose. Reference playback highlights the active input interval.
 
 Five cases still lack complete target videos (Speed, Amplitude, Direction, Times, Body Restrain). Rhythm, Rotation-to-Pose and Trajectory have additional visualization or alignment limitations marked in the cards. Source skeletons are not model predictions or verified renderings of the G1 output packages.
+
+## Task modality variants
+
+The gallery keeps 20 task cards and provides 59 examples across their available input modalities. Fifteen task cards include an input-modality tab bar. Switching a tab replaces the input assets, prompt, target interval and motion package with the corresponding task record, pauses the previous media, and preserves keyboard focus. Arrow keys, Home and End switch tabs. The full prompt and media notes remain under Task details.
+
+Temporal Completion: Prediction (5), Retrodiction (4), Interpolation (4), Key-frame Conditioning (4). Spatial Completion: Upper-to-Full (4), Lower-to-Full (4), Target Reaching (2). Level 2: Speed / Amplitude / Direction / Body Restrain (4 each), Order / Times / Trajectory (3 each). Video-to-Motion Imitation has Human video and Skeleton video inputs.

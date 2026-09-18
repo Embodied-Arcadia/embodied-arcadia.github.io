@@ -182,12 +182,44 @@
     wrapper.append(media, controls, seek); update();
     return { wrapper, media };
   }
-  function caseCard(item, headingTag) {
+  function caseCard(task, headingTag, activeVariant) {
+    const variants = task.variants || [];
+    const selected = variants.find(variant => variant.variantId === activeVariant) || variants[0];
+    const item = selected ? { ...selected, id: task.id, title: task.title } : task;
     const article = el("article", "case"); article.id = `task-${item.id}`; article.dataset.title = item.title;
+    if (selected) article.dataset.modality = selected.variantId;
     if (item.level === 3) article.classList.add("interleaved-case");
     const header = el("header", "case-header");
     header.append(el(headingTag, "case-title", item.title), el("p", "case-level", `${item.modality} · ${Number(item.duration.toFixed(3))} s`), el("p", "case-purpose", item.purpose));
     article.append(header);
+    if (variants.length > 1) {
+      const tabs = el("div", "modality-tabs"); tabs.setAttribute("role", "tablist");
+      tabs.setAttribute("aria-label", `${task.title}: input modality`);
+      const selectVariant = variant => {
+        article.querySelectorAll("video, audio").forEach(media => { media.pause(); caseObserver.unobserve(media); });
+        const replacement = caseCard(task, headingTag, variant.variantId);
+        article.replaceWith(replacement);
+        replacement.querySelector('[role="tab"][aria-selected="true"]').focus({ preventScroll: true });
+      };
+      variants.forEach((variant, index) => {
+        const button = el("button", "modality-tab", variant.variantLabel); button.type = "button";
+        const active = selected.variantId === variant.variantId;
+        button.id = `${article.id}-modality-${variant.variantId}`;
+        button.setAttribute("role", "tab"); button.setAttribute("aria-selected", String(active));
+        button.setAttribute("aria-controls", `${article.id}-panel`); button.tabIndex = active ? 0 : -1;
+        button.addEventListener("click", () => { if (!active) selectVariant(variant); });
+        button.addEventListener("keydown", event => {
+          let target;
+          if (event.key === "ArrowRight") target = (index + 1) % variants.length;
+          if (event.key === "ArrowLeft") target = (index + variants.length - 1) % variants.length;
+          if (event.key === "Home") target = 0;
+          if (event.key === "End") target = variants.length - 1;
+          if (target !== undefined) { event.preventDefault(); selectVariant(variants[target]); }
+        });
+        tabs.append(button);
+      });
+      article.append(tabs);
+    }
     const input = el("section", "case-input"); input.setAttribute("aria-label", `${item.title}: input condition`);
     input.append(el("h6", "case-block-title", item.level === 3 ? "Ordered input sequence" : "Input condition"));
     const inputs = el(item.level === 3 ? "ol" : "div", item.level === 3 ? "interleaved-inputs" : "case-inputs");
@@ -269,9 +301,13 @@
     table.append(body); packageInfo.append(table);
     const path = el("p", "package-path"); path.append(el("span", "", "Dataset-relative path: "), el("code", "", item.packagePath)); packageInfo.append(path);
     if (item.trajectoryPoints && Object.keys(item.trajectoryPoints).length) packageInfo.append(el("pre", "", JSON.stringify(item.trajectoryPoints, null, 2)));
-    caseBody.append(output); article.append(caseBody);
+    caseBody.append(output);
     const details = disclosure("Task details", packageInfo); details.className = "case-technical";
-    article.append(details);
+    if (variants.length > 1) {
+      const panel = el("div", "case-variant-panel"); panel.id = `${article.id}-panel`;
+      panel.setAttribute("role", "tabpanel"); panel.setAttribute("aria-labelledby", `${article.id}-modality-${selected.variantId}`);
+      panel.append(caseBody, details); article.append(panel);
+    } else article.append(caseBody, details);
     return article;
   }
   const levels = [
