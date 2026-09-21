@@ -15,147 +15,183 @@ window.ROBOOSTEER = {
   "heroVideos": [
     {
       "src": "assets/motion/hf-g1-s4nk5mlyTnk_00009_0_65.mp4",
-      "poster": "assets/motion/hf-g1-s4nk5mlyTnk_00009_0_65.jpg"
+      "poster": "assets/motion/hf-g1-s4nk5mlyTnk_00009_0_65.jpg",
+      "label": "Walk"
     },
     {
       "src": "assets/motion/hf-g1-KekLnViQSuc_00001_0_196.mp4",
-      "poster": "assets/motion/hf-g1-KekLnViQSuc_00001_0_196.jpg"
+      "poster": "assets/motion/hf-g1-KekLnViQSuc_00001_0_196.jpg",
+      "label": "Wipe & reach"
     },
     {
       "src": "assets/motion/hf-g1-kbopR9QVBns_00044_0_97.mp4",
-      "poster": "assets/motion/hf-g1-kbopR9QVBns_00044_0_97.jpg"
+      "poster": "assets/motion/hf-g1-kbopR9QVBns_00044_0_97.jpg",
+      "label": "Reach overhead"
     },
     {
       "src": "assets/motion/hf-g1-tU9LKk25fdU_00002_702_854.mp4",
-      "poster": "assets/motion/hf-g1-tU9LKk25fdU_00002_702_854.jpg"
+      "poster": "assets/motion/hf-g1-tU9LKk25fdU_00002_702_854.jpg",
+      "label": "Reach & retrieve"
     },
     {
       "src": "assets/motion/hf-g1-I3G5UUEE_N0_00034_7_81.mp4",
-      "poster": "assets/motion/hf-g1-I3G5UUEE_N0_00034_7_81.jpg"
+      "poster": "assets/motion/hf-g1-I3G5UUEE_N0_00034_7_81.jpg",
+      "label": "Pull & smooth"
     },
     {
       "src": "assets/motion/hf-g1-alI6lqWQf28_00003_0_81.mp4",
-      "poster": "assets/motion/hf-g1-alI6lqWQf28_00003_0_81.jpg"
+      "poster": "assets/motion/hf-g1-alI6lqWQf28_00003_0_81.jpg",
+      "label": "Sweep & spray"
     },
     {
       "src": "assets/motion/hf-g1-s0sTH6JtODs_00000_0_161.mp4",
-      "poster": "assets/motion/hf-g1-s0sTH6JtODs_00000_0_161.jpg"
+      "poster": "assets/motion/hf-g1-s0sTH6JtODs_00000_0_161.jpg",
+      "label": "Cooking gestures"
     },
     {
       "src": "assets/motion/hf-g1-uao897AZC08_00024_64_161.mp4",
-      "poster": "assets/motion/hf-g1-uao897AZC08_00024_64_161.jpg"
+      "poster": "assets/motion/hf-g1-uao897AZC08_00024_64_161.jpg",
+      "label": "Unpack & carry"
     },
     {
       "src": "assets/motion/hf-g1-Ce8IQZPJPW0_00008_0_60.mp4",
-      "poster": "assets/motion/hf-g1-Ce8IQZPJPW0_00008_0_60.jpg"
+      "poster": "assets/motion/hf-g1-Ce8IQZPJPW0_00008_0_60.jpg",
+      "label": "Lean forward"
     },
     {
       "src": "assets/motion/hf-g1-s5x2LY5TRv8_00027_0_152.mp4",
-      "poster": "assets/motion/hf-g1-s5x2LY5TRv8_00027_0_152.jpg"
+      "poster": "assets/motion/hf-g1-s5x2LY5TRv8_00027_0_152.jpg",
+      "label": "Adjust & turn"
     },
     {
       "src": "assets/motion/hf-g1-DQGAcsxCzPw_00002_47_121.mp4",
-      "poster": "assets/motion/hf-g1-DQGAcsxCzPw_00002_47_121.jpg"
+      "poster": "assets/motion/hf-g1-DQGAcsxCzPw_00002_47_121.jpg",
+      "label": "Walk & reach"
     },
     {
       "src": "assets/motion/hf-g1-JY1mxnXCeF8_00003_511_598.mp4",
-      "poster": "assets/motion/hf-g1-JY1mxnXCeF8_00003_511_598.jpg"
+      "poster": "assets/motion/hf-g1-JY1mxnXCeF8_00003_511_598.jpg",
+      "label": "Lift & turn"
     },
     {
       "src": "assets/motion/hf-g1-HfM2BjLPm1w_00023_0_175.mp4",
-      "poster": "assets/motion/hf-g1-HfM2BjLPm1w_00023_0_175.jpg"
+      "poster": "assets/motion/hf-g1-HfM2BjLPm1w_00023_0_175.jpg",
+      "label": "Push & lean"
     },
     {
       "src": "assets/motion/hf-g1-k0X8Mz1ksEg_00013_0_154.mp4",
-      "poster": "assets/motion/hf-g1-k0X8Mz1ksEg_00013_0_154.jpg"
+      "poster": "assets/motion/hf-g1-k0X8Mz1ksEg_00013_0_154.jpg",
+      "label": "Pick up & toss"
     },
     {
       "src": "assets/motion/hf-g1-rGsF1notX2A_00020_0_88.mp4",
-      "poster": "assets/motion/hf-g1-rGsF1notX2A_00020_0_88.jpg"
+      "poster": "assets/motion/hf-g1-rGsF1notX2A_00020_0_88.jpg",
+      "label": "Press & fold"
     },
     {
       "src": "assets/motion/hf-g1-bAAfenZs46o_00105_0_66.mp4",
-      "poster": "assets/motion/hf-g1-bAAfenZs46o_00105_0_66.jpg"
+      "poster": "assets/motion/hf-g1-bAAfenZs46o_00105_0_66.jpg",
+      "label": "Sit & reach"
     },
     {
       "src": "assets/motion/hf-g1-JOuLYDwMuIg_00014_22_82.mp4",
-      "poster": "assets/motion/hf-g1-JOuLYDwMuIg_00014_22_82.jpg"
+      "poster": "assets/motion/hf-g1-JOuLYDwMuIg_00014_22_82.jpg",
+      "label": "Push & walk"
     },
     {
       "src": "assets/motion/hf-g1-s3PvzlrzuQ4_00017_83_141.mp4",
-      "poster": "assets/motion/hf-g1-s3PvzlrzuQ4_00017_83_141.jpg"
+      "poster": "assets/motion/hf-g1-s3PvzlrzuQ4_00017_83_141.jpg",
+      "label": "Rise & turn"
     },
     {
       "src": "assets/motion/hf-g1-kHQ8ib3EQb8_00014_0_556.mp4",
-      "poster": "assets/motion/hf-g1-kHQ8ib3EQb8_00014_0_556.jpg"
+      "poster": "assets/motion/hf-g1-kHQ8ib3EQb8_00014_0_556.jpg",
+      "label": "Squat"
     },
     {
       "src": "assets/motion/hf-g1-bbRKGfSL2Ds_00028_25_200.mp4",
-      "poster": "assets/motion/hf-g1-bbRKGfSL2Ds_00028_25_200.jpg"
+      "poster": "assets/motion/hf-g1-bbRKGfSL2Ds_00028_25_200.jpg",
+      "label": "Hand gestures"
     },
     {
       "src": "assets/motion/hf-g1-EIibo7aTpys_00012_0_97.mp4",
-      "poster": "assets/motion/hf-g1-EIibo7aTpys_00012_0_97.jpg"
+      "poster": "assets/motion/hf-g1-EIibo7aTpys_00012_0_97.jpg",
+      "label": "Kick & punch"
     },
     {
       "src": "assets/motion/hf-g1-J5Y_ySkVEVo_00023_396_513.mp4",
-      "poster": "assets/motion/hf-g1-J5Y_ySkVEVo_00023_396_513.jpg"
+      "poster": "assets/motion/hf-g1-J5Y_ySkVEVo_00023_396_513.jpg",
+      "label": "Walk across"
     },
     {
       "src": "assets/motion/hf-g1-E2gLpsHir84_00001_0_65.mp4",
-      "poster": "assets/motion/hf-g1-E2gLpsHir84_00001_0_65.jpg"
+      "poster": "assets/motion/hf-g1-E2gLpsHir84_00001_0_65.jpg",
+      "label": "Carry & walk"
     },
     {
       "src": "assets/motion/hf-g1-vt7KzSJqtQQ_00004_0_214.mp4",
-      "poster": "assets/motion/hf-g1-vt7KzSJqtQQ_00004_0_214.jpg"
+      "poster": "assets/motion/hf-g1-vt7KzSJqtQQ_00004_0_214.jpg",
+      "label": "Point & gesture"
     },
     {
       "src": "assets/motion/hf-g1-MIvggVdEGb8_00004_0_90.mp4",
-      "poster": "assets/motion/hf-g1-MIvggVdEGb8_00004_0_90.jpg"
+      "poster": "assets/motion/hf-g1-MIvggVdEGb8_00004_0_90.jpg",
+      "label": "Walk forward"
     },
     {
       "src": "assets/motion/hf-g1-v3J14lxJmHo_00021_0_178.mp4",
-      "poster": "assets/motion/hf-g1-v3J14lxJmHo_00021_0_178.jpg"
+      "poster": "assets/motion/hf-g1-v3J14lxJmHo_00021_0_178.jpg",
+      "label": "Kick & follow through"
     },
     {
       "src": "assets/motion/hf-g1-r2tvvYplVpc_00002_836_987.mp4",
-      "poster": "assets/motion/hf-g1-r2tvvYplVpc_00002_836_987.jpg"
+      "poster": "assets/motion/hf-g1-r2tvvYplVpc_00002_836_987.jpg",
+      "label": "Reach & smooth"
     },
     {
       "src": "assets/motion/hf-g1-rLoHXD9dxUU_00042_97_166.mp4",
-      "poster": "assets/motion/hf-g1-rLoHXD9dxUU_00042_97_166.jpg"
+      "poster": "assets/motion/hf-g1-rLoHXD9dxUU_00042_97_166.jpg",
+      "label": "Lift & lower"
     },
     {
       "src": "assets/motion/hf-g1-k0jVSr_wprw_00000_0_1765.mp4",
-      "poster": "assets/motion/hf-g1-k0jVSr_wprw_00000_0_1765.jpg"
+      "poster": "assets/motion/hf-g1-k0jVSr_wprw_00000_0_1765.jpg",
+      "label": "Standing gestures"
     },
     {
       "src": "assets/motion/hf-g1-vXgqnnkqNok_00008_0_106.mp4",
-      "poster": "assets/motion/hf-g1-vXgqnnkqNok_00008_0_106.jpg"
+      "poster": "assets/motion/hf-g1-vXgqnnkqNok_00008_0_106.jpg",
+      "label": "Bend & clean"
     },
     {
       "src": "assets/motion/hf-g1-kqb5Ki8k3_M_00052_36_111.mp4",
-      "poster": "assets/motion/hf-g1-kqb5Ki8k3_M_00052_36_111.jpg"
+      "poster": "assets/motion/hf-g1-kqb5Ki8k3_M_00052_36_111.jpg",
+      "label": "Arm gestures"
     },
     {
       "src": "assets/motion/hf-g1-slCwOLXIeU4_00025_56_104.mp4",
-      "poster": "assets/motion/hf-g1-slCwOLXIeU4_00025_56_104.jpg"
+      "poster": "assets/motion/hf-g1-slCwOLXIeU4_00025_56_104.jpg",
+      "label": "Crouch & jump"
     },
     {
       "src": "assets/motion/hf-g1-Cn2s3-690wI_00004_105_199.mp4",
-      "poster": "assets/motion/hf-g1-Cn2s3-690wI_00004_105_199.jpg"
+      "poster": "assets/motion/hf-g1-Cn2s3-690wI_00004_105_199.jpg",
+      "label": "Turn & point"
     },
     {
       "src": "assets/motion/hf-g1-EiYsUTfJAw0_00058_0_189.mp4",
-      "poster": "assets/motion/hf-g1-EiYsUTfJAw0_00058_0_189.jpg"
+      "poster": "assets/motion/hf-g1-EiYsUTfJAw0_00058_0_189.jpg",
+      "label": "Turn & step"
     },
     {
       "src": "assets/motion/hf-g1-CYgluRrmZ5c_00043_0_63.mp4",
-      "poster": "assets/motion/hf-g1-CYgluRrmZ5c_00043_0_63.jpg"
+      "poster": "assets/motion/hf-g1-CYgluRrmZ5c_00043_0_63.jpg",
+      "label": "Walk with a load"
     },
     {
       "src": "assets/motion/hf-g1-xD1ywMiX99s_00007_0_194.mp4",
-      "poster": "assets/motion/hf-g1-xD1ywMiX99s_00007_0_194.jpg"
+      "poster": "assets/motion/hf-g1-xD1ywMiX99s_00007_0_194.jpg",
+      "label": "Gather & lift"
     }
   ],
   "cases": [
