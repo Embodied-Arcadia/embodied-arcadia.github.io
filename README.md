@@ -29,7 +29,7 @@ Edit **`site-content.js`**:
 | `codeUrl` | Actual project code repository, not the website repository unless they coincide |
 | `figure` | `src`, accessible `alt`, and `caption` |
 | `bibtex` | Exact final entry; leave empty until bibliographic details are known |
-| `heroVideos` | The 16 distinct G1 background media objects (`src`, `poster`, `label`) |
+| `heroVideos` | The 36 distinct G1 background media objects (`src`, `poster`, `label`) |
 | `cases` | 20 task records: level, task family, input modality, full conditions, prompt, visualization, GT schema and B.3 panel |
 
 Empty resource URLs display as unavailable. No placeholder arXiv IDs or nonexistent dataset/repository links are emitted. Once all three resource URLs are available, the preview release note is hidden automatically.
@@ -38,7 +38,7 @@ Empty resource URLs display as unavailable. No placeholder arXiv IDs or nonexist
 
 ## Motion media
 
-- The hero uses 16 distinct existing G1 retargeted clips from the local Demo selection. Motions repeat when extra cells are needed to fill complete rows. Cells retain the native 4:3 ratio without cropping, grid gaps or letterboxing. Mobile layouts use two columns; hidden videos pause. `heroAspectRatio` controls the cell geometry.
+- The hero uses 36 distinct G1 retargeted clips selected from wendell0218/motion_example_final, retargeted_videos/00000.tar. Each grid cell has a different source video; clips are never duplicated to fill the grid. Cells retain the native 4:3 ratio without cropping, grid gaps or letterboxing. Mobile layouts use two columns; hidden videos pause. `heroAspectRatio` controls the cell geometry.
 - Seventeen task cards now use matching G1 retargeted references (18 videos including the separate music-prediction example). The selected Key-frame Conditioning, Order and Times references still lack corresponding G1 renders. Task inputs retain their original text, human/skeleton video, image and audio modalities, including temporal cuts and partial-body conditions.
 - Backgrounds are muted, looped, and paused when the hero leaves view or the tab is hidden.
 - Reduced-motion and data-saving preferences start the background paused, with posters visible; visitors can explicitly play it.

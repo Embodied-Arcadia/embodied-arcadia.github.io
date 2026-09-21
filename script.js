@@ -39,10 +39,8 @@
   let paused = reduced.matches || saveData;
   let heroVisible = true;
   const heroVideos = [];
-  // Reuse the selected motions when extra cells are needed to fill whole rows.
-  const wallAssets = Array.from({ length: Math.max(36, content.heroVideos.length) },
-    (_, index) => content.heroVideos[index % content.heroVideos.length]);
-  wallAssets.forEach((asset, index) => {
+  // One distinct source per cell; the grid never duplicates clips to fill space.
+  content.heroVideos.forEach((asset, index) => {
     const tile = document.createElement("div"); tile.className = "motion-tile";
     const video = document.createElement("video");
     video.muted = true; video.defaultMuted = true; video.loop = true; video.playsInline = true;
