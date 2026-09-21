@@ -14,184 +14,84 @@ window.ROBOOSTEER = {
   "contributors": "Coming soon.",
   "heroVideos": [
     {
-      "src": "assets/motion/hero-01--bgPTgJJlv4_00019_8_72.mp4",
-      "poster": "assets/motion/hero-01--bgPTgJJlv4_00019_8_72.jpg",
-      "label": "Reach & crouch"
+      "src": "assets/motion/g1---k14qjhPTA_00041_64_156.mp4",
+      "poster": "assets/motion/g1---k14qjhPTA_00041_64_156.jpg",
+      "label": "Lift & gesture"
     },
     {
-      "src": "assets/motion/hero-02--4pJlbpQPXA_00030_0_71.mp4",
-      "poster": "assets/motion/hero-02--4pJlbpQPXA_00030_0_71.jpg",
+      "src": "assets/motion/g1-HhLmhjgg0AA_00000_392_462.mp4",
+      "poster": "assets/motion/g1-HhLmhjgg0AA_00000_392_462.jpg",
+      "label": "Motion imitation"
+    },
+    {
+      "src": "assets/motion/g1-_1hvhhAQkq4_00009_0_126.mp4",
+      "poster": "assets/motion/g1-_1hvhhAQkq4_00009_0_126.jpg",
+      "label": "Ball balance"
+    },
+    {
+      "src": "assets/motion/g1-IlvpCJwcP48_00007_200_353.mp4",
+      "poster": "assets/motion/g1-IlvpCJwcP48_00007_200_353.jpg",
+      "label": "Joint conditioning"
+    },
+    {
+      "src": "assets/motion/g1-jEqXdH2H0Bw_00022_0_131.mp4",
+      "poster": "assets/motion/g1-jEqXdH2H0Bw_00022_0_131.jpg",
+      "label": "Move a panel"
+    },
+    {
+      "src": "assets/motion/g1-_M7DH7Ml9lI_00002_0_258.mp4",
+      "poster": "assets/motion/g1-_M7DH7Ml9lI_00002_0_258.jpg",
+      "label": "Squat & lift"
+    },
+    {
+      "src": "assets/motion/g1-tfYiJh5E1uY_00006_36_110.mp4",
+      "poster": "assets/motion/g1-tfYiJh5E1uY_00006_36_110.jpg",
+      "label": "Walk through"
+    },
+    {
+      "src": "assets/motion/g1-EJYftp7eZYc_00005_0_85.mp4",
+      "poster": "assets/motion/g1-EJYftp7eZYc_00005_0_85.jpg",
       "label": "Squat"
     },
     {
-      "src": "assets/motion/hero-03--3sSOrbcYTQ_00009_226_296.mp4",
-      "poster": "assets/motion/hero-03--3sSOrbcYTQ_00009_226_296.jpg",
-      "label": "Lift & push"
+      "src": "assets/motion/g1-v3J14lxJmHo_00016_542_901.mp4",
+      "poster": "assets/motion/g1-v3J14lxJmHo_00016_542_901.jpg",
+      "label": "Kick & walk"
     },
     {
-      "src": "assets/motion/hero-04--3dpmLSeQrw_00031_0_117.mp4",
-      "poster": "assets/motion/hero-04--3dpmLSeQrw_00031_0_117.jpg",
-      "label": "Bend & raise arms"
+      "src": "assets/motion/g1-_7ui0Pd8Bd0_00020_18_71.mp4",
+      "poster": "assets/motion/g1-_7ui0Pd8Bd0_00020_18_71.jpg",
+      "label": "Walking"
     },
     {
-      "src": "assets/motion/hero-05--4dtZChA9L0_00021_86_234.mp4",
-      "poster": "assets/motion/hero-05--4dtZChA9L0_00021_86_234.jpg",
-      "label": "Shovel"
+      "src": "assets/motion/g1-_629q8t8_Hg_00004_91_186.mp4",
+      "poster": "assets/motion/g1-_629q8t8_Hg_00004_91_186.jpg",
+      "label": "Arm swing"
     },
     {
-      "src": "assets/motion/hero-06--4BPpfFGcIE_00005_0_77.mp4",
-      "poster": "assets/motion/hero-06--4BPpfFGcIE_00005_0_77.jpg",
-      "label": "Turn & reach"
+      "src": "assets/motion/g1-_0jcfXKxjLI_00025_33_131.mp4",
+      "poster": "assets/motion/g1-_0jcfXKxjLI_00025_33_131.jpg",
+      "label": "Walk forward"
     },
     {
-      "src": "assets/motion/hero-07--4Yh3uWGEIQ_00001_0_153.mp4",
-      "poster": "assets/motion/hero-07--4Yh3uWGEIQ_00001_0_153.jpg",
-      "label": "Standing gesture"
+      "src": "assets/motion/g1-_7dhzy2Mnm8_00006_0_68.mp4",
+      "poster": "assets/motion/g1-_7dhzy2Mnm8_00006_0_68.jpg",
+      "label": "Balance & walk"
     },
     {
-      "src": "assets/motion/hero-08--4n5dfGrbAE_00015_0_79.mp4",
-      "poster": "assets/motion/hero-08--4n5dfGrbAE_00015_0_79.jpg",
-      "label": "Walk & wave"
+      "src": "assets/motion/g1-_0qRTEzGEe4_00015_60_183.mp4",
+      "poster": "assets/motion/g1-_0qRTEzGEe4_00015_60_183.jpg",
+      "label": "Reach & bend"
     },
     {
-      "src": "assets/motion/hero-09--114RHflBPE_00046_0_189.mp4",
-      "poster": "assets/motion/hero-09--114RHflBPE_00046_0_189.jpg",
-      "label": "Stand still"
+      "src": "assets/motion/g1-_0udJrBrtrk_00000_0_485.mp4",
+      "poster": "assets/motion/g1-_0udJrBrtrk_00000_0_485.jpg",
+      "label": "Pick & place"
     },
     {
-      "src": "assets/motion/hero-10--0tsSU4APwI_00007_221_329.mp4",
-      "poster": "assets/motion/hero-10--0tsSU4APwI_00007_221_329.jpg",
-      "label": "Step & gesture"
-    },
-    {
-      "src": "assets/motion/hero-11--0twpb3R9-E_00016_1345_1439.mp4",
-      "poster": "assets/motion/hero-11--0twpb3R9-E_00016_1345_1439.jpg",
-      "label": "Walk & reach"
-    },
-    {
-      "src": "assets/motion/hero-12--6PwyjW_0jo_00016_0_60.mp4",
-      "poster": "assets/motion/hero-12--6PwyjW_0jo_00016_0_60.jpg",
-      "label": "Reach at counter"
-    },
-    {
-      "src": "assets/motion/hero-13--13yT_i3DQw_00007_0_80.mp4",
-      "poster": "assets/motion/hero-13--13yT_i3DQw_00007_0_80.jpg",
-      "label": "Hold & aim"
-    },
-    {
-      "src": "assets/motion/hero-14--3XjxO_Y1vY_00000_595_738.mp4",
-      "poster": "assets/motion/hero-14--3XjxO_Y1vY_00000_595_738.jpg",
-      "label": "Walk"
-    },
-    {
-      "src": "assets/motion/hero-15--0TiQ5ihwds_00063_0_88.mp4",
-      "poster": "assets/motion/hero-15--0TiQ5ihwds_00063_0_88.jpg",
-      "label": "Fine hand movement"
-    },
-    {
-      "src": "assets/motion/hero-16--5idryel3tU_00003_0_634.mp4",
-      "poster": "assets/motion/hero-16--5idryel3tU_00003_0_634.jpg",
-      "label": "Side-step dance"
-    },
-    {
-      "src": "assets/motion/hero-17--5ntpiukSe0_00015_0_166.mp4",
-      "poster": "assets/motion/hero-17--5ntpiukSe0_00015_0_166.jpg",
-      "label": "Crouch & walk"
-    },
-    {
-      "src": "assets/motion/hero-18--4QKxC5qmYQ_00040_146_224.mp4",
-      "poster": "assets/motion/hero-18--4QKxC5qmYQ_00040_146_224.jpg",
-      "label": "Step up & down"
-    },
-    {
-      "src": "assets/motion/hero-19--3QylwbiiaI_00003_0_105.mp4",
-      "poster": "assets/motion/hero-19--3QylwbiiaI_00003_0_105.jpg",
-      "label": "Hammer"
-    },
-    {
-      "src": "assets/motion/hero-20--6HvZzTRfR8_00023_0_60.mp4",
-      "poster": "assets/motion/hero-20--6HvZzTRfR8_00023_0_60.jpg",
-      "label": "Walk"
-    },
-    {
-      "src": "assets/motion/hero-21--0TiQ5ihwds_00061_0_186.mp4",
-      "poster": "assets/motion/hero-21--0TiQ5ihwds_00061_0_186.jpg",
-      "label": "Reach & gesture"
-    },
-    {
-      "src": "assets/motion/hero-22--1DxOaYOWpc_00001_0_260.mp4",
-      "poster": "assets/motion/hero-22--1DxOaYOWpc_00001_0_260.jpg",
-      "label": "Crouch & balance"
-    },
-    {
-      "src": "assets/motion/hero-23--3HddqbfVrw_00047_0_118.mp4",
-      "poster": "assets/motion/hero-23--3HddqbfVrw_00047_0_118.jpg",
-      "label": "Clap & raise hands"
-    },
-    {
-      "src": "assets/motion/hero-24--64wZkdPRew_00030_0_69.mp4",
-      "poster": "assets/motion/hero-24--64wZkdPRew_00030_0_69.jpg",
-      "label": "Kneel & reach"
-    },
-    {
-      "src": "assets/motion/hero-25--9PgQ7uo97Q_00003_15_99.mp4",
-      "poster": "assets/motion/hero-25--9PgQ7uo97Q_00003_15_99.jpg",
-      "label": "Walk & bend"
-    },
-    {
-      "src": "assets/motion/hero-26--77eMa_eCmk_00010_510_645.mp4",
-      "poster": "assets/motion/hero-26--77eMa_eCmk_00010_510_645.jpg",
-      "label": "Reach & pull"
-    },
-    {
-      "src": "assets/motion/hero-27--3PNM2bvwME_00000_216_295.mp4",
-      "poster": "assets/motion/hero-27--3PNM2bvwME_00000_216_295.jpg",
-      "label": "Lift & place"
-    },
-    {
-      "src": "assets/motion/hero-28--6p6EdHW1DA_00017_0_60.mp4",
-      "poster": "assets/motion/hero-28--6p6EdHW1DA_00017_0_60.jpg",
-      "label": "Turn & pour"
-    },
-    {
-      "src": "assets/motion/hero-29--1ZDhv6QNJ8_00006_17_81.mp4",
-      "poster": "assets/motion/hero-29--1ZDhv6QNJ8_00006_17_81.jpg",
-      "label": "Hold arms forward"
-    },
-    {
-      "src": "assets/motion/hero-30--3S269-GflQ_00012_0_55.mp4",
-      "poster": "assets/motion/hero-30--3S269-GflQ_00012_0_55.jpg",
-      "label": "Overhead arm circles"
-    },
-    {
-      "src": "assets/motion/hero-31--0og5HrzhpY_00061_0_146.mp4",
-      "poster": "assets/motion/hero-31--0og5HrzhpY_00061_0_146.jpg",
-      "label": "Pour"
-    },
-    {
-      "src": "assets/motion/hero-32--0Xx-OZ-MRE_00018_16_64.mp4",
-      "poster": "assets/motion/hero-32--0Xx-OZ-MRE_00018_16_64.jpg",
-      "label": "Rhythmic arm motion"
-    },
-    {
-      "src": "assets/motion/hero-33--10FIjYHkiQ_00022_67_151.mp4",
-      "poster": "assets/motion/hero-33--10FIjYHkiQ_00022_67_151.jpg",
-      "label": "Walk"
-    },
-    {
-      "src": "assets/motion/hero-34--A1lcufOBAA_00024_0_115.mp4",
-      "poster": "assets/motion/hero-34--A1lcufOBAA_00024_0_115.jpg",
-      "label": "Sweep & bend"
-    },
-    {
-      "src": "assets/motion/hero-35--6Id4NJ7i4w_00017_0_136.mp4",
-      "poster": "assets/motion/hero-35--6Id4NJ7i4w_00017_0_136.jpg",
-      "label": "Walk"
-    },
-    {
-      "src": "assets/motion/hero-36--77eMa_eCmk_00026_0_224.mp4",
-      "poster": "assets/motion/hero-36--77eMa_eCmk_00026_0_224.jpg",
-      "label": "Walk & wipe"
+      "src": "assets/motion/g1-_1fhVpM4xCU_00000_399_474.mp4",
+      "poster": "assets/motion/g1-_1fhVpM4xCU_00000_399_474.jpg",
+      "label": "Field & throw"
     }
   ],
   "cases": [
@@ -241,14 +141,15 @@ window.ROBOOSTEER = {
       ],
       "panel": 1,
       "video": {
-        "src": "assets/cases/text_to_motion_generation/skeleton.mp4",
-        "label": "Skeleton reference motion · complete sequence",
-        "poster": "assets/cases/text_to_motion_generation/skeleton.jpg"
+        "src": "assets/cases/text_to_motion_generation/g1.mp4",
+        "label": "G1 retargeted motion · complete sequence",
+        "poster": "assets/cases/text_to_motion_generation/g1.jpg"
       },
       "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
       "packagePath": "Data/Shared/Motion/00068/--k14qjhPTA_00041_64_156",
       "watchFor": "Follow the description through reaching, raising the arms, and stepping back.",
-      "previewScope": "Full source motion; objects described in the text are not rendered."
+      "previewScope": "Full source motion; objects described in the text are not rendered.",
+      "visualization": "g1-retargeted"
     },
     {
       "id": "video_to_motion_imitation",
@@ -297,9 +198,9 @@ window.ROBOOSTEER = {
       ],
       "panel": 2,
       "video": {
-        "src": "assets/cases/video_to_motion_imitation/skeleton.mp4",
-        "label": "Skeleton reference motion · complete sequence",
-        "poster": "assets/cases/video_to_motion_imitation/skeleton.jpg"
+        "src": "assets/cases/video_to_motion_imitation/g1.mp4",
+        "label": "G1 retargeted motion · complete sequence",
+        "poster": "assets/cases/video_to_motion_imitation/g1.jpg"
       },
       "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
       "packagePath": "Data/Shared/Motion/00002/HhLmhjgg0AA_00000_392_462",
@@ -353,16 +254,17 @@ window.ROBOOSTEER = {
           ],
           "panel": 2,
           "video": {
-            "src": "assets/cases/video_to_motion_imitation/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/video_to_motion_imitation/skeleton.jpg"
+            "src": "assets/cases/video_to_motion_imitation/g1.mp4",
+            "label": "G1 retargeted motion · complete sequence",
+            "poster": "assets/cases/video_to_motion_imitation/g1.jpg"
           },
           "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
           "packagePath": "Data/Shared/Motion/00002/HhLmhjgg0AA_00000_392_462",
           "watchFor": "Transfer the action and its order from the human video to a full-body motion.",
           "previewScope": "Human input and skeleton reference show the same source action.",
           "variantId": "human_video",
-          "variantLabel": "Human video"
+          "variantLabel": "Human video",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "video_to_motion_imitation",
@@ -411,17 +313,19 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/video_to_motion_imitation/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/video_to_motion_imitation/skeleton.jpg"
+            "src": "assets/cases/video_to_motion_imitation/g1.mp4",
+            "label": "G1 retargeted motion · complete sequence",
+            "poster": "assets/cases/video_to_motion_imitation/g1.jpg"
           },
           "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
           "packagePath": "Data/Shared/Motion/00002/HhLmhjgg0AA_00000_392_462",
           "previewScope": "Human input and skeleton reference show the same source action.",
           "variantId": "skeleton_video",
-          "variantLabel": "Skeleton video"
+          "variantLabel": "Skeleton video",
+          "visualization": "g1-retargeted"
         }
-      ]
+      ],
+      "visualization": "g1-retargeted"
     },
     {
       "id": "audio_to_motion_generation",
@@ -470,14 +374,15 @@ window.ROBOOSTEER = {
       "panel": 3,
       "transcript": "The person stands behind a large wooden box, leaning forward slightly with arms extended to grip the top edges of the box. Both arms are extended forward and downward, hands gripping the top rim of the wooden box. Legs are straight and positioned shoulder-width apart, supporting the body’s weight as it leans forward. The person releases the box and steps back slightly, raising both arms upward and outward in a celebratory or expressive gesture. Arms are raised above shoulder height, elbows slightly bent, hands open and facing forward. Legs remain mostly stationary, with a slight shift in weight as the person steps back. The person lowers their arms, turns slightly to the side, and adjusts their posture while stepping back further from the box. Legs shift weight as the person takes a small step back and turns slightly to the left.",
       "video": {
-        "src": "assets/cases/audio_to_motion_generation/skeleton.mp4",
-        "label": "Skeleton reference motion · complete sequence",
-        "poster": "assets/cases/audio_to_motion_generation/skeleton.jpg"
+        "src": "assets/cases/audio_to_motion_generation/g1.mp4",
+        "label": "G1 retargeted motion · complete sequence",
+        "poster": "assets/cases/audio_to_motion_generation/g1.jpg"
       },
       "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
       "packagePath": "Data/Shared/Motion/00068/--k14qjhPTA_00041_64_156",
       "watchFor": "Listen for the action sequence, then compare it with the reference. The transcript is available below the input.",
-      "previewScope": "The speech is an instruction, not a soundtrack; its playback length differs from the target motion."
+      "previewScope": "The speech is an instruction, not a soundtrack; its playback length differs from the target motion.",
+      "visualization": "g1-retargeted"
     },
     {
       "id": "rhythm_to_motion_alignment",
@@ -530,14 +435,15 @@ window.ROBOOSTEER = {
       ],
       "panel": 4,
       "video": {
-        "src": "assets/cases/rhythm_to_motion_alignment/skeleton.mp4",
-        "label": "Skeleton reference motion · complete sequence",
-        "poster": "assets/cases/rhythm_to_motion_alignment/skeleton.jpg"
+        "src": "assets/cases/rhythm_to_motion_alignment/g1.mp4",
+        "label": "G1 retargeted motion · complete sequence",
+        "poster": "assets/cases/rhythm_to_motion_alignment/g1.jpg"
       },
       "motionNote": "The music and source action are supplied separately. This preview does not establish beat alignment. This is not a model prediction.",
       "packagePath": "Data/Shared/Motion/00055/_1hvhhAQkq4_00009_0_126",
       "watchFor": "Keep the soccer-ball juggling action while matching motion timing to the music.",
-      "previewScope": "The music and source action are supplied separately. This preview does not establish beat alignment."
+      "previewScope": "The music and source action are supplied separately. This preview does not establish beat alignment.",
+      "visualization": "g1-retargeted"
     },
     {
       "id": "rotation_to_pose_generation",
@@ -585,14 +491,15 @@ window.ROBOOSTEER = {
       ],
       "panel": 5,
       "video": {
-        "src": "assets/cases/rotation_to_pose_generation/skeleton.mp4",
-        "label": "Skeleton reference motion · complete sequence",
-        "poster": "assets/cases/rotation_to_pose_generation/skeleton.jpg"
+        "src": "assets/cases/rotation_to_pose_generation/g1.mp4",
+        "label": "G1 retargeted motion · complete sequence",
+        "poster": "assets/cases/rotation_to_pose_generation/g1.jpg"
       },
       "motionNote": "This skeleton illustrates the source action. It is not a rendering decoded from the G1 conditioning package. This is not a model prediction.",
       "packagePath": "Data/Shared/Motion/00002/IlvpCJwcP48_00007_200_353",
       "watchFor": "Reconstruct every frame from the joint-angle and root constraints, rather than from a text description.",
-      "previewScope": "This skeleton illustrates the source action. It is not a rendering decoded from the G1 conditioning package."
+      "previewScope": "This skeleton illustrates the source action. It is not a rendering decoded from the G1 conditioning package.",
+      "visualization": "g1-retargeted"
     },
     {
       "id": "motion_prediction",
@@ -640,9 +547,9 @@ window.ROBOOSTEER = {
       ],
       "panel": 6,
       "video": {
-        "src": "assets/cases/motion_prediction/skeleton.mp4",
-        "label": "Skeleton reference motion · complete sequence",
-        "poster": "assets/cases/motion_prediction/skeleton.jpg"
+        "src": "assets/cases/motion_prediction/g1.mp4",
+        "label": "G1 retargeted motion · complete sequence",
+        "poster": "assets/cases/motion_prediction/g1.jpg"
       },
       "motionNote": "The full reference is shown for context. Only 3–4.405 s is the target interval; the other interval(s) supply the condition. The GT package contains the target segment.",
       "targetWindow": [
@@ -713,9 +620,9 @@ window.ROBOOSTEER = {
           ],
           "panel": 6,
           "video": {
-            "src": "assets/cases/motion_prediction/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/motion_prediction/skeleton.jpg"
+            "src": "assets/cases/motion_prediction/g1.mp4",
+            "label": "G1 retargeted motion · complete sequence",
+            "poster": "assets/cases/motion_prediction/g1.jpg"
           },
           "motionNote": "The full reference is shown for context. Only 3–4.405 s is the target interval; the other interval(s) supply the condition. The GT package contains the target segment.",
           "targetWindow": [
@@ -740,7 +647,8 @@ window.ROBOOSTEER = {
           "watchFor": "Generate 3–4.405 s using the earlier text condition. Only the final interval is missing.",
           "previewScope": "The complete source is shown for comparison; the blue interval marks the requested completion.",
           "variantId": "text",
-          "variantLabel": "Text"
+          "variantLabel": "Text",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "motion_prediction",
@@ -789,9 +697,9 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/motion_prediction/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/motion_prediction/skeleton.jpg"
+            "src": "assets/cases/motion_prediction/g1.mp4",
+            "label": "G1 retargeted motion · complete sequence",
+            "poster": "assets/cases/motion_prediction/g1.jpg"
           },
           "motionNote": "The full reference is shown for context. Only 3–4.405 s is the target interval; the other interval(s) supply the condition. The GT package contains the target segment.",
           "targetWindow": [
@@ -815,7 +723,8 @@ window.ROBOOSTEER = {
           "packagePath": "Data/Level1/Motion/Prediction/jEqXdH2H0Bw_00022_0_131_fore",
           "previewScope": "The complete source is shown for comparison; the blue interval marks the requested completion.",
           "variantId": "human_video",
-          "variantLabel": "Human video"
+          "variantLabel": "Human video",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "motion_prediction",
@@ -864,9 +773,9 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/motion_prediction/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/motion_prediction/skeleton.jpg"
+            "src": "assets/cases/motion_prediction/g1.mp4",
+            "label": "G1 retargeted motion · complete sequence",
+            "poster": "assets/cases/motion_prediction/g1.jpg"
           },
           "motionNote": "The full reference is shown for context. Only 3–4.405 s is the target interval; the other interval(s) supply the condition. The GT package contains the target segment.",
           "targetWindow": [
@@ -890,7 +799,8 @@ window.ROBOOSTEER = {
           "packagePath": "Data/Level1/Motion/Prediction/jEqXdH2H0Bw_00022_0_131_fore",
           "previewScope": "The complete source is shown for comparison; the blue interval marks the requested completion.",
           "variantId": "skeleton_video",
-          "variantLabel": "Skeleton video"
+          "variantLabel": "Skeleton video",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "motion_prediction",
@@ -938,9 +848,9 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/motion_prediction/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/motion_prediction/skeleton.jpg"
+            "src": "assets/cases/motion_prediction/g1.mp4",
+            "label": "G1 retargeted motion · complete sequence",
+            "poster": "assets/cases/motion_prediction/g1.jpg"
           },
           "motionNote": "The full reference is shown for context. Only 3–4.405 s is the target interval; the other interval(s) supply the condition. The GT package contains the target segment.",
           "targetWindow": [
@@ -964,7 +874,8 @@ window.ROBOOSTEER = {
           "packagePath": "Data/Level1/Motion/Prediction/jEqXdH2H0Bw_00022_0_131_fore",
           "previewScope": "The complete source is shown for comparison; the blue interval marks the requested completion.",
           "variantId": "audio",
-          "variantLabel": "Audio"
+          "variantLabel": "Audio",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "motion_prediction",
@@ -1017,9 +928,9 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/motion_prediction/rhythm/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/motion_prediction/rhythm/skeleton.jpg"
+            "src": "assets/cases/motion_prediction/rhythm/g1.mp4",
+            "label": "G1 retargeted motion · complete sequence",
+            "poster": "assets/cases/motion_prediction/rhythm/g1.jpg"
           },
           "motionNote": "The source action is shown; beat alignment is not established. The task target interval ends at 10.840816 s; metadata reports a 10.803 s source duration.",
           "targetWindow": [
@@ -1042,9 +953,11 @@ window.ROBOOSTEER = {
           ],
           "packagePath": "Data/Level1/Motion/RhythmPrediction/_M7DH7Ml9lI_00002_0_258_rhyme_fore_motion",
           "variantId": "rhythm",
-          "variantLabel": "Text + music"
+          "variantLabel": "Text + music",
+          "visualization": "g1-retargeted"
         }
-      ]
+      ],
+      "visualization": "g1-retargeted"
     },
     {
       "id": "motion_retrodiction",
@@ -1092,9 +1005,9 @@ window.ROBOOSTEER = {
       ],
       "panel": 11,
       "video": {
-        "src": "assets/cases/motion_retrodiction/skeleton.mp4",
-        "label": "Skeleton reference motion · complete sequence",
-        "poster": "assets/cases/motion_retrodiction/skeleton.jpg"
+        "src": "assets/cases/motion_retrodiction/g1.mp4",
+        "label": "G1 retargeted motion · complete sequence",
+        "poster": "assets/cases/motion_retrodiction/g1.jpg"
       },
       "motionNote": "The full reference is shown for context. Only 0–1.5 s is the target interval; the other interval(s) supply the condition. The GT package contains the target segment.",
       "targetWindow": [
@@ -1165,9 +1078,9 @@ window.ROBOOSTEER = {
           ],
           "panel": 11,
           "video": {
-            "src": "assets/cases/motion_retrodiction/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/motion_retrodiction/skeleton.jpg"
+            "src": "assets/cases/motion_retrodiction/g1.mp4",
+            "label": "G1 retargeted motion · complete sequence",
+            "poster": "assets/cases/motion_retrodiction/g1.jpg"
           },
           "motionNote": "The full reference is shown for context. Only 0–1.5 s is the target interval; the other interval(s) supply the condition. The GT package contains the target segment.",
           "targetWindow": [
@@ -1192,7 +1105,8 @@ window.ROBOOSTEER = {
           "watchFor": "Reconstruct 0–1.5 s from the later text condition. Only the beginning is missing.",
           "previewScope": "The complete source is shown for comparison; the blue interval marks the requested completion.",
           "variantId": "text",
-          "variantLabel": "Text"
+          "variantLabel": "Text",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "motion_retrodiction",
@@ -1241,9 +1155,9 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/motion_retrodiction/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/motion_retrodiction/skeleton.jpg"
+            "src": "assets/cases/motion_retrodiction/g1.mp4",
+            "label": "G1 retargeted motion · complete sequence",
+            "poster": "assets/cases/motion_retrodiction/g1.jpg"
           },
           "motionNote": "The full reference is shown for context. Only 0–1.5 s is the target interval; the other interval(s) supply the condition. The GT package contains the target segment.",
           "targetWindow": [
@@ -1267,7 +1181,8 @@ window.ROBOOSTEER = {
           "packagePath": "Data/Level1/Motion/Retrodiction/jEqXdH2H0Bw_00022_0_131_retro",
           "previewScope": "The complete source is shown for comparison; the blue interval marks the requested completion.",
           "variantId": "human_video",
-          "variantLabel": "Human video"
+          "variantLabel": "Human video",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "motion_retrodiction",
@@ -1316,9 +1231,9 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/motion_retrodiction/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/motion_retrodiction/skeleton.jpg"
+            "src": "assets/cases/motion_retrodiction/g1.mp4",
+            "label": "G1 retargeted motion · complete sequence",
+            "poster": "assets/cases/motion_retrodiction/g1.jpg"
           },
           "motionNote": "The full reference is shown for context. Only 0–1.5 s is the target interval; the other interval(s) supply the condition. The GT package contains the target segment.",
           "targetWindow": [
@@ -1342,7 +1257,8 @@ window.ROBOOSTEER = {
           "packagePath": "Data/Level1/Motion/Retrodiction/jEqXdH2H0Bw_00022_0_131_retro",
           "previewScope": "The complete source is shown for comparison; the blue interval marks the requested completion.",
           "variantId": "skeleton_video",
-          "variantLabel": "Skeleton video"
+          "variantLabel": "Skeleton video",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "motion_retrodiction",
@@ -1390,9 +1306,9 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/motion_retrodiction/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/motion_retrodiction/skeleton.jpg"
+            "src": "assets/cases/motion_retrodiction/g1.mp4",
+            "label": "G1 retargeted motion · complete sequence",
+            "poster": "assets/cases/motion_retrodiction/g1.jpg"
           },
           "motionNote": "The full reference is shown for context. Only 0–1.5 s is the target interval; the other interval(s) supply the condition. The GT package contains the target segment.",
           "targetWindow": [
@@ -1416,9 +1332,11 @@ window.ROBOOSTEER = {
           "packagePath": "Data/Level1/Motion/Retrodiction/jEqXdH2H0Bw_00022_0_131_retro",
           "previewScope": "The complete source is shown for comparison; the blue interval marks the requested completion.",
           "variantId": "audio",
-          "variantLabel": "Audio"
+          "variantLabel": "Audio",
+          "visualization": "g1-retargeted"
         }
-      ]
+      ],
+      "visualization": "g1-retargeted"
     },
     {
       "id": "motion_interpolation",
@@ -1466,9 +1384,9 @@ window.ROBOOSTEER = {
       ],
       "panel": 15,
       "video": {
-        "src": "assets/cases/motion_interpolation/skeleton.mp4",
-        "label": "Skeleton reference motion · complete sequence",
-        "poster": "assets/cases/motion_interpolation/skeleton.jpg"
+        "src": "assets/cases/motion_interpolation/g1.mp4",
+        "label": "G1 retargeted motion · complete sequence",
+        "poster": "assets/cases/motion_interpolation/g1.jpg"
       },
       "motionNote": "The full reference is shown for context. Only 1–2 s is the target interval; the other interval(s) supply the condition. The GT package contains the target segment.",
       "targetWindow": [
@@ -1545,9 +1463,9 @@ window.ROBOOSTEER = {
           ],
           "panel": 15,
           "video": {
-            "src": "assets/cases/motion_interpolation/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/motion_interpolation/skeleton.jpg"
+            "src": "assets/cases/motion_interpolation/g1.mp4",
+            "label": "G1 retargeted motion · complete sequence",
+            "poster": "assets/cases/motion_interpolation/g1.jpg"
           },
           "motionNote": "The full reference is shown for context. Only 1–2 s is the target interval; the other interval(s) supply the condition. The GT package contains the target segment.",
           "targetWindow": [
@@ -1578,7 +1496,8 @@ window.ROBOOSTEER = {
           "watchFor": "Fill 1–2 s while connecting the described beginning and ending.",
           "previewScope": "The complete source is shown for comparison; the blue interval marks the missing middle.",
           "variantId": "text",
-          "variantLabel": "Text"
+          "variantLabel": "Text",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "motion_interpolation",
@@ -1633,9 +1552,9 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/motion_interpolation/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/motion_interpolation/skeleton.jpg"
+            "src": "assets/cases/motion_interpolation/g1.mp4",
+            "label": "G1 retargeted motion · complete sequence",
+            "poster": "assets/cases/motion_interpolation/g1.jpg"
           },
           "motionNote": "The full reference is shown for context. Only 1–2 s is the target interval; the other interval(s) supply the condition. The GT package contains the target segment.",
           "targetWindow": [
@@ -1665,7 +1584,8 @@ window.ROBOOSTEER = {
           "packagePath": "Data/Level1/Motion/Interpolation/tfYiJh5E1uY_00006_36_110_inter",
           "previewScope": "The complete source is shown for comparison; the blue interval marks the missing middle.",
           "variantId": "human_video",
-          "variantLabel": "Human video"
+          "variantLabel": "Human video",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "motion_interpolation",
@@ -1720,9 +1640,9 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/motion_interpolation/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/motion_interpolation/skeleton.jpg"
+            "src": "assets/cases/motion_interpolation/g1.mp4",
+            "label": "G1 retargeted motion · complete sequence",
+            "poster": "assets/cases/motion_interpolation/g1.jpg"
           },
           "motionNote": "The full reference is shown for context. Only 1–2 s is the target interval; the other interval(s) supply the condition. The GT package contains the target segment.",
           "targetWindow": [
@@ -1752,7 +1672,8 @@ window.ROBOOSTEER = {
           "packagePath": "Data/Level1/Motion/Interpolation/tfYiJh5E1uY_00006_36_110_inter",
           "previewScope": "The complete source is shown for comparison; the blue interval marks the missing middle.",
           "variantId": "skeleton_video",
-          "variantLabel": "Skeleton video"
+          "variantLabel": "Skeleton video",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "motion_interpolation",
@@ -1800,9 +1721,9 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/motion_interpolation/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/motion_interpolation/skeleton.jpg"
+            "src": "assets/cases/motion_interpolation/g1.mp4",
+            "label": "G1 retargeted motion · complete sequence",
+            "poster": "assets/cases/motion_interpolation/g1.jpg"
           },
           "motionNote": "The full reference is shown for context. Only 1–2 s is the target interval; the other interval(s) supply the condition. The GT package contains the target segment.",
           "targetWindow": [
@@ -1832,9 +1753,11 @@ window.ROBOOSTEER = {
           "packagePath": "Data/Level1/Motion/Interpolation/tfYiJh5E1uY_00006_36_110_inter",
           "previewScope": "The complete source is shown for comparison; the blue interval marks the missing middle.",
           "variantId": "audio",
-          "variantLabel": "Audio"
+          "variantLabel": "Audio",
+          "visualization": "g1-retargeted"
         }
-      ]
+      ],
+      "visualization": "g1-retargeted"
     },
     {
       "id": "key_frame_conditioning",
@@ -2189,9 +2112,9 @@ window.ROBOOSTEER = {
       ],
       "panel": 23,
       "video": {
-        "src": "assets/cases/upper_to_full_body_completion/skeleton.mp4",
-        "label": "Skeleton reference motion · complete sequence",
-        "poster": "assets/cases/upper_to_full_body_completion/skeleton.jpg"
+        "src": "assets/cases/upper_to_full_body_completion/g1.mp4",
+        "label": "G1 retargeted motion · complete sequence",
+        "poster": "assets/cases/upper_to_full_body_completion/g1.jpg"
       },
       "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
       "packagePath": "Data/Shared/Motion/00023/EJYftp7eZYc_00005_0_85",
@@ -2244,16 +2167,17 @@ window.ROBOOSTEER = {
           ],
           "panel": 23,
           "video": {
-            "src": "assets/cases/upper_to_full_body_completion/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/upper_to_full_body_completion/skeleton.jpg"
+            "src": "assets/cases/upper_to_full_body_completion/g1.mp4",
+            "label": "G1 retargeted motion · complete sequence",
+            "poster": "assets/cases/upper_to_full_body_completion/g1.jpg"
           },
           "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
           "packagePath": "Data/Shared/Motion/00023/EJYftp7eZYc_00005_0_85",
           "watchFor": "Preserve the described upper body and infer the leg motion needed for a balanced squat.",
           "previewScope": "The full body is shown for comparison; the legs are the part to complete.",
           "variantId": "text",
-          "variantLabel": "Text"
+          "variantLabel": "Text",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "upper_to_full_body_completion",
@@ -2302,15 +2226,16 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/upper_to_full_body_completion/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/upper_to_full_body_completion/skeleton.jpg"
+            "src": "assets/cases/upper_to_full_body_completion/g1.mp4",
+            "label": "G1 retargeted motion · complete sequence",
+            "poster": "assets/cases/upper_to_full_body_completion/g1.jpg"
           },
           "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
           "packagePath": "Data/Shared/Motion/00023/EJYftp7eZYc_00005_0_85",
           "previewScope": "The full body is shown for comparison; the legs are the part to complete.",
           "variantId": "human_video",
-          "variantLabel": "Human video"
+          "variantLabel": "Human video",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "upper_to_full_body_completion",
@@ -2359,15 +2284,16 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/upper_to_full_body_completion/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/upper_to_full_body_completion/skeleton.jpg"
+            "src": "assets/cases/upper_to_full_body_completion/g1.mp4",
+            "label": "G1 retargeted motion · complete sequence",
+            "poster": "assets/cases/upper_to_full_body_completion/g1.jpg"
           },
           "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
           "packagePath": "Data/Shared/Motion/00023/EJYftp7eZYc_00005_0_85",
           "previewScope": "The full body is shown for comparison; the legs are the part to complete.",
           "variantId": "skeleton_video",
-          "variantLabel": "Skeleton video"
+          "variantLabel": "Skeleton video",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "upper_to_full_body_completion",
@@ -2415,17 +2341,19 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/upper_to_full_body_completion/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/upper_to_full_body_completion/skeleton.jpg"
+            "src": "assets/cases/upper_to_full_body_completion/g1.mp4",
+            "label": "G1 retargeted motion · complete sequence",
+            "poster": "assets/cases/upper_to_full_body_completion/g1.jpg"
           },
           "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
           "packagePath": "Data/Shared/Motion/00023/EJYftp7eZYc_00005_0_85",
           "previewScope": "The full body is shown for comparison; the legs are the part to complete.",
           "variantId": "audio",
-          "variantLabel": "Audio"
+          "variantLabel": "Audio",
+          "visualization": "g1-retargeted"
         }
-      ]
+      ],
+      "visualization": "g1-retargeted"
     },
     {
       "id": "lower_to_full_body_completion",
@@ -2473,9 +2401,9 @@ window.ROBOOSTEER = {
       ],
       "panel": 27,
       "video": {
-        "src": "assets/cases/lower_to_full_body_completion/skeleton.mp4",
-        "label": "Skeleton reference motion · complete sequence",
-        "poster": "assets/cases/lower_to_full_body_completion/skeleton.jpg"
+        "src": "assets/cases/lower_to_full_body_completion/g1.mp4",
+        "label": "G1 retargeted motion · complete sequence",
+        "poster": "assets/cases/lower_to_full_body_completion/g1.jpg"
       },
       "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
       "packagePath": "Data/Shared/Motion/00023/EJYftp7eZYc_00005_0_85",
@@ -2528,16 +2456,17 @@ window.ROBOOSTEER = {
           ],
           "panel": 27,
           "video": {
-            "src": "assets/cases/lower_to_full_body_completion/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/lower_to_full_body_completion/skeleton.jpg"
+            "src": "assets/cases/lower_to_full_body_completion/g1.mp4",
+            "label": "G1 retargeted motion · complete sequence",
+            "poster": "assets/cases/lower_to_full_body_completion/g1.jpg"
           },
           "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
           "packagePath": "Data/Shared/Motion/00023/EJYftp7eZYc_00005_0_85",
           "watchFor": "Preserve the described leg motion and infer compatible torso and arm motion.",
           "previewScope": "The full body is shown for comparison; the upper body is the part to complete.",
           "variantId": "text",
-          "variantLabel": "Text"
+          "variantLabel": "Text",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "lower_to_full_body_completion",
@@ -2586,15 +2515,16 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/lower_to_full_body_completion/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/lower_to_full_body_completion/skeleton.jpg"
+            "src": "assets/cases/lower_to_full_body_completion/g1.mp4",
+            "label": "G1 retargeted motion · complete sequence",
+            "poster": "assets/cases/lower_to_full_body_completion/g1.jpg"
           },
           "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
           "packagePath": "Data/Shared/Motion/00023/EJYftp7eZYc_00005_0_85",
           "previewScope": "The full body is shown for comparison; the upper body is the part to complete.",
           "variantId": "human_video",
-          "variantLabel": "Human video"
+          "variantLabel": "Human video",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "lower_to_full_body_completion",
@@ -2643,15 +2573,16 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/lower_to_full_body_completion/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/lower_to_full_body_completion/skeleton.jpg"
+            "src": "assets/cases/lower_to_full_body_completion/g1.mp4",
+            "label": "G1 retargeted motion · complete sequence",
+            "poster": "assets/cases/lower_to_full_body_completion/g1.jpg"
           },
           "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
           "packagePath": "Data/Shared/Motion/00023/EJYftp7eZYc_00005_0_85",
           "previewScope": "The full body is shown for comparison; the upper body is the part to complete.",
           "variantId": "skeleton_video",
-          "variantLabel": "Skeleton video"
+          "variantLabel": "Skeleton video",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "lower_to_full_body_completion",
@@ -2699,17 +2630,19 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/lower_to_full_body_completion/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/lower_to_full_body_completion/skeleton.jpg"
+            "src": "assets/cases/lower_to_full_body_completion/g1.mp4",
+            "label": "G1 retargeted motion · complete sequence",
+            "poster": "assets/cases/lower_to_full_body_completion/g1.jpg"
           },
           "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
           "packagePath": "Data/Shared/Motion/00023/EJYftp7eZYc_00005_0_85",
           "previewScope": "The full body is shown for comparison; the upper body is the part to complete.",
           "variantId": "audio",
-          "variantLabel": "Audio"
+          "variantLabel": "Audio",
+          "visualization": "g1-retargeted"
         }
-      ]
+      ],
+      "visualization": "g1-retargeted"
     },
     {
       "id": "target_reaching",
@@ -2757,9 +2690,9 @@ window.ROBOOSTEER = {
       ],
       "panel": 31,
       "video": {
-        "src": "assets/cases/target_reaching/skeleton.mp4",
-        "label": "Skeleton reference motion · complete sequence",
-        "poster": "assets/cases/target_reaching/skeleton.jpg"
+        "src": "assets/cases/target_reaching/g1.mp4",
+        "label": "G1 retargeted motion · complete sequence",
+        "poster": "assets/cases/target_reaching/g1.jpg"
       },
       "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
       "packagePath": "Data/Shared/Motion/00030/v3J14lxJmHo_00016_542_901",
@@ -2812,16 +2745,17 @@ window.ROBOOSTEER = {
           ],
           "panel": 31,
           "video": {
-            "src": "assets/cases/target_reaching/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/target_reaching/skeleton.jpg"
+            "src": "assets/cases/target_reaching/g1.mp4",
+            "label": "G1 retargeted motion · complete sequence",
+            "poster": "assets/cases/target_reaching/g1.jpg"
           },
           "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
           "packagePath": "Data/Shared/Motion/00030/v3J14lxJmHo_00016_542_901",
           "watchFor": "Keep the kick-and-walk action and include one clear occurrence of both hands on the head.",
           "previewScope": "The local hand goal is one event in the sequence, not a pose to hold throughout.",
           "variantId": "text",
-          "variantLabel": "Text"
+          "variantLabel": "Text",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "target_reaching",
@@ -2869,17 +2803,19 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/target_reaching/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/target_reaching/skeleton.jpg"
+            "src": "assets/cases/target_reaching/g1.mp4",
+            "label": "G1 retargeted motion · complete sequence",
+            "poster": "assets/cases/target_reaching/g1.jpg"
           },
           "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
           "packagePath": "Data/Shared/Motion/00030/v3J14lxJmHo_00016_542_901",
           "previewScope": "The local hand goal is one event in the sequence, not a pose to hold throughout.",
           "variantId": "audio",
-          "variantLabel": "Audio"
+          "variantLabel": "Audio",
+          "visualization": "g1-retargeted"
         }
-      ]
+      ],
+      "visualization": "g1-retargeted"
     },
     {
       "id": "speed",
@@ -2927,9 +2863,9 @@ window.ROBOOSTEER = {
       ],
       "panel": 46,
       "video": {
-        "src": "assets/cases/speed/skeleton.mp4",
+        "src": "assets/cases/speed/g1.mp4",
         "label": "Base-action reference · constraint target described above",
-        "poster": "assets/cases/speed/skeleton.jpg"
+        "poster": "assets/cases/speed/g1.jpg"
       },
       "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
       "packagePath": "Data/Shared/Motion/00026/_7ui0Pd8Bd0_00020_18_71",
@@ -2982,16 +2918,17 @@ window.ROBOOSTEER = {
           ],
           "panel": 46,
           "video": {
-            "src": "assets/cases/speed/skeleton.mp4",
+            "src": "assets/cases/speed/g1.mp4",
             "label": "Base-action reference · constraint target described above",
-            "poster": "assets/cases/speed/skeleton.jpg"
+            "poster": "assets/cases/speed/g1.jpg"
           },
           "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
           "packagePath": "Data/Shared/Motion/00026/_7ui0Pd8Bd0_00020_18_71",
           "watchFor": "Keep the walking action but perform it at half the original speed.",
           "previewScope": "Base action only. A verified 0.5× target video is not available in this preview.",
           "variantId": "text",
-          "variantLabel": "Text"
+          "variantLabel": "Text",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "speed",
@@ -3040,15 +2977,16 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/speed/skeleton.mp4",
+            "src": "assets/cases/speed/g1.mp4",
             "label": "Base-action reference · constraint target described above",
-            "poster": "assets/cases/speed/skeleton.jpg"
+            "poster": "assets/cases/speed/g1.jpg"
           },
           "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
           "packagePath": "Data/Shared/Motion/00026/_7ui0Pd8Bd0_00020_18_71",
           "previewScope": "Base action only. A verified 0.5× target video is not available in this preview.",
           "variantId": "human_video",
-          "variantLabel": "Human video"
+          "variantLabel": "Human video",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "speed",
@@ -3097,15 +3035,16 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/speed/skeleton.mp4",
+            "src": "assets/cases/speed/g1.mp4",
             "label": "Base-action reference · constraint target described above",
-            "poster": "assets/cases/speed/skeleton.jpg"
+            "poster": "assets/cases/speed/g1.jpg"
           },
           "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
           "packagePath": "Data/Shared/Motion/00026/_7ui0Pd8Bd0_00020_18_71",
           "previewScope": "Base action only. A verified 0.5× target video is not available in this preview.",
           "variantId": "skeleton_video",
-          "variantLabel": "Skeleton video"
+          "variantLabel": "Skeleton video",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "speed",
@@ -3153,17 +3092,19 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/speed/skeleton.mp4",
+            "src": "assets/cases/speed/g1.mp4",
             "label": "Base-action reference · constraint target described above",
-            "poster": "assets/cases/speed/skeleton.jpg"
+            "poster": "assets/cases/speed/g1.jpg"
           },
           "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
           "packagePath": "Data/Shared/Motion/00026/_7ui0Pd8Bd0_00020_18_71",
           "previewScope": "Base action only. A verified 0.5× target video is not available in this preview.",
           "variantId": "audio",
-          "variantLabel": "Audio"
+          "variantLabel": "Audio",
+          "visualization": "g1-retargeted"
         }
-      ]
+      ],
+      "visualization": "g1-retargeted"
     },
     {
       "id": "amplitude",
@@ -3211,9 +3152,9 @@ window.ROBOOSTEER = {
       ],
       "panel": 40,
       "video": {
-        "src": "assets/cases/amplitude/skeleton.mp4",
+        "src": "assets/cases/amplitude/g1.mp4",
         "label": "Base-action reference · constraint target described above",
-        "poster": "assets/cases/amplitude/skeleton.jpg"
+        "poster": "assets/cases/amplitude/g1.jpg"
       },
       "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
       "packagePath": "Data/Shared/Motion/00063/_629q8t8_Hg_00004_91_186",
@@ -3266,16 +3207,17 @@ window.ROBOOSTEER = {
           ],
           "panel": 40,
           "video": {
-            "src": "assets/cases/amplitude/skeleton.mp4",
+            "src": "assets/cases/amplitude/g1.mp4",
             "label": "Base-action reference · constraint target described above",
-            "poster": "assets/cases/amplitude/skeleton.jpg"
+            "poster": "assets/cases/amplitude/g1.jpg"
           },
           "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
           "packagePath": "Data/Shared/Motion/00063/_629q8t8_Hg_00004_91_186",
           "watchFor": "Keep the walking action but double the requested motion amplitude.",
           "previewScope": "Base action only. A verified 2×-amplitude target video is not available in this preview.",
           "variantId": "text",
-          "variantLabel": "Text"
+          "variantLabel": "Text",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "amplitude",
@@ -3324,15 +3266,16 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/amplitude/skeleton.mp4",
+            "src": "assets/cases/amplitude/g1.mp4",
             "label": "Base-action reference · constraint target described above",
-            "poster": "assets/cases/amplitude/skeleton.jpg"
+            "poster": "assets/cases/amplitude/g1.jpg"
           },
           "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
           "packagePath": "Data/Shared/Motion/00063/_629q8t8_Hg_00004_91_186",
           "previewScope": "Base action only. A verified 2×-amplitude target video is not available in this preview.",
           "variantId": "human_video",
-          "variantLabel": "Human video"
+          "variantLabel": "Human video",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "amplitude",
@@ -3381,15 +3324,16 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/amplitude/skeleton.mp4",
+            "src": "assets/cases/amplitude/g1.mp4",
             "label": "Base-action reference · constraint target described above",
-            "poster": "assets/cases/amplitude/skeleton.jpg"
+            "poster": "assets/cases/amplitude/g1.jpg"
           },
           "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
           "packagePath": "Data/Shared/Motion/00063/_629q8t8_Hg_00004_91_186",
           "previewScope": "Base action only. A verified 2×-amplitude target video is not available in this preview.",
           "variantId": "skeleton_video",
-          "variantLabel": "Skeleton video"
+          "variantLabel": "Skeleton video",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "amplitude",
@@ -3437,17 +3381,19 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/amplitude/skeleton.mp4",
+            "src": "assets/cases/amplitude/g1.mp4",
             "label": "Base-action reference · constraint target described above",
-            "poster": "assets/cases/amplitude/skeleton.jpg"
+            "poster": "assets/cases/amplitude/g1.jpg"
           },
           "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
           "packagePath": "Data/Shared/Motion/00063/_629q8t8_Hg_00004_91_186",
           "previewScope": "Base action only. A verified 2×-amplitude target video is not available in this preview.",
           "variantId": "audio",
-          "variantLabel": "Audio"
+          "variantLabel": "Audio",
+          "visualization": "g1-retargeted"
         }
-      ]
+      ],
+      "visualization": "g1-retargeted"
     },
     {
       "id": "direction",
@@ -3495,9 +3441,9 @@ window.ROBOOSTEER = {
       ],
       "panel": 44,
       "video": {
-        "src": "assets/cases/direction/skeleton.mp4",
+        "src": "assets/cases/direction/g1.mp4",
         "label": "Base-action reference · constraint target described above",
-        "poster": "assets/cases/direction/skeleton.jpg"
+        "poster": "assets/cases/direction/g1.jpg"
       },
       "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
       "packagePath": "Data/Shared/Motion/00024/_0jcfXKxjLI_00025_33_131",
@@ -3550,16 +3496,17 @@ window.ROBOOSTEER = {
           ],
           "panel": 44,
           "video": {
-            "src": "assets/cases/direction/skeleton.mp4",
+            "src": "assets/cases/direction/g1.mp4",
             "label": "Base-action reference · constraint target described above",
-            "poster": "assets/cases/direction/skeleton.jpg"
+            "poster": "assets/cases/direction/g1.jpg"
           },
           "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
           "packagePath": "Data/Shared/Motion/00024/_0jcfXKxjLI_00025_33_131",
           "watchFor": "Redirect travel to the left while preserving the underlying walking behavior.",
           "previewScope": "Base action only. A verified redirected target video is not available in this preview.",
           "variantId": "text",
-          "variantLabel": "Text"
+          "variantLabel": "Text",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "direction",
@@ -3608,15 +3555,16 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/direction/skeleton.mp4",
+            "src": "assets/cases/direction/g1.mp4",
             "label": "Base-action reference · constraint target described above",
-            "poster": "assets/cases/direction/skeleton.jpg"
+            "poster": "assets/cases/direction/g1.jpg"
           },
           "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
           "packagePath": "Data/Shared/Motion/00024/_0jcfXKxjLI_00025_33_131",
           "previewScope": "Base action only. A verified redirected target video is not available in this preview.",
           "variantId": "human_video",
-          "variantLabel": "Human video"
+          "variantLabel": "Human video",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "direction",
@@ -3665,15 +3613,16 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/direction/skeleton.mp4",
+            "src": "assets/cases/direction/g1.mp4",
             "label": "Base-action reference · constraint target described above",
-            "poster": "assets/cases/direction/skeleton.jpg"
+            "poster": "assets/cases/direction/g1.jpg"
           },
           "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
           "packagePath": "Data/Shared/Motion/00024/_0jcfXKxjLI_00025_33_131",
           "previewScope": "Base action only. A verified redirected target video is not available in this preview.",
           "variantId": "skeleton_video",
-          "variantLabel": "Skeleton video"
+          "variantLabel": "Skeleton video",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "direction",
@@ -3721,17 +3670,19 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/direction/skeleton.mp4",
+            "src": "assets/cases/direction/g1.mp4",
             "label": "Base-action reference · constraint target described above",
-            "poster": "assets/cases/direction/skeleton.jpg"
+            "poster": "assets/cases/direction/g1.jpg"
           },
           "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
           "packagePath": "Data/Shared/Motion/00024/_0jcfXKxjLI_00025_33_131",
           "previewScope": "Base action only. A verified redirected target video is not available in this preview.",
           "variantId": "audio",
-          "variantLabel": "Audio"
+          "variantLabel": "Audio",
+          "visualization": "g1-retargeted"
         }
-      ]
+      ],
+      "visualization": "g1-retargeted"
     },
     {
       "id": "order",
@@ -4134,9 +4085,9 @@ window.ROBOOSTEER = {
       ],
       "panel": 38,
       "video": {
-        "src": "assets/cases/trajectory/skeleton.mp4",
-        "label": "Skeleton reference motion · complete sequence",
-        "poster": "assets/cases/trajectory/skeleton.jpg"
+        "src": "assets/cases/trajectory/g1.mp4",
+        "label": "G1 retargeted motion · complete sequence",
+        "poster": "assets/cases/trajectory/g1.jpg"
       },
       "motionNote": "The skeleton shows the source action. Agreement with the supplied trajectory has not been verified. This is not a model prediction.",
       "packagePath": "Data/Shared/Motion/00004/_7dhzy2Mnm8_00006_0_68",
@@ -4216,9 +4167,9 @@ window.ROBOOSTEER = {
           ],
           "panel": 38,
           "video": {
-            "src": "assets/cases/trajectory/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/trajectory/skeleton.jpg"
+            "src": "assets/cases/trajectory/g1.mp4",
+            "label": "G1 retargeted motion · complete sequence",
+            "poster": "assets/cases/trajectory/g1.jpg"
           },
           "motionNote": "The skeleton shows the source action. Agreement with the supplied trajectory has not been verified. This is not a model prediction.",
           "packagePath": "Data/Shared/Motion/00004/_7dhzy2Mnm8_00006_0_68",
@@ -4247,7 +4198,8 @@ window.ROBOOSTEER = {
           "watchFor": "Preserve the balancing action while moving along the supplied path. Compare the root path, not just the limb motion.",
           "previewScope": "The skeleton shows the source action. Agreement with the supplied trajectory has not been verified.",
           "variantId": "text",
-          "variantLabel": "Text + trajectory"
+          "variantLabel": "Text + trajectory",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "trajectory",
@@ -4300,9 +4252,9 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/trajectory/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/trajectory/skeleton.jpg"
+            "src": "assets/cases/trajectory/g1.mp4",
+            "label": "G1 retargeted motion · complete sequence",
+            "poster": "assets/cases/trajectory/g1.jpg"
           },
           "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
           "packagePath": "Data/Shared/Motion/00004/_7dhzy2Mnm8_00006_0_68",
@@ -4330,7 +4282,8 @@ window.ROBOOSTEER = {
           },
           "previewScope": "The skeleton shows the source action. Agreement with the supplied trajectory has not been verified.",
           "variantId": "audio",
-          "variantLabel": "Audio + trajectory"
+          "variantLabel": "Audio + trajectory",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "trajectory",
@@ -4384,9 +4337,9 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/trajectory/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/trajectory/skeleton.jpg"
+            "src": "assets/cases/trajectory/g1.mp4",
+            "label": "G1 retargeted motion · complete sequence",
+            "poster": "assets/cases/trajectory/g1.jpg"
           },
           "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
           "packagePath": "Data/Shared/Motion/00004/_7dhzy2Mnm8_00006_0_68",
@@ -4414,9 +4367,11 @@ window.ROBOOSTEER = {
           },
           "previewScope": "The skeleton shows the source action. Agreement with the supplied trajectory has not been verified.",
           "variantId": "video",
-          "variantLabel": "Video + trajectory"
+          "variantLabel": "Video + trajectory",
+          "visualization": "g1-retargeted"
         }
-      ]
+      ],
+      "visualization": "g1-retargeted"
     },
     {
       "id": "body_restrain",
@@ -4464,9 +4419,9 @@ window.ROBOOSTEER = {
       ],
       "panel": 42,
       "video": {
-        "src": "assets/cases/body_restrain/skeleton.mp4",
+        "src": "assets/cases/body_restrain/g1.mp4",
         "label": "Base-action reference · constraint target described above",
-        "poster": "assets/cases/body_restrain/skeleton.jpg"
+        "poster": "assets/cases/body_restrain/g1.jpg"
       },
       "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
       "packagePath": "Data/Shared/Motion/00063/_629q8t8_Hg_00004_91_186",
@@ -4519,16 +4474,17 @@ window.ROBOOSTEER = {
           ],
           "panel": 42,
           "video": {
-            "src": "assets/cases/body_restrain/skeleton.mp4",
+            "src": "assets/cases/body_restrain/g1.mp4",
             "label": "Base-action reference · constraint target described above",
-            "poster": "assets/cases/body_restrain/skeleton.jpg"
+            "poster": "assets/cases/body_restrain/g1.jpg"
           },
           "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
           "packagePath": "Data/Shared/Motion/00063/_629q8t8_Hg_00004_91_186",
           "watchFor": "Keep walking while holding the arms still, overriding the arm swing in the base description.",
           "previewScope": "Base action only. A verified arms-fixed target video is not available in this preview.",
           "variantId": "text",
-          "variantLabel": "Text"
+          "variantLabel": "Text",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "body_restrain",
@@ -4577,15 +4533,16 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/body_restrain/skeleton.mp4",
+            "src": "assets/cases/body_restrain/g1.mp4",
             "label": "Base-action reference · constraint target described above",
-            "poster": "assets/cases/body_restrain/skeleton.jpg"
+            "poster": "assets/cases/body_restrain/g1.jpg"
           },
           "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
           "packagePath": "Data/Shared/Motion/00063/_629q8t8_Hg_00004_91_186",
           "previewScope": "Base action only. A verified arms-fixed target video is not available in this preview.",
           "variantId": "human_video",
-          "variantLabel": "Human video"
+          "variantLabel": "Human video",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "body_restrain",
@@ -4634,15 +4591,16 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/body_restrain/skeleton.mp4",
+            "src": "assets/cases/body_restrain/g1.mp4",
             "label": "Base-action reference · constraint target described above",
-            "poster": "assets/cases/body_restrain/skeleton.jpg"
+            "poster": "assets/cases/body_restrain/g1.jpg"
           },
           "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
           "packagePath": "Data/Shared/Motion/00063/_629q8t8_Hg_00004_91_186",
           "previewScope": "Base action only. A verified arms-fixed target video is not available in this preview.",
           "variantId": "skeleton_video",
-          "variantLabel": "Skeleton video"
+          "variantLabel": "Skeleton video",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "body_restrain",
@@ -4690,17 +4648,19 @@ window.ROBOOSTEER = {
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/body_restrain/skeleton.mp4",
+            "src": "assets/cases/body_restrain/g1.mp4",
             "label": "Base-action reference · constraint target described above",
-            "poster": "assets/cases/body_restrain/skeleton.jpg"
+            "poster": "assets/cases/body_restrain/g1.jpg"
           },
           "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
           "packagePath": "Data/Shared/Motion/00063/_629q8t8_Hg_00004_91_186",
           "previewScope": "Base action only. A verified arms-fixed target video is not available in this preview.",
           "variantId": "audio",
-          "variantLabel": "Audio"
+          "variantLabel": "Audio",
+          "visualization": "g1-retargeted"
         }
-      ]
+      ],
+      "visualization": "g1-retargeted"
     },
     {
       "id": "interleaved_multi_source_steering",
@@ -4780,14 +4740,16 @@ window.ROBOOSTEER = {
       ],
       "panel": 48,
       "video": {
-        "src": "assets/cases/interleaved_multi_source_steering/skeleton.mp4",
-        "label": "Skeleton reference motion · complete sequence",
-        "poster": "assets/cases/interleaved_multi_source_steering/skeleton.jpg"
+        "src": "assets/cases/interleaved_multi_source_steering/g1.mp4",
+        "label": "G1 retargeted motion · complete sequence",
+        "poster": "assets/cases/interleaved_multi_source_steering/g1.jpg"
       },
       "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
       "packagePath": "Data/Shared/Motion/00001/_0qRTEzGEe4_00015_60_183",
       "watchFor": "Use text for 0–2 s, match the pose at 2 s, follow video for 2–4 s, then the spoken instruction for 4–5 s.",
-      "previewScope": "The inputs share one source sequence. The final 0.167 s of the declared source duration has no assigned input segment."
+      "previewScope": "The inputs share one source sequence. The final 0.167 s of the declared source duration has no assigned input segment.",
+      "visualization": "g1-retargeted"
     }
-  ]
+  ],
+  "heroAspectRatio": 1.3333333333333333
 };

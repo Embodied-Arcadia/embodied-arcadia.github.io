@@ -39,7 +39,10 @@
   let paused = reduced.matches || saveData;
   let heroVisible = true;
   const heroVideos = [];
-  content.heroVideos.forEach((asset, index) => {
+  // Reuse the selected motions when extra cells are needed to fill whole rows.
+  const wallAssets = Array.from({ length: Math.max(36, content.heroVideos.length) },
+    (_, index) => content.heroVideos[index % content.heroVideos.length]);
+  wallAssets.forEach((asset, index) => {
     const tile = document.createElement("div"); tile.className = "motion-tile";
     const video = document.createElement("video");
     video.muted = true; video.defaultMuted = true; video.loop = true; video.playsInline = true;
@@ -71,9 +74,9 @@
     const hero = byId("home");
     const width = hero.clientWidth;
     if (!width || !heroVideos.length) return;
-    // All prepared clips are 480 x 384. Match the cells to their native ratio,
+    // Match the cells to the prepared clips' native ratio,
     // then size the entire hero to whole rows: no cropping or letterboxing.
-    const aspect = 5 / 4;
+    const aspect = content.heroAspectRatio || 5 / 4;
     const targetHeight = Math.max(560, window.innerHeight);
     const minColumns = width <= 760 ? 2 : Math.max(3, Math.ceil(width / 440));
     const maxColumns = width <= 760 ? 2 : Math.max(minColumns, Math.min(9, Math.floor(width / 190)));

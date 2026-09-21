@@ -29,7 +29,7 @@ Edit **`site-content.js`**:
 | `codeUrl` | Actual project code repository, not the website repository unless they coincide |
 | `figure` | `src`, accessible `alt`, and `caption` |
 | `bibtex` | Exact final entry; leave empty until bibliographic details are known |
-| `heroVideos` | The 36 available background media objects (`src`, `poster`, `label`) |
+| `heroVideos` | The 16 distinct G1 background media objects (`src`, `poster`, `label`) |
 | `cases` | 20 task records: level, task family, input modality, full conditions, prompt, visualization, GT schema and B.3 panel |
 
 Empty resource URLs display as unavailable. No placeholder arXiv IDs or nonexistent dataset/repository links are emitted. Once all three resource URLs are available, the preview release note is hidden automatically.
@@ -38,8 +38,8 @@ Empty resource URLs display as unavailable. No placeholder arXiv IDs or nonexist
 
 ## Motion media
 
-- The hero chooses complete rows and columns from 36 unique skeleton videos to fit the viewport. Every cell retains the source 5:4 aspect ratio at 100% size, with no grid gaps, borders, cropping, or letterboxing. Hero height follows the complete rows and can slightly exceed the viewport. Mobile layouts use two columns; hidden videos are paused. The wall background matches the source render to prevent subpixel seams.
-- All 20 case references use human-body/skeleton renderings: 18 corresponding Data/Shared/Video/Skeleton clips and the two original AMASS Order/Times clips. G1 robot videos are no longer used in the gallery. Human video/image/audio task inputs retain their original modalities.
+- The hero uses 16 distinct existing G1 retargeted clips from the local Demo selection. Motions repeat when extra cells are needed to fill complete rows. Cells retain the native 4:3 ratio without cropping, grid gaps or letterboxing. Mobile layouts use two columns; hidden videos pause. `heroAspectRatio` controls the cell geometry.
+- Seventeen task cards now use matching G1 retargeted references (18 videos including the separate music-prediction example). The selected Key-frame Conditioning, Order and Times references still lack corresponding G1 renders. Task inputs retain their original text, human/skeleton video, image and audio modalities, including temporal cuts and partial-body conditions.
 - Backgrounds are muted, looped, and paused when the hero leaves view or the tab is hidden.
 - Reduced-motion and data-saving preferences start the background paused, with posters visible; visitors can explicitly play it.
 - Twenty detailed cases cover all tasks: 12 in Conditional Steering, 7 in Constraint Steering, and 1 in Compositional Steering. Level 1 groups are Full Conditioning Reproduction, Temporal Completion, and Spatial Completion. Text/audio/video are input modalities within tasks.
@@ -74,7 +74,7 @@ Hero action labels summarize each selected sample’s original text annotation. 
 
 All 20 cases include `watchFor` (the task requirement) and `previewScope` (what the available visualization demonstrates). Input and reference media use the same player controls. Level 3 retains the boundary image at 2 s and the full 2–4 s video; its poster is taken at motion time 2.9 s to show a different pose. Reference playback highlights the active input interval.
 
-Five cases still lack complete target videos (Speed, Amplitude, Direction, Times, Body Restrain). Rhythm, Rotation-to-Pose and Trajectory have additional visualization or alignment limitations marked in the cards. Source skeletons are not model predictions or verified renderings of the G1 output packages.
+Five cases still lack complete target videos (Speed, Amplitude, Direction, Times, Body Restrain). Rhythm, Rotation-to-Pose and Trajectory have additional visualization or alignment limitations marked in the cards. Changing the visualization to a G1 robot does not turn a base-action reference into a constraint-satisfying result or a model prediction.
 
 ## Task modality variants
 
