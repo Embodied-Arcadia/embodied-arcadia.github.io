@@ -318,16 +318,18 @@
     }
     const packageInfo = el("div", "package-info");
     if (item.previewScope) packageInfo.append(el("p", "input-label", "Media notes"), el("p", "motion-note", item.previewScope));
-    packageInfo.append(el("p", "input-label", "Task prompt"), el("p", "input-text", item.prompt), el("p", "motion-note", item.motionNote), el("p", "case-id", item.taskId));
-    const table = el("table"); table.append(el("caption", "", "Motion package referenced by the task"));
+    packageInfo.append(el("p", "input-label", "Task prompt"), el("p", "input-text", item.prompt));
+    if (item.motionNote) packageInfo.append(el("p", "input-label", "Video context"), el("p", "motion-note", item.motionNote));
+    packageInfo.append(el("p", "input-label", "Task ID"), el("p", "case-id", item.taskId));
+    const table = el("table"); table.append(el("caption", "input-label", "Motion package referenced by the task"));
     const head = el("thead"), headrow = el("tr");
     ["Component", "Shape / format"].forEach(label => { const th = el("th", "", label); th.scope = "col"; headrow.append(th); });
     head.append(headrow); table.append(head);
     const body = el("tbody");
     item.package.forEach(component => { const row = el("tr"); row.append(el("td", "", component.file), el("td", "", component.shape)); body.append(row); });
     table.append(body); packageInfo.append(table);
-    const path = el("p", "package-path"); path.append(el("span", "", "Dataset-relative path: "), el("code", "", item.packagePath)); packageInfo.append(path);
-    if (item.trajectoryPoints && Object.keys(item.trajectoryPoints).length) packageInfo.append(el("pre", "", JSON.stringify(item.trajectoryPoints, null, 2)));
+    const path = el("p", "package-path"); path.append(el("code", "", item.packagePath)); packageInfo.append(el("p", "input-label", "Dataset-relative path"), path);
+    if (item.trajectoryPoints && Object.keys(item.trajectoryPoints).length) packageInfo.append(el("p", "input-label", "Trajectory points"), el("pre", "", JSON.stringify(item.trajectoryPoints, null, 2)));
     caseBody.append(output);
     const details = disclosure("Task details", packageInfo); details.className = "case-technical";
     if (variants.length > 1) {

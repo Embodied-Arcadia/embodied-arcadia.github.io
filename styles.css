@@ -177,6 +177,10 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; white-sp
 .case-technical { padding: 0 16px; }
 .case-technical > summary { color: var(--color-ink); }
 .case-technical .package-info { padding: 4px 0 12px; }
+.case-technical .package-info > .input-label { margin: 14px 0 4px; }
+.case-technical .package-info > .input-label:first-child { margin-top: 0; }
+.case-technical .package-info caption.input-label { padding: 14px 0 4px; }
+.case-technical .motion-note { margin-top: 0; }
 .case-technical .input-text { margin-bottom: 12px; }
 .interleaved-case .case-body { grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr); }
 .interleaved-inputs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
