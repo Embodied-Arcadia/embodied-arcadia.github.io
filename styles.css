@@ -64,7 +64,8 @@ a.resource-link:hover { background: var(--color-accent); border-color: var(--col
 .level li { padding: 3px 0; }
 .abstract-slot { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); gap: 32px; border-top: 1px solid var(--color-line); margin-top: 40px; padding-top: 24px; }
 .abstract-slot h3 { font-size: 1.5rem; }
-.abstract-slot p { color: var(--color-muted); }
+.abstract-slot p { color: var(--color-muted); line-height: 1.65; margin-bottom: 0; }
+.abstract-slot p + p { margin-top: 14px; }
 .main-figure { margin: 32px 0 0; }
 .figure-placeholder { min-height: 180px; border: 1px dashed var(--color-line); display: flex; flex-direction: column; justify-content: center; align-items: center; background: var(--color-soft); padding: 32px; text-align: center; }
 .figure-placeholder span { font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; }

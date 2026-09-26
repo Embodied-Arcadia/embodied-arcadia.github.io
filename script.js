@@ -6,7 +6,16 @@
   const safeUrl = value => typeof value === "string" && /^https:\/\//.test(value);
   const setText = (id, value) => { if (value) byId(id).textContent = value; };
   setText("authors", content.authors); setText("team", content.team);
-  setText("abstract", content.abstract); setText("contributors", content.contributors);
+  setText("contributors", content.contributors);
+  if (content.abstract) {
+    const target = byId("abstract");
+    const paragraphs = Array.isArray(content.abstract) ? content.abstract : content.abstract.split(/\n\n+/);
+    if (paragraphs.length > 1) {
+      target.replaceChildren(...paragraphs.map(p => el("p", "", p)));
+    } else {
+      target.textContent = content.abstract;
+    }
+  }
   const resources = [
     ["Homepage", "#home"], ["Paper", content.paperUrl],
     ["Dataset", content.datasetUrl], ["Code", content.codeUrl]
