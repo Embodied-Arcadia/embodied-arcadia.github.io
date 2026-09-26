@@ -276,12 +276,17 @@
     if (item.modifier) {
       const constraint = el("div", "case-constraint"); constraint.append(el("p", "input-label", "Explicit constraint"), el("p", "", item.modifier)); input.append(constraint);
     }
-    if (item.sequence) {
+    if (item.sequence && item.id !== "times") {
       const sequence = el("ol", "action-sequence"); item.sequence.forEach(step => sequence.append(el("li", "", step))); input.append(sequence);
     }
     const caseBody = el("div", "case-body"); caseBody.append(input);
-    const output = el("section", "case-output"); output.setAttribute("aria-label", `${item.title}: reference motion`);
-    output.append(el("h6", "case-block-title", "Motion reference"));
+    const output = el("section", "case-output");
+    const outputTitle = item.id === "times" ? "BABEL-labeled example" : "Motion reference";
+    output.setAttribute("aria-label", `${item.title}: ${outputTitle.toLowerCase()}`);
+    output.append(el("h6", "case-block-title", outputTitle));
+    if (item.sequence && item.id === "times") {
+      const sequence = el("ol", "action-sequence"); item.sequence.forEach(step => sequence.append(el("li", "", step))); output.append(sequence);
+    }
     if (item.level === 3) output.append(el("p", "sequence-output-note", "01 → 02 → 03 → 04 · one continuous motion"));
     if (item.timeline) {
       const timeline = el("div", "task-timeline");

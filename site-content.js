@@ -3991,39 +3991,40 @@ window.ROBOOSTEER = {
       "group": "",
       "title": "Times",
       "modality": "Text",
-      "taskId": "L2_times_text_10005_7_2x",
-      "duration": 3.216666666666667,
-      "purpose": "Realize the intended behavior with the specified repetition count.",
+      "taskId": "L2_times_text_5617_0_2x",
+      "duration": 3.533333333333333,
+      "purpose": "Repeat the right-arm raise twice, with a transition between repetitions.",
       "prompt": "You are an advanced 3D motion generation model. I will provide you with a text description of a single action and an explicit repetition count. Your objective is to generate a continuous 3D motion where the specified action is repeated exactly as instructed, including the necessary reset between repetitions. Your output MUST be a continuous sequence of ACTION TOKENS.",
       "modifier": "",
       "inputs": [
         {
           "kind": "text",
           "label": "Input description",
-          "text": "repeat lower arms 2 times"
+          "text": "repeat raise right arm 2 times"
         }
       ],
       "package": [
         {
-          "file": "10005_7_2x.pkl",
+          "file": "5617_0_2x.pkl",
           "shape": "AMASS motion package: poses, trans, dmpls, betas, gender, mocap_framerate"
         }
       ],
-      "panel": 36,
+      "panel": null,
       "video": {
-        "src": "assets/cases/times/skeleton.mp4",
-        "label": "Source action cycle · lower arms",
-        "poster": "assets/cases/times/skeleton.jpg"
+        "src": "assets/cases/times/babel-a-transition-a.mp4",
+        "poster": "assets/cases/times/babel-a-transition-a.jpg",
+        "label": "BABEL-labeled sequence · right-arm raise, transition, right-arm raise"
       },
-      "motionNote": "The supplied video shows one source cycle. The task requests two repetitions and points to a separate repeated-motion package (10005_7_2x.pkl). A video of that complete repeated target is not supplied.",
+      "motionNote": "The continuous clip is cut from the original BABEL rendering at its two matching action labels and intervening transition. The current Times task uses the first action and stores a separately constructed two-repetition target in 5617_0_2x.pkl. This clip is an annotated example, not a rendering of that target package.",
       "sequence": [
-        "Lower arms",
-        "Reset",
-        "Lower arms"
+        "Raise right arm · 0–1.77 s",
+        "Transition · 1.77–2.17 s",
+        "Raise right arm · 2.17–2.85 s"
       ],
-      "packagePath": "Data/Level2/Times/Motion/10005_7_2x.pkl",
-      "watchFor": "Realize the intended behavior with the specified repetition count.",
-      "previewScope": "One source cycle is shown. The separate two-repetition motion package has no complete target preview here.",
+      "packagePath": "Data/Level2/Times/Motion/5617_0_2x.pkl",
+      "variantId": "text",
+      "variantLabel": "Text",
+      "watchFor": "Perform the action twice while preserving the intended behavior across repetitions.",
       "variants": [
         {
           "id": "times",
@@ -4031,39 +4032,37 @@ window.ROBOOSTEER = {
           "group": "",
           "title": "Times",
           "modality": "Text",
-          "taskId": "L2_times_text_10005_7_2x",
-          "duration": 3.216666666666667,
-          "purpose": "Realize the intended behavior with the specified repetition count.",
+          "taskId": "L2_times_text_5617_0_2x",
+          "duration": 3.533333333333333,
+          "purpose": "Repeat the right-arm raise twice, with a transition between repetitions.",
           "prompt": "You are an advanced 3D motion generation model. I will provide you with a text description of a single action and an explicit repetition count. Your objective is to generate a continuous 3D motion where the specified action is repeated exactly as instructed, including the necessary reset between repetitions. Your output MUST be a continuous sequence of ACTION TOKENS.",
           "modifier": "",
           "inputs": [
             {
               "kind": "text",
               "label": "Input description",
-              "text": "repeat lower arms 2 times"
+              "text": "repeat raise right arm 2 times"
             }
           ],
           "package": [
             {
-              "file": "10005_7_2x.pkl",
+              "file": "5617_0_2x.pkl",
               "shape": "AMASS motion package: poses, trans, dmpls, betas, gender, mocap_framerate"
             }
           ],
-          "panel": 36,
+          "panel": null,
           "video": {
-            "src": "assets/cases/times/skeleton.mp4",
-            "label": "Source action cycle · lower arms",
-            "poster": "assets/cases/times/skeleton.jpg"
+            "src": "assets/cases/times/babel-a-transition-a.mp4",
+            "poster": "assets/cases/times/babel-a-transition-a.jpg",
+            "label": "BABEL-labeled sequence · right-arm raise, transition, right-arm raise"
           },
-          "motionNote": "The supplied video shows one source cycle. The task requests two repetitions and points to a separate repeated-motion package (10005_7_2x.pkl). A video of that complete repeated target is not supplied.",
+          "motionNote": "The continuous clip is cut from the original BABEL rendering at its two matching action labels and intervening transition. The current Times task uses the first action and stores a separately constructed two-repetition target in 5617_0_2x.pkl. This clip is an annotated example, not a rendering of that target package.",
           "sequence": [
-            "Lower arms",
-            "Reset",
-            "Lower arms"
+            "Raise right arm · 0–1.77 s",
+            "Transition · 1.77–2.17 s",
+            "Raise right arm · 2.17–2.85 s"
           ],
-          "packagePath": "Data/Level2/Times/Motion/10005_7_2x.pkl",
-          "watchFor": "Realize the intended behavior with the specified repetition count.",
-          "previewScope": "One source cycle is shown. The separate two-repetition motion package has no complete target preview here.",
+          "packagePath": "Data/Level2/Times/Motion/5617_0_2x.pkl",
           "variantId": "text",
           "variantLabel": "Text"
         },
@@ -4073,9 +4072,9 @@ window.ROBOOSTEER = {
           "group": "",
           "title": "Times",
           "modality": "Audio",
-          "taskId": "L2_times_audio_10005_7_2x",
-          "duration": 3.216666666666667,
-          "purpose": "Realize the intended behavior with the specified repetition count.",
+          "taskId": "L2_times_audio_5617_0_2x",
+          "duration": 3.533333333333333,
+          "purpose": "Repeat the right-arm raise twice, with a transition between repetitions.",
           "prompt": "You are an advanced 3D motion generation model. I will provide you with an audio recording describing a single action and an explicit repetition count. Your objective is to generate a continuous 3D motion in which the specified action is repeated exactly as instructed, including the necessary reset between repetitions. Your output MUST be a continuous sequence of ACTION TOKENS.",
           "modifier": "",
           "inputs": [
@@ -4087,24 +4086,23 @@ window.ROBOOSTEER = {
           ],
           "package": [
             {
-              "file": "10005_7_2x.pkl",
+              "file": "5617_0_2x.pkl",
               "shape": "AMASS motion package: poses, trans, dmpls, betas, gender, mocap_framerate"
             }
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/times/skeleton.mp4",
-            "label": "Source action cycle · lower arms",
-            "poster": "assets/cases/times/skeleton.jpg"
+            "src": "assets/cases/times/babel-a-transition-a.mp4",
+            "poster": "assets/cases/times/babel-a-transition-a.jpg",
+            "label": "BABEL-labeled sequence · right-arm raise, transition, right-arm raise"
           },
-          "motionNote": "The supplied video shows one source cycle. The task requests two repetitions and points to a separate repeated-motion package (10005_7_2x.pkl). A video of that complete repeated target is not supplied.",
+          "motionNote": "The continuous clip is cut from the original BABEL rendering at its two matching action labels and intervening transition. The current Times task uses the first action and stores a separately constructed two-repetition target in 5617_0_2x.pkl. This clip is an annotated example, not a rendering of that target package.",
           "sequence": [
-            "Lower arms",
-            "Reset",
-            "Lower arms"
+            "Raise right arm · 0–1.77 s",
+            "Transition · 1.77–2.17 s",
+            "Raise right arm · 2.17–2.85 s"
           ],
-          "packagePath": "Data/Level2/Times/Motion/10005_7_2x.pkl",
-          "previewScope": "One source cycle is shown. The separate two-repetition motion package has no complete target preview here.",
+          "packagePath": "Data/Level2/Times/Motion/5617_0_2x.pkl",
           "variantId": "audio",
           "variantLabel": "Audio"
         },
@@ -4114,9 +4112,9 @@ window.ROBOOSTEER = {
           "group": "",
           "title": "Times",
           "modality": "Video",
-          "taskId": "L2_times_video_10005_7_2x",
-          "duration": 3.216666666666667,
-          "purpose": "Realize the intended behavior with the specified repetition count.",
+          "taskId": "L2_times_video_5617_0_2x",
+          "duration": 3.533333333333333,
+          "purpose": "Repeat the right-arm raise twice, with a transition between repetitions.",
           "prompt": "You are an advanced 3D motion generation model. I will provide you with a video clip showing a single action and a text instruction specifying how many times to repeat that action. Your objective is to generate a continuous 3D motion that repeats the action from the video exactly as instructed. Your output MUST be a continuous sequence of ACTION TOKENS.",
           "modifier": "",
           "inputs": [
@@ -4127,31 +4125,30 @@ window.ROBOOSTEER = {
             },
             {
               "kind": "video",
-              "label": "Input action · one cycle",
+              "label": "Input action · first BABEL segment",
               "src": "assets/cases/times/video/condition-01.mp4",
               "poster": "assets/cases/times/video/condition-01.jpg"
             }
           ],
           "package": [
             {
-              "file": "10005_7_2x.pkl",
+              "file": "5617_0_2x.pkl",
               "shape": "AMASS motion package: poses, trans, dmpls, betas, gender, mocap_framerate"
             }
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/times/skeleton.mp4",
-            "label": "Source action cycle · lower arms",
-            "poster": "assets/cases/times/skeleton.jpg"
+            "src": "assets/cases/times/babel-a-transition-a.mp4",
+            "poster": "assets/cases/times/babel-a-transition-a.jpg",
+            "label": "BABEL-labeled sequence · right-arm raise, transition, right-arm raise"
           },
-          "motionNote": "The supplied video shows one source cycle. The task requests two repetitions and points to a separate repeated-motion package (10005_7_2x.pkl). A video of that complete repeated target is not supplied.",
+          "motionNote": "The continuous clip is cut from the original BABEL rendering at its two matching action labels and intervening transition. The current Times task uses the first action and stores a separately constructed two-repetition target in 5617_0_2x.pkl. This clip is an annotated example, not a rendering of that target package.",
           "sequence": [
-            "Lower arms",
-            "Reset",
-            "Lower arms"
+            "Raise right arm · 0–1.77 s",
+            "Transition · 1.77–2.17 s",
+            "Raise right arm · 2.17–2.85 s"
           ],
-          "packagePath": "Data/Level2/Times/Motion/10005_7_2x.pkl",
-          "previewScope": "One source cycle is shown. The separate two-repetition motion package has no complete target preview here.",
+          "packagePath": "Data/Level2/Times/Motion/5617_0_2x.pkl",
           "variantId": "video",
           "variantLabel": "Video"
         }
