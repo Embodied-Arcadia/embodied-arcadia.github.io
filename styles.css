@@ -58,7 +58,8 @@ a.resource-link:hover { background: var(--color-accent); border-color: var(--col
 .level-top { display: flex; align-items: center; gap: 12px; color: var(--color-muted); font-size: var(--text-sm); margin-bottom: 24px; }
 .level-number { font: 600 1.5rem var(--font-display); color: var(--color-accent); }
 .level h3 { font-size: 1.3rem; line-height: 1.35; margin-bottom: 16px; }
-.level p, .level li { color: var(--color-muted); }
+.level p { color: var(--color-ink); }
+.level li { color: var(--color-muted); }
 .level ul { padding: 0; list-style: none; font-size: var(--text-sm); margin-bottom: 0; }
 .level li { padding: 3px 0; }
 .abstract-slot { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); gap: 32px; border-top: 1px solid var(--color-line); margin-top: 40px; padding-top: 24px; }
@@ -78,7 +79,7 @@ figcaption { margin-top: 12px; font-size: var(--text-sm); color: var(--color-mut
 .case-intro { max-width: 88ch; color: var(--color-muted); font-size: var(--text-sm); margin: 12px 0 0; }
 .case-level-section { margin-top: 40px; }
 .case-level-heading { font-size: clamp(1.5rem, 2.5vw, 1.9rem); margin-bottom: 6px; }
-.level-description, .family-description { color: var(--color-ink); width: 100%; max-width: none; font-size: clamp(1rem, .95rem + .3vw, 1.125rem); line-height: 1.7; margin: 0 0 16px; }
+.level-description, .family-description { color: var(--color-ink); width: 100%; max-width: none; font-size: var(--text-body); line-height: 1.65; margin: 0 0 16px; }
 .case-family { margin-top: 22px; }
 .family-heading { font: 600 1.2rem/1.3 var(--font-display); border-bottom: 1px solid var(--color-line); padding-bottom: 10px; margin: 0 0 8px; }
 .task-index { display: flex; flex-wrap: wrap; gap: 0 16px; margin: 0 0 12px; }
