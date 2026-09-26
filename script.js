@@ -345,25 +345,71 @@
     "Spatial Completion": "Spatial Completion evaluates whether a model generates a coherent full-body behavior from spatially partial behavioral conditions. Upper-to-Full Body Completion preserves the upper-body condition while completing the lower-body behavior; Lower-to-Full Body Completion reverses that relationship. Target Reaching requires the intended behavior to satisfy a specified local body-part goal. The generated behavior must satisfy the local condition while remaining consistent as a whole."
   };
   const levels = [
-    [1, "Conditional Steering", "Conditional Steering evaluates whether a model can generate the intended behavior from user inputs with different degrees of completeness. Tasks are divided into three distinct categories: (1) Full Conditioning Reproduction, where the instruction is completely specified across modalities (such as text, speech, video demonstration, or musical rhythm); (2) Temporal Completion, where only a partial temporal segment is provided, requiring the model to fill in the missing parts (such as predicting future motion, inferring past motion, or interpolating between frames); and (3) Spatial Completion, where only part of the body is observed (such as upper- or lower-body motions), requiring the model to complete the remaining body parts into a coherent full-body action."],
-    [2, "Constraint Steering", "Constraint Steering evaluates whether a model can perform an intended behavior while strictly satisfying an explicit constraint on how it must be executed. The model must preserve the core action while adhering to seven practical constraints: modulating movement speed, amplitude, or direction; following a designated ground trajectory; controlling action execution order and repetition times; or enforcing body restrain by keeping specific limbs still during motion."],
-    [3, "Compositional Steering", "Compositional Steering evaluates whether a model can handle complex, multi-step instructions by sequentially executing inputs from heterogeneous sources within a single continuous behavior. Formulated as Interleaved Multi-Source Steering, the robot must follow a sequence of guidance across different modalities—such as imitating a reference video, transitioning to a text or voice instruction, and hitting a keyframe target pose—all combined into one smooth, uninterrupted motion."]
+    {
+      level: 1,
+      title: "Conditional Steering",
+      lead: "Conditional Steering evaluates whether a model can generate the intended behavior from user inputs with different degrees of completeness across three distinct categories:",
+      points: [
+        { label: "Full Conditioning Reproduction", desc: "The instruction is completely specified across modalities (such as text, speech, video demonstration, or musical rhythm)." },
+        { label: "Temporal Completion", desc: "Only a partial temporal segment is provided, requiring the model to fill in the missing parts (such as predicting future motion, inferring past motion, or interpolating between frames)." },
+        { label: "Spatial Completion", desc: "Only part of the body is observed (such as upper- or lower-body motions), requiring the model to complete the remaining body parts into a coherent full-body action." }
+      ]
+    },
+    {
+      level: 2,
+      title: "Constraint Steering",
+      lead: "Constraint Steering evaluates whether a model can perform an intended behavior while strictly satisfying an explicit constraint on how it must be executed. The model must preserve the core action while adhering to seven practical constraints:",
+      points: [
+        { label: "Movement Dynamics", desc: "Modulating execution speed, movement amplitude, or moving direction." },
+        { label: "Spatial Path", desc: "Following a designated continuous ground trajectory." },
+        { label: "Order & Times", desc: "Controlling temporal action sequence and exact repetition count." },
+        { label: "Body Restrain", desc: "Enforcing stability by keeping specific non-core limbs still during motion." }
+      ]
+    },
+    {
+      level: 3,
+      title: "Compositional Steering",
+      lead: "Compositional Steering evaluates whether a model can handle complex, multi-step instructions by sequentially executing inputs from heterogeneous sources within a single continuous behavior.",
+      sublead: "Formulated as Interleaved Multi-Source Steering, the robot must follow a sequence of guidance across different modalities—such as imitating a reference video, transitioning to a text or voice instruction, and hitting a keyframe target pose—all combined into one smooth, uninterrupted motion."
+    }
   ];
-  for (const [level, title, description] of levels) {
-    const section = el("section", "case-level-section"); section.id = `cases-level-${level}`;
-    section.setAttribute("aria-labelledby", `case-level-heading-${level}`);
-    const heading = el("h3", "case-level-heading", `Level ${level} · ${title}`); heading.id = `case-level-heading-${level}`;
-    section.append(heading, el("p", "level-description", description));
-    const items = content.cases.filter(item => item.level === level);
-    const groups = level === 1 ? [...new Set(items.map(item => item.group))] : [""];
+  for (const item of levels) {
+    const section = el("section", "case-level-section"); section.id = `cases-level-${item.level}`;
+    section.setAttribute("aria-labelledby", `case-level-heading-${item.level}`);
+    const heading = el("h3", "case-level-heading", `Level ${item.level} · ${item.title}`); heading.id = `case-level-heading-${item.level}`;
+    section.append(heading);
+    const intro = el("div", "level-intro");
+    intro.append(el("p", "level-description", item.lead));
+    if (item.points) {
+      const list = el("ul", "level-points");
+      item.points.forEach(point => {
+        const li = el("li");
+        li.append(el("strong", "", `${point.label}: `), document.createTextNode(point.desc));
+        list.append(li);
+      });
+      intro.append(list);
+    }
+    if (item.sublead) {
+      const sub = el("p", "level-subdescription");
+      const parts = item.sublead.split("Interleaved Multi-Source Steering");
+      if (parts.length === 2) {
+        sub.append(document.createTextNode(parts[0]), el("strong", "", "Interleaved Multi-Source Steering"), document.createTextNode(parts[1]));
+      } else {
+        sub.textContent = item.sublead;
+      }
+      intro.append(sub);
+    }
+    section.append(intro);
+    const items = content.cases.filter(c => c.level === item.level);
+    const groups = item.level === 1 ? [...new Set(items.map(c => c.group))] : [""];
     for (const group of groups) {
-      const subset = group ? items.filter(item => item.group === group) : items;
+      const subset = group ? items.filter(c => c.group === group) : items;
       const groupSection = el("div", "case-family");
       if (group) { groupSection.id = `family-${group.toLowerCase().replaceAll(" ", "-")}`; groupSection.append(el("h4", "family-heading", group), el("p", "family-description", familyDescriptions[group])); }
-      const taskLinks = el("nav", "task-index"); taskLinks.setAttribute("aria-label", `${group || title} task types`);
-      for (const item of subset) { const link = el("a", "", item.title); link.href = `#task-${item.id}`; taskLinks.append(link); }
-      const grid = el("div", level === 3 ? "case-grid interleaved-grid" : "case-grid");
-      subset.forEach(item => grid.append(caseCard(item, group ? "h5" : "h4")));
+      const taskLinks = el("nav", "task-index"); taskLinks.setAttribute("aria-label", `${group || item.title} task types`);
+      for (const c of subset) { const link = el("a", "", c.title); link.href = `#task-${c.id}`; taskLinks.append(link); }
+      const grid = el("div", item.level === 3 ? "case-grid interleaved-grid" : "case-grid");
+      subset.forEach(c => grid.append(caseCard(c, group ? "h5" : "h4")));
       groupSection.append(taskLinks, grid); section.append(groupSection);
     }
     byId("case-grid").append(section);
