@@ -311,22 +311,27 @@
     } else article.append(caseBody, details);
     return article;
   }
+  const familyDescriptions = {
+    "Full Conditioning Reproduction": "Generate a complete motion sequence from the supplied description, video, audio, music, or joint constraints, preserving the action or movement specified by the input.",
+    "Temporal Completion": "Fill in missing motion before, after, or between observed segments, or generate a sequence that passes through a supplied key pose at the specified time.",
+    "Spatial Completion": "Complete full-body motion from upper- or lower-body information, or perform a base action while satisfying a local body-part goal, such as placing both hands on the head."
+  };
   const levels = [
-    [1, "Conditional Steering", "Generate or complete motion from a conditioning source."],
-    [2, "Constraint Steering", "Control how a behavior is performed through one explicit constraint."],
-    [3, "Compositional Steering", "Compose temporally interleaved instructions from multiple modalities."]
+    [1, "Conditional Steering", "Generate full-body motion from instructions, observed movement, or pose constraints. The tasks cover complete inputs, partial motion in time, and partial body information."],
+    [2, "Constraint Steering", "Keep the underlying action while following an added requirement, such as changing its speed, movement size, direction, order, repetition count, path, or body-part movement."],
+    [3, "Compositional Steering", "Follow a sequence of text, image, video, and audio instructions, each assigned to a different time or interval, and combine them into one continuous motion."]
   ];
   for (const [level, title, description] of levels) {
     const section = el("section", "case-level-section"); section.id = `cases-level-${level}`;
     section.setAttribute("aria-labelledby", `case-level-heading-${level}`);
     const heading = el("h3", "case-level-heading", `Level ${level} · ${title}`); heading.id = `case-level-heading-${level}`;
-    section.append(heading);
+    section.append(heading, el("p", "level-description", description));
     const items = content.cases.filter(item => item.level === level);
     const groups = level === 1 ? [...new Set(items.map(item => item.group))] : [""];
     for (const group of groups) {
       const subset = group ? items.filter(item => item.group === group) : items;
       const groupSection = el("div", "case-family");
-      if (group) { groupSection.id = `family-${group.toLowerCase().replaceAll(" ", "-")}`; groupSection.append(el("h4", "family-heading", group)); }
+      if (group) { groupSection.id = `family-${group.toLowerCase().replaceAll(" ", "-")}`; groupSection.append(el("h4", "family-heading", group), el("p", "family-description", familyDescriptions[group])); }
       const taskLinks = el("nav", "task-index"); taskLinks.setAttribute("aria-label", `${group || title} tasks`);
       for (const item of subset) { const link = el("a", "", item.title); link.href = `#task-${item.id}`; taskLinks.append(link); }
       const grid = el("div", level === 3 ? "case-grid interleaved-grid" : "case-grid");
