@@ -184,26 +184,26 @@
     return { wrapper, media };
   }
   const taskDescriptions = {
-    "text_to_motion_generation": "Generate a complete full-body motion sequence that follows a written action description.",
-    "video_to_motion_imitation": "Reconstruct the full-body movement demonstrated in a human or skeleton video.",
-    "audio_to_motion_generation": "Generate full-body motion by following a spoken action instruction.",
-    "rhythm_to_motion_alignment": "Perform the described action with movement timing aligned to the supplied music.",
-    "rotation_to_pose_generation": "Reconstruct motion from the supplied joint angles, root orientation, and root position over time.",
-    "motion_prediction": "Generate the missing future motion from the available beginning and accompanying instructions.",
-    "motion_retrodiction": "Reconstruct the missing beginning of a motion sequence from the observed later segment.",
-    "motion_interpolation": "Generate the missing middle of a motion sequence to connect its observed beginning and ending smoothly.",
-    "key_frame_conditioning": "Generate continuous motion that follows the action instruction and matches the supplied key poses at their specified times.",
-    "upper_to_full_body_completion": "Generate the missing lower-body movement while preserving the supplied upper-body action.",
-    "lower_to_full_body_completion": "Generate the missing upper-body movement while preserving the supplied lower-body action.",
-    "target_reaching": "Perform the base action while satisfying a specified local body-part goal.",
-    "speed": "Perform the same action at the requested speed relative to the original movement.",
-    "amplitude": "Perform the same action with the requested increase or decrease in movement size.",
-    "direction": "Preserve the action while changing its travel direction as instructed.",
-    "order": "Perform the given actions in the specified order with continuous transitions.",
-    "times": "Repeat the specified action the requested number of times.",
-    "trajectory": "Perform the described action while following a specified path through space.",
-    "body_restrain": "Perform the base action while keeping the specified body parts still.",
-    "interleaved_multi_source_steering": "Combine text, image, video, and audio instructions into continuous motion, following each condition at its assigned time."
+    "text_to_motion_generation": "Generate a full-body behavior that faithfully follows the textual behavioral condition.",
+    "video_to_motion_imitation": "Imitate the full-body behavior demonstrated in the input video.",
+    "audio_to_motion_generation": "Generate a full-body behavior that faithfully follows the spoken behavioral instruction.",
+    "rhythm_to_motion_alignment": "Realize the textual behavioral condition while aligning the generated behavior with the musical rhythm.",
+    "rotation_to_pose_generation": "Realize a full-body behavior that satisfies the supplied per-frame joint rotations and root conditions.",
+    "motion_prediction": "Generate the unseen future segment so that it naturally continues the observed prefix and satisfies the provided behavioral condition.",
+    "motion_retrodiction": "Generate the unseen past segment so that it naturally leads into the observed suffix and satisfies the provided behavioral condition.",
+    "motion_interpolation": "Generate the missing intermediate segment while satisfying the observed prefix and suffix as temporal behavioral conditions.",
+    "key_frame_conditioning": "Generate a continuous behavior that satisfies the behavioral instruction and the key-frame pose conditions at their specified timestamps.",
+    "upper_to_full_body_completion": "Complete the lower-body behavior while preserving the supplied upper-body behavioral condition.",
+    "lower_to_full_body_completion": "Complete the upper-body behavior while preserving the supplied lower-body behavioral condition.",
+    "target_reaching": "Preserve the intended behavior while satisfying the specified local body-part goal.",
+    "speed": "Preserve the intended behavior while satisfying the specified execution-speed constraint.",
+    "amplitude": "Preserve the intended behavior while satisfying the specified movement-amplitude constraint.",
+    "direction": "Preserve the intended behavior while satisfying the specified movement-direction constraint.",
+    "order": "Realize the specified behaviors in the required temporal order while maintaining continuous transitions.",
+    "times": "Realize the intended behavior with the specified repetition count.",
+    "trajectory": "Preserve the intended behavior while satisfying the specified root-trajectory constraint.",
+    "body_restrain": "Preserve the intended behavior while keeping the specified non-core body parts still.",
+    "interleaved_multi_source_steering": "Jointly satisfy multiple temporally interleaved behavioral requirements from heterogeneous sources within a single behavior sequence."
 };
   function caseCard(task, headingTag, activeVariant) {
     const variants = task.variants || [];
@@ -280,7 +280,7 @@
       const sequence = el("ol", "action-sequence"); item.sequence.forEach(step => sequence.append(el("li", "", step))); input.append(sequence);
     }
     const caseBody = el("div", "case-body"); caseBody.append(input);
-    const output = el("section", "case-output"); output.setAttribute("aria-label", `${item.title}: motion and ground truth`);
+    const output = el("section", "case-output"); output.setAttribute("aria-label", `${item.title}: reference motion`);
     output.append(el("h6", "case-block-title", "Motion reference"));
     if (item.level === 3) output.append(el("p", "sequence-output-note", "01 → 02 → 03 → 04 · one continuous motion"));
     if (item.timeline) {
@@ -333,14 +333,14 @@
     return article;
   }
   const familyDescriptions = {
-    "Full Conditioning Reproduction": "These tasks provide a condition for the whole motion sequence and ask the model to generate the corresponding full-body movement. Depending on the task, the input is a written or spoken action description, a human or skeleton video, an action description accompanied by music, or joint and root constraints. The model should reproduce the specified action or motion and, for the music task, align its timing with the rhythm.",
-    "Temporal Completion": "These tasks provide information at only selected times and ask the model to complete a continuous sequence. Motion Prediction generates the missing future, Motion Retrodiction reconstructs the missing beginning, and Motion Interpolation fills the gap between two observed segments. Key-frame Conditioning instead supplies poses at specific timestamps. In each case, the generated motion should respect the available conditions and connect naturally through time.",
-    "Spatial Completion": "These tasks constrain selected parts of the body while asking the model to produce a coordinated full-body movement. Upper-to-Full Body Completion supplies the upper-body action and asks for the lower-body movement; Lower-to-Full Body Completion reverses that relationship. Target Reaching specifies a local body-part goal alongside a base action, such as placing both hands on the head during the movement. The model must satisfy the local condition while keeping the whole-body action consistent."
+    "Full Conditioning Reproduction": "Full Conditioning Reproduction evaluates whether a model realizes a behavior from a fully specified behavioral condition. The five task types use textual conditions, spoken instructions, demonstrated behaviors in video, text accompanied by music, or per-frame joint and root conditions. The generated behavior must faithfully satisfy the supplied condition; Rhythm-Motion Alignment additionally requires alignment with the musical rhythm.",
+    "Temporal Completion": "Temporal Completion evaluates whether a model generates the unspecified parts of a behavior while satisfying the available temporal conditions. Motion Prediction uses an observed prefix to generate an unseen future segment; Motion Retrodiction uses an observed suffix to generate an unseen past segment. Motion Interpolation fills a missing intermediate segment, while Key-frame Conditioning requires the generated behavior to satisfy pose conditions at specified timestamps. These segments need not divide the sequence into equal durations.",
+    "Spatial Completion": "Spatial Completion evaluates whether a model generates a coherent full-body behavior from spatially partial behavioral conditions. Upper-to-Full Body Completion preserves the upper-body condition while completing the lower-body behavior; Lower-to-Full Body Completion reverses that relationship. Target Reaching requires the intended behavior to satisfy a specified local body-part goal. The generated behavior must satisfy the local condition while remaining consistent as a whole."
   };
   const levels = [
-    [1, "Conditional Steering", "Level 1 asks whether a model can generate full-body motion that follows a supplied condition, such as an action description, a video, or a set of poses. Its three task groups vary how much information is given: a complete description or demonstration, selected moments in time, or information about only part of the body. The model must preserve what is specified while generating the rest of the movement."],
-    [2, "Constraint Steering", "Level 2 tests whether a model can follow an explicit behavioral constraint while preserving the intended action. A task may ask it to move faster, use a larger range of motion, travel in a different direction, follow a path, or keep selected body parts still. Other tasks specify the order of several actions or the number of repetitions. The challenge is to satisfy that requirement while keeping the movement coherent."],
-    [3, "Compositional Steering", "Level 3 combines several instructions within a single motion sequence. Text, images, video clips, and spoken audio are assigned to particular moments or time intervals, so the model must follow both their content and their order. For example, it may begin with a written instruction, match a key pose, continue from a video, and finish by following speech. The resulting motion should connect these conditions smoothly across their boundaries."]
+    [1, "Conditional Steering", "Realize behaviors from fully specified, temporally partial, or spatially partial conditions. Conditional Steering tests whether a model faithfully follows the supplied behavioral condition. Full Conditioning Reproduction uses fully specified conditions, Temporal Completion supplies only selected temporal segments or key frames, and Spatial Completion provides partial-body conditions or local goals. The generated behavior must satisfy the provided information while completing what remains unspecified."],
+    [2, "Constraint Steering", "Preserve the intended behavior while satisfying an explicit constraint on how it is performed. Constraint Steering comprises seven constraint types: Speed, Amplitude, Direction, Order, Times, Trajectory, and Body Restrain. Each task instance specifies a behavioral constraint that the generated behavior must satisfy, such as a change in execution speed, movement amplitude, direction, ordering, repetition count, root trajectory, or non-core body-part movement."],
+    [3, "Compositional Steering", "Jointly satisfy multiple temporally interleaved behavioral requirements from heterogeneous sources within a single behavior sequence. Compositional Steering requires a model to satisfy the semantic content and temporal assignment of every requirement. Interleaved Multi-Source Steering combines text, image, video, and spoken-audio conditions at specified intervals or timestamps; the generated behavior must jointly satisfy these requirements while maintaining continuity across their boundaries."]
   ];
   for (const [level, title, description] of levels) {
     const section = el("section", "case-level-section"); section.id = `cases-level-${level}`;
@@ -353,7 +353,7 @@
       const subset = group ? items.filter(item => item.group === group) : items;
       const groupSection = el("div", "case-family");
       if (group) { groupSection.id = `family-${group.toLowerCase().replaceAll(" ", "-")}`; groupSection.append(el("h4", "family-heading", group), el("p", "family-description", familyDescriptions[group])); }
-      const taskLinks = el("nav", "task-index"); taskLinks.setAttribute("aria-label", `${group || title} tasks`);
+      const taskLinks = el("nav", "task-index"); taskLinks.setAttribute("aria-label", `${group || title} task types`);
       for (const item of subset) { const link = el("a", "", item.title); link.href = `#task-${item.id}`; taskLinks.append(link); }
       const grid = el("div", level === 3 ? "case-grid interleaved-grid" : "case-grid");
       subset.forEach(item => grid.append(caseCard(item, group ? "h5" : "h4")));

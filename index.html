@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="RoboSteer — Benchmarking Behavioral Steerability in Humanoid Foundation Models. Explore the benchmark, motion examples, and project resources.">
+  <meta name="description" content="RoboSteer — Benchmarking Behavioral Steerability in Behavior Foundation Models. Explore the benchmark, motion examples, and project resources.">
   <meta name="theme-color" content="#10151b">
-  <meta property="og:title" content="RoboSteer — Behavioral Steerability Benchmark">
-  <meta property="og:description" content="Benchmarking Behavioral Steerability in Humanoid Foundation Models.">
+  <meta property="og:title" content="RoboSteer — Benchmarking Behavioral Steerability in Behavior Foundation Models">
+  <meta property="og:description" content="Benchmarking Behavioral Steerability in Behavior Foundation Models.">
   <meta property="og:type" content="website">
-  <title>RoboSteer — Benchmarking Behavioral Steerability</title>
+  <title>RoboSteer — Benchmarking Behavioral Steerability in Behavior Foundation Models</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/fonts/fonts.css">
   <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="styles.css?v=expanded-intros-20260925">
-  <script src="site-content.js?v=case-review-20260925" defer></script>
-  <script src="script.js?v=expanded-intros-20260925" defer></script>
+  <script src="site-content.js?v=paper-copy-20260925" defer></script>
+  <script src="script.js?v=paper-copy-20260925" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#paper">Skip to project information</a>
@@ -24,14 +24,14 @@
       <header class="hero-nav"><a href="#home" class="wordmark" aria-label="RoboSteer home">RoboSteer<span class="brand-mark" aria-hidden="true">↗</span></a><a href="#paper">Overview <span aria-hidden="true">↓</span></a></header>
       <div class="hero-copy">
         <h1 id="hero-title">Robo<span>Steer</span></h1>
-        <p>Benchmarking Behavioral Steerability<br class="desktop-break"> in Humanoid Foundation Models</p>
+        <p>Benchmarking Behavioral Steerability<br class="desktop-break"> in Behavior Foundation Models</p>
       </div>
       <div class="hero-bottom"><button id="motion-toggle" type="button" aria-pressed="false">Pause motion <span aria-hidden="true">Ⅱ</span></button></div>
     </section>
 
     <section class="paper section" id="paper" aria-labelledby="paper-title">
       <div class="paper-inner">
-        <h2 id="paper-title">Benchmarking Behavioral Steerability<br class="desktop-break"> in Humanoid Foundation Models</h2>
+        <h2 id="paper-title">Benchmarking Behavioral Steerability<br class="desktop-break"> in Behavior Foundation Models</h2>
         <p class="authors" id="authors">Authors to be announced</p>
         <p class="team" id="team">Team and affiliations to be announced</p>
         <nav class="resource-links" aria-label="Project resources" id="resource-links"></nav>
@@ -41,22 +41,22 @@
     <section class="section overview" id="overview" aria-labelledby="overview-title">
       <div class="section-heading"><h2 id="overview-title">Benchmark overview</h2></div>
       <div class="task-levels">
-        <article class="level"><div class="level-top"><span class="level-number">L1</span><span>12 tasks</span></div><h3>Conditional Steering</h3><p>Generate or complete motion from full, temporal, or spatial conditions.</p><ul><li><a href="#family-full-conditioning-reproduction">Full Conditioning Reproduction · 5</a></li><li><a href="#family-temporal-completion">Temporal Completion · 4</a></li><li><a href="#family-spatial-completion">Spatial Completion · 3</a></li></ul></article>
-        <article class="level"><div class="level-top"><span class="level-number">L2</span><span>7 tasks</span></div><h3>Constraint Steering</h3><p>Control motion with an explicit behavioral constraint.</p><ul><li><a href="#task-speed">Speed</a> · <a href="#task-amplitude">Amplitude</a> · <a href="#task-direction">Direction</a></li><li><a href="#task-order">Order</a> · <a href="#task-times">Times</a> · <a href="#task-trajectory">Trajectory</a></li><li><a href="#task-body_restrain">Body Restrain</a></li></ul></article>
-        <article class="level"><div class="level-top"><span class="level-number">L3</span><span>1 task</span></div><h3>Compositional Steering</h3><p>Combine interleaved instructions into one motion sequence.</p><ul><li><a href="#task-interleaved_multi_source_steering">Interleaved Multi-Source Steering</a></li></ul></article>
+        <article class="level"><div class="level-top"><span class="level-number">L1</span><span>12 task types</span></div><h3>Conditional Steering</h3><p>Realize behaviors from fully specified, temporally partial, or spatially partial conditions.</p><ul><li><a href="#family-full-conditioning-reproduction">Full Conditioning Reproduction · 5</a></li><li><a href="#family-temporal-completion">Temporal Completion · 4</a></li><li><a href="#family-spatial-completion">Spatial Completion · 3</a></li></ul></article>
+        <article class="level"><div class="level-top"><span class="level-number">L2</span><span>7 constraint types</span></div><h3>Constraint Steering</h3><p>Preserve the intended behavior while satisfying an explicit constraint on how it is performed.</p><ul><li><a href="#task-speed">Speed</a> · <a href="#task-amplitude">Amplitude</a> · <a href="#task-direction">Direction</a></li><li><a href="#task-order">Order</a> · <a href="#task-times">Times</a> · <a href="#task-trajectory">Trajectory</a></li><li><a href="#task-body_restrain">Body Restrain</a></li></ul></article>
+        <article class="level"><div class="level-top"><span class="level-number">L3</span><span>1 compositional task type</span></div><h3>Compositional Steering</h3><p>Jointly satisfy multiple temporally interleaved behavioral requirements from heterogeneous sources within a single behavior sequence.</p><ul><li><a href="#task-interleaved_multi_source_steering">Interleaved Multi-Source Steering</a></li></ul></article>
       </div>
-      <div class="abstract-slot"><h3>Abstract</h3><p id="abstract">Coming soon.</p></div>
+      <div class="abstract-slot"><h3>Abstract</h3><p id="abstract">Behavior Foundation Models (BFMs) aim to translate diverse human intentions into executable humanoid behaviors. RoboSteer benchmarks behavioral steerability—the ability to faithfully realize user-specified behavioral intentions—through a three-level hierarchy of Conditional, Constraint, and Compositional Steering. Supported by a large-scale multimodal motion corpus and a unified evaluation framework, RoboSteer reveals that strong behavior generation does not necessarily imply strong behavioral steerability, with the gap widening as steering complexity increases.</p></div>
       <figure class="main-figure" id="main-figure"><div class="figure-placeholder"><span>Representative figure</span><p>The project overview figure will be added here.</p></div><figcaption id="main-caption">Project overview · Figure forthcoming</figcaption></figure>
     </section>
 
     <section class="cases-section" id="cases" aria-labelledby="cases-title"><div class="section">
-      <div class="section-heading"><h2 id="cases-title">Task demonstration</h2></div>
-      <nav class="case-navigation" aria-label="Browse cases by benchmark level"><a href="#cases-level-1">01 · Conditional Steering <span>12 tasks</span></a><a href="#cases-level-2">02 · Constraint Steering <span>7 tasks</span></a><a href="#cases-level-3">03 · Compositional Steering <span>1 task</span></a></nav>
+      <div class="section-heading"><h2 id="cases-title">Task Demonstrations</h2></div>
+      <nav class="case-navigation" aria-label="Browse cases by benchmark level"><a href="#cases-level-1">01 · Conditional Steering <span>12 task types</span></a><a href="#cases-level-2">02 · Constraint Steering <span>7 constraint types</span></a><a href="#cases-level-3">03 · Compositional Steering <span>1 compositional task type</span></a></nav>
       <div id="case-grid"></div>
     </div></section>
 
     <section class="section dataset-section" id="dataset" aria-labelledby="dataset-title">
-      <div><h2 id="dataset-title">Dataset</h2><a class="text-link" href="docs/dataset-guide.html">Dataset guide <span aria-hidden="true">↗</span></a></div>
+      <div><h2 id="dataset-title">Dataset</h2><p>RoboSteer contains 38,522 source motions, 77,044 human and rendered motion sequences spanning 91.58 hours, and 773,716 behavioral task instances across three levels of behavioral steerability.</p><a class="text-link" href="docs/dataset-guide.html">Dataset guide <span aria-hidden="true">↗</span></a></div>
       <div class="dataset-tree" role="img" aria-label="The dataset root contains Tasks with Levels 1, 2 and 3, and Data with Levels 1, 2, 3 and Shared."><div class="tree-root">RoboSteer dataset</div><div class="tree-branch"><strong>Tasks/</strong><span>Level1/ · Level2/ · Level3/</span></div><div class="tree-branch"><strong>Data/</strong><span>Level1/ · Level2/ · Level3/ · Shared/</span></div></div>
     </section>
 

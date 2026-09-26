@@ -1,6 +1,6 @@
 # RoboSteer project website
 
-An English static project website for **Benchmarking Behavioral Steerability in Humanoid Foundation Models**. No backend, database, build service, or npm dependencies are required.
+An English static project website for **Benchmarking Behavioral Steerability in Behavior Foundation Models**. No backend, database, build service, or npm dependencies are required.
 
 Static website for https://embodied-arcadia.github.io/ . The website repository is `Embodied-Arcadia/embodied-arcadia.github.io`. Publication metadata and resource links are updated as they become available.
 
@@ -30,7 +30,7 @@ Edit **`site-content.js`**:
 | `figure` | `src`, accessible `alt`, and `caption` |
 | `bibtex` | Exact final entry; leave empty until bibliographic details are known |
 | `heroVideos` | The 36 distinct G1 background media objects (`src`, `poster`, `label`) |
-| `cases` | 20 task records: level, task family, input modality, full conditions, prompt, visualization, GT schema and B.3 panel |
+| `cases` | 20 demonstration records covering task types: level, task family, input modality, full conditions, prompt, visualization, GT schema and B.3 panel |
 
 Empty resource URLs display as unavailable. No placeholder arXiv IDs or nonexistent dataset/repository links are emitted. Once all three resource URLs are available, the preview release note is hidden automatically.
 
@@ -39,10 +39,10 @@ Empty resource URLs display as unavailable. No placeholder arXiv IDs or nonexist
 ## Motion media
 
 - The hero uses 36 distinct G1 retargeted clips selected from wendell0218/motion_example_final, retargeted_videos/00000.tar. Each grid cell has a different source video; clips are never duplicated to fill the grid. Cells retain the native 4:3 ratio without cropping, grid gaps or letterboxing. Mobile layouts use two columns; hidden videos pause. `heroAspectRatio` controls the cell geometry.
-- Seventeen task cards now use matching G1 retargeted references (18 videos including the separate music-prediction example). The selected Key-frame Conditioning, Order and Times references still lack corresponding G1 renders. Task inputs retain their original text, human/skeleton video, image and audio modalities, including temporal cuts and partial-body conditions.
+- Eighteen task cards use matching G1 reference motions (19 videos including the separate music-prediction example). The selected Order and Times references still lack corresponding G1 renders. Task inputs retain their original text, human/skeleton video, image and audio modalities, including temporal cuts and partial-body conditions.
 - Backgrounds are muted, looped, and paused when the hero leaves view or the tab is hidden.
 - Reduced-motion and data-saving preferences start the background paused, with posters visible; visitors can explicitly play it.
-- Twenty detailed cases cover all tasks: 12 in Conditional Steering, 7 in Constraint Steering, and 1 in Compositional Steering. Level 1 groups are Full Conditioning Reproduction, Temporal Completion, and Spatial Completion. Text/audio/video are input modalities within tasks.
+- Twenty detailed cases cover 12 task types in Conditional Steering, 7 constraint types in Constraint Steering, and 1 compositional task type in Compositional Steering. Level 1 groups are Full Conditioning Reproduction, Temporal Completion, and Spatial Completion. Text/audio/video are input modalities within tasks.
 - Each case includes the complete selected input, the task requirement and prompt, a full reference video and GT package details. Appendix figure links are omitted. The page uses two case columns on desktop and one on mobile; wide cards place inputs beside the reference video. Long input text can expand in place, and full prompts plus GT details share one disclosure. All 20 case records are retained.
 - Completion timelines distinguish provided intervals from target intervals; the label follows the current video time. Level 3 displays a connected, numbered sequence with separate motion timestamps and compact input playback controls. Speech playback duration is distinguished from the motion interval.
 - Input audio, video, images, and trajectory conditions are available inline. Case media loads near the viewport and pauses outside it. Playing media in a new case pauses media in other cases.

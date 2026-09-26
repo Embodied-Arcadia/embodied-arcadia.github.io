@@ -1,7 +1,7 @@
 window.ROBOOSTEER = {
   "authors": "Authors to be announced",
   "team": "Team and affiliations to be announced",
-  "abstract": "",
+  "abstract": "Behavior Foundation Models (BFMs) aim to translate diverse human intentions into executable humanoid behaviors. RoboSteer benchmarks behavioral steerability—the ability to faithfully realize user-specified behavioral intentions—through a three-level hierarchy of Conditional, Constraint, and Compositional Steering. Supported by a large-scale multimodal motion corpus and a unified evaluation framework, RoboSteer reveals that strong behavior generation does not necessarily imply strong behavioral steerability, with the gap widening as steering complexity increases.",
   "paperUrl": "",
   "datasetUrl": "https://huggingface.co/datasets/YanCORANV/RoboSteer",
   "codeUrl": "",
@@ -203,7 +203,7 @@ window.ROBOOSTEER = {
       "modality": "Text",
       "taskId": "L1_text_to_motion_generation_text_--k14qjhPTA_00041_64_156",
       "duration": 3.879,
-      "purpose": "Generate the complete full-body motion from the semantic description.",
+      "purpose": "Generate a full-body behavior that faithfully follows the textual behavioral condition.",
       "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic text input that details the kinematics of a person's whole body, upper limbs, and lower limbs during an action. Your objective is to translate this textual description into a complete 3D full-body motion sequence. You must ensure that the generated movements strictly follow the semantic instructions and maintain physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the final full-body motion.",
       "modifier": "",
       "inputs": [
@@ -247,7 +247,7 @@ window.ROBOOSTEER = {
       },
       "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
       "packagePath": "Data/Shared/Motion/00068/--k14qjhPTA_00041_64_156",
-      "watchFor": "Follow the description through reaching, raising the arms, and stepping back.",
+      "watchFor": "Generate a full-body behavior that faithfully follows the textual behavioral condition.",
       "previewScope": "Full source motion; objects described in the text are not rendered.",
       "visualization": "g1-retargeted"
     },
@@ -259,8 +259,8 @@ window.ROBOOSTEER = {
       "modality": "Human video",
       "taskId": "L1_video_to_motion_imitation_human_video_HhLmhjgg0AA_00000_392_462",
       "duration": 2.4,
-      "purpose": "Reconstruct the full-body action shown in the complete input video.",
-      "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a video showing a full-body real human action. Your objective is to reconstruct the corresponding 3D full-body motion sequence. You must ensure that the generated movements follow the actions depicted in the video and maintain physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the full-body motion.",
+      "purpose": "Imitate the full-body behavior demonstrated in the input video.",
+      "prompt": "I will provide a video demonstrating a full-body behavior. Your objective is to imitate the demonstrated behavior while remaining physically plausible and maintaining balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the generated full-body behavior.",
       "modifier": "",
       "inputs": [
         {
@@ -304,8 +304,8 @@ window.ROBOOSTEER = {
       },
       "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
       "packagePath": "Data/Shared/Motion/00002/HhLmhjgg0AA_00000_392_462",
-      "watchFor": "Transfer the action and its order from the human video to a full-body motion.",
-      "previewScope": "Human input and skeleton reference show the same source action.",
+      "watchFor": "Imitate the full-body behavior demonstrated in the input video.",
+      "previewScope": "The input video and G1 reference motion depict the same source behavior.",
       "variants": [
         {
           "id": "video_to_motion_imitation",
@@ -315,8 +315,8 @@ window.ROBOOSTEER = {
           "modality": "Human video",
           "taskId": "L1_video_to_motion_imitation_human_video_HhLmhjgg0AA_00000_392_462",
           "duration": 2.4,
-          "purpose": "Reconstruct the full-body action shown in the complete input video.",
-          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a video showing a full-body real human action. Your objective is to reconstruct the corresponding 3D full-body motion sequence. You must ensure that the generated movements follow the actions depicted in the video and maintain physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the full-body motion.",
+          "purpose": "Imitate the full-body behavior demonstrated in the input video.",
+          "prompt": "I will provide a video demonstrating a full-body behavior. Your objective is to imitate the demonstrated behavior while remaining physically plausible and maintaining balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the generated full-body behavior.",
           "modifier": "",
           "inputs": [
             {
@@ -360,8 +360,8 @@ window.ROBOOSTEER = {
           },
           "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
           "packagePath": "Data/Shared/Motion/00002/HhLmhjgg0AA_00000_392_462",
-          "watchFor": "Transfer the action and its order from the human video to a full-body motion.",
-          "previewScope": "Human input and skeleton reference show the same source action.",
+          "watchFor": "Imitate the full-body behavior demonstrated in the input video.",
+          "previewScope": "The input video and G1 reference motion depict the same source behavior.",
           "variantId": "human_video",
           "variantLabel": "Human video",
           "visualization": "g1-retargeted"
@@ -374,8 +374,8 @@ window.ROBOOSTEER = {
           "modality": "Skeleton video",
           "taskId": "L1_video_to_motion_imitation_skeleton_video_HhLmhjgg0AA_00000_392_462",
           "duration": 2.4,
-          "purpose": "Reconstruct the full-body action shown in the input video.",
-          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a video showing a full-body rendered skeleton action. Your objective is to reconstruct the corresponding 3D full-body motion sequence. You must ensure that the generated movements follow the actions depicted in the video and maintain physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the full-body motion.",
+          "purpose": "Imitate the full-body behavior demonstrated in the input video.",
+          "prompt": "I will provide a video demonstrating a full-body behavior. Your objective is to imitate the demonstrated behavior while remaining physically plausible and maintaining balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the generated full-body behavior.",
           "modifier": "",
           "inputs": [
             {
@@ -419,7 +419,7 @@ window.ROBOOSTEER = {
           },
           "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
           "packagePath": "Data/Shared/Motion/00002/HhLmhjgg0AA_00000_392_462",
-          "previewScope": "Human input and skeleton reference show the same source action.",
+          "previewScope": "The input video and G1 reference motion depict the same source behavior.",
           "variantId": "skeleton_video",
           "variantLabel": "Skeleton video",
           "visualization": "g1-retargeted"
@@ -435,7 +435,7 @@ window.ROBOOSTEER = {
       "modality": "Spoken audio",
       "taskId": "L1_audio_to_motion_generation_audio_--k14qjhPTA_00041_64_156",
       "duration": 3.879,
-      "purpose": "Execute the spoken action instruction over the target motion duration.",
+      "purpose": "Generate a full-body behavior that faithfully follows the spoken behavioral instruction.",
       "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with an audio track containing a spoken motion instruction. Your objective is to execute the action described in the audio. You must ensure that the generated movements strictly follow the instructions, match the target duration, and maintain physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the full-body motion.",
       "modifier": "",
       "inputs": [
@@ -480,7 +480,7 @@ window.ROBOOSTEER = {
       },
       "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
       "packagePath": "Data/Shared/Motion/00068/--k14qjhPTA_00041_64_156",
-      "watchFor": "Listen for the action sequence, then compare it with the reference. The transcript is available below the input.",
+      "watchFor": "Generate a full-body behavior that faithfully follows the spoken behavioral instruction.",
       "previewScope": "The speech is an instruction, not a soundtrack; its playback length differs from the target motion.",
       "visualization": "g1-retargeted"
     },
@@ -488,11 +488,11 @@ window.ROBOOSTEER = {
       "id": "rhythm_to_motion_alignment",
       "level": 1,
       "group": "Full Conditioning Reproduction",
-      "title": "Rhythm-to-Motion Alignment",
+      "title": "Rhythm-Motion Alignment",
       "modality": "Text + music",
       "taskId": "L1_rhythm_to_motion_alignment_rhythm__1hvhhAQkq4_00009_0_126",
       "duration": 2.58,
-      "purpose": "Follow the action description while aligning motion with the musical rhythm.",
+      "purpose": "Realize the textual behavioral condition while aligning the generated behavior with the musical rhythm.",
       "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with an audio track of music, a text description of the overall full-body action, and a target motion duration in seconds. Your objective is to generate movements that rhythmically align with the music and follow the action description. You must ensure that the generated motion synchronizes with the musical rhythm, matches the target duration, and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the full-body motion.",
       "modifier": "",
       "inputs": [
@@ -541,7 +541,7 @@ window.ROBOOSTEER = {
       },
       "motionNote": "The music and source action are supplied separately. This preview does not establish beat alignment. This is not a model prediction.",
       "packagePath": "Data/Shared/Motion/00055/_1hvhhAQkq4_00009_0_126",
-      "watchFor": "Keep the soccer-ball juggling action while matching motion timing to the music.",
+      "watchFor": "Realize the textual behavioral condition while aligning the generated behavior with the musical rhythm.",
       "previewScope": "The music and source action are supplied separately. This preview does not establish beat alignment.",
       "visualization": "g1-retargeted"
     },
@@ -553,7 +553,7 @@ window.ROBOOSTEER = {
       "modality": "Joint rotations + root constraints",
       "taskId": "L1_rotation_to_pose_generation_spatial_IlvpCJwcP48_00007_200_353",
       "duration": 6.2,
-      "purpose": "Reconstruct motion from the per-frame G1 joint and root constraints.",
+      "purpose": "Realize a full-body behavior that satisfies the supplied per-frame joint rotations and root conditions.",
       "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a target motion duration in seconds and a continuous per-frame G1 retargeted motion conditioning pack containing 29-DoF joint angles, root orientation, and root trajectory. Your objective is to reconstruct the complete full-body motion sequence based strictly on these G1 rotation and root-trajectory constraints. You must ensure the reconstructed motion matches the provided per-frame kinematic constraints, matches the target duration, and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the full-body motion.",
       "modifier": "",
       "inputs": [
@@ -595,10 +595,10 @@ window.ROBOOSTEER = {
         "label": "G1 retargeted motion · complete sequence",
         "poster": "assets/cases/rotation_to_pose_generation/g1.jpg"
       },
-      "motionNote": "This skeleton illustrates the source action. It is not a rendering decoded from the G1 conditioning package. This is not a model prediction.",
+      "motionNote": "This G1 rendering depicts the reference motion. Agreement with all supplied joint and root conditions has not been independently verified. This is not a model prediction.",
       "packagePath": "Data/Shared/Motion/00002/IlvpCJwcP48_00007_200_353",
-      "watchFor": "Reconstruct every frame from the joint-angle and root constraints, rather than from a text description.",
-      "previewScope": "This skeleton illustrates the source action. It is not a rendering decoded from the G1 conditioning package.",
+      "watchFor": "Realize a full-body behavior that satisfies the supplied per-frame joint rotations and root conditions.",
+      "previewScope": "This G1 rendering depicts the reference motion. Agreement with all supplied joint and root conditions has not been independently verified.",
       "visualization": "g1-retargeted"
     },
     {
@@ -609,14 +609,14 @@ window.ROBOOSTEER = {
       "modality": "Text",
       "taskId": "L1_motion_prediction_text_jEqXdH2H0Bw_00022_0_131",
       "duration": 4.405,
-      "purpose": "Generate the unseen future interval from the background and first-part description.",
-      "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic text input consisting of two parts: a Background that summarizes the macro intent of a complete action, and the First half details which specifies the kinematics of the person's whole body, upper limbs, and lower limbs during the initial period. Your objective is to leverage the global context from the Background to predict and generate the unseen second half of the motion sequence. You must ensure the generated future motion naturally continues from the described first half and maintains physical balance throughout the transition. Your output MUST be a continuous sequence of ACTION TOKENS representing the predicted future motion.",
+      "purpose": "Generate the unseen future segment so that it naturally continues the observed prefix and satisfies the provided behavioral condition.",
+      "prompt": "I will provide a textual behavioral condition containing the background of a continuous action sequence and details of its observed prefix. Your objective is to generate the unseen future segment so that it naturally continues from the provided motion, follows the behavioral condition, and remains physically plausible. Your output MUST be a continuous sequence of ACTION TOKENS representing the generated future behavior.",
       "modifier": "",
       "inputs": [
         {
           "kind": "text",
           "label": "Input description",
-          "text": "Background: The person is lifting a white panel off a wooden cabinet and repositioning the cabinet on a workbench.\nFirst half details: The person stands beside a wooden cabinet, then lifts a white rectangular panel off the top with both hands, rotating it upward and away from the cabinet. Both arms extend forward to grip the panel, then lift and rotate it upward and to the right, with elbows bending and shoulders engaging to control the motion. Legs remain mostly stationary, with slight bending at the knees to stabilize the body during the lifting motion. The person lowers the white panel onto a workbench in front of them, bending slightly at the waist and knees to place it down gently. Arms extend forward and downward to lower the panel, with forearms rotating to align the panel flat on the workbench. Knees bend slightly and hips hinge forward to maintain balance while lowering the panel."
+          "text": "Background: The person is lifting a white panel off a wooden cabinet and repositioning the cabinet on a workbench.\nObserved prefix details: The person stands beside a wooden cabinet, then lifts a white rectangular panel off the top with both hands, rotating it upward and away from the cabinet. Both arms extend forward to grip the panel, then lift and rotate it upward and to the right, with elbows bending and shoulders engaging to control the motion. Legs remain mostly stationary, with slight bending at the knees to stabilize the body during the lifting motion. The person lowers the white panel onto a workbench in front of them, bending slightly at the waist and knees to place it down gently. Arms extend forward and downward to lower the panel, with forearms rotating to align the panel flat on the workbench. Knees bend slightly and hips hinge forward to maintain balance while lowering the panel."
         }
       ],
       "package": [
@@ -671,7 +671,7 @@ window.ROBOOSTEER = {
         }
       ],
       "packagePath": "Data/Level1/Motion/Prediction/jEqXdH2H0Bw_00022_0_131_fore",
-      "watchFor": "Generate 3–4.405 s using the earlier text condition. Only the final interval is missing.",
+      "watchFor": "Generate the unseen future segment so that it naturally continues the observed prefix and satisfies the provided behavioral condition.",
       "previewScope": "The complete source is shown for comparison; the blue interval marks the requested completion.",
       "variants": [
         {
@@ -682,14 +682,14 @@ window.ROBOOSTEER = {
           "modality": "Text",
           "taskId": "L1_motion_prediction_text_jEqXdH2H0Bw_00022_0_131",
           "duration": 4.405,
-          "purpose": "Generate the unseen future interval from the background and first-part description.",
-          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic text input consisting of two parts: a Background that summarizes the macro intent of a complete action, and the First half details which specifies the kinematics of the person's whole body, upper limbs, and lower limbs during the initial period. Your objective is to leverage the global context from the Background to predict and generate the unseen second half of the motion sequence. You must ensure the generated future motion naturally continues from the described first half and maintains physical balance throughout the transition. Your output MUST be a continuous sequence of ACTION TOKENS representing the predicted future motion.",
+          "purpose": "Generate the unseen future segment so that it naturally continues the observed prefix and satisfies the provided behavioral condition.",
+          "prompt": "I will provide a textual behavioral condition containing the background of a continuous action sequence and details of its observed prefix. Your objective is to generate the unseen future segment so that it naturally continues from the provided motion, follows the behavioral condition, and remains physically plausible. Your output MUST be a continuous sequence of ACTION TOKENS representing the generated future behavior.",
           "modifier": "",
           "inputs": [
             {
               "kind": "text",
               "label": "Input description",
-              "text": "Background: The person is lifting a white panel off a wooden cabinet and repositioning the cabinet on a workbench.\nFirst half details: The person stands beside a wooden cabinet, then lifts a white rectangular panel off the top with both hands, rotating it upward and away from the cabinet. Both arms extend forward to grip the panel, then lift and rotate it upward and to the right, with elbows bending and shoulders engaging to control the motion. Legs remain mostly stationary, with slight bending at the knees to stabilize the body during the lifting motion. The person lowers the white panel onto a workbench in front of them, bending slightly at the waist and knees to place it down gently. Arms extend forward and downward to lower the panel, with forearms rotating to align the panel flat on the workbench. Knees bend slightly and hips hinge forward to maintain balance while lowering the panel."
+              "text": "Background: The person is lifting a white panel off a wooden cabinet and repositioning the cabinet on a workbench.\nObserved prefix details: The person stands beside a wooden cabinet, then lifts a white rectangular panel off the top with both hands, rotating it upward and away from the cabinet. Both arms extend forward to grip the panel, then lift and rotate it upward and to the right, with elbows bending and shoulders engaging to control the motion. Legs remain mostly stationary, with slight bending at the knees to stabilize the body during the lifting motion. The person lowers the white panel onto a workbench in front of them, bending slightly at the waist and knees to place it down gently. Arms extend forward and downward to lower the panel, with forearms rotating to align the panel flat on the workbench. Knees bend slightly and hips hinge forward to maintain balance while lowering the panel."
             }
           ],
           "package": [
@@ -744,7 +744,7 @@ window.ROBOOSTEER = {
             }
           ],
           "packagePath": "Data/Level1/Motion/Prediction/jEqXdH2H0Bw_00022_0_131_fore",
-          "watchFor": "Generate 3–4.405 s using the earlier text condition. Only the final interval is missing.",
+          "watchFor": "Generate the unseen future segment so that it naturally continues the observed prefix and satisfies the provided behavioral condition.",
           "previewScope": "The complete source is shown for comparison; the blue interval marks the requested completion.",
           "variantId": "text",
           "variantLabel": "Text",
@@ -758,8 +758,8 @@ window.ROBOOSTEER = {
           "modality": "Human video",
           "taskId": "L1_motion_prediction_human_video_jEqXdH2H0Bw_00022_0_131",
           "duration": 4.405,
-          "purpose": "Generate the missing future motion from the provided input.",
-          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a video of a real human that ONLY shows the first half of a continuous action sequence. Your objective is to predict and generate the unseen second half of the motion sequence. You must ensure the generated future motion naturally continues from the action in the video and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the predicted future motion.",
+          "purpose": "Generate the unseen future segment so that it naturally continues the observed prefix and satisfies the provided behavioral condition.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a video of a real human that ONLY shows the observed prefix of a continuous action sequence. Your objective is to predict and generate the unseen future segment of the motion sequence. You must ensure the generated future motion naturally continues from the action in the video and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the predicted future motion.",
           "modifier": "",
           "inputs": [
             {
@@ -834,8 +834,8 @@ window.ROBOOSTEER = {
           "modality": "Skeleton video",
           "taskId": "L1_motion_prediction_skeleton_video_jEqXdH2H0Bw_00022_0_131",
           "duration": 4.405,
-          "purpose": "Generate the missing future motion from the provided input.",
-          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a video of a rendered skeleton that ONLY shows the first half of a continuous action sequence. Your objective is to predict and generate the unseen second half of the motion sequence. You must ensure the generated future motion naturally continues from the action in the video and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the predicted future motion.",
+          "purpose": "Generate the unseen future segment so that it naturally continues the observed prefix and satisfies the provided behavioral condition.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a video of a rendered skeleton that ONLY shows the observed prefix of a continuous action sequence. Your objective is to predict and generate the unseen future segment of the motion sequence. You must ensure the generated future motion naturally continues from the action in the video and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the predicted future motion.",
           "modifier": "",
           "inputs": [
             {
@@ -910,8 +910,8 @@ window.ROBOOSTEER = {
           "modality": "Audio",
           "taskId": "L1_motion_prediction_audio_jEqXdH2H0Bw_00022_0_131",
           "duration": 4.405,
-          "purpose": "Generate the missing future motion from the provided input.",
-          "prompt": "You are an advanced 3D motion generation model. I will provide you with an audio recording containing the background of a complete action and spoken details of its first half. Your objective is to predict and generate the unseen second half so that it naturally continues the described motion and remains physically plausible. Your output MUST be a continuous sequence of ACTION TOKENS representing the predicted future motion.",
+          "purpose": "Generate the unseen future segment so that it naturally continues the observed prefix and satisfies the provided behavioral condition.",
+          "prompt": "You are an advanced 3D motion generation model. I will provide you with an audio recording containing the background of a complete action and spoken details of its observed prefix. Your objective is to predict and generate the unseen future segment so that it naturally continues the described motion and remains physically plausible. Your output MUST be a continuous sequence of ACTION TOKENS representing the predicted future motion.",
           "modifier": "",
           "inputs": [
             {
@@ -985,8 +985,8 @@ window.ROBOOSTEER = {
           "modality": "Text + music",
           "taskId": "L1_motion_prediction_rhythm__M7DH7Ml9lI_00002_0_258",
           "duration": 10.803,
-          "purpose": "Predict the continuation from the action description and partial music.",
-          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with the first half of a music track, a text description of the overall full-body action, and a target motion duration for the predicted sequence in seconds. Your objective is to predict and generate the continuation of the motion sequence. You must ensure the generated future motion naturally continues from the previous state, matches the target duration, synchronizes with the music continuation, and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the predicted future motion.",
+          "purpose": "Generate the unseen future behavior from the provided initial music segment and textual behavioral condition, maintaining continuity and alignment with the music continuation.",
+          "prompt": "I will provide an initial segment of a music track, a textual behavioral condition, and a target duration. Your objective is to generate the unseen future behavior so that it follows the textual condition, maintains continuity, and aligns with the music continuation while remaining physically plausible. Your output MUST be a continuous sequence of ACTION TOKENS representing the generated future behavior.",
           "modifier": "",
           "inputs": [
             {
@@ -1067,14 +1067,14 @@ window.ROBOOSTEER = {
       "modality": "Text",
       "taskId": "L1_motion_retrodiction_text_jEqXdH2H0Bw_00022_0_131",
       "duration": 4.405,
-      "purpose": "Reconstruct the missing past interval from the background and later observations.",
-      "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic text input consisting of two parts: a Background that summarizes the macro intent of a complete action, and the Second half details which specifies the kinematics of the person's whole body, upper limbs, and lower limbs during the concluding period. Your objective is to leverage the global context from the Background to retrodict and generate the unseen initial phase of the motion sequence. You must ensure the generated past motion naturally leads into the described final state and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the retrodicted initial motion.",
+      "purpose": "Generate the unseen past segment so that it naturally leads into the observed suffix and satisfies the provided behavioral condition.",
+      "prompt": "I will provide a textual behavioral condition containing the background of a continuous action sequence and details of its observed suffix. Your objective is to generate the unseen past segment so that it naturally leads into the provided motion, follows the behavioral condition, and remains physically plausible. Your output MUST be a continuous sequence of ACTION TOKENS representing the generated past behavior.",
       "modifier": "",
       "inputs": [
         {
           "kind": "text",
           "label": "Input description",
-          "text": "Background: The person is lifting a white panel off a wooden cabinet and repositioning the cabinet on a workbench.\nSecond half details: The person lowers the white panel onto a workbench in front of them, bending slightly at the waist and knees to place it down gently. Arms extend forward and downward to lower the panel, with forearms rotating to align the panel flat on the workbench. Knees bend slightly and hips hinge forward to maintain balance while lowering the panel. The person grips the wooden cabinet with both hands, lifts it slightly off the workbench, and tilts it forward to reposition it over the white panel. Arms bend at the elbows to grip the sides of the cabinet, then extend slightly as the cabinet is lifted and tilted forward. Legs bend more deeply at the knees and hips to generate lifting force, with feet planted firmly for stability."
+          "text": "Background: The person is lifting a white panel off a wooden cabinet and repositioning the cabinet on a workbench.\nObserved suffix details: The person lowers the white panel onto a workbench in front of them, bending slightly at the waist and knees to place it down gently. Arms extend forward and downward to lower the panel, with forearms rotating to align the panel flat on the workbench. Knees bend slightly and hips hinge forward to maintain balance while lowering the panel. The person grips the wooden cabinet with both hands, lifts it slightly off the workbench, and tilts it forward to reposition it over the white panel. Arms bend at the elbows to grip the sides of the cabinet, then extend slightly as the cabinet is lifted and tilted forward. Legs bend more deeply at the knees and hips to generate lifting force, with feet planted firmly for stability."
         }
       ],
       "package": [
@@ -1129,7 +1129,7 @@ window.ROBOOSTEER = {
         }
       ],
       "packagePath": "Data/Level1/Motion/Retrodiction/jEqXdH2H0Bw_00022_0_131_retro",
-      "watchFor": "Reconstruct 0–1.5 s from the later text condition. Only the beginning is missing.",
+      "watchFor": "Generate the unseen past segment so that it naturally leads into the observed suffix and satisfies the provided behavioral condition.",
       "previewScope": "The complete source is shown for comparison; the blue interval marks the requested completion.",
       "variants": [
         {
@@ -1140,14 +1140,14 @@ window.ROBOOSTEER = {
           "modality": "Text",
           "taskId": "L1_motion_retrodiction_text_jEqXdH2H0Bw_00022_0_131",
           "duration": 4.405,
-          "purpose": "Reconstruct the missing past interval from the background and later observations.",
-          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic text input consisting of two parts: a Background that summarizes the macro intent of a complete action, and the Second half details which specifies the kinematics of the person's whole body, upper limbs, and lower limbs during the concluding period. Your objective is to leverage the global context from the Background to retrodict and generate the unseen initial phase of the motion sequence. You must ensure the generated past motion naturally leads into the described final state and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the retrodicted initial motion.",
+          "purpose": "Generate the unseen past segment so that it naturally leads into the observed suffix and satisfies the provided behavioral condition.",
+          "prompt": "I will provide a textual behavioral condition containing the background of a continuous action sequence and details of its observed suffix. Your objective is to generate the unseen past segment so that it naturally leads into the provided motion, follows the behavioral condition, and remains physically plausible. Your output MUST be a continuous sequence of ACTION TOKENS representing the generated past behavior.",
           "modifier": "",
           "inputs": [
             {
               "kind": "text",
               "label": "Input description",
-              "text": "Background: The person is lifting a white panel off a wooden cabinet and repositioning the cabinet on a workbench.\nSecond half details: The person lowers the white panel onto a workbench in front of them, bending slightly at the waist and knees to place it down gently. Arms extend forward and downward to lower the panel, with forearms rotating to align the panel flat on the workbench. Knees bend slightly and hips hinge forward to maintain balance while lowering the panel. The person grips the wooden cabinet with both hands, lifts it slightly off the workbench, and tilts it forward to reposition it over the white panel. Arms bend at the elbows to grip the sides of the cabinet, then extend slightly as the cabinet is lifted and tilted forward. Legs bend more deeply at the knees and hips to generate lifting force, with feet planted firmly for stability."
+              "text": "Background: The person is lifting a white panel off a wooden cabinet and repositioning the cabinet on a workbench.\nObserved suffix details: The person lowers the white panel onto a workbench in front of them, bending slightly at the waist and knees to place it down gently. Arms extend forward and downward to lower the panel, with forearms rotating to align the panel flat on the workbench. Knees bend slightly and hips hinge forward to maintain balance while lowering the panel. The person grips the wooden cabinet with both hands, lifts it slightly off the workbench, and tilts it forward to reposition it over the white panel. Arms bend at the elbows to grip the sides of the cabinet, then extend slightly as the cabinet is lifted and tilted forward. Legs bend more deeply at the knees and hips to generate lifting force, with feet planted firmly for stability."
             }
           ],
           "package": [
@@ -1202,7 +1202,7 @@ window.ROBOOSTEER = {
             }
           ],
           "packagePath": "Data/Level1/Motion/Retrodiction/jEqXdH2H0Bw_00022_0_131_retro",
-          "watchFor": "Reconstruct 0–1.5 s from the later text condition. Only the beginning is missing.",
+          "watchFor": "Generate the unseen past segment so that it naturally leads into the observed suffix and satisfies the provided behavioral condition.",
           "previewScope": "The complete source is shown for comparison; the blue interval marks the requested completion.",
           "variantId": "text",
           "variantLabel": "Text",
@@ -1216,8 +1216,8 @@ window.ROBOOSTEER = {
           "modality": "Human video",
           "taskId": "L1_motion_retrodiction_human_video_jEqXdH2H0Bw_00022_0_131",
           "duration": 4.405,
-          "purpose": "Reconstruct the missing beginning from the later input.",
-          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a video of a real human that ONLY shows the second half of a continuous action sequence. Your objective is to infer and generate the preceding first half of the motion sequence. You must ensure the generated past motion logically transitions into the starting state of the provided video and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the inferred past motion.",
+          "purpose": "Generate the unseen past segment so that it naturally leads into the observed suffix and satisfies the provided behavioral condition.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a video of a real human that ONLY shows the observed suffix of a continuous action sequence. Your objective is to infer and generate the unseen past segment of the motion sequence. You must ensure the generated past motion logically transitions into the starting state of the provided video and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the inferred past motion.",
           "modifier": "",
           "inputs": [
             {
@@ -1292,8 +1292,8 @@ window.ROBOOSTEER = {
           "modality": "Skeleton video",
           "taskId": "L1_motion_retrodiction_skeleton_video_jEqXdH2H0Bw_00022_0_131",
           "duration": 4.405,
-          "purpose": "Reconstruct the missing beginning from the later input.",
-          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a video of a rendered skeleton that ONLY shows the second half of a continuous action sequence. Your objective is to infer and generate the preceding first half of the motion sequence. You must ensure the generated past motion logically transitions into the starting state of the provided video and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the inferred past motion.",
+          "purpose": "Generate the unseen past segment so that it naturally leads into the observed suffix and satisfies the provided behavioral condition.",
+          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a video of a rendered skeleton that ONLY shows the observed suffix of a continuous action sequence. Your objective is to infer and generate the unseen past segment of the motion sequence. You must ensure the generated past motion logically transitions into the starting state of the provided video and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the inferred past motion.",
           "modifier": "",
           "inputs": [
             {
@@ -1368,8 +1368,8 @@ window.ROBOOSTEER = {
           "modality": "Audio",
           "taskId": "L1_motion_retrodiction_audio_jEqXdH2H0Bw_00022_0_131",
           "duration": 4.405,
-          "purpose": "Reconstruct the missing beginning from the later input.",
-          "prompt": "You are an advanced 3D motion generation model. I will provide you with an audio recording containing the background of a complete action and spoken details of its second half. Your objective is to infer and generate the unseen first half so that it naturally leads into the described motion and remains physically plausible. Your output MUST be a continuous sequence of ACTION TOKENS representing the inferred past motion.",
+          "purpose": "Generate the unseen past segment so that it naturally leads into the observed suffix and satisfies the provided behavioral condition.",
+          "prompt": "You are an advanced 3D motion generation model. I will provide you with an audio recording containing the background of a complete action and spoken details of its observed suffix. Your objective is to infer and generate the unseen past segment so that it naturally leads into the described motion and remains physically plausible. Your output MUST be a continuous sequence of ACTION TOKENS representing the inferred past motion.",
           "modifier": "",
           "inputs": [
             {
@@ -1446,8 +1446,8 @@ window.ROBOOSTEER = {
       "modality": "Text",
       "taskId": "L1_motion_interpolation_text_tfYiJh5E1uY_00006_36_110",
       "duration": 3.086,
-      "purpose": "Generate the missing middle interval while connecting the two observed ends.",
-      "prompt": "You are an advanced 3D motion generation model. You will receive motion text from the beginning and ending parts of the same clip, with the middle part missing. Your objective is to rewrite them into one coherent motion sequence while inserting the exact bridge sentence 'The middle sequence is missing.' once in the middle. Keep only motion facts and essential object interaction. Do not mention appearance, clothing, face, camera, lighting, or unrelated background details. Do not invent actions or add unsupported details. Your output MUST be a coherent motion sequence representing the missing middle sequence.",
+      "purpose": "Generate the missing intermediate segment while satisfying the observed prefix and suffix as temporal behavioral conditions.",
+      "prompt": "I will provide text describing the observed prefix and suffix of a continuous behavior sequence. Your objective is to generate the missing intermediate segment so that it connects the provided segments naturally, satisfies their behavioral conditions, and remains physically plausible. Your output MUST be a continuous sequence of ACTION TOKENS representing the generated intermediate behavior.",
       "modifier": "",
       "inputs": [
         {
@@ -1514,7 +1514,7 @@ window.ROBOOSTEER = {
         }
       ],
       "packagePath": "Data/Level1/Motion/Interpolation/tfYiJh5E1uY_00006_36_110_inter",
-      "watchFor": "Fill 1–2 s while connecting the described beginning and ending.",
+      "watchFor": "Generate the missing intermediate segment while satisfying the observed prefix and suffix as temporal behavioral conditions.",
       "previewScope": "The complete source is shown for comparison; the blue interval marks the missing middle.",
       "variants": [
         {
@@ -1525,8 +1525,8 @@ window.ROBOOSTEER = {
           "modality": "Text",
           "taskId": "L1_motion_interpolation_text_tfYiJh5E1uY_00006_36_110",
           "duration": 3.086,
-          "purpose": "Generate the missing middle interval while connecting the two observed ends.",
-          "prompt": "You are an advanced 3D motion generation model. You will receive motion text from the beginning and ending parts of the same clip, with the middle part missing. Your objective is to rewrite them into one coherent motion sequence while inserting the exact bridge sentence 'The middle sequence is missing.' once in the middle. Keep only motion facts and essential object interaction. Do not mention appearance, clothing, face, camera, lighting, or unrelated background details. Do not invent actions or add unsupported details. Your output MUST be a coherent motion sequence representing the missing middle sequence.",
+          "purpose": "Generate the missing intermediate segment while satisfying the observed prefix and suffix as temporal behavioral conditions.",
+          "prompt": "I will provide text describing the observed prefix and suffix of a continuous behavior sequence. Your objective is to generate the missing intermediate segment so that it connects the provided segments naturally, satisfies their behavioral conditions, and remains physically plausible. Your output MUST be a continuous sequence of ACTION TOKENS representing the generated intermediate behavior.",
           "modifier": "",
           "inputs": [
             {
@@ -1593,7 +1593,7 @@ window.ROBOOSTEER = {
             }
           ],
           "packagePath": "Data/Level1/Motion/Interpolation/tfYiJh5E1uY_00006_36_110_inter",
-          "watchFor": "Fill 1–2 s while connecting the described beginning and ending.",
+          "watchFor": "Generate the missing intermediate segment while satisfying the observed prefix and suffix as temporal behavioral conditions.",
           "previewScope": "The complete source is shown for comparison; the blue interval marks the missing middle.",
           "variantId": "text",
           "variantLabel": "Text",
@@ -1607,8 +1607,8 @@ window.ROBOOSTEER = {
           "modality": "Human video",
           "taskId": "L1_motion_interpolation_human_video_tfYiJh5E1uY_00006_36_110",
           "duration": 3.086,
-          "purpose": "Connect the provided beginning and ending with the missing motion.",
-          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with two video segments of a real human showing the starting portion and the ending portion of an action, with a temporal gap in between. Your objective is to predict and generate the missing intermediate movements to bridge this temporal gap. You must ensure the generated motion logically connects the action in the starting video to the action in the ending video and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the missing middle sequence.",
+          "purpose": "Generate the missing intermediate segment while satisfying the observed prefix and suffix as temporal behavioral conditions.",
+          "prompt": "I will provide human video clips of the observed prefix and suffix of a continuous behavior sequence. Your objective is to generate the missing intermediate segment so that it connects the provided segments naturally, satisfies their behavioral conditions, and remains physically plausible. Your output MUST be a continuous sequence of ACTION TOKENS representing the generated intermediate behavior.",
           "modifier": "",
           "inputs": [
             {
@@ -1695,8 +1695,8 @@ window.ROBOOSTEER = {
           "modality": "Skeleton video",
           "taskId": "L1_motion_interpolation_skeleton_video_tfYiJh5E1uY_00006_36_110",
           "duration": 3.086,
-          "purpose": "Connect the provided beginning and ending with the missing motion.",
-          "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with two video segments of a rendered skeleton showing the starting portion and the ending portion of an action, with a temporal gap in between. Your objective is to predict and generate the missing intermediate movements to bridge this temporal gap. You must ensure the generated motion logically connects the action in the starting video to the action in the ending video and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the missing middle sequence.",
+          "purpose": "Generate the missing intermediate segment while satisfying the observed prefix and suffix as temporal behavioral conditions.",
+          "prompt": "I will provide skeleton video clips of the observed prefix and suffix of a continuous behavior sequence. Your objective is to generate the missing intermediate segment so that it connects the provided segments naturally, satisfies their behavioral conditions, and remains physically plausible. Your output MUST be a continuous sequence of ACTION TOKENS representing the generated intermediate behavior.",
           "modifier": "",
           "inputs": [
             {
@@ -1783,8 +1783,8 @@ window.ROBOOSTEER = {
           "modality": "Audio",
           "taskId": "L1_motion_interpolation_audio_tfYiJh5E1uY_00006_36_110",
           "duration": 3.086,
-          "purpose": "Connect the provided beginning and ending with the missing motion.",
-          "prompt": "You are an advanced 3D motion generation model. I will provide you with an audio recording containing the background of a complete action and spoken descriptions of its beginning and ending portions, with the middle portion missing. Your objective is to generate the missing intermediate motion so that it connects both observed portions naturally and remains physically plausible. Your output MUST be a continuous sequence of ACTION TOKENS representing the missing middle motion.",
+          "purpose": "Generate the missing intermediate segment while satisfying the observed prefix and suffix as temporal behavioral conditions.",
+          "prompt": "I will provide spoken descriptions of the observed prefix and suffix of a continuous behavior sequence. Your objective is to generate the missing intermediate segment so that it connects the provided segments naturally, satisfies their behavioral conditions, and remains physically plausible. Your output MUST be a continuous sequence of ACTION TOKENS representing the generated intermediate behavior.",
           "modifier": "",
           "inputs": [
             {
@@ -1867,7 +1867,7 @@ window.ROBOOSTEER = {
       "modality": "Human image + text",
       "taskId": "L1_key_frame_conditioning_human_image__1fhVpM4xCU_00000_399_474",
       "duration": 2.536,
-      "purpose": "Match the supplied key poses at 0.8 and 1.5 seconds while fielding and throwing the ball.",
+      "purpose": "Generate a continuous behavior that satisfies the behavioral instruction and the key-frame pose conditions at their specified timestamps.",
       "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a text description of the overall full-body action, a target motion duration in seconds, and a sequence of keyframe images of a real human extracted at specific timestamps. Your objective is to generate a continuous 3D motion sequence. You must ensure that the generated motion logically follows the text description, matches the target duration, matches the subject's poses in the keyframe images at their exact timestamps, and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the full-body motion.",
       "modifier": "",
       "inputs": [
@@ -1931,7 +1931,7 @@ window.ROBOOSTEER = {
           "modality": "Human image + text",
           "taskId": "L1_key_frame_conditioning_human_image__1fhVpM4xCU_00000_399_474",
           "duration": 2.536,
-          "purpose": "Match the supplied key poses at 0.8 and 1.5 seconds while fielding and throwing the ball.",
+          "purpose": "Generate a continuous behavior that satisfies the behavioral instruction and the key-frame pose conditions at their specified timestamps.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a text description of the overall full-body action, a target motion duration in seconds, and a sequence of keyframe images of a real human extracted at specific timestamps. Your objective is to generate a continuous 3D motion sequence. You must ensure that the generated motion logically follows the text description, matches the target duration, matches the subject's poses in the keyframe images at their exact timestamps, and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the full-body motion.",
           "modifier": "",
           "inputs": [
@@ -1997,7 +1997,7 @@ window.ROBOOSTEER = {
           "modality": "Human image + audio",
           "taskId": "L1_key_frame_conditioning_human_image_audio__1fhVpM4xCU_00000_399_474",
           "duration": 2.536,
-          "purpose": "Match the supplied key poses at 0.8 and 1.5 seconds while fielding and throwing the ball.",
+          "purpose": "Generate a continuous behavior that satisfies the behavioral instruction and the key-frame pose conditions at their specified timestamps.",
           "prompt": "You are an advanced 3D motion generation model. I will provide you with an audio recording describing the overall action, a target motion duration, and keyframe images of a real human at specific timestamps. Your objective is to generate a continuous 3D full-body motion that follows the spoken action description, matches the target duration, and matches the human poses at their corresponding timestamps while maintaining physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the full-body motion.",
           "modifier": "",
           "inputs": [
@@ -2063,7 +2063,7 @@ window.ROBOOSTEER = {
           "modality": "Skeleton image + text",
           "taskId": "L1_key_frame_conditioning_skeleton_image__1fhVpM4xCU_00000_399_474",
           "duration": 2.536,
-          "purpose": "Match the supplied key poses at 0.8 and 1.5 seconds while fielding and throwing the ball.",
+          "purpose": "Generate a continuous behavior that satisfies the behavioral instruction and the key-frame pose conditions at their specified timestamps.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a text description of the overall full-body action, a target motion duration in seconds, and a sequence of keyframe images of a rendered skeleton extracted at specific timestamps. Your objective is to generate a continuous 3D motion sequence. You must ensure that the generated motion logically follows the text description, matches the target duration, matches the subject's poses in the keyframe images at their exact timestamps, and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the full-body motion.",
           "modifier": "",
           "inputs": [
@@ -2129,7 +2129,7 @@ window.ROBOOSTEER = {
           "modality": "Skeleton image + audio",
           "taskId": "L1_key_frame_conditioning_skeleton_image_audio__1fhVpM4xCU_00000_399_474",
           "duration": 2.536,
-          "purpose": "Match the supplied key poses at 0.8 and 1.5 seconds while fielding and throwing the ball.",
+          "purpose": "Generate a continuous behavior that satisfies the behavioral instruction and the key-frame pose conditions at their specified timestamps.",
           "prompt": "You are an advanced 3D motion generation model. I will provide you with an audio recording describing the overall action, a target motion duration, and keyframe images of a rendered skeleton at specific timestamps. Your objective is to generate a continuous 3D full-body motion that follows the spoken action description, matches the target duration, and matches the skeleton poses at their corresponding timestamps while maintaining physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the full-body motion.",
           "modifier": "",
           "inputs": [
@@ -2197,7 +2197,7 @@ window.ROBOOSTEER = {
       "modality": "Text",
       "taskId": "L1_upper_to_full_body_completion_text_EJYftp7eZYc_00005_0_85",
       "duration": 2.87,
-      "purpose": "Complete the lower-body motion while preserving the described upper-body action.",
+      "purpose": "Complete the lower-body behavior while preserving the supplied upper-body behavioral condition.",
       "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic text input that details the kinematics of a person's whole body and upper limbs, but the description for the lower limbs is explicitly missing. Your objective is to predict the missing lower-limb movements to form a coherent full-body action. You must ensure that the generated lower-limb movements synchronize with the explicitly described whole body and upper limbs, and maintain physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the completed entire body.",
       "modifier": "",
       "inputs": [
@@ -2241,7 +2241,7 @@ window.ROBOOSTEER = {
       },
       "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
       "packagePath": "Data/Shared/Motion/00023/EJYftp7eZYc_00005_0_85",
-      "watchFor": "Preserve the described upper body and infer the leg motion needed for a balanced squat.",
+      "watchFor": "Complete the lower-body behavior while preserving the supplied upper-body behavioral condition.",
       "previewScope": "The full body is shown for comparison; the legs are the part to complete.",
       "variants": [
         {
@@ -2252,7 +2252,7 @@ window.ROBOOSTEER = {
           "modality": "Text",
           "taskId": "L1_upper_to_full_body_completion_text_EJYftp7eZYc_00005_0_85",
           "duration": 2.87,
-          "purpose": "Complete the lower-body motion while preserving the described upper-body action.",
+          "purpose": "Complete the lower-body behavior while preserving the supplied upper-body behavioral condition.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic text input that details the kinematics of a person's whole body and upper limbs, but the description for the lower limbs is explicitly missing. Your objective is to predict the missing lower-limb movements to form a coherent full-body action. You must ensure that the generated lower-limb movements synchronize with the explicitly described whole body and upper limbs, and maintain physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the completed entire body.",
           "modifier": "",
           "inputs": [
@@ -2296,7 +2296,7 @@ window.ROBOOSTEER = {
           },
           "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
           "packagePath": "Data/Shared/Motion/00023/EJYftp7eZYc_00005_0_85",
-          "watchFor": "Preserve the described upper body and infer the leg motion needed for a balanced squat.",
+          "watchFor": "Complete the lower-body behavior while preserving the supplied upper-body behavioral condition.",
           "previewScope": "The full body is shown for comparison; the legs are the part to complete.",
           "variantId": "text",
           "variantLabel": "Text",
@@ -2310,7 +2310,7 @@ window.ROBOOSTEER = {
           "modality": "Human video",
           "taskId": "L1_upper_to_full_body_completion_human_video_EJYftp7eZYc_00005_0_85",
           "duration": 2.87,
-          "purpose": "Complete the lower body while preserving the supplied upper-body motion.",
+          "purpose": "Complete the lower-body behavior while preserving the supplied upper-body behavioral condition.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a video of a real human that ONLY shows the movements of the upper body. The lower body is explicitly missing. Your objective is to predict the missing lower-body movements to form a coherent full-body action. You must ensure that the generated lower-body movements synchronize with the visible upper body and maintain physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the completed entire body.",
           "modifier": "",
           "inputs": [
@@ -2368,7 +2368,7 @@ window.ROBOOSTEER = {
           "modality": "Skeleton video",
           "taskId": "L1_upper_to_full_body_completion_skeleton_video_EJYftp7eZYc_00005_0_85",
           "duration": 2.87,
-          "purpose": "Complete the lower body while preserving the supplied upper-body motion.",
+          "purpose": "Complete the lower-body behavior while preserving the supplied upper-body behavioral condition.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a video of a rendered skeleton that ONLY shows the movements of the upper body. The lower body is explicitly missing. Your objective is to predict the missing lower-body movements to form a coherent full-body action. You must ensure that the generated lower-body movements synchronize with the visible upper body and maintain physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the completed entire body.",
           "modifier": "",
           "inputs": [
@@ -2426,7 +2426,7 @@ window.ROBOOSTEER = {
           "modality": "Audio",
           "taskId": "L1_upper_to_full_body_completion_audio_EJYftp7eZYc_00005_0_85",
           "duration": 2.87,
-          "purpose": "Complete the lower body while preserving the supplied upper-body motion.",
+          "purpose": "Complete the lower-body behavior while preserving the supplied upper-body behavioral condition.",
           "prompt": "You are an advanced 3D motion generation model. I will provide you with an audio recording describing the observed whole-body context and upper-body motion while the lower-body details are missing. Your objective is to infer the missing lower-body movement and generate a coherent, physically plausible full-body action. Your output MUST be a continuous sequence of ACTION TOKENS representing the completed full-body motion.",
           "modifier": "",
           "inputs": [
@@ -2486,7 +2486,7 @@ window.ROBOOSTEER = {
       "modality": "Text",
       "taskId": "L1_lower_to_full_body_completion_text_EJYftp7eZYc_00005_0_85",
       "duration": 2.87,
-      "purpose": "Complete the upper-body motion while preserving the described lower-body action.",
+      "purpose": "Complete the upper-body behavior while preserving the supplied lower-body behavioral condition.",
       "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic text input that details the kinematics of a person's whole body and lower limbs, but the description for the upper limbs is explicitly missing. Your objective is to predict the missing upper-limb movements to form a coherent full-body action. You must ensure that the generated upper-limb movements synchronize with the explicitly described whole body and lower limbs, and maintain physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the completed entire body.",
       "modifier": "",
       "inputs": [
@@ -2530,7 +2530,7 @@ window.ROBOOSTEER = {
       },
       "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
       "packagePath": "Data/Shared/Motion/00023/EJYftp7eZYc_00005_0_85",
-      "watchFor": "Preserve the described leg motion and infer compatible torso and arm motion.",
+      "watchFor": "Complete the upper-body behavior while preserving the supplied lower-body behavioral condition.",
       "previewScope": "The full body is shown for comparison; the upper body is the part to complete.",
       "variants": [
         {
@@ -2541,7 +2541,7 @@ window.ROBOOSTEER = {
           "modality": "Text",
           "taskId": "L1_lower_to_full_body_completion_text_EJYftp7eZYc_00005_0_85",
           "duration": 2.87,
-          "purpose": "Complete the upper-body motion while preserving the described lower-body action.",
+          "purpose": "Complete the upper-body behavior while preserving the supplied lower-body behavioral condition.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic text input that details the kinematics of a person's whole body and lower limbs, but the description for the upper limbs is explicitly missing. Your objective is to predict the missing upper-limb movements to form a coherent full-body action. You must ensure that the generated upper-limb movements synchronize with the explicitly described whole body and lower limbs, and maintain physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the completed entire body.",
           "modifier": "",
           "inputs": [
@@ -2585,7 +2585,7 @@ window.ROBOOSTEER = {
           },
           "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
           "packagePath": "Data/Shared/Motion/00023/EJYftp7eZYc_00005_0_85",
-          "watchFor": "Preserve the described leg motion and infer compatible torso and arm motion.",
+          "watchFor": "Complete the upper-body behavior while preserving the supplied lower-body behavioral condition.",
           "previewScope": "The full body is shown for comparison; the upper body is the part to complete.",
           "variantId": "text",
           "variantLabel": "Text",
@@ -2599,7 +2599,7 @@ window.ROBOOSTEER = {
           "modality": "Human video",
           "taskId": "L1_lower_to_full_body_completion_human_video_EJYftp7eZYc_00005_0_85",
           "duration": 2.87,
-          "purpose": "Complete the upper body while preserving the supplied lower-body motion.",
+          "purpose": "Complete the upper-body behavior while preserving the supplied lower-body behavioral condition.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a video of a real human that ONLY shows the movements of the lower body. The upper body is explicitly missing. Your objective is to predict the missing upper-body movements to form a coherent full-body action. You must ensure that the generated upper-body movements synchronize with the visible lower body and maintain physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the completed entire body.",
           "modifier": "",
           "inputs": [
@@ -2657,7 +2657,7 @@ window.ROBOOSTEER = {
           "modality": "Skeleton video",
           "taskId": "L1_lower_to_full_body_completion_skeleton_video_EJYftp7eZYc_00005_0_85",
           "duration": 2.87,
-          "purpose": "Complete the upper body while preserving the supplied lower-body motion.",
+          "purpose": "Complete the upper-body behavior while preserving the supplied lower-body behavioral condition.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a video of a rendered skeleton that ONLY shows the movements of the lower body. The upper body is explicitly missing. Your objective is to predict the missing upper-body movements to form a coherent full-body action. You must ensure that the generated upper-body movements synchronize with the visible lower body and maintain physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the completed entire body.",
           "modifier": "",
           "inputs": [
@@ -2715,7 +2715,7 @@ window.ROBOOSTEER = {
           "modality": "Audio",
           "taskId": "L1_lower_to_full_body_completion_audio_EJYftp7eZYc_00005_0_85",
           "duration": 2.87,
-          "purpose": "Complete the upper body while preserving the supplied lower-body motion.",
+          "purpose": "Complete the upper-body behavior while preserving the supplied lower-body behavioral condition.",
           "prompt": "You are an advanced 3D motion generation model. I will provide you with an audio recording describing the observed whole-body context and lower-body motion while the upper-body details are missing. Your objective is to infer the missing upper-body movement and generate a coherent, physically plausible full-body action. Your output MUST be a continuous sequence of ACTION TOKENS representing the completed full-body motion.",
           "modifier": "",
           "inputs": [
@@ -2775,7 +2775,7 @@ window.ROBOOSTEER = {
       "modality": "Text",
       "taskId": "L1_target_reaching_text_v3J14lxJmHo_00016_542_901",
       "duration": 6.009,
-      "purpose": "Preserve the base action and satisfy the local goal: both hands on the head.",
+      "purpose": "Preserve the intended behavior while satisfying the specified local body-part goal.",
       "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements under a local body-part goal. I will provide you with a base action description plus a separate local goal. Your objective is to generate the complete full-body motion that follows the base action and includes this local goal as one clear occurrence during the action. You must preserve physical plausibility, timing, and balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the full-body motion.",
       "modifier": "",
       "inputs": [
@@ -2819,7 +2819,7 @@ window.ROBOOSTEER = {
       },
       "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
       "packagePath": "Data/Shared/Motion/00030/v3J14lxJmHo_00016_542_901",
-      "watchFor": "Keep the kick-and-walk action and include one clear occurrence of both hands on the head.",
+      "watchFor": "Preserve the intended behavior while satisfying the specified local body-part goal.",
       "previewScope": "The local hand goal is one event in the sequence, not a pose to hold throughout.",
       "variants": [
         {
@@ -2830,7 +2830,7 @@ window.ROBOOSTEER = {
           "modality": "Text",
           "taskId": "L1_target_reaching_text_v3J14lxJmHo_00016_542_901",
           "duration": 6.009,
-          "purpose": "Preserve the base action and satisfy the local goal: both hands on the head.",
+          "purpose": "Preserve the intended behavior while satisfying the specified local body-part goal.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements under a local body-part goal. I will provide you with a base action description plus a separate local goal. Your objective is to generate the complete full-body motion that follows the base action and includes this local goal as one clear occurrence during the action. You must preserve physical plausibility, timing, and balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the full-body motion.",
           "modifier": "",
           "inputs": [
@@ -2874,7 +2874,7 @@ window.ROBOOSTEER = {
           },
           "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
           "packagePath": "Data/Shared/Motion/00030/v3J14lxJmHo_00016_542_901",
-          "watchFor": "Keep the kick-and-walk action and include one clear occurrence of both hands on the head.",
+          "watchFor": "Preserve the intended behavior while satisfying the specified local body-part goal.",
           "previewScope": "The local hand goal is one event in the sequence, not a pose to hold throughout.",
           "variantId": "text",
           "variantLabel": "Text",
@@ -2888,7 +2888,7 @@ window.ROBOOSTEER = {
           "modality": "Audio",
           "taskId": "L1_target_reaching_audio_v3J14lxJmHo_00016_542_901",
           "duration": 6.009,
-          "purpose": "Preserve the base action and satisfy the local goal: both hands on the head.",
+          "purpose": "Preserve the intended behavior while satisfying the specified local body-part goal.",
           "prompt": "You are an advanced 3D motion generation model. I will provide you with an audio recording containing a spoken base-action description and a local target-reaching goal. Your objective is to generate a complete, physically plausible full-body motion that preserves the base action and reaches the specified local target as instructed. Your output MUST be a continuous sequence of ACTION TOKENS representing the target-reaching motion.",
           "modifier": "",
           "inputs": [
@@ -2948,7 +2948,7 @@ window.ROBOOSTEER = {
       "modality": "Text",
       "taskId": "L2_speed_text__7ui0Pd8Bd0_00020_18_71_slow",
       "duration": 2.123,
-      "purpose": "Preserve the action while performing it at 0.5 times the original speed.",
+      "purpose": "Preserve the intended behavior while satisfying the specified execution-speed constraint.",
       "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic description of an action and a specific speed multiplier. Your objective is to apply the specified multiplier to the execution tempo while maintaining the action's core kinematics and physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the motion at the target speed multiplier.",
       "modifier": "Please perform the movement at 0.5x the original speed.",
       "inputs": [
@@ -2992,7 +2992,7 @@ window.ROBOOSTEER = {
       },
       "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
       "packagePath": "Data/Shared/Motion/00026/_7ui0Pd8Bd0_00020_18_71",
-      "watchFor": "Keep the walking action but perform it at half the original speed.",
+      "watchFor": "Preserve the intended behavior while satisfying the specified execution-speed constraint.",
       "previewScope": "Base action only. A verified 0.5× target video is not available in this preview.",
       "variants": [
         {
@@ -3003,7 +3003,7 @@ window.ROBOOSTEER = {
           "modality": "Text",
           "taskId": "L2_speed_text__7ui0Pd8Bd0_00020_18_71_slow",
           "duration": 2.123,
-          "purpose": "Preserve the action while performing it at 0.5 times the original speed.",
+          "purpose": "Preserve the intended behavior while satisfying the specified execution-speed constraint.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic description of an action and a specific speed multiplier. Your objective is to apply the specified multiplier to the execution tempo while maintaining the action's core kinematics and physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the motion at the target speed multiplier.",
           "modifier": "Please perform the movement at 0.5x the original speed.",
           "inputs": [
@@ -3047,7 +3047,7 @@ window.ROBOOSTEER = {
           },
           "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
           "packagePath": "Data/Shared/Motion/00026/_7ui0Pd8Bd0_00020_18_71",
-          "watchFor": "Keep the walking action but perform it at half the original speed.",
+          "watchFor": "Preserve the intended behavior while satisfying the specified execution-speed constraint.",
           "previewScope": "Base action only. A verified 0.5× target video is not available in this preview.",
           "variantId": "text",
           "variantLabel": "Text",
@@ -3061,7 +3061,7 @@ window.ROBOOSTEER = {
           "modality": "Human video",
           "taskId": "L2_speed_human_video__7ui0Pd8Bd0_00020_18_71_slow",
           "duration": 2.123,
-          "purpose": "Preserve the action while performing it at 0.5 times the original speed.",
+          "purpose": "Preserve the intended behavior while satisfying the specified execution-speed constraint.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic description of an action and a specific speed multiplier. Your objective is to apply the specified multiplier to the execution tempo while maintaining the action's core kinematics and physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the motion at the target speed multiplier.",
           "modifier": "Please perform the movement at 0.5x the original speed.",
           "inputs": [
@@ -3119,7 +3119,7 @@ window.ROBOOSTEER = {
           "modality": "Skeleton video",
           "taskId": "L2_speed_skeleton_video__7ui0Pd8Bd0_00020_18_71_slow",
           "duration": 2.123,
-          "purpose": "Preserve the action while performing it at 0.5 times the original speed.",
+          "purpose": "Preserve the intended behavior while satisfying the specified execution-speed constraint.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic description of an action and a specific speed multiplier. Your objective is to apply the specified multiplier to the execution tempo while maintaining the action's core kinematics and physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the motion at the target speed multiplier.",
           "modifier": "Please perform the movement at 0.5x the original speed.",
           "inputs": [
@@ -3177,7 +3177,7 @@ window.ROBOOSTEER = {
           "modality": "Audio",
           "taskId": "L2_speed_audio__7ui0Pd8Bd0_00020_18_71_slow",
           "duration": 2.123,
-          "purpose": "Preserve the action while performing it at 0.5 times the original speed.",
+          "purpose": "Preserve the intended behavior while satisfying the specified execution-speed constraint.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with an audio recording containing a spoken action description and a speed-control instruction. Your objective is to apply the specified speed multiplier while preserving the action's core kinematics and physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the motion at the target speed multiplier.",
           "modifier": "",
           "inputs": [
@@ -3237,7 +3237,7 @@ window.ROBOOSTEER = {
       "modality": "Text",
       "taskId": "L2_amplitude_text__629q8t8_Hg_00004_91_186_scale_up",
       "duration": 3.92,
-      "purpose": "Preserve the action while doubling the spatial extent of the movement.",
+      "purpose": "Preserve the intended behavior while satisfying the specified movement-amplitude constraint.",
       "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic description of an action and a specific amplitude multiplier. Your objective is to apply the specified multiplier to the spatial extent of the movement while maintaining the action's core kinematics and physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the motion at the target amplitude multiplier.",
       "modifier": "Please perform the movement with 2x the original amplitude.",
       "inputs": [
@@ -3281,7 +3281,7 @@ window.ROBOOSTEER = {
       },
       "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
       "packagePath": "Data/Shared/Motion/00063/_629q8t8_Hg_00004_91_186",
-      "watchFor": "Keep the walking action but double the requested motion amplitude.",
+      "watchFor": "Preserve the intended behavior while satisfying the specified movement-amplitude constraint.",
       "previewScope": "Base action only. A verified 2×-amplitude target video is not available in this preview.",
       "variants": [
         {
@@ -3292,7 +3292,7 @@ window.ROBOOSTEER = {
           "modality": "Text",
           "taskId": "L2_amplitude_text__629q8t8_Hg_00004_91_186_scale_up",
           "duration": 3.92,
-          "purpose": "Preserve the action while doubling the spatial extent of the movement.",
+          "purpose": "Preserve the intended behavior while satisfying the specified movement-amplitude constraint.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic description of an action and a specific amplitude multiplier. Your objective is to apply the specified multiplier to the spatial extent of the movement while maintaining the action's core kinematics and physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the motion at the target amplitude multiplier.",
           "modifier": "Please perform the movement with 2x the original amplitude.",
           "inputs": [
@@ -3336,7 +3336,7 @@ window.ROBOOSTEER = {
           },
           "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
           "packagePath": "Data/Shared/Motion/00063/_629q8t8_Hg_00004_91_186",
-          "watchFor": "Keep the walking action but double the requested motion amplitude.",
+          "watchFor": "Preserve the intended behavior while satisfying the specified movement-amplitude constraint.",
           "previewScope": "Base action only. A verified 2×-amplitude target video is not available in this preview.",
           "variantId": "text",
           "variantLabel": "Text",
@@ -3350,7 +3350,7 @@ window.ROBOOSTEER = {
           "modality": "Human video",
           "taskId": "L2_amplitude_human_video__629q8t8_Hg_00004_91_186_scale_up",
           "duration": 3.92,
-          "purpose": "Preserve the action while doubling the spatial extent of the movement.",
+          "purpose": "Preserve the intended behavior while satisfying the specified movement-amplitude constraint.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic description of an action and a specific amplitude multiplier. Your objective is to apply the specified multiplier to the spatial extent of the movement while maintaining the action's core kinematics and physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the motion at the target amplitude multiplier.",
           "modifier": "Please perform the movement with 2x the original amplitude.",
           "inputs": [
@@ -3408,7 +3408,7 @@ window.ROBOOSTEER = {
           "modality": "Skeleton video",
           "taskId": "L2_amplitude_skeleton_video__629q8t8_Hg_00004_91_186_scale_up",
           "duration": 3.92,
-          "purpose": "Preserve the action while doubling the spatial extent of the movement.",
+          "purpose": "Preserve the intended behavior while satisfying the specified movement-amplitude constraint.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic description of an action and a specific amplitude multiplier. Your objective is to apply the specified multiplier to the spatial extent of the movement while maintaining the action's core kinematics and physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the motion at the target amplitude multiplier.",
           "modifier": "Please perform the movement with 2x the original amplitude.",
           "inputs": [
@@ -3466,7 +3466,7 @@ window.ROBOOSTEER = {
           "modality": "Audio",
           "taskId": "L2_amplitude_audio__629q8t8_Hg_00004_91_186_scale_up",
           "duration": 3.92,
-          "purpose": "Preserve the action while doubling the spatial extent of the movement.",
+          "purpose": "Preserve the intended behavior while satisfying the specified movement-amplitude constraint.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with an audio recording containing a spoken action description and an amplitude-control instruction. Your objective is to apply the specified amplitude multiplier to the spatial extent of the movement while maintaining the action's core kinematics and physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the motion at the target amplitude multiplier.",
           "modifier": "",
           "inputs": [
@@ -3526,7 +3526,7 @@ window.ROBOOSTEER = {
       "modality": "Text",
       "taskId": "L2_direction_text__0jcfXKxjLI_00025_33_131_left",
       "duration": 3.96,
-      "purpose": "Complete the same action while changing the travel direction to the left.",
+      "purpose": "Preserve the intended behavior while satisfying the specified movement-direction constraint.",
       "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide a base motion description or video and a direction-change instruction. Your objective is to change the movement direction as instructed while preserving the original action and physical plausibility. Your output MUST be a continuous sequence of ACTION TOKENS representing the modified motion.",
       "modifier": "The current motion moves straight to the front. Change it to move to the left while still completing the same action.",
       "inputs": [
@@ -3570,7 +3570,7 @@ window.ROBOOSTEER = {
       },
       "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
       "packagePath": "Data/Shared/Motion/00024/_0jcfXKxjLI_00025_33_131",
-      "watchFor": "Redirect travel to the left while preserving the underlying walking behavior.",
+      "watchFor": "Preserve the intended behavior while satisfying the specified movement-direction constraint.",
       "previewScope": "Base action only. A verified redirected target video is not available in this preview.",
       "variants": [
         {
@@ -3581,7 +3581,7 @@ window.ROBOOSTEER = {
           "modality": "Text",
           "taskId": "L2_direction_text__0jcfXKxjLI_00025_33_131_left",
           "duration": 3.96,
-          "purpose": "Complete the same action while changing the travel direction to the left.",
+          "purpose": "Preserve the intended behavior while satisfying the specified movement-direction constraint.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide a base motion description or video and a direction-change instruction. Your objective is to change the movement direction as instructed while preserving the original action and physical plausibility. Your output MUST be a continuous sequence of ACTION TOKENS representing the modified motion.",
           "modifier": "The current motion moves straight to the front. Change it to move to the left while still completing the same action.",
           "inputs": [
@@ -3625,7 +3625,7 @@ window.ROBOOSTEER = {
           },
           "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
           "packagePath": "Data/Shared/Motion/00024/_0jcfXKxjLI_00025_33_131",
-          "watchFor": "Redirect travel to the left while preserving the underlying walking behavior.",
+          "watchFor": "Preserve the intended behavior while satisfying the specified movement-direction constraint.",
           "previewScope": "Base action only. A verified redirected target video is not available in this preview.",
           "variantId": "text",
           "variantLabel": "Text",
@@ -3639,7 +3639,7 @@ window.ROBOOSTEER = {
           "modality": "Human video",
           "taskId": "L2_direction_human_video__0jcfXKxjLI_00025_33_131_left",
           "duration": 3.96,
-          "purpose": "Complete the same action while changing the travel direction to the left.",
+          "purpose": "Preserve the intended behavior while satisfying the specified movement-direction constraint.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide a base motion description or video and a direction-change instruction. Your objective is to change the movement direction as instructed while preserving the original action and physical plausibility. Your output MUST be a continuous sequence of ACTION TOKENS representing the modified motion.",
           "modifier": "The current motion moves straight to the front. Change it to move to the left while still completing the same action.",
           "inputs": [
@@ -3697,7 +3697,7 @@ window.ROBOOSTEER = {
           "modality": "Skeleton video",
           "taskId": "L2_direction_skeleton_video__0jcfXKxjLI_00025_33_131_left",
           "duration": 3.96,
-          "purpose": "Complete the same action while changing the travel direction to the left.",
+          "purpose": "Preserve the intended behavior while satisfying the specified movement-direction constraint.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide a base motion description or video and a direction-change instruction. Your objective is to change the movement direction as instructed while preserving the original action and physical plausibility. Your output MUST be a continuous sequence of ACTION TOKENS representing the modified motion.",
           "modifier": "The current motion moves straight to the front. Change it to move to the left while still completing the same action.",
           "inputs": [
@@ -3755,7 +3755,7 @@ window.ROBOOSTEER = {
           "modality": "Audio",
           "taskId": "L2_direction_audio__0jcfXKxjLI_00025_33_131_left",
           "duration": 3.96,
-          "purpose": "Complete the same action while changing the travel direction to the left.",
+          "purpose": "Preserve the intended behavior while satisfying the specified movement-direction constraint.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with an audio recording containing a spoken base-motion description and a direction-change instruction. Your objective is to change the movement direction as instructed while preserving the original action and physical plausibility. Your output MUST be a continuous sequence of ACTION TOKENS representing the modified motion.",
           "modifier": "",
           "inputs": [
@@ -3815,7 +3815,7 @@ window.ROBOOSTEER = {
       "modality": "Text",
       "taskId": "L2_order_text_10028_0_p0",
       "duration": 4.309,
-      "purpose": "Perform a T-pose, then step-jump to the right, with a continuous transition.",
+      "purpose": "Realize the specified behaviors in the required temporal order while maintaining continuous transitions.",
       "prompt": "You are an advanced 3D motion generation model. I will provide you with a text description of two distinct actions that must occur in a specific sequence. Your objective is to generate a continuous 3D motion that executes Action A followed by Action B with a natural transition. Your output MUST be a continuous sequence of ACTION TOKENS.",
       "modifier": "",
       "inputs": [
@@ -3844,7 +3844,7 @@ window.ROBOOSTEER = {
         "Step-jump right"
       ],
       "packagePath": "Data/Level2/Order/Motion/10028_0.pkl",
-      "watchFor": "Perform the T-pose first, then the step-jump to the right; preserve that order and the transition.",
+      "watchFor": "Realize the specified behaviors in the required temporal order while maintaining continuous transitions.",
       "previewScope": "The supplied AMASS body rendering shows the ordered reference.",
       "variants": [
         {
@@ -3855,7 +3855,7 @@ window.ROBOOSTEER = {
           "modality": "Text",
           "taskId": "L2_order_text_10028_0_p0",
           "duration": 4.309,
-          "purpose": "Perform a T-pose, then step-jump to the right, with a continuous transition.",
+          "purpose": "Realize the specified behaviors in the required temporal order while maintaining continuous transitions.",
           "prompt": "You are an advanced 3D motion generation model. I will provide you with a text description of two distinct actions that must occur in a specific sequence. Your objective is to generate a continuous 3D motion that executes Action A followed by Action B with a natural transition. Your output MUST be a continuous sequence of ACTION TOKENS.",
           "modifier": "",
           "inputs": [
@@ -3884,7 +3884,7 @@ window.ROBOOSTEER = {
             "Step-jump right"
           ],
           "packagePath": "Data/Level2/Order/Motion/10028_0.pkl",
-          "watchFor": "Perform the T-pose first, then the step-jump to the right; preserve that order and the transition.",
+          "watchFor": "Realize the specified behaviors in the required temporal order while maintaining continuous transitions.",
           "previewScope": "The supplied AMASS body rendering shows the ordered reference.",
           "variantId": "text",
           "variantLabel": "Text"
@@ -3897,7 +3897,7 @@ window.ROBOOSTEER = {
           "modality": "Audio",
           "taskId": "L2_order_audio_10028_0_p0",
           "duration": 4.309,
-          "purpose": "Perform a T-pose, then step-jump to the right, with a continuous transition.",
+          "purpose": "Realize the specified behaviors in the required temporal order while maintaining continuous transitions.",
           "prompt": "You are an advanced 3D motion generation model. I will provide you with an audio recording describing two distinct actions that must occur in a specific sequence. Your objective is to generate a continuous 3D motion that executes the actions in the spoken order with a natural transition. Your output MUST be a continuous sequence of ACTION TOKENS.",
           "modifier": "",
           "inputs": [
@@ -3938,7 +3938,7 @@ window.ROBOOSTEER = {
           "modality": "Video",
           "taskId": "L2_order_video_10028_0_p0",
           "duration": 4.309,
-          "purpose": "Perform a T-pose, then step-jump to the right, with a continuous transition.",
+          "purpose": "Realize the specified behaviors in the required temporal order while maintaining continuous transitions.",
           "prompt": "You are an advanced 3D motion generation model. I will provide you with two video clips, each showing one action segment, and a text instruction specifying their temporal order. Your objective is to generate a continuous 3D motion that performs the action from the first referenced video and the action from the second referenced video in the instructed order with a natural transition. Your output MUST be a continuous sequence of ACTION TOKENS.",
           "modifier": "",
           "inputs": [
@@ -3993,7 +3993,7 @@ window.ROBOOSTEER = {
       "modality": "Text",
       "taskId": "L2_times_text_10005_7_2x",
       "duration": 3.216666666666667,
-      "purpose": "Lower the arms exactly twice, including the reset between repetitions.",
+      "purpose": "Realize the intended behavior with the specified repetition count.",
       "prompt": "You are an advanced 3D motion generation model. I will provide you with a text description of a single action and an explicit repetition count. Your objective is to generate a continuous 3D motion where the specified action is repeated exactly as instructed, including the necessary reset between repetitions. Your output MUST be a continuous sequence of ACTION TOKENS.",
       "modifier": "",
       "inputs": [
@@ -4022,7 +4022,7 @@ window.ROBOOSTEER = {
         "Lower arms"
       ],
       "packagePath": "Data/Level2/Times/Motion/10005_7_2x.pkl",
-      "watchFor": "Lower the arms, reset, and lower them again: exactly two repetitions.",
+      "watchFor": "Realize the intended behavior with the specified repetition count.",
       "previewScope": "One source cycle is shown. The separate two-repetition motion package has no complete target preview here.",
       "variants": [
         {
@@ -4033,7 +4033,7 @@ window.ROBOOSTEER = {
           "modality": "Text",
           "taskId": "L2_times_text_10005_7_2x",
           "duration": 3.216666666666667,
-          "purpose": "Lower the arms exactly twice, including the reset between repetitions.",
+          "purpose": "Realize the intended behavior with the specified repetition count.",
           "prompt": "You are an advanced 3D motion generation model. I will provide you with a text description of a single action and an explicit repetition count. Your objective is to generate a continuous 3D motion where the specified action is repeated exactly as instructed, including the necessary reset between repetitions. Your output MUST be a continuous sequence of ACTION TOKENS.",
           "modifier": "",
           "inputs": [
@@ -4062,7 +4062,7 @@ window.ROBOOSTEER = {
             "Lower arms"
           ],
           "packagePath": "Data/Level2/Times/Motion/10005_7_2x.pkl",
-          "watchFor": "Lower the arms, reset, and lower them again: exactly two repetitions.",
+          "watchFor": "Realize the intended behavior with the specified repetition count.",
           "previewScope": "One source cycle is shown. The separate two-repetition motion package has no complete target preview here.",
           "variantId": "text",
           "variantLabel": "Text"
@@ -4075,7 +4075,7 @@ window.ROBOOSTEER = {
           "modality": "Audio",
           "taskId": "L2_times_audio_10005_7_2x",
           "duration": 3.216666666666667,
-          "purpose": "Lower the arms exactly twice, including the reset between repetitions.",
+          "purpose": "Realize the intended behavior with the specified repetition count.",
           "prompt": "You are an advanced 3D motion generation model. I will provide you with an audio recording describing a single action and an explicit repetition count. Your objective is to generate a continuous 3D motion in which the specified action is repeated exactly as instructed, including the necessary reset between repetitions. Your output MUST be a continuous sequence of ACTION TOKENS.",
           "modifier": "",
           "inputs": [
@@ -4116,7 +4116,7 @@ window.ROBOOSTEER = {
           "modality": "Video",
           "taskId": "L2_times_video_10005_7_2x",
           "duration": 3.216666666666667,
-          "purpose": "Lower the arms exactly twice, including the reset between repetitions.",
+          "purpose": "Realize the intended behavior with the specified repetition count.",
           "prompt": "You are an advanced 3D motion generation model. I will provide you with a video clip showing a single action and a text instruction specifying how many times to repeat that action. Your objective is to generate a continuous 3D motion that repeats the action from the video exactly as instructed. Your output MUST be a continuous sequence of ACTION TOKENS.",
           "modifier": "",
           "inputs": [
@@ -4165,7 +4165,7 @@ window.ROBOOSTEER = {
       "modality": "Text",
       "taskId": "L2_trajectory_text__7dhzy2Mnm8_00006_0_68_s_shape",
       "duration": 2.8,
-      "purpose": "Perform the described action while following the supplied root trajectory.",
+      "purpose": "Preserve the intended behavior while satisfying the specified root-trajectory constraint.",
       "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a base action and a target spatial trajectory curve shown in a graph. Your objective is to map the local movements onto the global path such that the root translation strictly adheres to the specified curve. Your output MUST be a continuous sequence of ACTION TOKENS representing the trajectory-constrained motion.",
       "modifier": "",
       "inputs": [
@@ -4212,7 +4212,7 @@ window.ROBOOSTEER = {
         "label": "G1 retargeted motion · complete sequence",
         "poster": "assets/cases/trajectory/g1.jpg"
       },
-      "motionNote": "The skeleton shows the source action. Agreement with the supplied trajectory has not been verified. This is not a model prediction.",
+      "motionNote": "The G1 rendering depicts the reference motion. Agreement with the supplied trajectory has not been verified. This is not a model prediction.",
       "packagePath": "Data/Shared/Motion/00004/_7dhzy2Mnm8_00006_0_68",
       "trajectoryPoints": {
         "start": [
@@ -4236,8 +4236,8 @@ window.ROBOOSTEER = {
           1.4646698236465454
         ]
       },
-      "watchFor": "Preserve the balancing action while moving along the supplied path. Compare the root path, not just the limb motion.",
-      "previewScope": "The skeleton shows the source action. Agreement with the supplied trajectory has not been verified.",
+      "watchFor": "Preserve the intended behavior while satisfying the specified root-trajectory constraint.",
+      "previewScope": "The G1 rendering depicts the reference motion. Agreement with the supplied trajectory has not been verified.",
       "variants": [
         {
           "id": "trajectory",
@@ -4247,7 +4247,7 @@ window.ROBOOSTEER = {
           "modality": "Text + trajectory",
           "taskId": "L2_trajectory_text__7dhzy2Mnm8_00006_0_68_s_shape",
           "duration": 2.8,
-          "purpose": "Perform the described action while following the supplied root trajectory.",
+          "purpose": "Preserve the intended behavior while satisfying the specified root-trajectory constraint.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a base action and a target spatial trajectory curve shown in a graph. Your objective is to map the local movements onto the global path such that the root translation strictly adheres to the specified curve. Your output MUST be a continuous sequence of ACTION TOKENS representing the trajectory-constrained motion.",
           "modifier": "",
           "inputs": [
@@ -4294,7 +4294,7 @@ window.ROBOOSTEER = {
             "label": "G1 retargeted motion · complete sequence",
             "poster": "assets/cases/trajectory/g1.jpg"
           },
-          "motionNote": "The skeleton shows the source action. Agreement with the supplied trajectory has not been verified. This is not a model prediction.",
+          "motionNote": "The G1 rendering depicts the reference motion. Agreement with the supplied trajectory has not been verified. This is not a model prediction.",
           "packagePath": "Data/Shared/Motion/00004/_7dhzy2Mnm8_00006_0_68",
           "trajectoryPoints": {
             "start": [
@@ -4318,8 +4318,8 @@ window.ROBOOSTEER = {
               1.4646698236465454
             ]
           },
-          "watchFor": "Preserve the balancing action while moving along the supplied path. Compare the root path, not just the limb motion.",
-          "previewScope": "The skeleton shows the source action. Agreement with the supplied trajectory has not been verified.",
+          "watchFor": "Preserve the intended behavior while satisfying the specified root-trajectory constraint.",
+          "previewScope": "The G1 rendering depicts the reference motion. Agreement with the supplied trajectory has not been verified.",
           "variantId": "text",
           "variantLabel": "Text + trajectory",
           "visualization": "g1-retargeted"
@@ -4332,7 +4332,7 @@ window.ROBOOSTEER = {
           "modality": "Audio + trajectory",
           "taskId": "L2_trajectory_audio__7dhzy2Mnm8_00006_0_68_s_shape",
           "duration": 2.8,
-          "purpose": "Perform the described action while following the supplied root trajectory.",
+          "purpose": "Preserve the intended behavior while satisfying the specified root-trajectory constraint.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with an audio recording describing a base action and a target spatial trajectory curve shown in a graph. Your objective is to map the local movements onto the global path such that the root translation strictly adheres to the specified curve. Your output MUST be a continuous sequence of ACTION TOKENS representing the trajectory-constrained motion.",
           "modifier": "",
           "inputs": [
@@ -4403,7 +4403,7 @@ window.ROBOOSTEER = {
               1.4646698236465454
             ]
           },
-          "previewScope": "The skeleton shows the source action. Agreement with the supplied trajectory has not been verified.",
+          "previewScope": "The G1 rendering depicts the reference motion. Agreement with the supplied trajectory has not been verified.",
           "variantId": "audio",
           "variantLabel": "Audio + trajectory",
           "visualization": "g1-retargeted"
@@ -4416,7 +4416,7 @@ window.ROBOOSTEER = {
           "modality": "Video + trajectory",
           "taskId": "L2_trajectory_video__7dhzy2Mnm8_00006_0_68_s_shape",
           "duration": 2.8,
-          "purpose": "Perform the described action while following the supplied root trajectory.",
+          "purpose": "Preserve the intended behavior while satisfying the specified root-trajectory constraint.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a base action and a target spatial trajectory curve shown in a graph. Your objective is to map the local movements onto the global path such that the root translation strictly adheres to the specified curve. Your output MUST be a continuous sequence of ACTION TOKENS representing the trajectory-constrained motion.",
           "modifier": "",
           "inputs": [
@@ -4488,7 +4488,7 @@ window.ROBOOSTEER = {
               1.4646698236465454
             ]
           },
-          "previewScope": "The skeleton shows the source action. Agreement with the supplied trajectory has not been verified.",
+          "previewScope": "The G1 rendering depicts the reference motion. Agreement with the supplied trajectory has not been verified.",
           "variantId": "video",
           "variantLabel": "Video + trajectory",
           "visualization": "g1-retargeted"
@@ -4504,7 +4504,7 @@ window.ROBOOSTEER = {
       "modality": "Text",
       "taskId": "L2_body_restrain_text__629q8t8_Hg_00004_91_186_arms",
       "duration": 3.92,
-      "purpose": "Preserve walking while keeping the arms still and motionless.",
+      "purpose": "Preserve the intended behavior while keeping the specified non-core body parts still.",
       "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic description of an action and an instruction that specifies non-core body parts to restrain. Your objective is to generate the full-body motion while keeping the specified non-core joints still and motionless, preserving the core action as much as possible. Your output MUST be a continuous sequence of ACTION TOKENS representing the restrained motion.",
       "modifier": "Please perform the action while keeping your arms still and motionless.",
       "inputs": [
@@ -4548,7 +4548,7 @@ window.ROBOOSTEER = {
       },
       "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
       "packagePath": "Data/Shared/Motion/00063/_629q8t8_Hg_00004_91_186",
-      "watchFor": "Keep walking while holding the arms still, overriding the arm swing in the base description.",
+      "watchFor": "Preserve the intended behavior while keeping the specified non-core body parts still.",
       "previewScope": "Base action only. A verified arms-fixed target video is not available in this preview.",
       "variants": [
         {
@@ -4559,7 +4559,7 @@ window.ROBOOSTEER = {
           "modality": "Text",
           "taskId": "L2_body_restrain_text__629q8t8_Hg_00004_91_186_arms",
           "duration": 3.92,
-          "purpose": "Preserve walking while keeping the arms still and motionless.",
+          "purpose": "Preserve the intended behavior while keeping the specified non-core body parts still.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic description of an action and an instruction that specifies non-core body parts to restrain. Your objective is to generate the full-body motion while keeping the specified non-core joints still and motionless, preserving the core action as much as possible. Your output MUST be a continuous sequence of ACTION TOKENS representing the restrained motion.",
           "modifier": "Please perform the action while keeping your arms still and motionless.",
           "inputs": [
@@ -4603,7 +4603,7 @@ window.ROBOOSTEER = {
           },
           "motionNote": "This is the unmodified reference action. The current task record points to shared reference data; a separately verified video satisfying the requested constraint has not been supplied.",
           "packagePath": "Data/Shared/Motion/00063/_629q8t8_Hg_00004_91_186",
-          "watchFor": "Keep walking while holding the arms still, overriding the arm swing in the base description.",
+          "watchFor": "Preserve the intended behavior while keeping the specified non-core body parts still.",
           "previewScope": "Base action only. A verified arms-fixed target video is not available in this preview.",
           "variantId": "text",
           "variantLabel": "Text",
@@ -4617,7 +4617,7 @@ window.ROBOOSTEER = {
           "modality": "Human video",
           "taskId": "L2_body_restrain_human_video__629q8t8_Hg_00004_91_186_arms",
           "duration": 3.92,
-          "purpose": "Preserve walking while keeping the arms still and motionless.",
+          "purpose": "Preserve the intended behavior while keeping the specified non-core body parts still.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic description of an action and an instruction that specifies non-core body parts to restrain. Your objective is to generate the full-body motion while keeping the specified non-core joints still and motionless, preserving the core action as much as possible. Your output MUST be a continuous sequence of ACTION TOKENS representing the restrained motion.",
           "modifier": "Please perform the action while keeping your arms still and motionless.",
           "inputs": [
@@ -4675,7 +4675,7 @@ window.ROBOOSTEER = {
           "modality": "Skeleton video",
           "taskId": "L2_body_restrain_skeleton_video__629q8t8_Hg_00004_91_186_arms",
           "duration": 3.92,
-          "purpose": "Preserve walking while keeping the arms still and motionless.",
+          "purpose": "Preserve the intended behavior while keeping the specified non-core body parts still.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a semantic description of an action and an instruction that specifies non-core body parts to restrain. Your objective is to generate the full-body motion while keeping the specified non-core joints still and motionless, preserving the core action as much as possible. Your output MUST be a continuous sequence of ACTION TOKENS representing the restrained motion.",
           "modifier": "Please perform the action while keeping your arms still and motionless.",
           "inputs": [
@@ -4733,7 +4733,7 @@ window.ROBOOSTEER = {
           "modality": "Audio",
           "taskId": "L2_body_restrain_audio__629q8t8_Hg_00004_91_186_arms",
           "duration": 3.92,
-          "purpose": "Preserve walking while keeping the arms still and motionless.",
+          "purpose": "Preserve the intended behavior while keeping the specified non-core body parts still.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with an audio recording containing a spoken action description and an instruction specifying which non-core body parts to restrain. Your objective is to generate the full-body motion while keeping the specified non-core joints still and motionless and preserving the core action as much as possible. Your output MUST be a continuous sequence of ACTION TOKENS representing the restrained motion.",
           "modifier": "",
           "inputs": [
@@ -4793,7 +4793,7 @@ window.ROBOOSTEER = {
       "modality": "Text + image + video + audio",
       "taskId": "L3_interleave__0qRTEzGEe4_00015_60_183",
       "duration": 5.167,
-      "purpose": "Combine the ordered text, key-frame, video and audio conditions into one continuous motion.",
+      "purpose": "Jointly satisfy multiple temporally interleaved behavioral requirements from heterogeneous sources within a single behavior sequence.",
       "prompt": "You are an advanced 3D motion generation model. You will receive a chronological sequence of interleaved text descriptions, audio instructions, video segments, and key-frame images. Each input corresponds to a specific motion segment or boundary timestamp from the same original motion. Your objective is to synthesize a single, physically plausible 3D full-body motion sequence that strictly follows the temporal order and semantic content of all provided inputs.",
       "modifier": "",
       "inputs": [
@@ -4869,7 +4869,7 @@ window.ROBOOSTEER = {
       },
       "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
       "packagePath": "Data/Shared/Motion/00001/_0qRTEzGEe4_00015_60_183",
-      "watchFor": "Use text for 0–2 s, match the pose at 2 s, follow video for 2–4 s, then the spoken instruction for 4–5 s.",
+      "watchFor": "Jointly satisfy multiple temporally interleaved behavioral requirements from heterogeneous sources within a single behavior sequence.",
       "previewScope": "The inputs share one source sequence. The final 0.167 s of the declared source duration has no assigned input segment.",
       "visualization": "g1-retargeted"
     }
