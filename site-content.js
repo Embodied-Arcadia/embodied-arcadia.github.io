@@ -1864,60 +1864,64 @@ window.ROBOOSTEER = {
       "level": 1,
       "group": "Temporal Completion",
       "title": "Key-frame Conditioning",
-      "modality": "Text + human key frame",
-      "taskId": "L1_key_frame_conditioning_human_image_--3wjNOccLY_00002_0_63",
-      "duration": 2.136,
-      "purpose": "Generate the full sequence and match the supplied human pose at 1.2 seconds.",
+      "modality": "Human image + text",
+      "taskId": "L1_key_frame_conditioning_human_image__1fhVpM4xCU_00000_399_474",
+      "duration": 2.536,
+      "purpose": "Match the supplied key poses at 0.8 and 1.5 seconds while fielding and throwing the ball.",
       "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a text description of the overall full-body action, a target motion duration in seconds, and a sequence of keyframe images of a real human extracted at specific timestamps. Your objective is to generate a continuous 3D motion sequence. You must ensure that the generated motion logically follows the text description, matches the target duration, matches the subject's poses in the keyframe images at their exact timestamps, and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the full-body motion.",
       "modifier": "",
       "inputs": [
         {
           "kind": "text",
           "label": "Input description",
-          "text": "The person is lunging forward dynamically and dropping into a low crouch."
+          "text": "The person is fielding a ball and throwing it."
         },
         {
           "kind": "image",
-          "label": "Key frame at 1.2 s",
-          "src": "assets/cases/key_frame_conditioning/input-01.jpg"
+          "label": "Key frame at 0.8 s",
+          "src": "assets/cases/reviewed-20260925/key_frame_conditioning/human_image/condition-01.jpg"
+        },
+        {
+          "kind": "image",
+          "label": "Key frame at 1.5 s",
+          "src": "assets/cases/reviewed-20260925/key_frame_conditioning/human_image/condition-02.jpg"
         }
       ],
       "package": [
         {
           "file": "joint_pos.csv",
-          "shape": "154 × 29"
+          "shape": "174 × 29"
         },
         {
           "file": "body_pos.csv",
-          "shape": "154 × 3"
+          "shape": "174 × 3"
         },
         {
           "file": "body_quat.csv",
-          "shape": "154 × 4"
+          "shape": "174 × 4"
         },
         {
           "file": "joint_vel.csv",
-          "shape": "154 × 29"
+          "shape": "174 × 29"
         },
         {
           "file": "body_lin_vel.csv",
-          "shape": "154 × 3"
+          "shape": "174 × 3"
         },
         {
           "file": "body_ang_vel.csv",
-          "shape": "154 × 3"
+          "shape": "174 × 3"
         }
       ],
-      "panel": 19,
+      "panel": null,
       "video": {
-        "src": "assets/cases/key_frame_conditioning/skeleton.mp4",
-        "label": "Skeleton reference motion · complete sequence",
-        "poster": "assets/cases/key_frame_conditioning/skeleton.jpg"
+        "src": "assets/cases/key_frame_conditioning/g1-fielding.mp4",
+        "poster": "assets/cases/key_frame_conditioning/g1-fielding.jpg",
+        "label": "G1 retargeted motion · complete sequence"
       },
       "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
-      "packagePath": "Data/Shared/Motion/00052/--3wjNOccLY_00002_0_63",
-      "watchFor": "Match the supplied pose at 1.2 s while generating the rest of the lunge-to-crouch sequence.",
-      "previewScope": "The image constrains one instant; the reference shows the whole source sequence.",
+      "packagePath": "Data/Shared/Motion/00062/_1fhVpM4xCU_00000_399_474",
+      "visualization": "g1-retargeted",
       "variants": [
         {
           "id": "key_frame_conditioning",
@@ -1925,61 +1929,65 @@ window.ROBOOSTEER = {
           "group": "Temporal Completion",
           "title": "Key-frame Conditioning",
           "modality": "Human image + text",
-          "taskId": "L1_key_frame_conditioning_human_image_--3wjNOccLY_00002_0_63",
-          "duration": 2.136,
-          "purpose": "Generate the full sequence and match the supplied human pose at 1.2 seconds.",
+          "taskId": "L1_key_frame_conditioning_human_image__1fhVpM4xCU_00000_399_474",
+          "duration": 2.536,
+          "purpose": "Match the supplied key poses at 0.8 and 1.5 seconds while fielding and throwing the ball.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a text description of the overall full-body action, a target motion duration in seconds, and a sequence of keyframe images of a real human extracted at specific timestamps. Your objective is to generate a continuous 3D motion sequence. You must ensure that the generated motion logically follows the text description, matches the target duration, matches the subject's poses in the keyframe images at their exact timestamps, and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the full-body motion.",
           "modifier": "",
           "inputs": [
             {
               "kind": "text",
               "label": "Input description",
-              "text": "The person is lunging forward dynamically and dropping into a low crouch."
+              "text": "The person is fielding a ball and throwing it."
             },
             {
               "kind": "image",
-              "label": "Key frame at 1.2 s",
-              "src": "assets/cases/key_frame_conditioning/input-01.jpg"
+              "label": "Key frame at 0.8 s",
+              "src": "assets/cases/reviewed-20260925/key_frame_conditioning/human_image/condition-01.jpg"
+            },
+            {
+              "kind": "image",
+              "label": "Key frame at 1.5 s",
+              "src": "assets/cases/reviewed-20260925/key_frame_conditioning/human_image/condition-02.jpg"
             }
           ],
           "package": [
             {
               "file": "joint_pos.csv",
-              "shape": "154 × 29"
+              "shape": "174 × 29"
             },
             {
               "file": "body_pos.csv",
-              "shape": "154 × 3"
+              "shape": "174 × 3"
             },
             {
               "file": "body_quat.csv",
-              "shape": "154 × 4"
+              "shape": "174 × 4"
             },
             {
               "file": "joint_vel.csv",
-              "shape": "154 × 29"
+              "shape": "174 × 29"
             },
             {
               "file": "body_lin_vel.csv",
-              "shape": "154 × 3"
+              "shape": "174 × 3"
             },
             {
               "file": "body_ang_vel.csv",
-              "shape": "154 × 3"
+              "shape": "174 × 3"
             }
           ],
-          "panel": 19,
+          "panel": null,
           "video": {
-            "src": "assets/cases/key_frame_conditioning/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/key_frame_conditioning/skeleton.jpg"
+            "src": "assets/cases/key_frame_conditioning/g1-fielding.mp4",
+            "poster": "assets/cases/key_frame_conditioning/g1-fielding.jpg",
+            "label": "G1 retargeted motion · complete sequence"
           },
           "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
-          "packagePath": "Data/Shared/Motion/00052/--3wjNOccLY_00002_0_63",
-          "watchFor": "Match the supplied pose at 1.2 s while generating the rest of the lunge-to-crouch sequence.",
-          "previewScope": "The image constrains one instant; the reference shows the whole source sequence.",
+          "packagePath": "Data/Shared/Motion/00062/_1fhVpM4xCU_00000_399_474",
           "variantId": "human_image",
-          "variantLabel": "Human image + text"
+          "variantLabel": "Human image + text",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "key_frame_conditioning",
@@ -1987,60 +1995,65 @@ window.ROBOOSTEER = {
           "group": "Temporal Completion",
           "title": "Key-frame Conditioning",
           "modality": "Human image + audio",
-          "taskId": "L1_key_frame_conditioning_human_image_audio_--3wjNOccLY_00002_0_63",
-          "duration": 2.136,
-          "purpose": "Follow the action instruction and match the supplied pose at 1.2 s.",
+          "taskId": "L1_key_frame_conditioning_human_image_audio__1fhVpM4xCU_00000_399_474",
+          "duration": 2.536,
+          "purpose": "Match the supplied key poses at 0.8 and 1.5 seconds while fielding and throwing the ball.",
           "prompt": "You are an advanced 3D motion generation model. I will provide you with an audio recording describing the overall action, a target motion duration, and keyframe images of a real human at specific timestamps. Your objective is to generate a continuous 3D full-body motion that follows the spoken action description, matches the target duration, and matches the human poses at their corresponding timestamps while maintaining physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the full-body motion.",
           "modifier": "",
           "inputs": [
             {
               "kind": "audio",
               "label": "Spoken instruction",
-              "src": "assets/cases/key_frame_conditioning/human_image_audio/condition-00.mp3"
+              "src": "assets/cases/reviewed-20260925/key_frame_conditioning/human_image_audio/condition-00.mp3"
             },
             {
               "kind": "image",
-              "label": "Key frame at 1.2 s",
-              "src": "assets/cases/key_frame_conditioning/human_image_audio/condition-01.jpg"
+              "label": "Key frame at 0.8 s",
+              "src": "assets/cases/reviewed-20260925/key_frame_conditioning/human_image_audio/condition-01.jpg"
+            },
+            {
+              "kind": "image",
+              "label": "Key frame at 1.5 s",
+              "src": "assets/cases/reviewed-20260925/key_frame_conditioning/human_image_audio/condition-02.jpg"
             }
           ],
           "package": [
             {
               "file": "joint_pos.csv",
-              "shape": "154 × 29"
+              "shape": "174 × 29"
             },
             {
               "file": "body_pos.csv",
-              "shape": "154 × 3"
+              "shape": "174 × 3"
             },
             {
               "file": "body_quat.csv",
-              "shape": "154 × 4"
+              "shape": "174 × 4"
             },
             {
               "file": "joint_vel.csv",
-              "shape": "154 × 29"
+              "shape": "174 × 29"
             },
             {
               "file": "body_lin_vel.csv",
-              "shape": "154 × 3"
+              "shape": "174 × 3"
             },
             {
               "file": "body_ang_vel.csv",
-              "shape": "154 × 3"
+              "shape": "174 × 3"
             }
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/key_frame_conditioning/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/key_frame_conditioning/skeleton.jpg"
+            "src": "assets/cases/key_frame_conditioning/g1-fielding.mp4",
+            "poster": "assets/cases/key_frame_conditioning/g1-fielding.jpg",
+            "label": "G1 retargeted motion · complete sequence"
           },
           "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
-          "packagePath": "Data/Shared/Motion/00052/--3wjNOccLY_00002_0_63",
-          "previewScope": "The image constrains one instant; the reference shows the whole source sequence.",
+          "packagePath": "Data/Shared/Motion/00062/_1fhVpM4xCU_00000_399_474",
           "variantId": "human_image_audio",
-          "variantLabel": "Human image + audio"
+          "variantLabel": "Human image + audio",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "key_frame_conditioning",
@@ -2048,60 +2061,65 @@ window.ROBOOSTEER = {
           "group": "Temporal Completion",
           "title": "Key-frame Conditioning",
           "modality": "Skeleton image + text",
-          "taskId": "L1_key_frame_conditioning_skeleton_image_--3wjNOccLY_00002_0_63",
-          "duration": 2.136,
-          "purpose": "Follow the action instruction and match the supplied pose at 1.2 s.",
+          "taskId": "L1_key_frame_conditioning_skeleton_image__1fhVpM4xCU_00000_399_474",
+          "duration": 2.536,
+          "purpose": "Match the supplied key poses at 0.8 and 1.5 seconds while fielding and throwing the ball.",
           "prompt": "You are an advanced 3D motion generation model designed to synthesize physically plausible human movements. I will provide you with a text description of the overall full-body action, a target motion duration in seconds, and a sequence of keyframe images of a rendered skeleton extracted at specific timestamps. Your objective is to generate a continuous 3D motion sequence. You must ensure that the generated motion logically follows the text description, matches the target duration, matches the subject's poses in the keyframe images at their exact timestamps, and maintains physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the full-body motion.",
           "modifier": "",
           "inputs": [
             {
               "kind": "text",
               "label": "Input description",
-              "text": "The person is lunging forward dynamically and dropping into a low crouch."
+              "text": "The person is fielding a ball and throwing it."
             },
             {
               "kind": "image",
-              "label": "Key frame at 1.2 s",
-              "src": "assets/cases/key_frame_conditioning/skeleton_image/condition-01.jpg"
+              "label": "Key frame at 0.8 s",
+              "src": "assets/cases/reviewed-20260925/key_frame_conditioning/skeleton_image/condition-01.jpg"
+            },
+            {
+              "kind": "image",
+              "label": "Key frame at 1.5 s",
+              "src": "assets/cases/reviewed-20260925/key_frame_conditioning/skeleton_image/condition-02.jpg"
             }
           ],
           "package": [
             {
               "file": "joint_pos.csv",
-              "shape": "154 × 29"
+              "shape": "174 × 29"
             },
             {
               "file": "body_pos.csv",
-              "shape": "154 × 3"
+              "shape": "174 × 3"
             },
             {
               "file": "body_quat.csv",
-              "shape": "154 × 4"
+              "shape": "174 × 4"
             },
             {
               "file": "joint_vel.csv",
-              "shape": "154 × 29"
+              "shape": "174 × 29"
             },
             {
               "file": "body_lin_vel.csv",
-              "shape": "154 × 3"
+              "shape": "174 × 3"
             },
             {
               "file": "body_ang_vel.csv",
-              "shape": "154 × 3"
+              "shape": "174 × 3"
             }
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/key_frame_conditioning/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/key_frame_conditioning/skeleton.jpg"
+            "src": "assets/cases/key_frame_conditioning/g1-fielding.mp4",
+            "poster": "assets/cases/key_frame_conditioning/g1-fielding.jpg",
+            "label": "G1 retargeted motion · complete sequence"
           },
           "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
-          "packagePath": "Data/Shared/Motion/00052/--3wjNOccLY_00002_0_63",
-          "previewScope": "The image constrains one instant; the reference shows the whole source sequence.",
+          "packagePath": "Data/Shared/Motion/00062/_1fhVpM4xCU_00000_399_474",
           "variantId": "skeleton_image",
-          "variantLabel": "Skeleton image + text"
+          "variantLabel": "Skeleton image + text",
+          "visualization": "g1-retargeted"
         },
         {
           "id": "key_frame_conditioning",
@@ -2109,60 +2127,65 @@ window.ROBOOSTEER = {
           "group": "Temporal Completion",
           "title": "Key-frame Conditioning",
           "modality": "Skeleton image + audio",
-          "taskId": "L1_key_frame_conditioning_skeleton_image_audio_--3wjNOccLY_00002_0_63",
-          "duration": 2.136,
-          "purpose": "Follow the action instruction and match the supplied pose at 1.2 s.",
+          "taskId": "L1_key_frame_conditioning_skeleton_image_audio__1fhVpM4xCU_00000_399_474",
+          "duration": 2.536,
+          "purpose": "Match the supplied key poses at 0.8 and 1.5 seconds while fielding and throwing the ball.",
           "prompt": "You are an advanced 3D motion generation model. I will provide you with an audio recording describing the overall action, a target motion duration, and keyframe images of a rendered skeleton at specific timestamps. Your objective is to generate a continuous 3D full-body motion that follows the spoken action description, matches the target duration, and matches the skeleton poses at their corresponding timestamps while maintaining physical balance. Your output MUST be a continuous sequence of ACTION TOKENS representing the full-body motion.",
           "modifier": "",
           "inputs": [
             {
               "kind": "audio",
               "label": "Spoken instruction",
-              "src": "assets/cases/key_frame_conditioning/skeleton_image_audio/condition-00.mp3"
+              "src": "assets/cases/reviewed-20260925/key_frame_conditioning/skeleton_image_audio/condition-00.mp3"
             },
             {
               "kind": "image",
-              "label": "Key frame at 1.2 s",
-              "src": "assets/cases/key_frame_conditioning/skeleton_image_audio/condition-01.jpg"
+              "label": "Key frame at 0.8 s",
+              "src": "assets/cases/reviewed-20260925/key_frame_conditioning/skeleton_image_audio/condition-01.jpg"
+            },
+            {
+              "kind": "image",
+              "label": "Key frame at 1.5 s",
+              "src": "assets/cases/reviewed-20260925/key_frame_conditioning/skeleton_image_audio/condition-02.jpg"
             }
           ],
           "package": [
             {
               "file": "joint_pos.csv",
-              "shape": "154 × 29"
+              "shape": "174 × 29"
             },
             {
               "file": "body_pos.csv",
-              "shape": "154 × 3"
+              "shape": "174 × 3"
             },
             {
               "file": "body_quat.csv",
-              "shape": "154 × 4"
+              "shape": "174 × 4"
             },
             {
               "file": "joint_vel.csv",
-              "shape": "154 × 29"
+              "shape": "174 × 29"
             },
             {
               "file": "body_lin_vel.csv",
-              "shape": "154 × 3"
+              "shape": "174 × 3"
             },
             {
               "file": "body_ang_vel.csv",
-              "shape": "154 × 3"
+              "shape": "174 × 3"
             }
           ],
           "panel": null,
           "video": {
-            "src": "assets/cases/key_frame_conditioning/skeleton.mp4",
-            "label": "Skeleton reference motion · complete sequence",
-            "poster": "assets/cases/key_frame_conditioning/skeleton.jpg"
+            "src": "assets/cases/key_frame_conditioning/g1-fielding.mp4",
+            "poster": "assets/cases/key_frame_conditioning/g1-fielding.jpg",
+            "label": "G1 retargeted motion · complete sequence"
           },
           "motionNote": "The video visualizes the reference motion associated with this case. It is not a model prediction.",
-          "packagePath": "Data/Shared/Motion/00052/--3wjNOccLY_00002_0_63",
-          "previewScope": "The image constrains one instant; the reference shows the whole source sequence.",
+          "packagePath": "Data/Shared/Motion/00062/_1fhVpM4xCU_00000_399_474",
           "variantId": "skeleton_image_audio",
-          "variantLabel": "Skeleton image + audio"
+          "variantLabel": "Skeleton image + audio",
+          "visualization": "g1-retargeted"
         }
       ]
     },

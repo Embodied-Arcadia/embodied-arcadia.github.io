@@ -183,6 +183,28 @@
     wrapper.append(media, controls, seek); update();
     return { wrapper, media };
   }
+  const taskDescriptions = {
+    "text_to_motion_generation": "Generate a complete full-body motion sequence that follows a written action description.",
+    "video_to_motion_imitation": "Reconstruct the full-body movement demonstrated in a human or skeleton video.",
+    "audio_to_motion_generation": "Generate full-body motion by following a spoken action instruction.",
+    "rhythm_to_motion_alignment": "Perform the described action with movement timing aligned to the supplied music.",
+    "rotation_to_pose_generation": "Reconstruct motion from the supplied joint angles, root orientation, and root position over time.",
+    "motion_prediction": "Generate the missing future motion from the available beginning and accompanying instructions.",
+    "motion_retrodiction": "Reconstruct the missing beginning of a motion sequence from the observed later segment.",
+    "motion_interpolation": "Generate the missing middle of a motion sequence to connect its observed beginning and ending smoothly.",
+    "key_frame_conditioning": "Generate continuous motion that follows the action instruction and matches the supplied key poses at their specified times.",
+    "upper_to_full_body_completion": "Generate the missing lower-body movement while preserving the supplied upper-body action.",
+    "lower_to_full_body_completion": "Generate the missing upper-body movement while preserving the supplied lower-body action.",
+    "target_reaching": "Perform the base action while satisfying a specified local body-part goal.",
+    "speed": "Perform the same action at the requested speed relative to the original movement.",
+    "amplitude": "Perform the same action with the requested increase or decrease in movement size.",
+    "direction": "Preserve the action while changing its travel direction as instructed.",
+    "order": "Perform the given actions in the specified order with continuous transitions.",
+    "times": "Repeat the specified action the requested number of times.",
+    "trajectory": "Perform the described action while following a specified path through space.",
+    "body_restrain": "Perform the base action while keeping the specified body parts still.",
+    "interleaved_multi_source_steering": "Combine text, image, video, and audio instructions into continuous motion, following each condition at its assigned time."
+};
   function caseCard(task, headingTag, activeVariant) {
     const variants = task.variants || [];
     const selected = variants.find(variant => variant.variantId === activeVariant) || variants[0];
@@ -191,7 +213,7 @@
     if (selected) article.dataset.modality = selected.variantId;
     if (item.level === 3) article.classList.add("interleaved-case");
     const header = el("header", "case-header");
-    header.append(el(headingTag, "case-title", item.title), el("p", "case-level", `${item.modality} · ${Number(item.duration.toFixed(3))} s`), el("p", "case-purpose", item.purpose));
+    header.append(el(headingTag, "case-title", item.title), el("p", "case-purpose", taskDescriptions[task.id]));
     article.append(header);
     if (variants.length > 1) {
       const tabs = el("div", "modality-tabs"); tabs.setAttribute("role", "tablist");
@@ -290,7 +312,6 @@
       }); output.append(status);
     }
     const packageInfo = el("div", "package-info");
-    if (item.watchFor) packageInfo.append(el("p", "input-label", "Task requirement"), el("p", "", item.watchFor));
     if (item.previewScope) packageInfo.append(el("p", "input-label", "Media notes"), el("p", "motion-note", item.previewScope));
     packageInfo.append(el("p", "input-label", "Task prompt"), el("p", "input-text", item.prompt), el("p", "motion-note", item.motionNote), el("p", "case-id", item.taskId));
     const table = el("table"); table.append(el("caption", "", "Motion package referenced by the task"));
