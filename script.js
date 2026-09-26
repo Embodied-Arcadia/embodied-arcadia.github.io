@@ -3,6 +3,12 @@
   const content = window.ROBOOSTEER;
   if (!content) return;
   const byId = id => document.getElementById(id);
+  const el = (tag, className, text) => {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text) node.textContent = text;
+    return node;
+  };
   const safeUrl = value => typeof value === "string" && /^https:\/\//.test(value);
   const setText = (id, value) => { if (value) byId(id).textContent = value; };
   setText("authors", content.authors); setText("team", content.team);
@@ -126,12 +132,6 @@
     if (entry.isIntersecting) { if (!video.getAttribute("src")) { video.src = video.dataset.src; video.load(); } }
     else video.pause();
   }), { rootMargin: "150px 0px" });
-  const el = (tag, className, text) => {
-    const node = document.createElement(tag);
-    if (className) node.className = className;
-    if (text) node.textContent = text;
-    return node;
-  };
   const disclosure = (label, body) => {
     const details = el("details"); details.append(el("summary", "", label), body); return details;
   };
