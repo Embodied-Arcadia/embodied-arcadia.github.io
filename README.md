@@ -2,7 +2,7 @@
 
 An English static project website for **Benchmarking Behavioral Steerability in Behavior Foundation Models**. No backend, database, build service, or npm dependencies are required.
 
-Static website for https://embodied-arcadia.github.io/ . The website repository is `Embodied-Arcadia/embodied-arcadia.github.io`. Publication metadata and resource links are updated as they become available.
+Static website for https://robosteer.github.io/ . The website repository is `RoboSteer/robosteer.github.io`. Publication metadata and resource links are updated as they become available.
 
 ## Preview locally
 
