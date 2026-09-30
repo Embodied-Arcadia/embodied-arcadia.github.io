@@ -16,15 +16,27 @@
   if (content.abstract) {
     const target = byId("abstract");
     const paragraphs = Array.isArray(content.abstract) ? content.abstract : content.abstract.split(/\n\n+/);
-    if (paragraphs.length > 1) {
-      target.replaceChildren(...paragraphs.map(p => el("p", "", p)));
-    } else {
-      target.textContent = content.abstract;
-    }
+    target.replaceChildren(...paragraphs.map((p, idx) => {
+      const pNode = el("p");
+      let html = p;
+      if (idx === 0) {
+        html = html.replace("Behavior Foundation Models (BFMs)", "<strong>Behavior Foundation Models (BFMs)</strong>");
+      } else if (idx === 1) {
+        html = html
+          .replace("behavioral steerability", "<strong>behavioral steerability</strong>")
+          .replace("RoboSteer,", "<strong>RoboSteer</strong>,")
+          .replace("Conditional Steering", "<strong>Conditional Steering</strong>")
+          .replace("Constraint Steering", "<strong>Constraint Steering</strong>")
+          .replace("Compositional Steering", "<strong>Compositional Steering</strong>");
+      }
+      pNode.innerHTML = html;
+      return pNode;
+    }));
   }
   const resources = [
     ["Homepage", "#home"], ["Paper", content.paperUrl],
-    ["Dataset", content.datasetUrl], ["Code", content.codeUrl]
+    ["Dataset", content.datasetUrl], ["Hugging Face", "https://huggingface.co/PhoebeCC"],
+    ["Code", content.codeUrl]
   ];
   for (const [label, url] of resources) {
     const available = url === "#home" || safeUrl(url);

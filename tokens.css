@@ -20,8 +20,10 @@
   --font-code: ui-monospace, "Cascadia Code", monospace;
   --space-xs: 4px; --space-sm: 8px; --space-md: 16px; --space-lg: 24px;
   --space-xl: 32px; --space-2xl: 48px; --space-3xl: 64px; --space-4xl: 96px;
-  --text-sm: .875rem; --text-body: 1rem; --text-lg: 1.25rem;
-  --text-heading: clamp(2rem, 4vw, 3.25rem);
+  --text-sm: clamp(0.875rem, 0.83rem + 0.18vw, 0.95rem);
+  --text-body: clamp(1rem, 0.95rem + 0.22vw, 1.125rem);
+  --text-lg: clamp(1.2rem, 1.12rem + 0.35vw, 1.375rem);
+  --text-heading: clamp(2.1rem, 1.6rem + 2vw, 3.25rem);
   --radius-sm: 6px;
   --ease-out: cubic-bezier(.16, 1, .3, 1);
   --ease-in: cubic-bezier(.7, 0, .84, 0);
