@@ -47,10 +47,11 @@
     else item.setAttribute("aria-disabled", "true");
     byId("resource-links").append(item);
   }
-  if (content.figure?.src) {
+  const figPlaceholder = document.querySelector(".figure-placeholder");
+  if (figPlaceholder && content.figure?.src) {
     const img = document.createElement("img"); img.src = content.figure.src;
     img.alt = content.figure.alt || "RoboSteer overview"; img.loading = "lazy";
-    document.querySelector(".figure-placeholder").replaceWith(img);
+    figPlaceholder.replaceWith(img);
     setText("main-caption", content.figure.caption);
   }
   if (content.bibtex) {

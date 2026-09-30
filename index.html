@@ -12,9 +12,9 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/fonts/fonts.css">
   <link rel="stylesheet" href="tokens.css">
-  <link rel="stylesheet" href="styles.css?v=20260930-v2">
-  <script src="site-content.js?v=20260930-v2" defer></script>
-  <script src="script.js?v=20260930-v2" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260930-v3">
+  <script src="site-content.js?v=20260930-v3" defer></script>
+  <script src="script.js?v=20260930-v3" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#paper">Skip to project information</a>
@@ -39,7 +39,7 @@
       </div>
     </section>
 
-    <!-- 2. Abstract -->
+    <!-- 2. Abstract + Figure 1 -->
     <section class="section abstract-section" id="abstract-section" aria-labelledby="abstract-title">
       <div class="section-heading">
         <h2 id="abstract-title">Abstract</h2>
@@ -49,28 +49,24 @@
         <p>In this paper, we introduce the concept of <strong>behavioral steerability</strong>, defined as the ability of BFMs to faithfully generate behaviors that satisfy user-specified behavioral intentions. To systematically study this capability, we present <strong>RoboSteer</strong>, the first benchmark for behavioral steerability in BFMs. RoboSteer organizes behavioral steerability into a three-level hierarchy—<strong>Conditional Steering</strong>, <strong>Constraint Steering</strong>, and <strong>Compositional Steering</strong>—and establishes a unified evaluation framework supported by a large-scale multimodal motion corpus.</p>
         <p>Using RoboSteer, we conduct the first large-scale empirical study of behavioral steerability across existing BFMs. Our results reveal that strong behavior generation capability does not necessarily translate into strong behavioral steerability, with the performance gap widening as steering complexity increases. We hope RoboSteer will establish behavioral steerability as a fundamental capability for future BFMs and facilitate the development of more steerable general-purpose behavioral systems.</p>
       </div>
-    </section>
-
-    <!-- 3. Representative Figure / Motivation -->
-    <section class="section figure-section" id="motivation" aria-labelledby="motivation-title">
-      <div class="section-heading">
-        <h2 id="motivation-title">Representative Figure &amp; Motivation</h2>
-      </div>
-      <figure class="main-figure" id="main-figure">
-        <div class="figure-placeholder">
-          <span>Representative figure</span>
-          <p>The project overview figure will be added here.</p>
-        </div>
-        <figcaption id="main-caption">Project overview · Figure forthcoming</figcaption>
+      <figure class="paper-figure abstract-figure" id="fig-motivation">
+        <img src="assets/figures/figure1-steerability-motivation.png" alt="Evolution towards steerable behavior foundation models and comparison between steerable and non-steerable behaviors." loading="lazy">
+        <figcaption><strong>Figure 1.</strong> <em>(a)</em> Foundation models evolve from single-task generation toward steerable generalists. <em>(b)</em> Non-steerable models often confuse or drop fine-grained instructions, whereas steerable behavior foundation models reliably execute multimodal user intentions.</figcaption>
       </figure>
     </section>
 
-    <!-- 4. Benchmark Overview -->
+    <!-- 3. Benchmark Overview + Figure 4 -->
     <section class="section overview-section" id="overview" aria-labelledby="overview-title">
       <div class="section-heading">
         <h2 id="overview-title">Benchmark Overview</h2>
-        <p>RoboSteer establishes a three-level hierarchy for evaluating behavioral steerability in Behavior Foundation Models, spanning conditional completion, explicit behavioral constraints, and multi-source composition.</p>
+        <p>RoboSteer organizes behavioral steerability into a three-level hierarchy—spanning conditional reproduction and completion, explicit behavioral constraints, and multi-source compositional steering.</p>
       </div>
+
+      <figure class="paper-figure hierarchy-figure" id="fig-hierarchy">
+        <img src="assets/figures/figure4-robosteer-hierarchy.png" alt="Overview of the three-level behavioral steerability hierarchy in RoboSteer." loading="lazy">
+        <figcaption><strong>Figure 4.</strong> Overview of the three-level behavioral steerability hierarchy in RoboSteer: Level 1 Conditional Steering, Level 2 Constraint Steering, and Level 3 Compositional Steering.</figcaption>
+      </figure>
+
       <div class="task-levels">
         <article class="level">
           <div class="level-top"><span class="level-number">L1</span><span>12 task types</span></div>
@@ -100,6 +96,44 @@
             <li><a href="#task-interleaved_multi_source_steering">Interleaved Multi-Source Steering</a></li>
           </ul>
         </article>
+      </div>
+    </section>
+
+    <!-- 4. Evaluation Framework + Figure 5 -->
+    <section class="section framework-section" id="evaluation-framework" aria-labelledby="framework-title">
+      <div class="section-heading">
+        <h2 id="framework-title">Evaluation Framework</h2>
+        <p>RoboSteer establishes a unified evaluation formulation that decouples basic generation quality from intention realization across steering levels.</p>
+      </div>
+      <div class="framework-grid">
+        <figure class="paper-figure framework-figure" id="fig-framework">
+          <img src="assets/figures/figure5-evaluation-framework.png" alt="Progressive computation of Intention Realization across three steering levels." loading="lazy">
+          <figcaption><strong>Figure 5.</strong> Progressive computation of Intention Realization (IR) across three steering levels and formulation of Behavioral Steerability (BS).</figcaption>
+        </figure>
+        <div class="framework-summary">
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-badge">BG</span>
+              <h4>Behavior Generation</h4>
+            </div>
+            <p>Measures fundamental motion quality, physical plausibility, and diversity, reflecting baseline generation capacity without penalizing constraint violations.</p>
+          </div>
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-badge">IR</span>
+              <h4>Intention Realization</h4>
+            </div>
+            <p>Measures how faithfully generated behaviors satisfy user-specified conditions (IR₁), explicit behavioral constraints (IR₂), and compositional sequences (IR₃).</p>
+          </div>
+          <div class="metric-card metric-primary">
+            <div class="metric-header">
+              <span class="metric-badge">BS</span>
+              <h4>Behavioral Steerability</h4>
+            </div>
+            <p class="formula-line"><strong>BS = BG × IR</strong></p>
+            <p>Couples generation quality with intention realization: high steerability strictly requires both high-fidelity behavior generation and faithful intention adherence.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -190,7 +224,7 @@
         <p id="copy-status" role="status"></p>
       </div>
       <div>
-        <h2>Contributors</h2>
+        <h2 id="contributors-title">Contributors</h2>
         <p id="contributors">Coming soon.</p>
       </div>
     </section>

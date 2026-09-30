@@ -51,7 +51,7 @@ a.resource-link:hover { background: var(--color-accent); border-color: var(--col
 .release-note { margin: 20px auto 0; color: var(--color-muted); font-size: var(--text-sm); }
 
 /* Section general */
-.abstract-section, .figure-section, .overview-section, .dataset-section, .evaluation-section { border-top: 1px solid var(--color-line); }
+.abstract-section, .overview-section, .framework-section, .dataset-section, .evaluation-section { border-top: 1px solid var(--color-line); }
 .section-heading { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 40px; align-items: end; margin-bottom: 32px; }
 .section-heading h2 { font-size: var(--text-heading); margin-bottom: 0; }
 .section-heading p { color: var(--color-muted); margin: 0; max-width: 54ch; font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem); line-height: 1.6; }
@@ -62,14 +62,27 @@ a.resource-link:hover { background: var(--color-accent); border-color: var(--col
 .abstract-body p + p { margin-top: 20px; }
 .abstract-body strong { color: var(--color-ink); font-weight: 650; }
 
-/* Figure / Motivation Section */
-.figure-section .section-heading { margin-bottom: 24px; }
-.main-figure { margin: 0; }
-.figure-placeholder { min-height: 180px; border: 1px dashed var(--color-line); display: flex; flex-direction: column; justify-content: center; align-items: center; background: var(--color-soft); padding: 32px; text-align: center; border-radius: var(--radius-sm); }
-.figure-placeholder span { font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; }
-.figure-placeholder p { margin: 8px 0 0; color: var(--color-muted); }
-figcaption { margin-top: 14px; font-size: var(--text-sm); color: var(--color-muted); line-height: 1.5; }
-.main-figure img { width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--color-line); }
+/* Paper Figures */
+.paper-figure { margin: 32px 0 0; background: var(--color-paper); border: 1px solid var(--color-line); border-radius: var(--radius-sm); padding: 18px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03); }
+.paper-figure img { width: 100%; height: auto; display: block; border-radius: calc(var(--radius-sm) - 2px); }
+.paper-figure figcaption { margin-top: 14px; font-size: var(--text-sm); color: var(--color-muted); line-height: 1.55; padding: 0 4px; }
+.paper-figure figcaption strong { color: var(--color-ink); font-weight: 600; }
+.abstract-figure { max-width: 960px; margin-top: 36px; }
+.hierarchy-figure { margin-top: 0; margin-bottom: 36px; }
+
+/* Evaluation Framework */
+.framework-section { border-top: 1px solid var(--color-line); }
+.framework-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.95fr); gap: 36px; align-items: start; }
+.framework-figure { margin: 0; }
+.framework-summary { display: flex; flex-direction: column; gap: 16px; }
+.metric-card { background: var(--color-soft); border: 1px solid var(--color-line); border-radius: var(--radius-sm); padding: 20px 22px; }
+.metric-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.metric-badge { font-family: var(--font-display); font-weight: 700; font-size: 0.8125rem; padding: 3px 8px; border-radius: 4px; background: var(--color-paper); border: 1px solid var(--color-line); color: var(--color-accent); }
+.metric-card h4 { font-family: var(--font-display); font-size: 1.125rem; margin: 0; color: var(--color-ink); }
+.metric-card p { color: var(--color-muted); font-size: var(--text-sm); line-height: 1.55; margin: 0; }
+.metric-primary { border-color: var(--color-accent); background: var(--color-paper); }
+.metric-primary .metric-badge { background: var(--color-accent); color: var(--color-white); border-color: var(--color-accent); }
+.formula-line { font-family: var(--font-display); font-size: 1.15rem !important; color: var(--color-accent) !important; margin-bottom: 6px !important; }
 
 /* Benchmark Overview */
 .task-levels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
@@ -240,6 +253,7 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; white-sp
   .interleaved-case .case-body { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); }
   .interleaved-inputs { grid-template-columns: minmax(0, 1fr); }
   .hf-cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .framework-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
 }
 @media (max-width: 560px) {
   .case-body, .interleaved-case .case-body { grid-template-columns: minmax(0, 1fr); }
