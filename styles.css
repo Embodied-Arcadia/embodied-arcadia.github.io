@@ -56,44 +56,43 @@ a.resource-link:hover { background: var(--color-accent); border-color: var(--col
 .section-heading h2 { font-size: var(--text-heading); margin-bottom: 0; }
 .section-heading p { color: var(--color-muted); margin: 0; max-width: 54ch; font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem); line-height: 1.6; }
 
-/* Abstract Section */
-.abstract-body { max-width: 960px; }
-.abstract-body p { color: var(--color-ink); font-size: clamp(1.05rem, 0.98rem + 0.3vw, 1.2rem); line-height: 1.75; margin-bottom: 0; }
-.abstract-body p + p { margin-top: 20px; }
-.abstract-body strong { color: var(--color-ink); font-weight: 650; }
+/* Unified Split Layout: Figure + Concise Text */
+.split-layout { display: grid; gap: 36px; align-items: start; }
 
 /* Paper Figures */
-.paper-figure { margin: 32px 0 0; background: var(--color-paper); border: 1px solid var(--color-line); border-radius: var(--radius-sm); padding: 18px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03); }
-.paper-figure img { width: 100%; height: auto; display: block; border-radius: calc(var(--radius-sm) - 2px); }
-.paper-figure figcaption { margin-top: 14px; font-size: var(--text-sm); color: var(--color-muted); line-height: 1.55; padding: 0 4px; }
+.paper-figure { margin: 0; background: var(--color-paper); border: 1px solid var(--color-line); border-radius: var(--radius-sm); padding: 14px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03); }
+.paper-figure img { width: 100%; max-width: 100%; height: auto; object-fit: contain; display: block; border-radius: calc(var(--radius-sm) - 2px); }
+.paper-figure figcaption { margin-top: 12px; font-size: var(--text-sm); color: var(--color-muted); line-height: 1.5; padding: 0 2px; }
 .paper-figure figcaption strong { color: var(--color-ink); font-weight: 600; }
-.abstract-figure { max-width: 960px; margin-top: 36px; }
-.hierarchy-figure { margin-top: 0; margin-bottom: 36px; }
 
-/* Evaluation Framework */
-.framework-section { border-top: 1px solid var(--color-line); }
-.framework-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.95fr); gap: 36px; align-items: start; }
-.framework-figure { margin: 0; }
-.framework-summary { display: flex; flex-direction: column; gap: 16px; }
-.metric-card { background: var(--color-soft); border: 1px solid var(--color-line); border-radius: var(--radius-sm); padding: 20px 22px; }
-.metric-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-.metric-badge { font-family: var(--font-display); font-weight: 700; font-size: 0.8125rem; padding: 3px 8px; border-radius: 4px; background: var(--color-paper); border: 1px solid var(--color-line); color: var(--color-accent); }
-.metric-card h4 { font-family: var(--font-display); font-size: 1.125rem; margin: 0; color: var(--color-ink); }
-.metric-card p { color: var(--color-muted); font-size: var(--text-sm); line-height: 1.55; margin: 0; }
+/* 1. Abstract Split: 42% Fig 1, 58% Abstract Text */
+.abstract-split { grid-template-columns: minmax(0, 42fr) minmax(0, 58fr); gap: 36px; align-items: center; }
+.abstract-split .abstract-body { max-width: none; }
+.abstract-split .abstract-body p { color: var(--color-ink); font-size: clamp(0.96rem, 0.91rem + 0.2vw, 1.06rem); line-height: 1.7; margin-bottom: 0; }
+.abstract-split .abstract-body p + p { margin-top: 14px; }
+.abstract-split .abstract-body strong { color: var(--color-ink); font-weight: 650; }
+
+/* 2. Overview Split: 60% Fig 4, 40% Levels Text */
+.overview-split { grid-template-columns: minmax(0, 60fr) minmax(0, 40fr); gap: 32px; align-items: center; }
+.overview-levels { display: flex; flex-direction: column; gap: 12px; }
+.compact-level { background: var(--color-soft); border: 1px solid var(--color-line); border-left: 3px solid var(--color-accent); border-radius: var(--radius-sm); padding: 14px 16px; }
+.compact-level-header { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; flex-wrap: wrap; }
+.level-badge { font-family: var(--font-display); font-weight: 700; font-size: 0.75rem; padding: 2px 7px; border-radius: 4px; background: var(--color-paper); border: 1px solid var(--color-line); color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.03em; }
+.compact-level h3 { font-size: clamp(1.025rem, 0.98rem + 0.18vw, 1.15rem); margin: 0; color: var(--color-ink); }
+.compact-level .task-count { margin-left: auto; font-size: 0.8125rem; color: var(--color-muted); }
+.compact-level p { color: var(--color-muted); font-size: clamp(0.84rem, 0.81rem + 0.12vw, 0.9rem); line-height: 1.5; margin: 0; }
+
+/* 3. Evaluation Framework Split: 52% Fig 5, 48% Metrics Text */
+.framework-split { grid-template-columns: minmax(0, 52fr) minmax(0, 48fr); gap: 32px; align-items: center; }
+.framework-summary { display: flex; flex-direction: column; gap: 12px; }
+.metric-card { background: var(--color-soft); border: 1px solid var(--color-line); border-radius: var(--radius-sm); padding: 14px 18px; }
+.metric-header { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.metric-badge { font-family: var(--font-display); font-weight: 700; font-size: 0.75rem; padding: 2px 7px; border-radius: 4px; background: var(--color-paper); border: 1px solid var(--color-line); color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.03em; }
+.metric-card h4 { font-family: var(--font-display); font-size: 1.05rem; margin: 0; color: var(--color-ink); }
+.metric-card p { color: var(--color-muted); font-size: clamp(0.84rem, 0.81rem + 0.12vw, 0.9rem); line-height: 1.5; margin: 0; }
 .metric-primary { border-color: var(--color-accent); background: var(--color-paper); }
 .metric-primary .metric-badge { background: var(--color-accent); color: var(--color-white); border-color: var(--color-accent); }
-.formula-line { font-family: var(--font-display); font-size: 1.15rem !important; color: var(--color-accent) !important; margin-bottom: 6px !important; }
-
-/* Benchmark Overview */
-.task-levels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
-.level { padding-top: 24px; border-top: 2px solid var(--color-ink); }
-.level-top { display: flex; align-items: center; gap: 12px; color: var(--color-muted); font-size: var(--text-sm); margin-bottom: 24px; }
-.level-number { font: 600 clamp(1.5rem, 1.4rem + 0.4vw, 1.8rem) var(--font-display); color: var(--color-accent); }
-.level h3 { font-size: clamp(1.3rem, 1.2rem + 0.35vw, 1.55rem); line-height: 1.35; margin-bottom: 16px; }
-.level p { color: var(--color-ink); font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.05rem); line-height: 1.6; }
-.level li { color: var(--color-muted); }
-.level ul { padding: 0; list-style: none; font-size: var(--text-sm); margin-bottom: 0; line-height: 1.6; }
-.level li { padding: 4px 0; }
+.formula-line { font-family: var(--font-display); font-size: 1.08rem !important; color: var(--color-accent) !important; margin-bottom: 4px !important; }
 .cases-section { background: var(--color-soft); }
 .case-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-items: start; }
 .case-navigation { display: flex; flex-wrap: wrap; gap: 4px 28px; border-block: 1px solid var(--color-line); padding: 10px 0; }
@@ -253,7 +252,7 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; white-sp
   .interleaved-case .case-body { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); }
   .interleaved-inputs { grid-template-columns: minmax(0, 1fr); }
   .hf-cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .framework-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .abstract-split, .overview-split, .framework-split { grid-template-columns: minmax(0, 1fr); gap: 24px; }
 }
 @media (max-width: 560px) {
   .case-body, .interleaved-case .case-body { grid-template-columns: minmax(0, 1fr); }
@@ -274,10 +273,9 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; white-sp
   .hero-bottom { left: 20px; right: 20px; align-items: flex-end; }
   .hero-bottom p { max-width: 145px; }
   .section { padding: 48px 24px; }
-  .section-heading, .task-levels, .closing { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .section-heading, .closing { grid-template-columns: minmax(0, 1fr); gap: 24px; }
   .dataset-header-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
   .section-heading { margin-bottom: 24px; }
-  .task-levels { gap: 32px; }
   .desktop-break { display: none; }
   footer { margin: 0 24px; flex-wrap: wrap; gap: 8px 24px; }
   footer>span { flex-basis: 100%; order: 3; }
