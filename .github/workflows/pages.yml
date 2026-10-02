@@ -22,7 +22,7 @@ jobs:
       - name: Assemble public website only
         run: |
           mkdir _site
-          cp index.html tokens.css styles.css site-content.js script.js .nojekyll _site/
+          cp index.html tokens.css styles.css site-content.js script.js evaluation-config.js evaluation-service.js evaluation-ui.js .nojekyll _site/
           cp -r assets docs _site/
       - uses: actions/upload-pages-artifact@v3
         with:

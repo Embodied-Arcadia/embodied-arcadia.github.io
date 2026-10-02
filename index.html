@@ -12,9 +12,12 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/fonts/fonts.css">
   <link rel="stylesheet" href="tokens.css">
-  <link rel="stylesheet" href="styles.css?v=20260930-v3">
+  <link rel="stylesheet" href="styles.css?v=level2-20261002">
   <script src="site-content.js?v=20260930-v3" defer></script>
   <script src="script.js?v=20260930-v3" defer></script>
+  <script src="evaluation-config.js?v=level2-20261002" defer></script>
+  <script src="evaluation-service.js?v=level2-20261002" defer></script>
+  <script src="evaluation-ui.js?v=level2-20261002" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#paper">Skip to project information</a>
@@ -188,173 +191,65 @@
       </div>
     </section>
 
-    <!-- 6. Level 2 Evaluation Prototype -->
+    <!-- 6. Level 2 Evaluation -->
     <section class="section evaluation-section" id="evaluation" aria-labelledby="evaluation-title">
       <div class="section-heading">
         <h2 id="evaluation-title">Level 2 Evaluation</h2>
-        <p>Interactive evaluation prototype for Constraint Steering. Benchmark trajectories via kinematic CSV analysis or verify temporal order &amp; repetition via Video + VLM.</p>
+        <p>Choose one constraint and evaluate a single output from your model. Your Task ID lets the service find its benchmark reference.</p>
+      </div>
+      <div class="eval-constraint-picker" id="eval-constraint-picker" role="group" aria-label="Choose one of seven Level 2 constraints">
+        <button type="button" data-constraint="speed" aria-pressed="false">Speed</button>
+        <button type="button" data-constraint="amplitude" aria-pressed="false">Amplitude</button>
+        <button type="button" data-constraint="direction" aria-pressed="false">Direction</button>
+        <button type="button" data-constraint="trajectory" aria-pressed="false">Trajectory</button>
+        <button type="button" data-constraint="body_restrain" aria-pressed="false">Body Restrain</button>
+        <button type="button" data-constraint="order" aria-pressed="false">Order</button>
+        <button type="button" data-constraint="times" aria-pressed="false">Times</button>
       </div>
 
       <div class="eval-card">
-        <!-- Mode Switcher Tabs -->
-        <div class="eval-tabs" role="tablist" aria-label="Level 2 Evaluation Modality">
-          <button class="eval-tab active" id="tab-csv" role="tab" aria-selected="true" aria-controls="panel-csv" type="button">
-            <span class="tab-badge">Kinematic</span>
-            <span class="tab-title">CSV-based Evaluation</span>
-            <span class="tab-subtitle">Speed · Amplitude · Direction · Trajectory · Body Restrain</span>
-          </button>
-          <button class="eval-tab" id="tab-vlm" role="tab" aria-selected="false" aria-controls="panel-vlm" type="button">
-            <span class="tab-badge">Visual &amp; Temporal</span>
-            <span class="tab-title">Video + VLM Evaluation</span>
-            <span class="tab-subtitle">Order · Times</span>
-          </button>
+        <div class="eval-tabs" role="tablist" aria-label="Evaluation asset type">
+          <button class="eval-tab active" id="tab-csv" role="tab" aria-selected="true" aria-controls="panel-csv" type="button"><span class="tab-badge">Kinematic</span><span class="tab-title">CSV-based Evaluation</span><span class="tab-subtitle">Speed · Amplitude · Direction · Trajectory · Body Restrain</span></button>
+          <button class="eval-tab" id="tab-vlm" role="tab" aria-selected="false" aria-controls="panel-vlm" type="button"><span class="tab-badge">Visual &amp; Temporal</span><span class="tab-title">Video + VLM Evaluation</span><span class="tab-subtitle">Order · Times</span></button>
         </div>
 
-        <!-- Panel 1: CSV-based Evaluation -->
         <div class="eval-panel active" id="panel-csv" role="tabpanel" aria-labelledby="tab-csv">
           <div class="eval-grid">
-            <div class="eval-form">
-              <!-- Source mode switch (extensible for future) -->
+            <form class="eval-form" id="csv-evaluation-form" novalidate>
+              <div class="eval-field"><label class="eval-label" for="csv-constraint-select">Target Constraint</label><select id="csv-constraint-select" class="eval-select" name="constraint"><option value="">Choose a constraint</option><option value="speed">Speed</option><option value="amplitude">Amplitude</option><option value="direction">Direction</option><option value="trajectory">Trajectory</option><option value="body_restrain">Body Restrain</option></select></div>
+              <div class="eval-field"><label class="eval-label" for="csv-task-id">Task ID</label><input id="csv-task-id" name="task_id" class="eval-input" type="text" autocomplete="off" spellcheck="false" placeholder="Enter RoboSteer Task ID"><span class="field-hint">Identifies the benchmark task and reference for this sample.</span></div>
               <div class="eval-field">
-                <label class="eval-label">Data Source Mode</label>
-                <div class="eval-segmented" role="radiogroup" aria-label="CSV data source mode">
-                  <label class="segmented-opt">
-                    <input type="radio" name="csv-source-mode" value="custom" checked>
-                    <span>Custom Upload</span>
-                  </label>
-                  <label class="segmented-opt">
-                    <input type="radio" name="csv-source-mode" value="benchmark">
-                    <span>Benchmark Sample</span>
-                  </label>
-                </div>
-                <span class="field-hint">Supports both arbitrary original/style motion pairs and canonical RoboSteer benchmark instances.</span>
+                <div class="eval-file-heading"><label class="eval-label" for="csv-file-input">Model output CSV</label><button type="button" class="btn-demo-link" id="csv-demo-btn" disabled>Try a Demo</button></div>
+                <div class="eval-dropzone" id="csv-dropzone" tabindex="0" role="button" aria-label="Upload CSV file"><input type="file" id="csv-file-input" class="dropzone-input" tabindex="-1" aria-hidden="true"><div class="dropzone-content"><span class="dropzone-icon" aria-hidden="true">📊</span><span class="dropzone-text" id="csv-file-name">Click or drop a CSV file here</span><span class="dropzone-sub">One sample · CSV</span></div></div>
+                <div class="eval-file-actions" id="csv-file-actions" hidden><button type="button" id="csv-replace">Replace</button><button type="button" id="csv-remove">Remove</button></div>
+                <span class="field-hint" id="csv-demo-note">Choose a constraint to check example availability.</span>
               </div>
-
-              <!-- Constraint selector -->
-              <div class="eval-field">
-                <label class="eval-label" for="csv-constraint-select">Target Constraint</label>
-                <select id="csv-constraint-select" class="eval-select">
-                  <option value="speed">Speed (Movement Dynamics)</option>
-                  <option value="amplitude">Amplitude (Movement Dynamics)</option>
-                  <option value="direction">Direction (Movement Dynamics)</option>
-                  <option value="trajectory">Trajectory (Spatial Path)</option>
-                  <option value="body_restrain">Body Restrain (Limb Stability)</option>
-                </select>
-              </div>
-
-              <!-- File Upload Dropzone -->
-              <div class="eval-field">
-                <div class="field-header">
-                  <label class="eval-label" for="csv-file-input">Trajectory File (.csv)</label>
-                  <button type="button" class="btn-demo-link" id="csv-demo-btn">⚡ Try a Demo</button>
-                </div>
-                <div class="eval-dropzone" id="csv-dropzone" tabindex="0" role="button" aria-label="Upload CSV trajectory file">
-                  <input type="file" id="csv-file-input" accept=".csv" class="dropzone-input" aria-hidden="true">
-                  <div class="dropzone-content">
-                    <span class="dropzone-icon" aria-hidden="true">📊</span>
-                    <span class="dropzone-text" id="csv-file-name">Click or drop trajectory CSV here</span>
-                    <span class="dropzone-sub">Kinematic series data format</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="eval-actions">
-                <button type="button" class="btn-eval" id="btn-eval-csv">Evaluate (Prototype)</button>
-                <button type="button" class="btn-reset" id="btn-reset-csv">Reset</button>
-              </div>
-            </div>
-
-            <!-- CSV Result Area -->
-            <div class="eval-result-card" id="csv-result-box" aria-live="polite">
-              <div class="result-placeholder">
-                <span class="placeholder-icon">📋</span>
-                <h4>Evaluation Output</h4>
-                <p>Select a constraint, provide a trajectory CSV (or click <em>Try a Demo</em>), and click Evaluate to view the prototype verification results.</p>
-              </div>
-            </div>
+              <div class="eval-actions"><button type="submit" class="btn-eval" id="btn-eval-csv">Evaluate</button><button type="button" class="btn-reset" id="btn-reset-csv">Reset</button></div>
+            </form>
+            <div class="eval-result-card" id="csv-result-box" role="status" aria-live="polite"><div class="result-placeholder"><span class="placeholder-icon">📋</span><h4>Evaluation Output</h4><p>Choose a constraint, enter a Task ID, and upload your CSV output.</p></div></div>
           </div>
         </div>
 
-        <!-- Panel 2: Video + VLM Evaluation -->
         <div class="eval-panel" id="panel-vlm" role="tabpanel" aria-labelledby="tab-vlm" hidden>
           <div class="eval-grid">
-            <div class="eval-form">
-              <!-- Source mode switch -->
+            <form class="eval-form" id="vlm-evaluation-form" novalidate>
+              <div class="eval-field"><label class="eval-label" for="vlm-constraint-select">Target Constraint</label><select id="vlm-constraint-select" class="eval-select" name="constraint"><option value="">Choose a constraint</option><option value="order">Order</option><option value="times">Times</option></select></div>
+              <div class="eval-field"><label class="eval-label" for="vlm-task-id">Task ID</label><input id="vlm-task-id" name="task_id" class="eval-input" type="text" autocomplete="off" spellcheck="false" placeholder="Enter RoboSteer Task ID"><span class="field-hint">Identifies the benchmark task and reference for this sample.</span></div>
+              <div class="eval-field"><label class="eval-label" for="vlm-provider-select">VLM Provider</label><select id="vlm-provider-select" class="eval-select" name="provider"><option value="">Choose a provider</option></select></div>
+              <div class="eval-field"><label class="eval-label" for="vlm-api-key">API Key</label><input type="password" id="vlm-api-key" class="eval-input" name="api_key" autocomplete="off" autocapitalize="off" spellcheck="false"><span class="field-hint">Used only for this request. The backend makes the VLM call.</span></div>
               <div class="eval-field">
-                <label class="eval-label">Data Source Mode</label>
-                <div class="eval-segmented" role="radiogroup" aria-label="Video data source mode">
-                  <label class="segmented-opt">
-                    <input type="radio" name="vlm-source-mode" value="custom" checked>
-                    <span>Custom Upload</span>
-                  </label>
-                  <label class="segmented-opt">
-                    <input type="radio" name="vlm-source-mode" value="benchmark">
-                    <span>Benchmark Sample</span>
-                  </label>
-                </div>
-                <span class="field-hint">Compatible with benchmark task recordings and custom robot demonstration clips.</span>
+                <div class="eval-file-heading"><label class="eval-label" for="vlm-file-input">Model output video</label><button type="button" class="btn-demo-link" id="vlm-demo-btn" disabled>Try a Demo</button></div>
+                <div class="eval-dropzone" id="vlm-dropzone" tabindex="0" role="button" aria-label="Upload video file"><input type="file" id="vlm-file-input" class="dropzone-input" tabindex="-1" aria-hidden="true"><div class="dropzone-content"><span class="dropzone-icon" aria-hidden="true">🎬</span><span class="dropzone-text" id="vlm-file-name">Click or drop a video file here</span><span class="dropzone-sub" id="vlm-file-types">One sample · Video</span></div></div>
+                <div class="eval-file-actions" id="vlm-file-actions" hidden><button type="button" id="vlm-replace">Replace</button><button type="button" id="vlm-remove">Remove</button></div>
+                <span class="field-hint" id="vlm-demo-note">Choose a constraint to check example availability.</span>
               </div>
-
-              <!-- Constraint selector -->
-              <div class="eval-field">
-                <label class="eval-label" for="vlm-constraint-select">Target Constraint</label>
-                <select id="vlm-constraint-select" class="eval-select">
-                  <option value="order">Order (Temporal Sequence of Sub-Actions)</option>
-                  <option value="times">Times (Exact Repetition Count)</option>
-                </select>
-              </div>
-
-              <!-- VLM Provider selection (Configurable) -->
-              <div class="eval-field">
-                <label class="eval-label" for="vlm-provider-select">VLM Engine / Provider</label>
-                <select id="vlm-provider-select" class="eval-select">
-                  <!-- Injected dynamically from configuration -->
-                </select>
-                <span class="field-hint">Provider configuration is decoupled for flexible model backend switching.</span>
-              </div>
-
-              <!-- API Key Input (Password, strictly in-memory) -->
-              <div class="eval-field">
-                <div class="field-header">
-                  <label class="eval-label" for="vlm-api-key">API Key</label>
-                  <span class="security-badge" title="API Key is never saved to localStorage or persisted anywhere">Transient · Not persisted</span>
-                </div>
-                <input type="password" id="vlm-api-key" class="eval-input" placeholder="Enter provider API key (e.g., sk-...)" autocomplete="off" spellcheck="false">
-              </div>
-
-              <!-- Video Upload Dropzone -->
-              <div class="eval-field">
-                <div class="field-header">
-                  <label class="eval-label" for="vlm-file-input">Execution Video (.mp4, .webm)</label>
-                  <button type="button" class="btn-demo-link" id="vlm-demo-btn">⚡ Try a Demo</button>
-                </div>
-                <div class="eval-dropzone" id="vlm-dropzone" tabindex="0" role="button" aria-label="Upload execution video file">
-                  <input type="file" id="vlm-file-input" accept="video/mp4,video/webm" class="dropzone-input" aria-hidden="true">
-                  <div class="dropzone-content">
-                    <span class="dropzone-icon" aria-hidden="true">🎬</span>
-                    <span class="dropzone-text" id="vlm-file-name">Click or drop execution video here</span>
-                    <span class="dropzone-sub">MP4 or WebM motion video</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="eval-actions">
-                <button type="button" class="btn-eval" id="btn-eval-vlm">Evaluate via VLM (Prototype)</button>
-                <button type="button" class="btn-reset" id="btn-reset-vlm">Reset</button>
-              </div>
-            </div>
-
-            <!-- VLM Result Area -->
-            <div class="eval-result-card" id="vlm-result-box" aria-live="polite">
-              <div class="result-placeholder">
-                <span class="placeholder-icon">👁️</span>
-                <h4>VLM Evaluation Output</h4>
-                <p>Select temporal constraint, specify provider, upload video (or click <em>Try a Demo</em>), and evaluate to view the prototype multimodal judgment.</p>
-              </div>
-            </div>
+              <div class="eval-actions"><button type="submit" class="btn-eval" id="btn-eval-vlm">Evaluate</button><button type="button" class="btn-reset" id="btn-reset-vlm">Reset</button></div>
+            </form>
+            <div class="eval-result-card" id="vlm-result-box" role="status" aria-live="polite"><div class="result-placeholder"><span class="placeholder-icon">👁️</span><h4>VLM Evaluation Output</h4><p>Choose Order or Times, enter a Task ID, upload video, and provide your VLM credentials.</p></div></div>
           </div>
         </div>
       </div>
+      <p class="eval-backend-note" id="eval-backend-note"></p>
     </section>
 
     <!-- 7. Task Demonstrations -->

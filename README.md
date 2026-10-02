@@ -4,6 +4,10 @@ An English static project website for **Benchmarking Behavioral Steerability in 
 
 Static website for https://robosteer.github.io/ . The website repository is `RoboSteer/robosteer.github.io`. Publication metadata and resource links are updated as they become available.
 
+## Level 2 Evaluation integration
+
+The homepage's Level 2 Evaluation section submits one model output and a benchmark Task ID. Set `BACKEND_URL` and the supported VLM providers in `evaluation-config.js` when the separate evaluation service is available. Each constraint also has an optional `demos` entry with a real Task ID and a same-site CSV/video asset path. `Try a Demo` stays disabled until both are configured; it then loads that example into the same form and submits through the same backend adapter as a user upload. With an empty backend URL, the page reports that evaluation is unavailable and does not generate simulated results. The request and response contract for the backend is in `docs/level2-evaluation-api.md`.
+
 ## Preview locally
 
 From this directory, run:
