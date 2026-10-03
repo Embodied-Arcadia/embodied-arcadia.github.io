@@ -34,17 +34,26 @@
     }));
   }
   const resources = [
-    ["Homepage", "#home"], ["Paper", content.paperUrl],
-    ["Dataset", content.datasetUrl], ["Evaluator weights", content.evaluatorUrl],
+    ["Paper", content.paperUrl],
+    ["Hugging Face repositories", "#hf-repositories", "huggingface"],
     ["Code", content.codeUrl]
   ];
-  for (const [label, url] of resources) {
-    const available = url === "#home" || safeUrl(url);
-    const item = document.createElement(available ? "a" : "span");
+  for (const [label, url, icon] of resources) {
+    if (url !== "#hf-repositories" && !safeUrl(url)) continue;
+    const item = document.createElement("a");
     item.className = "resource-link";
-    item.textContent = available ? label : `${label} · forthcoming`;
-    if (available) { item.href = url; if (url !== "#home") { item.target = "_blank"; item.rel = "noopener noreferrer"; } }
-    else item.setAttribute("aria-disabled", "true");
+    item.href = url;
+    if (safeUrl(url)) { item.target = "_blank"; item.rel = "noopener noreferrer"; }
+    if (icon === "huggingface") {
+      const logo = document.createElement("img");
+      logo.src = "assets/huggingface-logo.svg";
+      logo.alt = "";
+      logo.width = 20;
+      logo.height = 20;
+      logo.className = "resource-icon";
+      item.append(logo);
+    }
+    item.append(document.createTextNode(label));
     byId("resource-links").append(item);
   }
   const figPlaceholder = document.querySelector(".figure-placeholder");

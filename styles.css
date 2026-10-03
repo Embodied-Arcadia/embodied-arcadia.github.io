@@ -45,6 +45,7 @@ img, video { max-width: 100%; display: block; }
 .team { color: var(--color-muted); font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.05rem); margin-bottom: 28px; }
 .resource-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
 .resource-link { display: inline-flex; align-items: center; gap: 8px; border-radius: 100px; background: var(--color-ink); border: 1px solid var(--color-ink); color: var(--color-white); min-height: 44px; padding: 10px 22px; text-decoration: none; white-space: nowrap; font-size: var(--text-sm); font-weight: 500; }
+.resource-icon { width: 20px; height: 20px; flex: none; }
 a.resource-link:hover { background: var(--color-accent); border-color: var(--color-accent); }
 .resource-link[aria-disabled="true"] { background: var(--color-soft); color: var(--color-muted); border-color: var(--color-line); }
 .resource-link small { font: inherit; opacity: .85; }
@@ -191,8 +192,7 @@ a.resource-link:hover { background: var(--color-accent); border-color: var(--col
 .hf-badge { display: inline-block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-accent); background: var(--color-paper); border: 1px solid var(--color-line); padding: 3px 8px; border-radius: 4px; }
 .hf-arrow { font-size: 1.1rem; color: var(--color-muted); transition: color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out); }
 .hf-card:hover .hf-arrow { color: var(--color-accent); transform: translate(2px, -2px); }
-.hf-card h4 { font-family: var(--font-display); font-size: clamp(1.05rem, 1rem + 0.2vw, 1.18rem); margin: 0 0 4px; letter-spacing: -0.02em; color: var(--color-ink); overflow-wrap: anywhere; }
-.hf-owner { color: var(--color-accent); font-size: .8rem; font-weight: 600; margin-bottom: 10px; }
+.hf-card h4 { font-family: var(--font-display); font-size: clamp(1.05rem, 1rem + 0.2vw, 1.18rem); margin: 0 0 10px; letter-spacing: -0.02em; color: var(--color-ink); overflow-wrap: anywhere; }
 .hf-card p { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.55; margin: 0; flex-grow: 1; }
 
 /* Level 2 Evaluation */
