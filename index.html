@@ -13,8 +13,8 @@
   <link rel="stylesheet" href="assets/fonts/fonts.css">
   <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="styles.css?v=hero-subtitle-blend-2-20261003">
-  <script src="site-content.js?v=20260930-v3" defer></script>
-  <script src="script.js?v=20260930-v3" defer></script>
+  <script src="site-content.js?v=hf-resources-20261003" defer></script>
+  <script src="script.js?v=hf-resources-20261003" defer></script>
   <script src="evaluation-config.js?v=level2-20261002" defer></script>
   <script src="evaluation-service.js?v=level2-20261002" defer></script>
   <script src="evaluation-ui.js?v=level2-20261002" defer></script>
@@ -150,7 +150,7 @@
           <p>RoboSteer contains 38,522 source motions, 77,044 human and rendered motion sequences spanning 91.58 hours, and 773,716 behavioral task instances across three levels of behavioral steerability.</p>
           <div class="dataset-actions">
             <a class="text-link" href="docs/dataset-guide.html">Dataset guide <span aria-hidden="true">↗</span></a>
-            <a class="text-link hf-hub-link" href="https://huggingface.co/PhoebeCC" target="_blank" rel="noopener noreferrer">Hugging Face Profile <span aria-hidden="true">↗</span></a>
+            <a class="text-link hf-section-link" href="#hf-repositories">Browse repositories <span aria-hidden="true">↓</span></a>
           </div>
         </div>
         <div class="dataset-tree" role="img" aria-label="The dataset root contains Tasks with Levels 1, 2 and 3, and Data with Levels 1, 2, 3 and Shared.">
@@ -160,24 +160,45 @@
         </div>
       </div>
 
-      <div class="hf-resources">
-        <h3 class="hf-resources-title">Hugging Face Repositories</h3>
+      <div class="hf-resources" id="hf-repositories" aria-labelledby="hf-resources-title">
+        <h3 class="hf-resources-title" id="hf-resources-title">Hugging Face Repositories</h3>
+        <p class="hf-resources-intro">Open the full benchmark, evaluator weights, and three supporting RoboSteer repositories directly.</p>
         <div class="hf-cards-grid">
+          <a class="hf-card hf-card-primary" href="https://huggingface.co/datasets/YanCORANV/RoboSteer" target="_blank" rel="noopener noreferrer">
+            <div class="hf-card-top">
+              <span class="hf-badge">Benchmark dataset</span>
+              <span class="hf-arrow" aria-hidden="true">↗</span>
+            </div>
+            <h4>RoboSteer</h4>
+            <span class="hf-owner">YanCORANV</span>
+            <p>Complete task definitions and multimodal motion assets across Levels 1–3. Start here to download the benchmark.</p>
+          </a>
+          <a class="hf-card" href="https://huggingface.co/Leontc/RoboSteer-evaluator" target="_blank" rel="noopener noreferrer">
+            <div class="hf-card-top">
+              <span class="hf-badge">Evaluator weights</span>
+              <span class="hf-arrow" aria-hidden="true">↗</span>
+            </div>
+            <h4>RoboSteer-evaluator</h4>
+            <span class="hf-owner">Leontc</span>
+            <p>Evaluator model weights and registry files for RoboSteer metrics. Download one evaluator or the complete collection.</p>
+          </a>
           <a class="hf-card" href="https://huggingface.co/datasets/PhoebeCC/RoboSteer_Evaluation" target="_blank" rel="noopener noreferrer">
             <div class="hf-card-top">
-              <span class="hf-badge">Dataset</span>
+              <span class="hf-badge">Evaluation data</span>
               <span class="hf-arrow" aria-hidden="true">↗</span>
             </div>
             <h4>RoboSteer_Evaluation</h4>
-            <p>Multimodal evaluation benchmark dataset organized by evaluation level, modality, and method/task unit.</p>
+            <span class="hf-owner">PhoebeCC</span>
+            <p>Multimodal evaluation assets organized by level, modality, and method or task unit.</p>
           </a>
           <a class="hf-card" href="https://huggingface.co/datasets/PhoebeCC/RoboSteer-Model-Resources" target="_blank" rel="noopener noreferrer">
             <div class="hf-card-top">
-              <span class="hf-badge">Resources</span>
+              <span class="hf-badge">Model resources</span>
               <span class="hf-arrow" aria-hidden="true">↗</span>
             </div>
             <h4>RoboSteer-Model-Resources</h4>
-            <p>Model documentation, resource manifests, and supplementary setup guides for evaluated baselines.</p>
+            <span class="hf-owner">PhoebeCC</span>
+            <p>Model documentation and resource manifests. Runnable model packages are not yet published.</p>
           </a>
           <a class="hf-card" href="https://huggingface.co/datasets/PhoebeCC/RoboSteer-Preprocessing" target="_blank" rel="noopener noreferrer">
             <div class="hf-card-top">
@@ -185,7 +206,8 @@
               <span class="hf-arrow" aria-hidden="true">↗</span>
             </div>
             <h4>RoboSteer-Preprocessing</h4>
-            <p>Reusable intermediate preprocessing assets, including processed text instructions and multimodal conditions.</p>
+            <span class="hf-owner">PhoebeCC</span>
+            <p>Reusable Level 1 processed text instructions and image-conditioned static videos.</p>
           </a>
         </div>
       </div>

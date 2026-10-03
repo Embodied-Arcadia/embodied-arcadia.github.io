@@ -35,7 +35,7 @@
   }
   const resources = [
     ["Homepage", "#home"], ["Paper", content.paperUrl],
-    ["Dataset", content.datasetUrl], ["Hugging Face", "https://huggingface.co/PhoebeCC"],
+    ["Dataset", content.datasetUrl], ["Evaluator weights", content.evaluatorUrl],
     ["Code", content.codeUrl]
   ];
   for (const [label, url] of resources) {
