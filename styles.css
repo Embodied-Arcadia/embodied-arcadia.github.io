@@ -23,15 +23,15 @@ img, video { max-width: 100%; display: block; }
 .motion-label { position: absolute; z-index: 2; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 94%; color: var(--color-white); opacity: .3; font: 700 clamp(1.125rem, 11cqw, 4rem)/1.05 var(--font-display); letter-spacing: -.035em; text-align: center; text-wrap: balance; pointer-events: none; }
 .motion-tile video { width: 100%; height: 100%; object-fit: contain; object-position: center; min-height: 0; min-width: 0; border: 0; border-radius: 0; }
 .motion-tile.failed video { opacity: .25; }
-.hero-shade { position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(180deg, var(--color-veil-edge), var(--color-veil) 30%, var(--color-veil) 65%, var(--color-veil-edge)); }
+.hero-shade { position: absolute; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(ellipse 60% 32% at 50% 62%, oklch(8% 0.02 250 / .58), oklch(8% 0.02 250 / .3) 48%, transparent 100%), linear-gradient(180deg, var(--color-veil-edge), var(--color-veil) 30%, var(--color-veil) 65%, var(--color-veil-edge)); }
 .hero-nav { position: absolute; top: 0; width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 24px 40px; gap: 16px; }
 .hero-nav a { text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; gap: 12px; white-space: nowrap; }
 .wordmark { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; letter-spacing: -.05em; text-decoration: none; }
 .brand-mark { color: inherit; margin-left: 5px; }
 .hero-copy { padding: 100px 24px; text-align: center; }
-.hero-copy h1 { font-size: clamp(4rem, 10.8vw, 10rem); font-weight: 650; line-height: 1; margin-bottom: 24px; letter-spacing: -.075em; }
+.hero-copy h1 { font-size: clamp(4rem, 10.8vw, 10rem); font-weight: 650; line-height: 1; margin-bottom: 40px; letter-spacing: -.075em; }
 .hero-copy h1 span { font-weight: 400; }
-.hero-copy p { position: relative; width: fit-content; max-width: 840px; margin: 0 auto; padding: 12px 24px; border: 1px solid oklch(100% 0 0 / .18); border-radius: 8px; background: oklch(14% 0.025 250 / .82); box-shadow: 0 10px 32px oklch(0% 0 0 / .22); color: var(--color-white); font-size: clamp(1.125rem, 2vw, 1.75rem); font-weight: 600; line-height: 1.45; text-shadow: 0 1px 2px oklch(0% 0 0 / .4); text-wrap: balance; }
+.hero-copy p { max-width: 840px; margin: 0 auto; color: var(--color-white); font-size: clamp(1.25rem, 2.15vw, 1.875rem); font-weight: 650; line-height: 1.4; letter-spacing: .005em; text-shadow: 0 1px 2px oklch(0% 0 0 / .95), 0 2px 12px oklch(0% 0 0 / .85); text-wrap: balance; }
 .hero-bottom { position: absolute; bottom: 20px; left: 40px; right: 40px; display: flex; align-items: center; justify-content: flex-end; gap: 16px; font-size: var(--text-sm); }
 .hero-bottom p { margin: 0; color: var(--color-hero-muted); }
 .hero-bottom button { background: var(--color-dark); color: var(--color-white); border: 1px solid var(--color-hero-line); padding: 8px 16px; min-height: 44px; border-radius: var(--radius-sm); white-space: nowrap; }
@@ -326,7 +326,7 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; white-sp
   .hero-nav>a:last-child { font-size: var(--text-sm); }
   .hero-copy { padding: 100px 20px; }
   .hero-copy h1 { font-size: clamp(3.2rem, 12vw, 5.5rem); }
-  .hero-copy p { padding: 12px 16px; font-size: clamp(1.05rem, 3.8vw, 1.25rem); }
+  .hero-copy p { font-size: clamp(1.125rem, 4.3vw, 1.35rem); }
   .hero-bottom { left: 20px; right: 20px; align-items: flex-end; }
   .hero-bottom p { max-width: 145px; }
   .section { padding: 48px 24px; }
